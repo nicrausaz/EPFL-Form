@@ -25,23 +25,22 @@
                     $fichier = basename($_FILES['fichier']['name']);
                     $extensions = array('.pdf');
                     $extension = strrchr($_FILES['fichier']['name'], '.'); 
-                    //Début des vérifications de sécurité...
-                    if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+                    
+                    if(!in_array($extension, $extensions))
                     {
                         $erreur = 'Vous devez uploader un fichier de type PDF';
                     }
-                    if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+                    if(!isset($erreur))
                     {
-                        //On formate le nom du fichier ici...
                         $fichier = strtr($fichier, 
                             'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
                             'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
                         $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-                        if(move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+                        if(move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $fichier))
                         {
                             echo 'Upload effectué avec succès !';
                         }
-                        else //Sinon (la fonction renvoie FALSE).
+                        else
                         {
                             echo 'Echec de l\'upload !';
                         }
