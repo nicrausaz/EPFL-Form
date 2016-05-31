@@ -22,13 +22,13 @@
             <legend><span class="number">1</span> Apprentissage</legend>
 
             <label for="job">Je suis intéressé par le métier de*: </label>
-            <input type="radio" name="groupJob" value="Informaticien" required/>Informaticien/Informaticienne CFC<p>
-            <input type="radio" name="groupJob"value="..." required/>Autre CFC<p>
-            <input type="radio" name="groupJob"value="..." required/>... CFC<p>
+            <input type="radio" name="groupJob" value="Informaticien" />Informaticien/Informaticienne CFC<p>
+            <input type="radio" name="groupJob"value="..." />Autre CFC<p>
+            <input type="radio" name="groupJob"value="..." />... CFC<p>
 
             Je désire m'inscire en maturité professionelle intégrée*:<p>
-            <input type="radio" name="mpt" value="MPT-oui" required/>Oui
-            <input type="radio" name="mpt" value="MPT-non" required/>Non
+            <input type="radio" name="mpt" value="MPT-oui" />Oui
+            <input type="radio" name="mpt" value="MPT-non" />Non
           </fieldset>
           
           <fieldset>
@@ -39,36 +39,36 @@
                 
                <!-- DONNEES APPRENTIS-->
                PHOTO* <!-- ajouter un cadre + upload--><p>
-            <select name="genreApp" required>
+            <select name="genreApp" >
                 <option disabled selected > Choisissez un genre*</option>
-                <option value="Homme" required>Homme</option>
-                <option value="Femme" required>Femme</option>
+                <option value="Homme" >Homme</option>
+                <option value="Femme" >Femme</option>
             </select>
             
-            <input type="text" name="nameApp" placeholder="Nom *" autocomplete="off" required/>
-            <input type="text" name="surnameApp" placeholder="Prénom *" autocomplete="off" required />
-            <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" required/>
-            <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" required/>
-            <input type="text" name="telApp" placeholder="Téléphone *" autocomplete="off" required/>
-            <input type="text" name="phoneApp" placeholder="Mobile *" autocomplete="off" required/>
-            <input type="email" name="mailApp" placeholder = "Mail *"autocomplete="off" required/> 
-            <input type="date" name="birthApp" max="today" required/>
-            <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" required/>
-            <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" required/>
-            <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" required/>
+            <input type="text" name="nameApp" placeholder="Nom *" autocomplete="off" />
+            <input type="text" name="surnameApp" placeholder="Prénom *" autocomplete="off"  />
+            <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" />
+            <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" />
+            <input type="text" name="telApp" placeholder="Téléphone *" autocomplete="off" />
+            <input type="text" name="phoneApp" placeholder="Mobile *" autocomplete="off" />
+            <input type="email" name="mailApp" placeholder = "Mail *"autocomplete="off" /> 
+            <input type="date" name="birthApp" max="today" />
+            <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" />
+            <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" />
+            <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" />
             
             <label for="languesApp">Connaissance linguistiques*:</label>
-            <input type="checkbox" name="languesApp" value="Français" required> Français<p>
-            <input type="checkbox" name="languesApp" value="Allemand" required>Allemand<p> <!-- check this-->
-            <input type="checkbox" name="languesApp" value="Anglais" required>Anglais<p>
-            <input type="checkbox" name="languesApp" value="Autres" required>Autres<p>
+            <input type="checkbox" name="languesApp" value="Français" > Français<p>
+            <input type="checkbox" name="languesApp" value="Allemand" >Allemand<p> <!-- check this-->
+            <input type="checkbox" name="languesApp" value="Anglais" >Anglais<p>
+            <input type="checkbox" name="languesApp" value="Autres" >Autres<p>
         </fieldset>
         <fieldset>
             <legend><span class="number">2.2</span> Réprésentants légaux</legend>    
              (Si vous avez moins de 18 ans.)<p>
                 <!-- DONNEES REPRESENTANT 1-->
               Réprésentant 1:<p>
-            <select name="genreRep1" required>
+            <select name="genreRep1" >
                 <option disabled selected> Choisissez un genre</option>
                 <option value="Homme">Homme</option>
                 <option value="Femme">Femme</option>
@@ -82,7 +82,7 @@
             
              Réprésentant 2:<p>
                 <!-- DONNEES REPRESENTANT 2-->
-            <select name="genreRep2" required>
+            <select name="genreRep2" >
                 <option disabled selected> Choisissez un genre</option>
                 <option value="Homme">Homme</option>
                 <option value="Femme">Femme</option>
@@ -145,9 +145,10 @@
         <fieldset>
         </fieldset>
         <legend><span class="number">4</span> Annexes à fournir</legend>
-           
-           <input type="file" name ="fichier"><p>
-                    
+    
+             <label for="fichier">CV (PDF | max. 1 Mo) :</label>
+                <input type="file" name="fichier" id="fichier" /><p>
+                                  
         </fieldset>   
             <input type="checkbox" value="conditionsAcc" id="conditions"/>Accepter les <a href="conditions.php">conditions</a><p>
             <input type="submit" value="Terminer">
