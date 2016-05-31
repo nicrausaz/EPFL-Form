@@ -139,7 +139,7 @@
         </fieldset>
         <fieldset>
             <legend><span class="number">3.3</span> Stages</legend>
-            hgdvauzsdvfzsavdz
+            test test test test test
         </fieldset>
         <!-- ANNEXES-->
         <fieldset>

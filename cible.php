@@ -10,8 +10,8 @@
     <div class="form-style-5">
         
        <?php
+       
        //get apprenti's infos
-
           $job= $_POST['mpt'] ." ". $_POST['groupJob'];
           $infosPerso = $_POST['genreApp']." ".$_POST['nameApp']." ".$_POST['surnameApp']." ".$_POST['adrApp']." ".$_POST['NPAApp']." ".$_POST['telApp']." ".$_POST['phoneApp']
           ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " .$_POST['languesApp'] ;
@@ -23,13 +23,13 @@
                 $pathtxt = $path."text/";
                 $pathpdf = $path."pdf/";
                 
-                    if (!mkdir($path, 0777, true)) {
+                    if (!mkdir($path, 0777, true)){
                         die('Echec lors de la création du dossier 1');
                     }
-                    if (!mkdir($pathtxt, 0777, true)) {
+                    if (!mkdir($pathtxt, 0777, true)){
                         die('Echec lors de la création du dossier 2');
                     }
-                    if (!mkdir($pathpdf, 0777, true)) {
+                    if (!mkdir($pathpdf, 0777, true)){
                         die('Echec lors de la création du dossier 3');
                     }
                     
@@ -44,31 +44,42 @@
                     $extensions = array('.pdf');
                     $extension = strrchr($_FILES['fichier']['name'], '.'); 
                     
-                    if(!in_array($extension, $extensions))
-                    {
+                    if(!in_array($extension, $extensions)){
                         $erreur = 'Vous devez uploader un fichier de type PDF';
                     }
-                    if(!isset($erreur))
-                    {
+                    if(!isset($erreur)){
                         $fichier = strtr($fichier, 
                             'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
                             'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
                         $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+                        
                         if(move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $fichier))
                         {
                             echo 'Upload effectué avec succès !';
                         }
-                        else
-                        {
+                        else{
                             echo 'Echec de l\'upload !';
                         }
                     }
-                    else
-                    {
+                    else{
                         echo $erreur;
                     }
-                    ?>
-                   
+                    
+                  // mail send  
+                        $to  = 'nicolas.crausaz@epfl.ch';
+                        $subject = 'Test envoi mail PHP';
+                        $message = $name.$surname . " a fait une demande de place d'apprentissage.";
+                        $headers = 'From: formapprentis@epfl.ch' . "\r\n" .
+                                    'Reply-To: formapprentis@epfl.ch' . "\r\n" .
+                                    'X-Mailer: PHP/' . phpversion();
+                        
+                        if (mail($to , $subject, $message, $headers)){
+                            echo "Mail envoyé";
+                        }
+                        else{
+                            echo "Mail non envoyé";
+                        }
+                    ?>       
     </div>
     </body>
 
