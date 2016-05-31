@@ -3,9 +3,9 @@
     <head>  
          <meta charset="UTF-8"/>
          <link rel="stylesheet" type="text/css" href="style.css">
+         <link rel="icon" type="image/png" href="img/favicon.png" />
          <title>Formulaire Apprentissage</title>
     </head>
-    
     <body>
     <div class="form-style-5">
         <form method ="post" action="cible.php" enctype="multipart/form-data">
