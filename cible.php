@@ -72,7 +72,7 @@
                         $headers = 'From: formapprentis@epfl.ch' . "\r\n" .
                                     'Reply-To: formapprentis@epfl.ch' . "\r\n" .
                                     'X-Mailer: PHP/' . phpversion();
-                        
+                                    
                         if (mail($to , $subject, $message, $headers)){
                             echo "Mail envoyé";
                         }

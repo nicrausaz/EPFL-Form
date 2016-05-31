@@ -4,6 +4,17 @@
          <meta charset="UTF-8"/>
          <link rel="stylesheet" type="text/css" href="style.css">
          <link rel="icon" type="image/png" href="img/favicon.png" />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+         <script>
+                $(document).ready(function(){
+
+                $("#job").change(function() {
+                if($("#job option:selected").text()== "Laborantin"){
+                    $("photoTitle").hide();
+                }
+                });
+                });
+            </script>
          <title>Formulaire Apprentissage</title>
     </head>
     <body>
@@ -20,15 +31,27 @@
         <fieldset>  
             <!-- DONNEES APPRENTISSAGE-->
             <legend><span class="number">1</span> Apprentissage</legend>
-
+            
+            
             <label for="job">Je suis intéressé par le métier de*: </label>
-            <input type="radio" name="groupJob" value="Informaticien" />Informaticien/Informaticienne CFC<p>
-            <input type="radio" name="groupJob"value="..." />Autre CFC<p>
-            <input type="radio" name="groupJob"value="..." />... CFC<p>
-
-            Je désire m'inscire en maturité professionelle intégrée*:<p>
+            <select name =job required>
+                <<option value="menu" selected disabled>Choisir un métier...</option>
+                <option value="laboBio">Laborantin</option> <!-- Laborantin-e CFC; option biologie -->
+                <option value="laboCh">Laborantin-e CFC; option chimie</option>
+                <option value="laboPhy">Laborantin-e en physique CFC</option>
+                <option value="polyM">Polymécanicien-ne CFC</option>
+                <option value="info">Informaticien-ne CFC</option>
+                <option value="logi">Logisticien-ne CFC</option>
+                <option value="planElec">Planificateur-trice éléctricien-ne CFC</option>
+                <option value="empCom">Employé-e de commerce CFC</option>
+                <option value="gardAn">Gardien-ne d'animaux CFC</option>
+            </select>
+           
+            
+            <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
             <input type="radio" name="mpt" value="MPT-oui" />Oui
             <input type="radio" name="mpt" value="MPT-non" />Non
+            <p>
           </fieldset>
           
           <fieldset>
@@ -154,6 +177,7 @@
             <input type="submit" value="Terminer">
             
         </form>
+        
     </div>
    </body>
 
