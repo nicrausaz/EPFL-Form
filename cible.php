@@ -19,7 +19,7 @@
        //create apprenti's folders
                 $name = $_POST['nameApp'];
                 $surname = $_POST['surnameApp'];
-                $path = '../candidatures/'.$name.$surname.'/';
+                $path = '../candidatures/'."new-".$name.$surname.'/';
                 $pathtxt = $path."text/";
                 $pathpdf = $path."pdf/";
                 
