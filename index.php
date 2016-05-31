@@ -45,8 +45,8 @@
                 <option value="Femme" >Femme</option>
             </select>
             
-            <input type="text" name="nameApp" placeholder="Nom *" autocomplete="off" />
-            <input type="text" name="surnameApp" placeholder="Prénom *" autocomplete="off"  />
+            <input type="text" name="nameApp" placeholder="Nom *" autocomplete="off" required/>
+            <input type="text" name="surnameApp" placeholder="Prénom *" autocomplete="off" required/>
             <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" />
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" />
             <input type="text" name="telApp" placeholder="Téléphone *" autocomplete="off" />
@@ -147,7 +147,7 @@
         <legend><span class="number">4</span> Annexes à fournir</legend>
     
              <label for="fichier">CV (PDF | max. 1 Mo) :</label>
-                <input type="file" name="fichier" id="fichier" /><p>
+                <input type="file" name="fichier" id="fichier" required/><p>
                                   
         </fieldset>   
             <input type="checkbox" value="conditionsAcc" id="conditions"/>Accepter les <a href="conditions.php">conditions</a><p>
