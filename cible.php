@@ -48,6 +48,7 @@
                 createThings($path);
             }
             
+            //create apprenti's folders
             function createThings($path){
                     $pathtxt = $path."text/";
                     $pathpdf = $path."pdf/";
@@ -59,6 +60,8 @@
                     }
                     if (!mkdir($pathpdf, 0777, true)){
                         die('Echec lors de la création du dossier 3');
+                    }else{
+                        echo "Dossiers crées";
                     }
                     
                     //create text file for apprenti's infos   
@@ -91,17 +94,9 @@
                     }
                     else{
                         echo $erreur;
-                    }
-
-       //create apprenti's folders
-
-                //$path = '../candidatures/'."new-".$name.$surname.'/';
-                
-                                  
-                    
-                    
-                  // mail send 
-                  /* 
+                    }                   
+                }
+                 // mail send 
                         $to  = 'nicolas.crausaz@epfl.ch';
                         $subject = 'Test envoi mail PHP';
                         $message = $name.$surname ." ". " a fait une demande de place d'apprentissage.";
@@ -115,13 +110,6 @@
                         else{
                             echo "Mail non envoyé";
                         }
-                        */
-                }
-                
-                    
-          
-                  
-        
                     ?>       
     </div>
     </body>
