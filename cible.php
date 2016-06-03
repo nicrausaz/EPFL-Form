@@ -10,19 +10,47 @@
     <div class="form-style-5">
         
        <?php
-       
+                
+                    
        //get apprenti's infos
           $job= $_POST['mpt'] ." ". $_POST['groupJob'];
           $infosPerso = $_POST['genreApp']." ".$_POST['nameApp']." ".$_POST['surnameApp']." ".$_POST['adrApp']." ".$_POST['NPAApp']." ".$_POST['telApp']." ".$_POST['phoneApp']
           ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " .$_POST['languesApp'] ;
 
-       //create apprenti's folders
-                $name = $_POST['nameApp'];
-                $surname = $_POST['surnameApp'];
-                $path = '../candidatures/'."new-".$name.$surname.'/';
-                $pathtxt = $path."text/";
-                $pathpdf = $path."pdf/";
-                
+
+//Tri des apprentis par métier
+        $name = $_POST['nameApp'];
+        $surname = $_POST['surnameApp'];
+        $job = $_POST['job'];
+            if($job=="polyM") {
+                echo "Polymec"; 
+                $path = '../candidatures/Polymecaniciens/'."new-".$name.$surname.'/';
+                createThings($path);
+            }else if($job=="info"){
+                echo "informaticien";
+                $path = '../candidatures/Informaticiens/'."new-".$name.$surname.'/';
+                createThings($path);
+            }else if($job=="logi"){
+                echo "Logisticiens";
+                $path = '../candidatures/Logisticiens/'."new-".$name.$surname.'/';
+                createThings($path);
+            }else if($job=="planElec"){
+                echo "";
+                $path = '../candidatures/PlanificateurElectricien/'."new-".$name.$surname.'/';
+                createThings($path);
+            }else if($job=="empCom"){
+                echo "EmployesCommerce";
+                $path = '../candidatures/EmployesCommerce/'."new-".$name.$surname.'/';
+                createThings($path);
+            }else if($job=="gardAn"){
+                echo "GardiensAnimaux";
+                $path = '../candidatures/GardiensAnimaux/'."new-".$name.$surname.'/';
+                createThings($path);
+            }
+            
+            function createThings($path){
+                    $pathtxt = $path."text/";
+                    $pathpdf = $path."pdf/";
                     if (!mkdir($path, 0777, true)){
                         die('Echec lors de la création du dossier 1');
                     }
@@ -33,12 +61,12 @@
                         die('Echec lors de la création du dossier 3');
                     }
                     
-        //create text file for apprenti's infos   
-                $myfile = fopen($path."text/infos.txt", "w") or die("Unable to open file!");
+                    //create text file for apprenti's infos   
+                    $myfile = fopen($path."text/infos.txt", "w") or die("Unable to open file!");
                     fwrite($myfile, $job." ".$infosPerso);
-                    fclose($myfile);  
-                      
-         //pdf upload               
+                    fclose($myfile);
+                    
+                    //pdf upload  
                     $dossier = $pathpdf;
                     $fichier = basename($_FILES['fichier']['name']);
                     $extensions = array('.pdf');
@@ -64,11 +92,19 @@
                     else{
                         echo $erreur;
                     }
+
+       //create apprenti's folders
+
+                //$path = '../candidatures/'."new-".$name.$surname.'/';
+                
+                                  
                     
-                  // mail send  
+                    
+                  // mail send 
+                  /* 
                         $to  = 'nicolas.crausaz@epfl.ch';
                         $subject = 'Test envoi mail PHP';
-                        $message = $name.$surname . " a fait une demande de place d'apprentissage.";
+                        $message = $name.$surname ." ". " a fait une demande de place d'apprentissage.";
                         $headers = 'From: formapprentis@epfl.ch' . "\r\n" .
                                     'Reply-To: formapprentis@epfl.ch' . "\r\n" .
                                     'X-Mailer: PHP/' . phpversion();
@@ -79,6 +115,13 @@
                         else{
                             echo "Mail non envoyé";
                         }
+                        */
+                }
+                
+                    
+          
+                  
+        
                     ?>       
     </div>
     </body>

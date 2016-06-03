@@ -6,14 +6,14 @@
          <link rel="icon" type="image/png" href="img/favicon.png" />
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
-                $(document).ready(function(){
+             /*   $(document).ready(function(){
 
                 $("#job").change(function() {
                 if($("#job option:selected").text()== "Laborantin"){
                     $("photoTitle").hide();
                 }
                 });
-                });
+                });*/
             </script>
          <title>Formulaire Apprentissage</title>
     </head>
