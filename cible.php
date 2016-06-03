@@ -13,9 +13,15 @@
                 
                     
        //get apprenti's infos
+          
           $job= $_POST['mpt'] ." ". $_POST['groupJob'];
           $infosPerso = $_POST['genreApp']." ".$_POST['nameApp']." ".$_POST['surnameApp']." ".$_POST['adrApp']." ".$_POST['NPAApp']." ".$_POST['telApp']." ".$_POST['phoneApp']
           ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " .$_POST['languesApp'] ;
+          //get the rest of infos here 
+          //
+          //
+          $allInfos = $job." ".$infosPerso;
+          
 
 
 //Tri des apprentis par métier
@@ -25,31 +31,31 @@
             if($job=="polyM") {
                 echo "Polymec"; 
                 $path = '../candidatures/Polymecaniciens/'."new-".$name.$surname.'/';
-                createThings($path);
+                createThings($path,$name,$surname,$infosPerso);
             }else if($job=="info"){
                 echo "informaticien";
                 $path = '../candidatures/Informaticiens/'."new-".$name.$surname.'/';
-                createThings($path);
+                createThings($path,$name,$surname,$infosPerso);
             }else if($job=="logi"){
                 echo "Logisticiens";
                 $path = '../candidatures/Logisticiens/'."new-".$name.$surname.'/';
-                createThings($path);
+                createThings($path,$name,$surname,$infosPerso);
             }else if($job=="planElec"){
                 echo "";
                 $path = '../candidatures/PlanificateurElectricien/'."new-".$name.$surname.'/';
-                createThings($path);
+                createThings($path,$name,$surname,$infosPerso);
             }else if($job=="empCom"){
                 echo "EmployesCommerce";
                 $path = '../candidatures/EmployesCommerce/'."new-".$name.$surname.'/';
-                createThings($path);
+                createThings($path,$name,$surname,$infosPerso);
             }else if($job=="gardAn"){
                 echo "GardiensAnimaux";
                 $path = '../candidatures/GardiensAnimaux/'."new-".$name.$surname.'/';
-                createThings($path);
+                createThings($path,$name,$surname,$infosPerso);
             }
             
             //create apprenti's folders
-            function createThings($path){
+            function createThings($path,$name,$surname,$infosPerso){
                     $pathtxt = $path."text/";
                     $pathpdf = $path."pdf/";
                     if (!mkdir($path, 0777, true)){
@@ -64,9 +70,11 @@
                         echo "Dossiers crées";
                     }
                     
+                    print_r();
+                    
                     //create text file for apprenti's infos   
                     $myfile = fopen($path."text/infos.txt", "w") or die("Unable to open file!");
-                    fwrite($myfile, $job." ".$infosPerso);
+                    fwrite($myfile,$infosPerso); //can't put an array here
                     fclose($myfile);
                     
                     //pdf upload  
@@ -86,7 +94,7 @@
                         
                         if(move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $fichier))
                         {
-                            echo 'Upload effectué avec succès !';
+                            echo 'Upload réussi';
                         }
                         else{
                             echo 'Echec de l\'upload !';
@@ -110,8 +118,19 @@
                         else{
                             echo "Mail non envoyé";
                         }
+                        
+                        //pdf convert
+                        /*
+                        $content = "";
+                        require_once(dirname(__FILE__).'/html2pdf/html2pdf.class.php');
+                        $html2pdf = new HTML2PDF('P','A4','fr');
+                        $html2pdf->WriteHTML($content);
+                        ob_clean();
+                        $html2pdf->Output('images.pdf', 'D');
+                        */
                     ?>       
     </div>
     </body>
 
 </html>
+
