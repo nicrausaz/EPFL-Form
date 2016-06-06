@@ -24,7 +24,6 @@
           $allInfos = $job." ".$infosPerso;
           
 
-
 //Tri des apprentis par métier
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
