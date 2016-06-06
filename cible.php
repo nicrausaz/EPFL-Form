@@ -10,14 +10,11 @@
     <div class="form-style-5">
         
        <?php
-       extract(unserialize(file_get_contents('datas.txt')));
-           ob_start();     
-                    
        //get apprenti's infos
           
-          $job= $_POST['mpt'] ." ". $_POST['groupJob'];
-          $infosPerso = $_POST['genreApp']." ".$_POST['nameApp']." ".$_POST['surnameApp']." ".$_POST['adrApp']." ".$_POST['NPAApp']." ".$_POST['telApp']." ".$_POST['phoneApp']
-          ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " .$_POST['languesApp'] ;
+          $job = $_POST['mpt'] ." ". $_POST['job'];
+          $infosPerso = $_POST['genreApp']." ".$_POST['nameApp']." ".$_POST['surnameApp']." "; /*.$_POST['adrApp']." ".$_POST['NPAApp']." ".$_POST['telApp']." ".$_POST['phoneApp']
+          ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " .$_POST['languesApp'] ;*/
           //get the rest of infos here 
           //
           //
@@ -42,7 +39,7 @@
                 createThings($path,$name,$surname,$infosPerso);
             }else if($job=="planElec"){
                 echo "";
-                $path = '../candidatures/PlanificateurElectricien/'."new-".$name.$surname.'/';
+                $path = '../candidatures/PlanificateurElectriciens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$infosPerso);
             }else if($job=="empCom"){
                 echo "EmployesCommerce";
@@ -70,7 +67,6 @@
                         echo "Dossiers crées";
                     }
                     
-                    print_r();
                     
                     //create text file for apprenti's infos   
                     $myfile = fopen($path."text/infos.txt", "w") or die("Unable to open file!");
@@ -118,21 +114,6 @@
                         else{
                             echo "Mail non envoyé";
                         }
-                       
-                        //pdf convert
-                         /*
-                         $content = ob_get_clean();
-                         require('html2pdf/html2pdf.class.php');
-                         try{
-                             $pdf = new HTML2PDF('P','A4','fr');
-                             $pdf->pdf->SetDisplayMode('fullpage');
-                             $pdf->writeHTML($content);
-                             $pdf->Output('test');
-                             
-                         }catch(HTML2PDF_exeption $e){
-                             die($e);
-                         }
-                         */
                     ?>
     </div>
     </body>

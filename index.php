@@ -7,7 +7,6 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
              $(document).ready(function(){
-                
                     $("#fi").hide();
                     $("#fi1").hide();
                     $("#fi2").hide();
@@ -15,9 +14,9 @@
                     $("#fi4").hide();
                     $("#fi5").hide();
                     $("#fin").hide();
-                    
-                    $("#job").change(function() {
-                      var sele = $("#job option:selected").text();
+
+                    $("#jb").change(function() {
+                      var sele = $("#jb option:selected").text();
                       
                         if((sele=="Polymécanicien-ne CFC")||(sele=="Informaticien-ne CFC")||(sele=="Logisticien-ne CFC")||(sele=="Planificateur-trice éléctricien-ne CFC")||(sele=="Employé-e de commerce CFC")||(sele=="Gardien-ne d'animaux CFC")){
                             $("#fi").show(1000);
@@ -40,8 +39,9 @@
                             window.location.replace("https://google.com");
                         }
                 });
-                });
-            </script>   
+                }); 
+            </script>  
+             
          <title>Formulaire Apprentissage</title>
     </head>
     <body>
@@ -61,7 +61,7 @@
             
             
             <label for="job">Je suis intéressé par le métier de*: </label>
-            <select id ="job"" required>
+            <select name ="job" id="jb" required>
                 <option value="menu" selected disabled>Choisir un métier...</option>
                 <option value="laboBio">Laborantin-e CFC; option biologie</option>
                 <option value="laboCh">Laborantin-e CFC; option chimie</option>
@@ -203,7 +203,10 @@
             <input type="submit" value="Terminer">
         </fieldset>
         </form>
-    </div>
-   </body>
-
+        </div>
+    </body>
+    
+    <script>
+   
+    </script>
 </html>
