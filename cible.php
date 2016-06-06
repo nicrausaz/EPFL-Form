@@ -10,7 +10,8 @@
     <div class="form-style-5">
         
        <?php
-                
+       extract(unserialize(file_get_contents('datas.txt')));
+           ob_start();     
                     
        //get apprenti's infos
           
@@ -107,7 +108,7 @@
                  // mail send 
                         $to  = 'nicolas.crausaz@epfl.ch';
                         $subject = 'Test envoi mail PHP';
-                        $message = $name.$surname ." ". " a fait une demande de place d'apprentissage.";
+                        $message = $name." ".$surname ." ". " a fait une demande de place d'apprentissage.";
                         $headers = 'From: formapprentis@epfl.ch' . "\r\n" .
                                     'Reply-To: formapprentis@epfl.ch' . "\r\n" .
                                     'X-Mailer: PHP/' . phpversion();
@@ -118,7 +119,7 @@
                         else{
                             echo "Mail non envoyé";
                         }
-                        
+                       
                         //pdf convert
                         /*
                         $content = "";
@@ -128,7 +129,21 @@
                         ob_clean();
                         $html2pdf->Output('images.pdf', 'D');
                         */
-                    ?>       
+                    ?>
+                    <?php
+                         $content = ob_get_clean();
+                         require('html2pdf/html2pdf.class.php');
+                         try{
+                             $pdf = new HTML2PDF('P','A4','fr');
+                             $pdf->pdf->SetDisplayMode('fullpage');
+                             $pdf->writeHTML($content);
+                             $pdf->Output('test');
+                             
+                         }catch(HTML2PDF_exeption $e){
+                             die($e);
+                         }
+                         
+                    ?>    
     </div>
     </body>
 
