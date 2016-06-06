@@ -6,19 +6,33 @@
          <link rel="icon" type="image/png" href="img/favicon.png" />
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
-             /*   $(document).ready(function(){
-
-                $("#job").change(function() {
-                if($("#job option:selected").text()== "Laborantin"){
-                    $("photoTitle").hide();
-                }
+             
+                $(document).ready(function(){
+                    $("#fi").hide();
+                    $("#fi1").hide();
+                    $("#fi2").hide();
+                    $("#fi3").hide();
+                    $("#fi4").hide();
+                    $("#fi5").hide();
+                    $("#fin").hide();
+                    
+                        $("#job").change(function() {
+                        if($("#job option:selected").text()=="Laborantin-e CFC; option biologie"){
+                            $("#fi").show(1000);
+                            $("#fi1").show(1000);
+                            $("#fi2").show(1000);
+                            $("#fi3").show(1000);
+                            $("#fi4").show(1000);
+                            $("#fi5").show(1000);
+                            $("#fin").show(1000);
+                        }
                 });
-                });*/
-            </script>
+                });
+            </script>   
          <title>Formulaire Apprentissage</title>
     </head>
     <body>
-    <div class="form-style-5">
+    <div class="form-style-5" >
         <form method ="post" action="cible.php" enctype="multipart/form-data">
             
         <fieldset id="photoTitle">
@@ -34,9 +48,9 @@
             
             
             <label for="job">Je suis intéressé par le métier de*: </label>
-            <select name =job required>
-                <<option value="menu" selected disabled>Choisir un métier...</option>
-                <option value="laboBio">Laborantin</option> <!-- Laborantin-e CFC; option biologie -->
+            <select id ="job"" required>
+                <option value="menu" selected disabled>Choisir un métier...</option>
+                <option value="laboBio">Laborantin-e CFC; option biologie</option> <!-- Laborantin-e CFC; option biologie -->
                 <option value="laboCh">Laborantin-e CFC; option chimie</option>
                 <option value="laboPhy">Laborantin-e en physique CFC</option>
                 <option value="polyM">Polymécanicien-ne CFC</option>
@@ -46,15 +60,15 @@
                 <option value="empCom">Employé-e de commerce CFC</option>
                 <option value="gardAn">Gardien-ne d'animaux CFC</option>
             </select>
-           
-            
+           </fieldset>
+           <fieldset id="fi">
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
             <input type="radio" name="mpt" value="MPT-oui" />Oui
             <input type="radio" name="mpt" value="MPT-non" />Non
             <p>
           </fieldset>
           
-          <fieldset>
+          <fieldset id="fi1">
             
             <legend><span class="number">2</span> Données </legend>
             <fieldset>
@@ -86,7 +100,7 @@
             <input type="checkbox" name="languesApp" value="Anglais" >Anglais<p>
             <input type="checkbox" name="languesApp" value="Autres" >Autres<p>
         </fieldset>
-        <fieldset>
+        <fieldset id="fi2">
             <legend><span class="number">2.2</span> Réprésentants légaux</legend>    
              (Si vous avez moins de 18 ans.)<p>
                 <!-- DONNEES REPRESENTANT 1-->
@@ -115,12 +129,11 @@
             <input type="text" name="surnameRep2" placeholder="Prénom" autocomplete="off"/>
              <input type="text" name="adrRep2" placeholder="Adresse" autocomplete="off"/>
             <input type="text" name="NPARep2" placeholder = "NPA\Domicile"autocomplete="off"/>
-            <input type="text" name="telRep2" placeholder="Téléphone" autocomplete="off"/>
-        </fieldset>
+            <input type="text" name="telRep2" placeholder="Téléphone" autocomplete="off"/>   
         </fieldset>
          <!-- ACIVITES-->
         <legend><span class="number">3</span> Activités</legend>
-        <fieldset>
+        <fieldset id="fi3">
             <legend><span class="number">3.1</span> Scolarité</legend>
                 <table id="scolaire">
                     <tr>
@@ -160,24 +173,24 @@
                     </tr>
                 </table>
         </fieldset>
-        <fieldset>
+        <fieldset id ="fi4">
             <legend><span class="number">3.3</span> Stages</legend>
             test test test test test
         </fieldset>
         <!-- ANNEXES-->
-        <fieldset>
+        <fieldset id="fi5">
         </fieldset>
         <legend><span class="number">4</span> Annexes à fournir</legend>
     
              <label for="fichier">CV (PDF | max. 1 Mo) :</label>
                 <input type="file" name="fichier" id="fichier" required/><p>
                                   
-        </fieldset>   
+        </fieldset> 
+        <fieldset id="fin">  
             <input type="checkbox" value="conditionsAcc" id="conditions"/>Accepter les <a href="conditions.php">conditions</a><p>
             <input type="submit" value="Terminer">
-            
+        </fieldset>
         </form>
-        
     </div>
    </body>
 

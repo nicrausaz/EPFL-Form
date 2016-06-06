@@ -121,16 +121,7 @@
                         }
                        
                         //pdf convert
-                        /*
-                        $content = "";
-                        require_once(dirname(__FILE__).'/html2pdf/html2pdf.class.php');
-                        $html2pdf = new HTML2PDF('P','A4','fr');
-                        $html2pdf->WriteHTML($content);
-                        ob_clean();
-                        $html2pdf->Output('images.pdf', 'D');
-                        */
-                    ?>
-                    <?php
+                         /*
                          $content = ob_get_clean();
                          require('html2pdf/html2pdf.class.php');
                          try{
@@ -142,8 +133,8 @@
                          }catch(HTML2PDF_exeption $e){
                              die($e);
                          }
-                         
-                    ?>    
+                         */
+                    ?>
     </div>
     </body>
 
