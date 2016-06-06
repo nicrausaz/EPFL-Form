@@ -6,8 +6,8 @@
          <link rel="icon" type="image/png" href="img/favicon.png" />
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
-             
-                $(document).ready(function(){
+             $(document).ready(function(){
+                
                     $("#fi").hide();
                     $("#fi1").hide();
                     $("#fi2").hide();
@@ -16,8 +16,10 @@
                     $("#fi5").hide();
                     $("#fin").hide();
                     
-                        $("#job").change(function() {
-                        if($("#job option:selected").text()=="Laborantin-e CFC; option biologie"){
+                    $("#job").change(function() {
+                      var sele = $("#job option:selected").text();
+                      
+                        if((sele=="Polymécanicien-ne CFC")||(sele=="Informaticien-ne CFC")||(sele=="Logisticien-ne CFC")||(sele=="Planificateur-trice éléctricien-ne CFC")||(sele=="Employé-e de commerce CFC")||(sele=="Gardien-ne d'animaux CFC")){
                             $("#fi").show(1000);
                             $("#fi1").show(1000);
                             $("#fi2").show(1000);
@@ -25,6 +27,17 @@
                             $("#fi4").show(1000);
                             $("#fi5").show(1000);
                             $("#fin").show(1000);
+                        }else if((sele=="Laborantin-e CFC; option biologie")||(sele=="Laborantin-e CFC; option chimie")||(sele=="Laborantin-e en physique CFC")){
+                            $("#fi").hide(1000);
+                            $("#fi1").hide(1000);
+                            $("#fi2").hide(1000);
+                            $("#fi3").hide(1000);
+                            $("#fi4").hide(1000);
+                            $("#fi5").hide(1000);
+                            $("#fin").hide(1000);
+                            
+                            alert("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...");
+                            window.location.replace("https://google.com");
                         }
                 });
                 });
@@ -50,7 +63,7 @@
             <label for="job">Je suis intéressé par le métier de*: </label>
             <select id ="job"" required>
                 <option value="menu" selected disabled>Choisir un métier...</option>
-                <option value="laboBio">Laborantin-e CFC; option biologie</option> <!-- Laborantin-e CFC; option biologie -->
+                <option value="laboBio">Laborantin-e CFC; option biologie</option>
                 <option value="laboCh">Laborantin-e CFC; option chimie</option>
                 <option value="laboPhy">Laborantin-e en physique CFC</option>
                 <option value="polyM">Polymécanicien-ne CFC</option>
@@ -67,7 +80,6 @@
             <input type="radio" name="mpt" value="MPT-non" />Non
             <p>
           </fieldset>
-          
           <fieldset id="fi1">
             
             <legend><span class="number">2</span> Données </legend>
