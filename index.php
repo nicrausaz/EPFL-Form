@@ -14,6 +14,10 @@
                       
                         if((sele=="Polymécanicien-ne CFC")||(sele=="Informaticien-ne CFC")||(sele=="Logisticien-ne CFC")||(sele=="Planificateur-trice éléctricien-ne CFC")||(sele=="Employé-e de commerce CFC")||(sele=="Gardien-ne d'animaux CFC")){
                             $("#all").show(1000)
+                            $("#infoOnly").hide(0)
+                            if(sele=="Informaticien-ne CFC"){
+                                $("#infoOnly").show(1000)
+                            }
                         }else if((sele=="Laborantin-e CFC; option biologie")||(sele=="Laborantin-e CFC; option chimie")||(sele=="Laborantin-e en physique CFC")){
                             $("#all").hide(1000)
 
@@ -58,13 +62,21 @@
             </select>
            </fieldset>
            <div id="all">
-           <fieldset id="fi">
+           <fieldset>
+           <div id="infoOnly">
+            <label for="filInfo">Filières informatiques:*</label>
+            <input type="radio" name="filInfo" value="devIT" />Dévellopement d'application <p>
+            <input type="radio" name="filInfo" value="entrIT" />Informatique d'entreprise <p>
+            <input type="radio" name="filInfo" value="techIT" />Technique des systèmes <p>
+            <input type="radio" name="filInfo" value="dontKnow" />Je ne sais pas <p>
+            </div>
+
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
             <input type="radio" name="mpt" value="MPT-oui" />Oui
             <input type="radio" name="mpt" value="MPT-non" />Non
             <p>
           </fieldset>
-          <fieldset id="fi1">
+          <fieldset>
             
             <legend><span class="number">2</span> Données </legend>
             <fieldset>
@@ -97,7 +109,7 @@
             <input type="checkbox" name="languesApp" value="Anglais" >Anglais<p>
             <input type="checkbox" name="languesApp" value="Autres" >Autres<p>
         </fieldset>
-        <fieldset id="fi2">
+        <fieldset>
             <legend><span class="number">2.2</span> Réprésentants légaux</legend>    
              (Si vous avez moins de 18 ans.)<p>
                 <!-- DONNEES REPRESENTANT 1-->
@@ -130,7 +142,7 @@
         </fieldset>
          <!-- ACIVITES-->
         <legend><span class="number">3</span> Activités</legend>
-        <fieldset id="fi3">
+        <fieldset>
             <legend><span class="number">3.1</span> Scolarité</legend>
                 <table id="scolaire">
                     <tr>
@@ -172,19 +184,19 @@
                 </table>
                 <input type="button" id="addPro" value="Ajouter une ligne" onclick="addLpro"/>
         </fieldset>
-        <fieldset id ="fi4">
+        <fieldset>
             <legend><span class="number">3.3</span> Stages</legend>
             test test test test test
         </fieldset>
         <!-- ANNEXES-->
-        <fieldset id="fi5">
+        <fieldset>
         </fieldset>
         <legend><span class="number">4</span> Annexes à fournir</legend>
     
              
                                   
         </fieldset> 
-        <fieldset id="fin">  
+        <fieldset>  
             <input type="checkbox" value="conditionsAcc" id="conditions"/>Accepter les <a href="conditions.php">conditions</a><p>
             <input type="submit" value="Terminer">
         </fieldset>
