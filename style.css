@@ -108,4 +108,9 @@
     color: red;
     font-size: 1.5em;
 }
-
+#addSch{
+   padding: 5px 20px 5px 20px; 
+}
+#addPro{
+   padding: 5px 20px 5px 20px; 
+}

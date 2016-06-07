@@ -155,7 +155,7 @@
                         <td><input type="text" name="ecole1" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieu1" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveau1" placeholder="Niveau" autocomplete="off"/></td>
-                        <td><input type="text" name="annees1" placeholder="de-à(années)" autocomplete="off"/></td>
+                        <td><input type="text" name="annees1" placeholder="de-à(années)" autocomplete="off"/></td>  
                     </tr>
                     <tr>
                         <td><input type="text" name="ecole2" placeholder="Ecole" autocomplete="off"/></td>
@@ -170,6 +170,7 @@
                         <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                 </table>
+                <input type="button" id="addSch" value="Ajouter une ligne"/ onclick="addLsch">
         </fieldset>
         <fieldset>
             <legend><span class="number">3.2</span> Activités professionelles</legend>
@@ -187,6 +188,7 @@
                         <td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                 </table>
+                <input type="button" id="addPro" value="Ajouter une ligne"/ onclick="addLsch">
         </fieldset>
         <fieldset id ="fi4">
             <legend><span class="number">3.3</span> Stages</legend>
