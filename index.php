@@ -7,44 +7,24 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
              $(document).ready(function(){
-                    $("#fi").hide();
-                    $("#fi1").hide();
-                    $("#fi2").hide();
-                    $("#fi3").hide();
-                    $("#fi4").hide();
-                    $("#fi5").hide();
-                    $("#fin").hide();
+                 $("#all").hide()
 
                     $("#jb").change(function() {
                       var sele = $("#jb option:selected").text();
                       
                         if((sele=="Polymécanicien-ne CFC")||(sele=="Informaticien-ne CFC")||(sele=="Logisticien-ne CFC")||(sele=="Planificateur-trice éléctricien-ne CFC")||(sele=="Employé-e de commerce CFC")||(sele=="Gardien-ne d'animaux CFC")){
-                            $("#fi").show(1000);
-                            $("#fi1").show(1000);
-                            $("#fi2").show(1000);
-                            $("#fi3").show(1000);
-                            $("#fi4").show(1000);
-                            $("#fi5").show(1000);
-                            $("#fin").show(1000);
+                            $("#all").show(1000)
                         }else if((sele=="Laborantin-e CFC; option biologie")||(sele=="Laborantin-e CFC; option chimie")||(sele=="Laborantin-e en physique CFC")){
-                            $("#fi").hide(1000);
-                            $("#fi1").hide(1000);
-                            $("#fi2").hide(1000);
-                            $("#fi3").hide(1000);
-                            $("#fi4").hide(1000);
-                            $("#fi5").hide(1000);
-                            $("#fin").hide(1000);
-                            
+                            $("#all").hide(1000)
+
                             if(confirm("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...")){
                                 window.location.replace("https://google.com");
                             }else{
-
                             }
                         }  
                 });
                 }); 
-            </script>  
-             
+            </script>      
          <title>Formulaire Apprentissage</title>
     </head>
     <body>
@@ -77,6 +57,7 @@
                 <option value="gardAn">Gardien-ne d'animaux CFC</option>
             </select>
            </fieldset>
+           <div id="all">
            <fieldset id="fi">
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
             <input type="radio" name="mpt" value="MPT-oui" />Oui
@@ -90,7 +71,8 @@
             <legend><span class="number">2.1</span> Données personnelles</legend>    
                 
                <!-- DONNEES APPRENTIS-->
-               PHOTO* <!-- ajouter un cadre + upload--><p>
+               <label for="photo">Photo passeport*:</label>
+                <input type="file" name="photo" id="photo" required/><p>
             <select name="genreApp" >
                 <option disabled selected > Choisissez un genre*</option>
                 <option value="Homme" >Homme</option>
@@ -188,7 +170,7 @@
                         <td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                 </table>
-                <input type="button" id="addPro" value="Ajouter une ligne"/ onclick="addLsch">
+                <input type="button" id="addPro" value="Ajouter une ligne" onclick="addLpro"/>
         </fieldset>
         <fieldset id ="fi4">
             <legend><span class="number">3.3</span> Stages</legend>
@@ -199,14 +181,14 @@
         </fieldset>
         <legend><span class="number">4</span> Annexes à fournir</legend>
     
-             <label for="fichier">CV (PDF | max. 1 Mo) :</label>
-                <input type="file" name="fichier" id="fichier" required/><p>
+             
                                   
         </fieldset> 
         <fieldset id="fin">  
             <input type="checkbox" value="conditionsAcc" id="conditions"/>Accepter les <a href="conditions.php">conditions</a><p>
             <input type="submit" value="Terminer">
         </fieldset>
+        </div>
         </form>
         </div>
     </body>

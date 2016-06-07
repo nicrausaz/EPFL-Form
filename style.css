@@ -1,6 +1,6 @@
 
 .form-style-5{
-    max-width: 750px; /*MODIFIE LA LARGEUR DU FORMULAIRE*/
+    max-width: 850px; /*MODIFIE LA LARGEUR DU FORMULAIRE*/
     padding: 10px 20px;
     background: #f4f7f8;
     margin: 10px auto;
@@ -103,6 +103,12 @@
 }
 #photoTitle{
     text-align: center;
+}
+#FAPic{
+    padding-right: 100px;
+}
+#epflPic{
+    padding-left: 100px;
 }
 #incomplet{
     color: red;
