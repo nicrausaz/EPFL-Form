@@ -35,9 +35,12 @@
                             $("#fi5").hide(1000);
                             $("#fin").hide(1000);
                             
-                            alert("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...");
-                            window.location.replace("https://google.com");
-                        }
+                            if(confirm("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...")){
+                                window.location.replace("https://google.com");
+                            }else{
+
+                            }
+                        }  
                 });
                 }); 
             </script>  

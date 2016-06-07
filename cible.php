@@ -20,8 +20,7 @@
           //
           $allInfos = $job." ".$infosPerso;
           
-
-//Tri des apprentis par métier
+    //Tri des apprentis par métier
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
         $job = $_POST['job'];
