@@ -52,28 +52,55 @@
             
             //create apprenti's folders
             function createThings($path,$name,$surname,$infosPerso){
-                    $pathtxt = $path."text/";
-                    $pathpdf = $path."pdf/";
+                    $pathInfos = $path."informations/";
+                    $pathAnnexes = $path."annexes/";
                     if (!mkdir($path, 0777, true)){
-                        die('Echec lors de la création du dossier 1');
+                        die('Echec lors de la création du dossier candidat');
                     }
-                    if (!mkdir($pathtxt, 0777, true)){
-                        die('Echec lors de la création du dossier 2');
+                    if (!mkdir($pathInfos, 0777, true)){
+                        die('Echec lors de la création du dossier informations');
                     }
-                    if (!mkdir($pathpdf, 0777, true)){
-                        die('Echec lors de la création du dossier 3');
+                    if (!mkdir($pathAnnexes, 0777, true)){
+                        die('Echec lors de la création du dossier annexes');
                     }else{
                         echo "Dossiers crées";
                     }
                     
-                    
                     //create text file for apprenti's infos   
-                    $myfile = fopen($path."text/infos.txt", "w") or die("Unable to open file!");
+                    $myfile = fopen($pathInfos."infos.txt", "w") or die("Unable to open file!");
                     fwrite($myfile,$infosPerso); //can't put an array here
                     fclose($myfile);
+
+                    //Photo upload
+                    $dossier = $pathAnnexes;
+                    $fichier = basename($_FILES['photo']['name']);
+                    $extensions = array('.jpg','.jpeg','.png');
+                    $extension = strrchr($_FILES['photo']['name'], '.'); 
                     
-                    //pdf upload  
-                    $dossier = $pathpdf;
+                    if(!in_array($extension, $extensions)){
+                        $erreur = 'Vous devez uploader un fichier de type JPG/JPEG ou PNG';
+                    }
+                    if(!isset($erreur)){
+                        $fichier = strtr($fichier, 
+                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+                        
+                        if(move_uploaded_file($_FILES['photo']['tmp_name'], $dossier . $fichier))
+                        {
+                            echo 'Upload réussi';
+                        }
+                        else{
+                            echo 'Echec de l\'upload !';
+                        }
+                    }
+                    else{
+                        echo $erreur;
+                    }                                     
+                
+                    
+                    //CV upload  
+                    $dossier = $pathAnnexes;
                     $fichier = basename($_FILES['fichier']['name']);
                     $extensions = array('.pdf');
                     $extension = strrchr($_FILES['fichier']['name'], '.'); 
@@ -97,11 +124,39 @@
                     }
                     else{
                         echo $erreur;
-                    }                   
-                }
+                    }
+
+                    // Lettre upload
+                    $dossier = $pathAnnexes;
+                    $fichier = basename($_FILES['lettre']['name']);
+                    $extensions = array('.pdf');
+                    $extension = strrchr($_FILES['lettre']['name'], '.'); 
+                    
+                    if(!in_array($extension, $extensions)){
+                        $erreur = 'Vous devez uploader un fichier de type PDF';
+                    }
+                    if(!isset($erreur)){
+                        $fichier = strtr($fichier, 
+                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+                        
+                        if(move_uploaded_file($_FILES['lettre']['tmp_name'], $dossier . $fichier))
+                        {
+                            echo 'Upload réussi';
+                        }
+                        else{
+                            echo 'Echec de l\'upload !';
+                        }
+                    }
+                    else{
+                        echo $erreur;
+                    }
+            }
+
                  // mail send 
                         $to  = 'nicolas.crausaz@epfl.ch';
-                        $subject = 'Test envoi mail PHP';
+                        $subject = 'Nouvelle demande de place d\'apprentissage';
                         $message = $name." ".$surname ." ". " a fait une demande de place d'apprentissage.";
                         $headers = 'From: formapprentis@epfl.ch' . "\r\n" .
                                     'Reply-To: formapprentis@epfl.ch' . "\r\n" .
@@ -114,8 +169,7 @@
                             echo "Mail non envoyé";
                         }
                     ?>
-    </div>
+        </div>
     </body>
-
 </html>
 

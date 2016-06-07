@@ -84,7 +84,7 @@
                 
                <!-- DONNEES APPRENTIS-->
                <label for="photo">Photo passeport*:</label>
-                <input type="file" name="photo" id="photo" required/><p>
+                <input type="file" name="photo" id="photo"/><p>
             <select name="genreApp" >
                 <option disabled selected > Choisissez un genre*</option>
                 <option value="Homme" >Homme</option>
@@ -192,9 +192,11 @@
         <fieldset>
         </fieldset>
         <legend><span class="number">4</span> Annexes à fournir</legend>
-    
-             
-                                  
+        <label for="CV">CV*:</label>
+                <input type="file" name="fichier" id="fichier" required/><p>
+        <label for="lettre">Lettre de motivation*:</label>
+                <input type="file" name="lettre" id="lettre" required/><p>
+                         
         </fieldset> 
         <fieldset>  
             <input type="checkbox" value="conditionsAcc" id="conditions"/>Accepter les <a href="conditions.php">conditions</a><p>
