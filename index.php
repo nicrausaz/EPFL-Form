@@ -30,6 +30,7 @@
                 }); 
             </script>      
          <title>Formulaire Apprentissage</title>
+         <meta name="description" content="Formulaire condidature apprentissage EPFL"/>
     </head>
     <body>
     <div class="form-style-5" >
@@ -104,10 +105,11 @@
             <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" />
             
             <label for="languesApp">Connaissance linguistiques*:</label>
-            <input type="checkbox" name="languesApp" value="Français" > Français<p>
-            <input type="checkbox" name="languesApp" value="Allemand" >Allemand<p> <!-- check this-->
-            <input type="checkbox" name="languesApp" value="Anglais" >Anglais<p>
-            <input type="checkbox" name="languesApp" value="Autres" >Autres<p>
+            <p><input type="checkbox" id="french" /><label for="french"><span class="ui"></span>Français</label></p>
+            <p><input type="checkbox" id="german" /><label for="german"><span class="ui"></span>Allemand</label></p>
+            <p><input type="checkbox" id="english" /><label for="english"><span class="ui"></span>Anglais</label></p>
+            <p><input type="checkbox" id="other" /><label for="other"><span class="ui"></span>Autres</label></p>
+
         </fieldset>
         <fieldset>
             <legend><span class="number">2.2</span> Réprésentants légaux</legend>    
