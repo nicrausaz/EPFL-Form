@@ -95,8 +95,8 @@
             <input type="text" name="surnameApp" placeholder="Prénom *" autocomplete="off" required/>
             <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" />
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" />
-            <input type="text" name="telApp" placeholder="Téléphone *" autocomplete="off" />
-            <input type="text" name="phoneApp" placeholder="Mobile *" autocomplete="off" />
+            <input type="tel" name="telApp" placeholder="Téléphone *" autocomplete="off" />
+            <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off" />
             <input type="email" name="mailApp" placeholder = "Mail *"autocomplete="off" /> 
             <input type="date" name="birthApp" max="today" />
             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" />
