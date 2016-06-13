@@ -25,7 +25,7 @@
                                 window.location.replace("https://google.com");
                             }else{
                             }
-                        }  
+                        }
                 });
                 }); 
             </script>      
@@ -66,6 +66,7 @@
            <fieldset>
            <div id="infoOnly">
             <label for="filInfo">Filières informatiques:*</label>
+            
             <input type="radio" name="filInfo" value="devIT" />Dévellopement d'application <p>
             <input type="radio" name="filInfo" value="entrIT" />Informatique d'entreprise <p>
             <input type="radio" name="filInfo" value="techIT" />Technique des systèmes <p>
@@ -75,6 +76,8 @@
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
             <input type="radio" name="mpt" value="MPT-oui" />Oui
             <input type="radio" name="mpt" value="MPT-non" />Non
+            <div>
+
             <p>
           </fieldset>
           <fieldset>
@@ -84,7 +87,7 @@
             <legend><span class="number">2.1</span> Données personnelles</legend>    
                 
                <!-- DONNEES APPRENTIS-->
-               <label for="photo">Photo passeport*:</label>
+               <label for="photo">Photo passeport couleur*:</label>
                 <input type="file" name="photo" id="photo"/><p>
             <select name="genreApp" >
                 <option disabled selected > Choisissez un genre*</option>
@@ -121,7 +124,7 @@
                 <option value="Homme">Homme</option>
                 <option value="Femme">Femme</option>
             </select>
- 
+
             <input type="text" name="nameRep1" placeholder="Nom" autocomplete="off"/>
             <input type="text" name="surnameRep1" placeholder="Prénom" autocomplete="off"/>
              <input type="text" name="adrRep1" placeholder="Adresse" autocomplete="off"/>
@@ -201,8 +204,9 @@
                          
         </fieldset> 
         <fieldset>  
-            <input type="checkbox" value="conditionsAcc" id="conditions"/>Accepter les <a href="conditions.php">conditions</a><p>
-            <input type="submit" value="Terminer">
+        <p><input type="checkbox" value="conditionsAcc" id="conditions"/><label for="conditions"><span class="ui"></span>Accepter les <a href="conditions.php"> conditions</label></p>
+
+        <input type="submit" value="Terminer">
         </fieldset>
         </div>
         </form>

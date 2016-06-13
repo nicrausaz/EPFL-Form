@@ -126,7 +126,7 @@
 /*
 CHECKBOX STYLE
 */
-[type="checkbox"]:not(:checked),
+	[type="checkbox"]:not(:checked),
 	[type="checkbox"]:checked {
 		position: absolute;
 		left: -9999px;
@@ -155,6 +155,7 @@ CHECKBOX STYLE
 		-ms-transition: background-color .2s;
 		transition: background-color .2s;
 	}
+    
 	[type="checkbox"]:not(:checked) + label:after,
 	[type="checkbox"]:checked + label:after {
 		width: 20px; height: 20px;
@@ -198,11 +199,6 @@ CHECKBOX STYLE
 		content: "oui";
 		color: white;
 	}
-	[type="checkbox"]:focus + label:before {
-		border: 1px dashed #777;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		box-sizing: border-box;
-		margin-top: -1px;
-	}
+a{
+	text-decoration: none;
+}
