@@ -66,18 +66,47 @@
            <fieldset>
            <div id="infoOnly">
             <label for="filInfo">Filières informatiques:*</label>
+
+            <dl class="radio-list-left">
+            <dd>
+                <input type="radio" name="filInfo" id="fill1" value="devIT" >
+                <label for="fill1">Dévellopement d'application</label>
+            </dd>
+            <dd>
+                <input type="radio" name="filInfo" id="fill2" value="entrIT" checked="checked">
+                <label for="fill2">Informatique d'entreprise</label>
+            </dd>
+            <dd>
+                <input type="radio" name="filInfo" id="fill3" value="techIT">
+                <label for="fill3">Technique des systèmes</label>
+            </dd>
+            <dd>
+                <input type="radio" name="filInfo" id="fill4" value="dontKnow">
+                <label for="fill4">Je ne sais pas</label>
+            </dd>
+            </dl>
             
-            <input type="radio" name="filInfo" value="devIT" />Dévellopement d'application <p>
+           <!-- <input type="radio" name="filInfo" value="devIT" />Dévellopement d'application <p>
             <input type="radio" name="filInfo" value="entrIT" />Informatique d'entreprise <p>
             <input type="radio" name="filInfo" value="techIT" />Technique des systèmes <p>
             <input type="radio" name="filInfo" value="dontKnow" />Je ne sais pas <p>
-            </div>
+            </div> -->
 
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
-            <input type="radio" name="mpt" value="MPT-oui" />Oui
-            <input type="radio" name="mpt" value="MPT-non" />Non
-            <div>
+            <!-- <input type="radio" name="mpt" value="MPT-oui" />Oui
+            <input type="radio" name="mpt" value="MPT-non" />Non -->
+            <dl class="radio-list-left">
+            <dd>
+                <input type="radio" name="mpt" id="mpt1" value="MPT-non" checked="checked">
+                <label for="mpt1">Non</label>
+            </dd>
+            <dd>
+                <input type="radio" name="mpt" id="mpt2" value="MPT-oui">
+                <label for="mpt2">Oui</label>
+            </dd>
+            </dl>
 
+            <div>
             <p>
           </fieldset>
           <fieldset>

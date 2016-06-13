@@ -202,3 +202,74 @@ CHECKBOX STYLE
 a{
 	text-decoration: none;
 }
+/*
+RADIOBUTTON STYLE
+*/
+.radio-list-left input[type="radio"], .radio-list-right input[type="radio"] {
+  opacity: 0;
+  float: left;
+  width: 1px;
+  margin: 0;
+}
+.radio-list-left input[type="radio"] + label, .radio-list-right input[type="radio"] + label {
+  position: relative;
+  margin: 0;
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+.radio-list-left input[type="radio"] + label:before, .radio-list-right input[type="radio"] + label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  background: #ddd;
+  border: 1px solid #aaa;
+}
+.radio-list-left input[type="radio"]:checked + label, .radio-list-right input[type="radio"]:checked + label {
+  color: red;
+}
+.radio-list-left input[type="radio"]:checked + label:before, .radio-list-right input[type="radio"]:checked + label:before {
+  background: red;
+  border-color: rgba(204, 204, 204, 0.5);
+}
+.radio-list-left input[type="radio"]:disabled + label, .radio-list-right input[type="radio"]:disabled + label {
+  color: #ccc;
+}
+.radio-list-left input[type="radio"]:disabled + label:before, .radio-list-right input[type="radio"]:disabled + label:before {
+  background: rgba(204, 204, 204, 0.5);
+  border: 2px dotted #ccc;
+}
+.radio-list-left input[type="radio"]:focus + label, .radio-list-right input[type="radio"]:focus + label {
+  box-shadow: inset 0 0 3px #eee;
+}
+dl {
+  max-width: 200px;
+  
+}
+dl dt {
+  margin: 3em 0 5px;
+  font-size: 18px;
+}
+dl dd {
+  margin: 0;
+}
+.radio-list-left input[type="radio"] + label {
+  padding-left: 50px;
+}
+.radio-list-left input[type="radio"] + label:before {
+  height: 20px;
+  width: 20px;
+  margin-top: -11px;
+  left: 10px;
+  border-radius: 100%;
+}
+.radio-list-right input[type="radio"] + label {
+  padding-right: 50px;
+}
+.radio-list-right input[type="radio"] + label:before {
+  height: 20px;
+  width: 20px;
+  margin-top: -11px;
+  right: 10px;
+  border-radius: 100%;
+}
