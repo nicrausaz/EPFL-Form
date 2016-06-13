@@ -30,4 +30,5 @@ Lorsque la profession de polymécanicien est choisie, un champ upload supplémen
 
 ### Dans un autre temps...
 
-Un base de données pourrait être liée afin de permettre le tri des apprentis selon certains critères (notes, maturité intégrée, ...)
+Un base de données pourrait être liée afin de permettre le tri des apprentis selon certains critères (notes, maturité intégrée, ...) <br>
+Un compte Tequila invité temporaire devra être crée afin de limiter l'accès au formaulaire, il faut donc prévoir l'authentification avec tequila.
