@@ -85,16 +85,9 @@
                 <label for="fill4">Je ne sais pas</label>
             </dd>
             </dl>
-            
-           <!-- <input type="radio" name="filInfo" value="devIT" />Dévellopement d'application <p>
-            <input type="radio" name="filInfo" value="entrIT" />Informatique d'entreprise <p>
-            <input type="radio" name="filInfo" value="techIT" />Technique des systèmes <p>
-            <input type="radio" name="filInfo" value="dontKnow" />Je ne sais pas <p>
-            </div> -->
+            </div>
 
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
-            <!-- <input type="radio" name="mpt" value="MPT-oui" />Oui
-            <input type="radio" name="mpt" value="MPT-non" />Non -->
             <dl class="radio-list-left">
             <dd>
                 <input type="radio" name="mpt" id="mpt1" value="MPT-non" checked="checked">
