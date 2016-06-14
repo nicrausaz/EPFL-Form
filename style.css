@@ -273,3 +273,61 @@ dl dd {
   right: 10px;
   border-radius: 100%;
 }
+/*
+INPUT FILE STYLE
+*/
+
+label.file input {position:absolute; width:0; overflow:hidden; opacity:0;}
+label.file {
+  width:0%; /* Use for fluid design */
+  min-width:200px;
+  height:30px;
+  line-height:28px!important;
+  cursor:pointer;
+  position:relative;
+  display:inline-block;
+  white-space:nowrap;
+  font-family:sans-serif;
+  text-align:right;
+}
+label.file:before {
+  content:"No file chosen";
+  display:block;
+  position:absolute;
+  box-sizing:border-box;
+  width:100%;
+  height:inherit;
+  padding:0 84px 0 10px;
+  border:0px solid #e8eeef;
+  border-width:2px 0px 2px 2px;
+  border-radius:3px 0 0 3px;
+  background-color:#fff;
+  color:#a0b7c5;
+  font-size:12px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  text-align:center;
+  vertical-align:middle;
+}
+label.file[title]:not([title=""]):before{
+  content:attr(title);
+  color:#162f44;
+}
+label.file:after {
+  content:"BROWSE";
+  display:inline-block;
+  position:relative;
+  box-sizing:border-box;
+  width:74px;
+  height:inherit;
+  padding:0 4px;
+  border-radius:0 3px 3px 0;
+  background-color:#a0b7c5;
+  color:#fff;
+  overflow:hidden;
+  font-size:9px;
+  font-weight:bold;
+  text-overflow:ellipsis;
+  text-align:center;
+  vertical-align:middle;
+}

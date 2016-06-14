@@ -110,7 +110,11 @@
                 
                <!-- DONNEES APPRENTIS-->
                <label for="photo">Photo passeport couleur*:</label>
-                <input type="file" name="photo" id="photo"/><p>
+
+               <label class="file" title="" name="photo" id="photo"><input type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
+
+
+               <!-- <input type="file" name="photo" id="photo"/><p> -->
             <select name="genreApp" >
                 <option disabled selected > Choisissez un genre*</option>
                 <option value="Homme" >Homme</option>
@@ -220,10 +224,11 @@
         </fieldset>
         <legend><span class="number">4</span> Annexes à fournir</legend>
         <label for="CV">CV*:</label>
-                <input type="file" name="fichier" id="fichier" required/><p>
+                <label class="file" title="" name="fichier" id="fichier"><input type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
+                
         <label for="lettre">Lettre de motivation*:</label>
-                <input type="file" name="lettre" id="lettre" required/><p>
-                         
+                <label class="file" title="" name="lettre" id="lettre"><input type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
+                    
         </fieldset> 
         <fieldset>  
         <p><input type="checkbox" value="conditionsAcc" id="conditions"/><label for="conditions"><span class="ui"></span>Accepter les <a href="conditions.php"> conditions</label></p>
