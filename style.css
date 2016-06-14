@@ -280,7 +280,7 @@ INPUT FILE STYLE
 label.file input {position:absolute; width:0; overflow:hidden; opacity:0;}
 label.file {
   width:0%; /* Use for fluid design */
-  min-width:200px;
+  min-width:300px;
   height:30px;
   line-height:28px!important;
   cursor:pointer;
@@ -291,7 +291,7 @@ label.file {
   text-align:right;
 }
 label.file:before {
-  content:"No file chosen";
+  content:"Aucun fichier choisi";
   display:block;
   position:absolute;
   box-sizing:border-box;
@@ -314,7 +314,7 @@ label.file[title]:not([title=""]):before{
   color:#162f44;
 }
 label.file:after {
-  content:"BROWSE";
+  content:"Choisir...";
   display:inline-block;
   position:relative;
   box-sizing:border-box;
@@ -325,7 +325,7 @@ label.file:after {
   background-color:#a0b7c5;
   color:#fff;
   overflow:hidden;
-  font-size:9px;
+  font-size:11px;
   font-weight:bold;
   text-overflow:ellipsis;
   text-align:center;

@@ -7,13 +7,15 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
              $(document).ready(function(){
-                 $("#all").hide()
+                $("#all").hide()
 
                     $("#jb").change(function() {
                       var sele = $("#jb option:selected").text();
                       
                         if((sele=="Polymécanicien-ne CFC")||(sele=="Informaticien-ne CFC")||(sele=="Logisticien-ne CFC")||(sele=="Planificateur-trice éléctricien-ne CFC")||(sele=="Employé-e de commerce CFC")||(sele=="Gardien-ne d'animaux CFC")){
                             $("#all").show(1000)
+                            //$("#lSch1").hide(0)
+                            //$("#lSch2").hide(0)
                             $("#infoOnly").hide(0)
                             if(sele=="Informaticien-ne CFC"){
                                 $("#infoOnly").show(1000)
@@ -175,6 +177,7 @@
         <legend><span class="number">3</span> Activités</legend>
         <fieldset>
             <legend><span class="number">3.1</span> Scolarité</legend>
+
                 <table id="scolaire">
                     <tr>
                         <td><input type="text" name="ecole1" placeholder="Ecole" autocomplete="off"/></td>
@@ -182,20 +185,21 @@
                         <td><input type="text" name="niveau1" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees1" placeholder="de-à(années)" autocomplete="off"/></td>  
                     </tr>
-                    <tr>
+
+                    <!--<tr id="lSch1">
                         <td><input type="text" name="ecole2" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieu2" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveau2" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees2" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
-                     <tr>
+                     <tr id="lSch2">
                         <td><input type="text" name="ecole3" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieu3" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveau3" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
-                    </tr>
+                    </tr>-->
                 </table>
-                <input type="button" id="addSch" value="Ajouter une ligne"/ onclick="addLsch">
+                <input type="button" id="addSch" value="Ajouter une ligne" onclick="addFieldSch()">
         </fieldset>
         <fieldset>
             <legend><span class="number">3.2</span> Activités professionelles</legend>
@@ -213,7 +217,7 @@
                         <td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                 </table>
-                <input type="button" id="addPro" value="Ajouter une ligne" onclick="addLpro"/>
+                <input type="button" id="addPro" value="Ajouter une ligne" onclick="addLpro()"/>
         </fieldset>
         <fieldset>
             <legend><span class="number">3.3</span> Stages</legend>
@@ -240,7 +244,42 @@
         </div>
     </body>
     
-    <script>
-   
+    <script type="text/javascript">
+        function addFieldSch(argument){
+
+            var myTable = document.getElementById("scolaire");
+            var currentIndex = myTable.rows.length;
+            var currentRow = myTable.insertRow(-1);
+
+            var ecoleBox = document.createElement("input");
+            ecoleBox.setAttribute("name", "ecole1" + currentIndex);
+
+            var lieuBox = document.createElement("input");
+            lieuBox.setAttribute("name", "lieu1" + currentIndex);
+
+            var niveauBox = document.createElement("input");
+            niveauBox.setAttribute("name", "niveau1" + currentIndex);
+
+            var anneesBox = document.createElement("input");
+            anneesBox.setAttribute("name", "annees1" + currentIndex);
+
+
+            var currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(ecoleBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(lieuBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(niveauBox);
+
+            currentCell = currentRow.insertCell(-1);
+            currentCell.appendChild(anneesBox);
+        }
+    </script>
+           
+                
+            
+        }
     </script>
 </html>
