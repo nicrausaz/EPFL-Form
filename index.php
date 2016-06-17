@@ -6,30 +6,59 @@
          <link rel="icon" type="image/png" href="img/favicon.png" />
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
-             $(document).ready(function(){
+             $(document).ready(function(){ 
                 $("#all").hide()
+                $("#lSch1").hide(0)
+                $("#lSch2").hide(0)
 
-                    $("#jb").change(function() {
+                    $("#jb").change(function(){
                       var sele = $("#jb option:selected").text();
                       
                         if((sele=="Polymécanicien-ne CFC")||(sele=="Informaticien-ne CFC")||(sele=="Logisticien-ne CFC")||(sele=="Planificateur-trice éléctricien-ne CFC")||(sele=="Employé-e de commerce CFC")||(sele=="Gardien-ne d'animaux CFC")){
                             $("#all").show(1000)
-                            //$("#lSch1").hide(0)
-                            //$("#lSch2").hide(0)
                             $("#infoOnly").hide(0)
+                            
                             if(sele=="Informaticien-ne CFC"){
                                 $("#infoOnly").show(1000)
                             }
+
                         }else if((sele=="Laborantin-e CFC; option biologie")||(sele=="Laborantin-e CFC; option chimie")||(sele=="Laborantin-e en physique CFC")){
                             $("#all").hide(1000)
 
                             if(confirm("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...")){
                                 window.location.replace("https://google.com");
-                            }else{
-                            }
+                            }else{}
                         }
-                });
-                }); 
+
+                        });
+                        });
+
+                       $("#photo").change(function(){
+                        var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
+                        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                        alert("Format non autorisé : "+fileExtension.join(', '));
+                        //must delete the file in input
+                        }
+                        });
+                        
+                        $("#cv").change(function() {
+                        var fileExtension = ['.pdf'];
+                        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                        alert("Format non autorisé : "+fileExtension.join(', '));
+                        //must delete the file in input
+                        }
+                        });
+
+                        $("#lettre").change(function() {
+                        var fileExtension = ['.pdf'];
+                        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                        alert("Format non autorisé : "+fileExtension.join(', '));
+                        //must delete the file in input
+                        }
+                        });
+
+                         //vérification des champs
+
             </script>      
          <title>Formulaire Apprentissage</title>
          <meta name="description" content="Formulaire condidature apprentissage EPFL"/>
@@ -69,7 +98,7 @@
            <div id="infoOnly">
             <label for="filInfo">Filières informatiques:*</label>
 
-            <dl class="radio-list-left">
+            <dl class="radio-list-left" required>
             <dd>
                 <input type="radio" name="filInfo" id="fill1" value="devIT" >
                 <label for="fill1">Dévellopement d'application</label>
@@ -113,12 +142,11 @@
                <!-- DONNEES APPRENTIS-->
                <label for="photo">Photo passeport couleur*:</label>
 
-               <label class="file" title="" name="photo" id="photo"><input type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
-
+               <label class="file" title=""><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
 
                <!-- <input type="file" name="photo" id="photo"/><p> -->
             <select name="genreApp" >
-                <option disabled selected > Choisissez un genre*</option>
+                <option disabled selected> Choisissez un genre*</option>
                 <option value="Homme" >Homme</option>
                 <option value="Femme" >Femme</option>
             </select>
@@ -186,7 +214,7 @@
                         <td><input type="text" name="annees1" placeholder="de-à(années)" autocomplete="off"/></td>  
                     </tr>
 
-                    <!--<tr id="lSch1">
+                    <tr id="lSch1">
                         <td><input type="text" name="ecole2" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieu2" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveau2" placeholder="Niveau" autocomplete="off"/></td>
@@ -197,7 +225,7 @@
                         <td><input type="text" name="lieu3" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveau3" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
-                    </tr>-->
+                    </tr>
                 </table>
                 <input type="button" id="addSch" value="Ajouter une ligne" onclick="addFieldSch()">
         </fieldset>
@@ -228,10 +256,10 @@
         </fieldset>
         <legend><span class="number">4</span> Annexes à fournir</legend>
         <label for="CV">CV*:</label>
-                <label class="file" title="" name="fichier" id="fichier"><input type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
+                <label class="file" title=""><input type="file" name="cv" id="cv" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
                 
         <label for="lettre">Lettre de motivation*:</label>
-                <label class="file" title="" name="lettre" id="lettre"><input type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
+                <label class="file" title=""><input type="file" name="lettre" id="lettre" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
                     
         </fieldset> 
         <fieldset>  
@@ -243,43 +271,4 @@
         </form>
         </div>
     </body>
-    
-    <script type="text/javascript">
-        function addFieldSch(argument){
-
-            var myTable = document.getElementById("scolaire");
-            var currentIndex = myTable.rows.length;
-            var currentRow = myTable.insertRow(-1);
-
-            var ecoleBox = document.createElement("input");
-            ecoleBox.setAttribute("name", "ecole1" + currentIndex);
-
-            var lieuBox = document.createElement("input");
-            lieuBox.setAttribute("name", "lieu1" + currentIndex);
-
-            var niveauBox = document.createElement("input");
-            niveauBox.setAttribute("name", "niveau1" + currentIndex);
-
-            var anneesBox = document.createElement("input");
-            anneesBox.setAttribute("name", "annees1" + currentIndex);
-
-
-            var currentCell = currentRow.insertCell(-1);
-            currentCell.appendChild(ecoleBox);
-
-            currentCell = currentRow.insertCell(-1);
-            currentCell.appendChild(lieuBox);
-
-            currentCell = currentRow.insertCell(-1);
-            currentCell.appendChild(niveauBox);
-
-            currentCell = currentRow.insertCell(-1);
-            currentCell.appendChild(anneesBox);
-        }
-    </script>
-           
-                
-            
-        }
-    </script>
 </html>
