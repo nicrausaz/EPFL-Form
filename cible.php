@@ -11,7 +11,6 @@
         
        <?php
        //get apprenti's infos
-          
           $job = $_POST['mpt'] ." ". $_POST['job'];
           $infosPerso = $_POST['genreApp']." ".$_POST['nameApp']." ".$_POST['surnameApp']." ".$_POST['adrApp']." ".$_POST['NPAApp']." ".$_POST['telApp']." ".$_POST['phoneApp']
           ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " /*.$_POST['languesApp']*/ ;

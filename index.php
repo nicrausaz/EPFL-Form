@@ -11,6 +11,8 @@
                 $("#lSch1").hide(0)
                 $("#lSch2").hide(0)
 
+                
+
                     $("#jb").change(function(){
                       var sele = $("#jb option:selected").text();
                       
@@ -31,7 +33,7 @@
                         }
 
                         });
-                        });
+                        
 
                        $("#photo").change(function(){
                         var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
@@ -56,7 +58,7 @@
                         //must delete the file in input
                         }
                         });
-
+                        });
                          //vérification des champs
 
             </script>      
