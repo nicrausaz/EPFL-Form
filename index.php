@@ -50,7 +50,6 @@
                         //must delete the file in input
                         }
                         });
-
                         $("#lettre").change(function() {
                         var fileExtension = ['.pdf'];
                         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
