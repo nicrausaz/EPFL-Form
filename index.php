@@ -117,11 +117,11 @@
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
             <dl class="radio-list-left">
             <dd>
-                <input type="radio" name="mpt" id="mpt1" value="MPT-non" checked="checked">
+                <input type="radio" name="mpt" id="mpt1" value="Matu-non" checked="checked">
                 <label for="mpt1">Non</label>
             </dd>
             <dd>
-                <input type="radio" name="mpt" id="mpt2" value="MPT-oui">
+                <input type="radio" name="mpt" id="mpt2" value="Matu-oui">
                 <label for="mpt2">Oui</label>
             </dd>
             </dl>

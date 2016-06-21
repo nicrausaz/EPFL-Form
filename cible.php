@@ -26,31 +26,32 @@
             if($job=="polyM") {
                 echo "Polymec"; 
                 $path = '../candidatures/Polymecaniciens/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$infosPerso);
+                createThings($path,$name,$surname,$allInfos);
             }else if($job=="info"){
                 echo "informaticien";
+                $allInfos = $_POST['filInfo']." ". $allInfos;
                 $path = '../candidatures/Informaticiens/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$infosPerso);
+                createThings($path,$name,$surname,$allInfos);
             }else if($job=="logi"){
                 echo "Logisticiens";
                 $path = '../candidatures/Logisticiens/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$infosPerso);
+                createThings($path,$name,$surname,$allInfos);
             }else if($job=="planElec"){
                 echo "Planif Elec";
                 $path = '../candidatures/PlanificateurElectriciens/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$infosPerso);
+                createThings($path,$name,$surname,$allInfos);
             }else if($job=="empCom"){
                 echo "EmployesCommerce";
                 $path = '../candidatures/EmployesCommerce/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$infosPerso);
+                createThings($path,$name,$surname,$allInfos);
             }else if($job=="gardAn"){
                 echo "GardiensAnimaux";
                 $path = '../candidatures/GardiensAnimaux/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$infosPerso);
+                createThings($path,$name,$surname,$allInfos);
             }
             
             //create apprenti's folders
-            function createThings($path,$name,$surname,$infosPerso){
+            function createThings($path,$name,$surname,$allInfos){
                     $pathInfos = $path."informations/";
                     $pathAnnexes = $path."annexes/";
                     if (!mkdir($path, 0777, true)){
@@ -67,7 +68,7 @@
                     
                     //create text file for apprenti's infos   
                     $myfile = fopen($pathInfos."infos.txt", "w") or die("Unable to open file!");
-                    fwrite($myfile,$infosPerso);
+                    fwrite($myfile,$allInfos);
                     fclose($myfile);
 
                     //Photo upload
