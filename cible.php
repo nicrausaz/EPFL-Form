@@ -10,10 +10,10 @@
     <div class="form-style-5">
         
        <?php
-       //get apprenti's infos
+          //get apprenti's infos
           $job = $_POST['job']." ".$_POST['mpt'];
           $infosPerso = $_POST['genreApp']." ".$_POST['nameApp']." ".$_POST['surnameApp']." ".$_POST['adrApp']." ".$_POST['NPAApp']." ".$_POST['telApp']." ".$_POST['phoneApp']
-          ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " /*.$_POST['languesApp']*/ ;
+          ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " .$_POST['connLing'];
           //get the rest of infos here 
           //
           //
