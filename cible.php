@@ -36,7 +36,7 @@
                 $path = '../candidatures/Logisticiens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$infosPerso);
             }else if($job=="planElec"){
-                echo "";
+                echo "Planif Elec";
                 $path = '../candidatures/PlanificateurElectriciens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$infosPerso);
             }else if($job=="empCom"){
@@ -67,7 +67,7 @@
                     
                     //create text file for apprenti's infos   
                     $myfile = fopen($pathInfos."infos.txt", "w") or die("Unable to open file!");
-                    fwrite($myfile,$infosPerso); //can't put an array here
+                    fwrite($myfile,$infosPerso);
                     fclose($myfile);
 
                     //Photo upload
@@ -90,7 +90,7 @@
                             echo 'Upload réussi';
                         }
                         else{
-                            echo 'Echec de l\'upload !';
+                            echo 'Echec de l\'upload photo!';
                         }
                     }
                     else{
@@ -112,12 +112,12 @@
                             'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
                         $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
                         
-                        if(move_uploaded_file($_FILES['fichier']['tmp_name'], $dossier . $fichier))
+                        if(move_uploaded_file($_FILES['cv']['tmp_name'], $dossier . $fichier))
                         {
                             echo 'Upload réussi';
                         }
                         else{
-                            echo 'Echec de l\'upload !';
+                            echo 'Echec de l\'upload CV!';
                         }
                     }
                     else{
@@ -144,7 +144,7 @@
                             echo 'Upload réussi';
                         }
                         else{
-                            echo 'Echec de l\'upload !';
+                            echo 'Echec de l\'upload Lettre de motivation!';
                         }
                     }
                     else{
