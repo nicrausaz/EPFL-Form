@@ -11,8 +11,6 @@
                 $("#lSch1").hide(0)
                 $("#lSch2").hide(0)
 
-                
-
                     $("#jb").change(function(){
                       var sele = $("#jb option:selected").text();
                       
@@ -31,34 +29,31 @@
                                 window.location.replace("https://google.com");
                             }else{}
                         }
-
                         });
-                        
 
                        $("#photo").change(function(){
                         var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
+                        var input = $("#photo");
                         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-                        alert("Format non autorisé : "+fileExtension.join(', '));
-                        //must delete the file in input
-                        }
+                            alert("Format, non pris en charge, Formats autorisés : "+fileExtension.join(', '));
+                            }
                         });
                         
                         $("#cv").change(function() {
                         var fileExtension = ['.pdf'];
                         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-                        alert("Format non autorisé : "+fileExtension.join(', '));
-                        //must delete the file in input
-                        }
+                            alert("Format, non pris en charge, Formats autorisés : "+fileExtension.join(', '));
+                            }
                         });
+
                         $("#lettre").change(function() {
                         var fileExtension = ['.pdf'];
                         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-                        alert("Format non autorisé : "+fileExtension.join(', '));
-                        //must delete the file in input
-                        }
+                            alert("Format, non pris en charge, Formats autorisés : "+fileExtension.join(', '));
+                            }
                         });
                         });
-                         //vérification des champs
+                         
 
             </script>      
          <title>Formulaire Apprentissage</title>
@@ -69,7 +64,7 @@
         <form method ="post" action="cible.php" enctype="multipart/form-data">
             
         <fieldset id="photoTitle">
-            <img src="./img/FA.png"/ alt="FA" width="300" height="150" id="FAPic" draggable="false"/>
+            <img src="./img/FA.png"/ alt="FA" width="315" height="150" id="FAPic" draggable="false"/>
             <img src="./img/epfl.png"/ alt="EPFL" width="300" height="150" id="epflPic" draggable="false"/>
             <p><h2>Candidature pour un Apprentissage</h2>
             Les champs notés d'un astérisque* doivent être obligatoirement remplis.<p>
