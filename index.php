@@ -21,18 +21,18 @@
         <legend><span class="number">1</span> Créer un compte temporaire </legend>
 
         Cliquer sur le bouton créer un compte.</p>
-        Sur la page ouverte, cliquer sur "Créer un compte pour personnes externes"</p>
-        Remplir les champs et confirmer (pour le champ Organisation, entrer "Postulation Apprentis")</p>
+        Sur la page ouverte, cliquer sur "Créer un compte pour personnes externes."</p>
+        Remplir les champs et confirmer (pour le champ Organisation, entrer "Postulation Apprentis").</p>
         Attendre la récéption du mail de confirmation puis cliquer sur le lien pour confirmer l'inscription.</p>
 
-        <a href="https://guests.epfl.ch/" id="createAcountB">Créer un compte</a>  
+        <a href="https://guests.epfl.ch/" class="indexB">Créer un compte</a>  
     </fieldset>
     <fieldset>
         <legend><span class="number">2</span> Se connecter et remplir le formulaire </legend>
-        Entrer vos informations de compte temporaire:</p>
-
-        
-        Lorsque la connexion sera effectuée, vous serez rediriger vers le formulaire
+        Cliquer sur le bouton se connecter.</p>
+        Entrer vos informations de compte temporaires.</p>
+        Lorsque la connexion sera effectuée, vous serez rediriger vers le formulaire.</p>
+        <a href="connection.php" class="indexB">Se connecter</a>
     </fieldset>
 
     

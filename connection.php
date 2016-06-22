@@ -3,7 +3,7 @@ require_once("tequila.php");
 
 $oClient = new TequilaClient();
 
-$oClient->SetApplicationName('Les élèves vont à l\'école');
+$oClient->SetApplicationName('Formulaire apprentissage');
 $oClient->SetWantedAttributes(array('uniqueid','name','firstname','unit', 'unitid', 'where', 'group'));
 $oClient->SetWishedAttributes(array('email', 'title'));
 #$oClient->SetApplicationURL('https://localhost/tequila/test.php');

@@ -332,7 +332,7 @@ label.file:after {
   vertical-align:middle;
 }
 
-#createAcountB{
+.indexB{
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
