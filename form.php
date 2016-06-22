@@ -54,9 +54,9 @@
                         });
                         });
             </script>
-            
+
          <title>Formulaire Apprentissage</title>
-         <meta name="description" content="Formulaire condidature apprentissage EPFL"/>
+         <meta name="description" content="Formulaire candidature apprentissage EPFL"/>
     </head>
     <body>
     <div class="form-style-5" >
@@ -65,7 +65,7 @@
         <fieldset id="photoTitle">
             <img src="./img/FA.png"/ alt="FA" width="315" height="150" id="FAPic" draggable="false"/>
             <img src="./img/epfl.png"/ alt="EPFL" width="300" height="150" id="epflPic" draggable="false"/>
-            <p><h2>Candidature pour un Apprentissage</h2>
+            <p><h2>Candidature pour un apprentissage</h2>
             Les champs notés d'un astérisque* doivent être obligatoirement remplis.<p>
         </fieldset> 
          
@@ -124,7 +124,6 @@
                 <label for="mpt2">Oui</label>
             </dd>
             </dl>
-
             <div>
             <p>
           </fieldset>

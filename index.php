@@ -13,7 +13,7 @@
     <fieldset id="photoTitle">
             <img src="./img/FA.png"/ alt="FA" width="315" height="150" id="FAPic" draggable="false"/>
             <img src="./img/epfl.png"/ alt="EPFL" width="300" height="150" id="epflPic" draggable="false"/>
-            <p><h2>Candidature pour un Apprentissage</h2>
+            <p><h2>Candidature pour un apprentissage</h2>
             Veuillez suivre les indication suivantes<p>
     </fieldset>
 
