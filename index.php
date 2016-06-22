@@ -30,9 +30,8 @@
     <fieldset>
         <legend><span class="number">2</span> Se connecter et remplir le formulaire </legend>
         Entrer vos informations de compte temporaire:</p>
-        **login tequila**</p>
-        **login tequila**</p>
-        **login tequila**</p>
+
+        
         Lorsque la connexion sera effectuée, vous serez rediriger vers le formulaire
     </fieldset>
 
