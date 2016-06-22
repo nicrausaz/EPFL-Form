@@ -23,6 +23,7 @@
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
         $job = $_POST['job'];
+
             if($job=="polyM") {
                 echo "Polymec"; 
                 $path = '../candidatures/Polymecaniciens/'."new-".$name.$surname.'/';
@@ -52,18 +53,23 @@
             
             //create apprenti's folders
             function createThings($path,$name,$surname,$allInfos){
+
+                    //global $noError;
                     $pathInfos = $path."informations/";
                     $pathAnnexes = $path."annexes/";
                     if (!mkdir($path, 0777, true)){
-                        die('Echec lors de la création du dossier candidat');
+                         die('Echec lors de la création du dossier candidat');
+                          $noError = false;
                     }
                     if (!mkdir($pathInfos, 0777, true)){
                         die('Echec lors de la création du dossier informations');
+                        $noError = false;
                     }
                     if (!mkdir($pathAnnexes, 0777, true)){
                         die('Echec lors de la création du dossier annexes');
                     }else{
                         echo "Dossiers crées";
+                        $noError = true;
                     }
                     
                     //create text file for apprenti's infos   
@@ -79,6 +85,7 @@
                     
                     if(!in_array($extension, $extensions)){
                         $erreur = 'Vous devez uploader un fichier de type JPG/JPEG ou PNG';
+                        //$noError = false;
                     }
                     if(!isset($erreur)){
                         $fichier = strtr($fichier, 
@@ -89,9 +96,12 @@
                         if(move_uploaded_file($_FILES['photo']['tmp_name'], $dossier . $fichier))
                         {
                             echo 'Upload réussi';
+                            $noError = true;
+                            
                         }
                         else{
                             echo 'Echec de l\'upload photo!';
+                            $noError = false;
                         }
                     }
                     else{
@@ -116,9 +126,11 @@
                         if(move_uploaded_file($_FILES['cv']['tmp_name'], $dossier . $fichier))
                         {
                             echo 'Upload réussi';
+                            $noError = true;
                         }
                         else{
                             echo 'Echec de l\'upload CV!';
+                            $noError = false;
                         }
                     }
                     else{
@@ -143,30 +155,36 @@
                         if(move_uploaded_file($_FILES['lettre']['tmp_name'], $dossier . $fichier))
                         {
                             echo 'Upload réussi';
+                            $noError = true;
                         }
                         else{
                             echo 'Echec de l\'upload Lettre de motivation!';
+                            $noError = false;
                         }
                     }
                     else{
                         echo $erreur;
                     }
+                    // mail send
+                    $to  = 'nicolas.crausaz@epfl.ch';
+                    $subject = 'Nouvelle demande de place d\'apprentissage';
+                    $message = $name." ".$surname ." ". " a fait une demande de place d'apprentissage.";
+                    $headers = 'From: formapprentis@epfl.ch' . "\r\n" .
+                                'Reply-To: formapprentis@epfl.ch' . "\r\n" .
+                                'X-Mailer: PHP/' . phpversion();
+
+                    if( $noError == true){
+                        if (mail($to , $subject, $message, $headers)){
+                                echo "Mail envoyé";
+                            }
+                            else{
+                                echo "Mail non envoyé";
+                            }
+                }
             }
 
-                 // mail send 
-                        $to  = 'nicolas.crausaz@epfl.ch';
-                        $subject = 'Nouvelle demande de place d\'apprentissage';
-                        $message = $name." ".$surname ." ". " a fait une demande de place d'apprentissage.";
-                        $headers = 'From: formapprentis@epfl.ch' . "\r\n" .
-                                    'Reply-To: formapprentis@epfl.ch' . "\r\n" .
-                                    'X-Mailer: PHP/' . phpversion();
-                                    
-                        if (mail($to , $subject, $message, $headers)){
-                            echo "Mail envoyé";
-                        }
-                        else{
-                            echo "Mail non envoyé";
-                        }
+                  
+                        //else{}
                     ?>
         </div>
     </body>

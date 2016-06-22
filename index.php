@@ -35,21 +35,21 @@
                         var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
                         var input = $("#photo");
                         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-                            alert("Format, non pris en charge, Formats autorisés : "+fileExtension.join(', '));
+                            alert("Format non pris en charge, Formats autorisés : "+fileExtension.join(', '));
                             }
                         });
                         
                         $("#cv").change(function() {
                         var fileExtension = ['pdf'];
                         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-                            alert("Format, non pris en charge, Formats autorisés : "+fileExtension.join(', '));
+                            alert("Format non pris en charge, Formats autorisés : "+fileExtension.join(', '));
                             }
                         });
 
                         $("#lettre").change(function() {
                         var fileExtension = ['pdf'];
                         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-                            alert("Format, non pris en charge, Formats autorisés : "+fileExtension.join(', '));
+                            alert("Format non pris en charge, Formats autorisés : "+fileExtension.join(', '));
                             }
                         });
                         });
