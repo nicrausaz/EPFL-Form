@@ -53,7 +53,7 @@
                             }
                         });
                         });
-            </script>
+            </script>     
 
          <title>Formulaire Apprentissage</title>
          <meta name="description" content="Formulaire candidature apprentissage EPFL"/>

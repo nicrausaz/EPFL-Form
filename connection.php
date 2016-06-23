@@ -4,9 +4,10 @@ require_once("tequila.php");
 $oClient = new TequilaClient();
 
 $oClient->SetApplicationName('Formulaire apprentissage');
-$oClient->SetWantedAttributes(array('uniqueid','name','firstname','unit', 'unitid', 'where', 'group'));
-$oClient->SetWishedAttributes(array('email', 'title'));
+$oClient->SetWantedAttributes(array('uniqueId'));
+#$oClient->SetWishedAttributes(array('email', 'title','name','firstname','unit', 'unitid', 'where', 'group'));
 #$oClient->SetApplicationURL('https://localhost/tequila/test.php');
+$oClient->SetAllowsFilter('categorie=epfl-guests');
 #$oClient->SetCustomFilter('org=EPFL&firstname=John&unit=SC-PME&where=SC-PME/SC-S/ETU/EPFL/CH&group=inbc');
 $oClient->SetCustomParamaters(array ('toto' => 1));
 
