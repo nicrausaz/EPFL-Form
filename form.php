@@ -21,16 +21,17 @@
 
             $oClient->Authenticate();
 
-            $org  = $oClient->getValue('org');
-            $user = $oClient->getValue('user');
-            $host = $oClient->getValue('host');
-            $name= $oClient->getValue('name');
+            //$org  = $oClient->getValue('org');
+            $user = $oClient->getValue('user'); //--> recupérer e mail
+            $u = $oClient->getValue('group');
+            //$host = $oClient->getValue('host');
             $firstname= $oClient->getValue('firstname');
             $sKey = $oClient->GetKey();
 
             echo '<script language="javascript">';
-            echo 'alert("Connexion réussie")';
+            echo 'alert("Connexion réussie!")';
             echo '</script>';
+            echo $org. " ".$user." ".$host." ".$name." ".$firstname;
             ?>
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -39,6 +40,12 @@
                 $("#all").hide()
                 $("#lSch1").hide(0)
                 $("#lSch2").hide(0)
+
+               /* var test;
+                test = $user;
+                var field;
+                field = Document.getElementById(mailApp).value;
+                field = test;*/
 
                     $("#jb").change(function(){
                       var sele = $("#jb option:selected").text();
@@ -176,11 +183,11 @@
             
             <input type="text" name="nameApp" placeholder="Nom *" autocomplete="off" required/>
             <input type="text" name="surnameApp" placeholder="Prénom *" autocomplete="off" required/>
-            <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" />
-            <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" />
-            <input type="tel" name="telApp" placeholder="Téléphone *" autocomplete="off" />
-            <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off" />
-            <input type="email" name="mailApp" placeholder = "Mail *"autocomplete="off" /> 
+            <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off"/>
+            <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off"/>
+            <input type="tel" name="telApp" placeholder="Téléphone *" autocomplete="off"/>
+            <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off"/>
+            <input type="email" name="mailApp" disabled="disabled"> 
             <input type="date" name="birthApp" max="today" />
             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" />
             <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" />
