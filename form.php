@@ -4,6 +4,35 @@
          <meta charset="UTF-8"/>
          <link rel="stylesheet" type="text/css" href="style.css">
          <link rel="icon" type="image/png" href="img/favicon.png" />
+         <?php
+            ini_set("display_errors",0);error_reporting(0);
+
+            require_once("tequila.php");
+
+            $oClient = new TequilaClient();
+
+            $oClient->SetApplicationName('Formulaire apprentissage');
+            $oClient->SetWantedAttributes(array('uniqueId'));
+            #$oClient->SetWishedAttributes(array('email', 'title','name','firstname','unit', 'unitid', 'where', 'group'));
+            #$oClient->SetApplicationURL('https://localhost/tequila/test.php');
+            $oClient->SetAllowsFilter('categorie=epfl-guests');
+            #$oClient->SetCustomFilter('org=EPFL&firstname=John&unit=SC-PME&where=SC-PME/SC-S/ETU/EPFL/CH&group=inbc');
+            $oClient->SetCustomParamaters(array ('toto' => 1));
+
+            $oClient->Authenticate();
+
+            $org  = $oClient->getValue('org');
+            $user = $oClient->getValue('user');
+            $host = $oClient->getValue('host');
+            $name= $oClient->getValue('name');
+            $firstname= $oClient->getValue('firstname');
+            $sKey = $oClient->GetKey();
+
+            echo '<script language="javascript">';
+            echo 'alert("Connexion réussie")';
+            echo '</script>';
+            ?>
+
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
              $(document).ready(function(){ 
@@ -239,7 +268,8 @@
                         <td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                 </table>
-                <input type="button" id="addPro" value="Ajouter une ligne" onclick="addLpro()"/>
+                <input type="button" id="addPro" value="Ajouter une ligne" class="indexB" onclick="addLpro()"/>
+                <a href="https://guests.epfl.ch/" target="_blank" class="indexB">Ajouter une ligne</a>
         </fieldset>
         <fieldset>
             <legend><span class="number">3.3</span> Stages</legend>
