@@ -13,7 +13,7 @@
 
             $oClient->SetApplicationName('Formulaire apprentissage');
             $oClient->SetWantedAttributes(array('uniqueId'));
-            #$oClient->SetWishedAttributes(array('email', 'title','name','firstname','unit', 'unitid', 'where', 'group'));
+            $oClient->SetWishedAttributes(array('user', 'sn','name','firstname','unit', 'unitid', 'where', 'group'));
             #$oClient->SetApplicationURL('https://localhost/tequila/test.php');
             $oClient->SetAllowsFilter('categorie=epfl-guests');
             #$oClient->SetCustomFilter('org=EPFL&firstname=John&unit=SC-PME&where=SC-PME/SC-S/ETU/EPFL/CH&group=inbc');
@@ -21,17 +21,15 @@
 
             $oClient->Authenticate();
 
-            //$org  = $oClient->getValue('org');
             $user = $oClient->getValue('user'); //--> recupérer e mail
-            $u = $oClient->getValue('group');
-            //$host = $oClient->getValue('host');
-            $firstname= $oClient->getValue('firstname');
+    
+            $name= $oClient->getValue('sn');
             $sKey = $oClient->GetKey();
 
             echo '<script language="javascript">';
             echo 'alert("Connexion réussie!")';
             echo '</script>';
-            echo $org. " ".$user." ".$host." ".$name." ".$firstname;
+            echo $user;
             ?>
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -62,7 +60,7 @@
                             $("#all").hide(1000)
 
                             if(confirm("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...")){
-                                window.location.replace("https://google.com");
+                                window.location.replace("apprentis.epfl.ch");
                             }else{}
                         }
                         });
@@ -187,8 +185,8 @@
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off"/>
             <input type="tel" name="telApp" placeholder="Téléphone *" autocomplete="off"/>
             <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off"/>
-            <input type="email" name="mailApp" disabled="disabled"> 
-            <input type="date" name="birthApp" max="today" />
+            <input type="email" name="mailApp" value="<?php echo htmlspecialchars($user); ?>" disabled="disabled"/>
+            <input type="date" name="birthApp" max="today"/>
             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" />
             <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" />
             <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" />
