@@ -1,6 +1,6 @@
 
 .form-style-5{
-    max-width: 850px; /*MODIFIE LA LARGEUR DU FORMULAIRE*/
+    max-width: 900px; /*MODIFIE LA LARGEUR DU FORMULAIRE*/
     padding: 10px 20px;
     background: #f4f7f8;
     margin: 10px auto;
@@ -307,7 +307,6 @@ label.file:before {
   overflow:hidden;
   text-overflow:ellipsis;
   text-align:center;
-  vertical-align:middle;
 }
 label.file[title]:not([title=""]):before{
   content:attr(title);

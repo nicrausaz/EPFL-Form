@@ -5,15 +5,14 @@
          <link rel="stylesheet" type="text/css" href="style.css">
          <link rel="icon" type="image/png" href="img/favicon.png" />
          <?php
+
             ini_set("display_errors",0);error_reporting(0);
-
             require_once("tequila.php");
-
             $oClient = new TequilaClient();
 
             $oClient->SetApplicationName('Formulaire apprentissage');
             $oClient->SetWantedAttributes(array('uniqueId'));
-            $oClient->SetWishedAttributes(array('user', 'sn','name','firstname','unit', 'unitid', 'where', 'group'));
+            $oClient->SetWishedAttributes(array('user'));
             #$oClient->SetApplicationURL('https://localhost/tequila/test.php');
             $oClient->SetAllowsFilter('categorie=epfl-guests');
             #$oClient->SetCustomFilter('org=EPFL&firstname=John&unit=SC-PME&where=SC-PME/SC-S/ETU/EPFL/CH&group=inbc');
@@ -22,14 +21,14 @@
             $oClient->Authenticate();
 
             $user = $oClient->getValue('user'); //--> recupérer e mail
-    
-            $name= $oClient->getValue('sn');
+
+            $nameG= $oClient->getValue('givenName');
             $sKey = $oClient->GetKey();
 
             echo '<script language="javascript">';
             echo 'alert("Connexion réussie!")';
             echo '</script>';
-            echo $user;
+            echo $nameG;
             ?>
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -38,12 +37,6 @@
                 $("#all").hide()
                 $("#lSch1").hide(0)
                 $("#lSch2").hide(0)
-
-               /* var test;
-                test = $user;
-                var field;
-                field = Document.getElementById(mailApp).value;
-                field = test;*/
 
                     $("#jb").change(function(){
                       var sele = $("#jb option:selected").text();
@@ -60,7 +53,7 @@
                             $("#all").hide(1000)
 
                             if(confirm("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...")){
-                                window.location.replace("apprentis.epfl.ch");
+                                window.location.replace("http://apprentis.epfl.ch");
                             }else{}
                         }
                         });
@@ -145,6 +138,7 @@
                 <label for="fill4">Je ne sais pas</label>
             </dd>
             </dl>
+            <a href="https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/" target="_blank" class="indexB">Informations sur les filières</a>  
             </div>
 
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
@@ -162,7 +156,7 @@
             <p>
           </fieldset>
           <fieldset>
-            
+
             <legend><span class="number">2</span> Données </legend>
             <fieldset>
             <legend><span class="number">2.1</span> Données personnelles</legend>    
@@ -172,11 +166,10 @@
 
                <label class="file" title=""><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
 
-               <!-- <input type="file" name="photo" id="photo"/><p> -->
             <select name="genreApp" >
                 <option disabled selected> Choisissez un genre*</option>
-                <option value="Homme" >Homme</option>
-                <option value="Femme" >Femme</option>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
             </select>
             
             <input type="text" name="nameApp" placeholder="Nom *" autocomplete="off" required/>
@@ -185,11 +178,11 @@
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off"/>
             <input type="tel" name="telApp" placeholder="Téléphone *" autocomplete="off"/>
             <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off"/>
-            <input type="email" name="mailApp" value="<?php echo htmlspecialchars($user); ?>" disabled="disabled"/>
+            <input type="email" name="mailApp" value="<?=$user?>" disabled="disabled"/>
             <input type="date" name="birthApp" max="today"/>
-            <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" />
-            <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" />
-            <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" />
+            <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off"/>
+            <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off"/>
+            <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off"/>
             
             <label for="languesApp">Connaissance linguistiques*:</label>
             <p><input type="checkbox" name="connLing" id="french" value="Français" /><label for="french"><span class="ui"></span>Français</label></p>
@@ -200,7 +193,7 @@
         </fieldset>
         <fieldset>
             <legend><span class="number">2.2</span> Réprésentants légaux</legend>    
-             (Si vous avez moins de 18 ans.)<p>
+             (Si vous avez moins de 18 ans).<p>
                 <!-- DONNEES REPRESENTANT 1-->
               Réprésentant 1:<p>
             <select name="genreRep1" >
@@ -254,8 +247,15 @@
                         <td><input type="text" name="niveau3" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input type="button" id="addSch" value="Ajouter une ligne" onclick="addFieldSch()"></td>
+                    </tr>
+                  
                 </table>
-                <input type="button" id="addSch" value="Ajouter une ligne" onclick="addFieldSch()">
+                
         </fieldset>
         <fieldset>
             <legend><span class="number">3.2</span> Activités professionelles</legend>
@@ -272,9 +272,14 @@
                         <td><input type="text" name="activite1" placeholder="Activité" autocomplete="off"/></td>
                         <td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input type="button" id="addPro" value="Ajouter une ligne" class="indexB" onclick="addLpro()"/></td>
+                    </tr>
                 </table>
-                <input type="button" id="addPro" value="Ajouter une ligne" class="indexB" onclick="addLpro()"/>
-                <a href="https://guests.epfl.ch/" target="_blank" class="indexB">Ajouter une ligne</a>
+
         </fieldset>
         <fieldset>
             <legend><span class="number">3.3</span> Stages</legend>
@@ -300,4 +305,8 @@
         </form>
         </div>
     </body>
+    <script>
+        function addFieldSch(){
+        }
+    </script>
 </html>
