@@ -23,31 +23,34 @@
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
         $job = $_POST['job'];
+        $rootpath = '../candidatures/';
+
+        //$path = sprintf('../candidatures/%s/new-%s%s/', $rootpath, $formFolder, $name, $surname);
 
             if($job=="polyM") {
                 echo "Polymec"; 
-                $path = '../candidatures/Polymecaniciens/'."new-".$name.$surname.'/';
+                $path = $rootpath.'Polymecaniciens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="info"){
                 echo "informaticien";
                 $allInfos = $_POST['filInfo']." ". $allInfos;
-                $path = '../candidatures/Informaticiens/'."new-".$name.$surname.'/';
+                $path = $rootpath.'Informaticiens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="logi"){
                 echo "Logisticiens";
-                $path = '../candidatures/Logisticiens/'."new-".$name.$surname.'/';
+                $path = $rootpath.'Logisticiens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="planElec"){
                 echo "Planif Elec";
-                $path = '../candidatures/PlanificateurElectriciens/'."new-".$name.$surname.'/';
+                $path = $rootpath.'PlanificateurElectriciens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="empCom"){
                 echo "EmployesCommerce";
-                $path = '../candidatures/EmployesCommerce/'."new-".$name.$surname.'/';
+                $path = $rootpath.'EmployesCommerce/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="gardAn"){
                 echo "GardiensAnimaux";
-                $path = '../candidatures/GardiensAnimaux/'."new-".$name.$surname.'/';
+                $path = $rootpath.'GardiensAnimaux/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }
             

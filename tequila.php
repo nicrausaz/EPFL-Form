@@ -107,7 +107,7 @@ class TequilaClient {
 			   LNG_ENGLISH => 'english',
 			    LNG_FRENCH => 'francais',
 			   );
-  var $aErrors = array(
+  var $aErrors = array (
 	ERROR_UNKNOWN_ERROR => array(
        		LNG_ENGLISH => 'An unknown error has occured.',
        		 LNG_FRENCH => 'Une erreur inconnue est survenue.',

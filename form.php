@@ -9,27 +9,18 @@
             ini_set("display_errors",0);error_reporting(0);
             require_once("tequila.php");
             $oClient = new TequilaClient();
-
             $oClient->SetApplicationName('Formulaire apprentissage');
-            $oClient->SetWantedAttributes(array('uniqueId'));
+            $oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
             $oClient->SetWishedAttributes(array('user'));
             #$oClient->SetApplicationURL('https://localhost/tequila/test.php');
             $oClient->SetAllowsFilter('categorie=epfl-guests');
             #$oClient->SetCustomFilter('org=EPFL&firstname=John&unit=SC-PME&where=SC-PME/SC-S/ETU/EPFL/CH&group=inbc');
             $oClient->SetCustomParamaters(array ('toto' => 1));
-
             $oClient->Authenticate();
-
             $user = $oClient->getValue('user'); //--> recupérer e mail
-            
-
-            $nameG= $oClient->getValue('givenName');// marche pas
+            $firstname= $oClient->getValue('firstname');
+            $name= $oClient->getValue('name');
             $sKey = $oClient->GetKey();
-
-            echo '<script language="javascript">';
-            echo 'alert("Connexion réussie!")';
-            echo '</script>';
-            echo $nameG;
             ?>
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -173,11 +164,11 @@
                 <option value="Femme">Femme</option>
             </select>
             
-            <input type="text" name="nameApp" placeholder="Nom *" autocomplete="off" required/>
-            <input type="text" name="surnameApp" placeholder="Prénom *" autocomplete="off" required/>
+            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name; ?>" readonly/>
+            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname; ?>" readonly/>
             <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off"/>
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off"/>
-            <input type="tel" name="telApp" placeholder="Téléphone *" autocomplete="off"/>
+            <input type="tel" name="telApp" placeholder="Téléphone (+41 21 693 11 11) *" autocomplete="off"/>
             <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off"/>
             <input type="text" name="mailApp" id="mailApp" value="<?php echo $user; ?>" readonly/>
             <input type="date" name="birthApp" max="today"/>
