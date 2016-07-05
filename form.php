@@ -21,8 +21,9 @@
             $oClient->Authenticate();
 
             $user = $oClient->getValue('user'); //--> recupérer e mail
+            
 
-            $nameG= $oClient->getValue('givenName');
+            $nameG= $oClient->getValue('givenName');// marche pas
             $sKey = $oClient->GetKey();
 
             echo '<script language="javascript">';
@@ -33,6 +34,7 @@
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
+            
              $(document).ready(function(){ 
                 $("#all").hide()
                 $("#lSch1").hide(0)
@@ -100,7 +102,6 @@
             <!-- DONNEES APPRENTISSAGE-->
             <legend><span class="number">1</span> Apprentissage</legend>
             
-            
             <label for="job">Je suis intéressé par le métier de*: </label>
             <select name ="job" id="jb" required>
                 <option value="menu" selected disabled>Choisir un métier...</option>
@@ -122,23 +123,23 @@
 
             <dl class="radio-list-left" required>
             <dd>
-                <input type="radio" name="filInfo" id="fill1" value="devIT" >
+                <input type="radio" name="filInfo" id="fill1" value="devIT"/>
                 <label for="fill1">Dévellopement d'application</label>
             </dd>
             <dd>
-                <input type="radio" name="filInfo" id="fill2" value="entrIT" checked="checked">
+                <input type="radio" name="filInfo" id="fill2" value="entrIT"/>
                 <label for="fill2">Informatique d'entreprise</label>
             </dd>
             <dd>
-                <input type="radio" name="filInfo" id="fill3" value="techIT">
+                <input type="radio" name="filInfo" id="fill3" value="techIT"/>
                 <label for="fill3">Technique des systèmes</label>
             </dd>
             <dd>
-                <input type="radio" name="filInfo" id="fill4" value="dontKnow">
+                <input type="radio" name="filInfo" id="fill4" value="dontKnow" checked="checked"/>
                 <label for="fill4">Je ne sais pas</label>
             </dd>
             </dl>
-            <a href="https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/" target="_blank" class="indexB">Informations sur les filières</a>  
+            <a href="https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/" target="_blank" class="indexB" id="infoFilieres">Informations sur les filières</a>  
             </div>
 
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
@@ -178,7 +179,7 @@
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off"/>
             <input type="tel" name="telApp" placeholder="Téléphone *" autocomplete="off"/>
             <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off"/>
-            <input type="email" name="mailApp" value="<?=$user?>" disabled="disabled"/>
+            <input type="text" name="mailApp" id="mailApp" value="<?php echo $user; ?>" readonly/>
             <input type="date" name="birthApp" max="today"/>
             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off"/>
             <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off"/>
@@ -251,7 +252,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><input type="button" id="addSch" value="Ajouter une ligne" onclick="addFieldSch()"></td>
+                        <td><input type="button" id="addSch" value="Ajouter une ligne" onclick="addLSch()"></td>
                     </tr>
                   
                 </table>
@@ -306,7 +307,13 @@
         </div>
     </body>
     <script>
-        function addFieldSch(){
+
+        function addLSch(){
+            //ajouter une ligne par clic
+        }
+
+        function addLpro(){
+            //ajouter une ligne par clic
         }
     </script>
 </html>
