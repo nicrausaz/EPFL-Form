@@ -12,10 +12,9 @@
             $oClient->SetApplicationName('Formulaire apprentissage');
             $oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
             $oClient->SetWishedAttributes(array('user'));
-            #$oClient->SetApplicationURL('https://localhost/tequila/test.php');
+
             $oClient->SetAllowsFilter('categorie=epfl-guests');
-            #$oClient->SetCustomFilter('org=EPFL&firstname=John&unit=SC-PME&where=SC-PME/SC-S/ETU/EPFL/CH&group=inbc');
-            $oClient->SetCustomParamaters(array ('toto' => 1));
+            //$oClient->SetCustomParmaters(array ('toto' => 1));
             $oClient->Authenticate();
             $user = $oClient->getValue('user'); //--> recupérer e mail
             $firstname= $oClient->getValue('firstname');
@@ -25,12 +24,9 @@
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
-            
              $(document).ready(function(){ 
                 $("#all").hide()
-                $("#lSch1").hide(0)
-                $("#lSch2").hide(0)
-
+                
                     $("#jb").change(function(){
                       var sele = $("#jb option:selected").text();
                       
@@ -73,22 +69,15 @@
                             }
                         });
                         });
-            </script>     
-
+            </script>
+        <?php include('templates/header.php') ?>
          <title>Formulaire Apprentissage</title>
          <meta name="description" content="Formulaire candidature apprentissage EPFL"/>
     </head>
     <body>
-    <div class="form-style-5" >
-        <form method ="post" action="cible.php" enctype="multipart/form-data">
-            
-        <fieldset id="photoTitle">
-            <img src="./img/FA.png"/ alt="FA" width="315" height="150" id="FAPic" draggable="false"/>
-            <img src="./img/epfl.png"/ alt="EPFL" width="300" height="150" id="epflPic" draggable="false"/>
-            <p><h2>Candidature pour un apprentissage</h2>
-            Les champs notés d'un astérisque* doivent être obligatoirement remplis.<p>
+           <p class="paracenter">Les champs notés d'un astérisque* doivent être obligatoirement remplis.
         </fieldset> 
-         
+        <form method ="post" action="cible.php" enctype="multipart/form-data">
         <fieldset>  
             <!-- DONNEES APPRENTISSAGE-->
             <legend><span class="number">1</span> Apprentissage</legend>
@@ -107,30 +96,11 @@
                 <option value="gardAn">Gardien-ne d'animaux CFC</option>
             </select>
            </fieldset>
+
            <div id="all">
            <fieldset>
            <div id="infoOnly">
-            <label for="filInfo">Filières informatiques:*</label>
-
-            <dl class="radio-list-left" required>
-            <dd>
-                <input type="radio" name="filInfo" id="fill1" value="devIT"/>
-                <label for="fill1">Dévellopement d'application</label>
-            </dd>
-            <dd>
-                <input type="radio" name="filInfo" id="fill2" value="entrIT"/>
-                <label for="fill2">Informatique d'entreprise</label>
-            </dd>
-            <dd>
-                <input type="radio" name="filInfo" id="fill3" value="techIT"/>
-                <label for="fill3">Technique des systèmes</label>
-            </dd>
-            <dd>
-                <input type="radio" name="filInfo" id="fill4" value="dontKnow" checked="checked"/>
-                <label for="fill4">Je ne sais pas</label>
-            </dd>
-            </dl>
-            <a href="https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/" target="_blank" class="indexB" id="infoFilieres">Informations sur les filières</a>  
+              <?php include('templates/filieresinfos.php') ?>
             </div>
 
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
@@ -156,7 +126,7 @@
                <!-- DONNEES APPRENTIS-->
                <label for="photo">Photo passeport couleur*:</label>
 
-               <label class="file" title=""><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" required/></label>
+               <label class="file" title=""><input type="file" name="photo" id="photo" onchange="changeInFileTitle(photo)" required/></label>
 
             <select name="genreApp" >
                 <option disabled selected> Choisissez un genre*</option>
@@ -164,17 +134,17 @@
                 <option value="Femme">Femme</option>
             </select>
             
-            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name; ?>" readonly/>
-            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname; ?>" readonly/>
-            <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off"/>
-            <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off"/>
-            <input type="tel" name="telApp" placeholder="Téléphone (+41 21 693 11 11) *" autocomplete="off"/>
-            <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off"/>
-            <input type="text" name="mailApp" id="mailApp" value="<?php echo $user; ?>" readonly/>
-            <input type="date" name="birthApp" max="today"/>
-            <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off"/>
-            <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off"/>
-            <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off"/>
+            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name; ?>" readonly />
+            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname; ?>" readonly />
+            <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" minlength="2" maxlength="40" required/>
+            <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" minlength="2" maxlength="40" required/>
+            <input type="tel" name="telApp" placeholder="Téléphone (+41 21 693 11 11) *" minlength="2" autocomplete="off" maxlength="15" required/>
+            <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off" minlength="2" maxlength="15" required/>
+            <input type="text" name="mailApp" id="mailApp" value="<?php echo $user; ?>" readonly />
+            <input type="date" name="birthApp" required/>
+            <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="30" required/>
+            <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="20" required/>
+            <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
             
             <label for="languesApp">Connaissance linguistiques*:</label>
             <p><input type="checkbox" name="connLing" id="french" value="Français" /><label for="french"><span class="ui"></span>Français</label></p>
@@ -226,7 +196,7 @@
                         <td><input type="text" name="niveau1" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees1" placeholder="de-à(années)" autocomplete="off"/></td>  
                     </tr>
-
+                    <!--
                     <tr id="lSch1">
                         <td><input type="text" name="ecole2" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieu2" placeholder="Lieu" autocomplete="off"/></td>
@@ -238,13 +208,15 @@
                         <td><input type="text" name="lieu3" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveau3" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><input type="button" id="addSch" value="Ajouter une ligne" onclick="addLSch()"></td>
+                        <td><input type="button" id="addSch" value="Ajouter une ligne"/></td>
                     </tr>
+                    <section id="test">
+                    </section>
                   
                 </table>
                 
@@ -268,7 +240,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><input type="button" id="addPro" value="Ajouter une ligne" class="indexB" onclick="addLpro()"/></td>
+                        <td><input type="button" id="addPro" value="Ajouter une ligne" class="indexB"/></td>
                     </tr>
                 </table>
 
@@ -298,10 +270,17 @@
         </div>
     </body>
     <script>
+          $('#addSch').click(function(){
+            var div = $('<div>Yolo</div>');
+            div.appendTo('#test');
+            });
 
-        function addLSch(){
-            //ajouter une ligne par clic
+
+        function changeInFileTitle(inName){
+            inName.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')) //not working for now in a function
         }
+        
+        
 
         function addLpro(){
             //ajouter une ligne par clic

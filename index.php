@@ -1,19 +1,12 @@
 <!doctype html>
 <html lang="fr">
-    <head>  
-        <meta charset="UTF-8"/>
-         <link rel="stylesheet" type="text/css" href="style.css">
-         <link rel="icon" type="image/png" href="img/favicon.png" />
-         <title>Accueil</title>
-         <meta name="description" content="Formulaire condidature apprentissage EPFL"/>
+    <head> 
+        <?php include('templates/header.php') ?>    
+        <title>Accueil</title>   
+    <meta name="description" content="Formulaire condidature apprentissage EPFL"/>  
     </head>
     <body>
-    <div class="form-style-5">
-        <fieldset id="photoTitle">
-                <img src="./img/FA.png"/ alt="FA" width="315" height="150" id="FAPic" draggable="false"/>
-                <img src="./img/epfl.png"/ alt="EPFL" width="300" height="150" id="epflPic" draggable="false"/>
-                <p><h2>Candidature pour un apprentissage</h2>
-                Veuillez suivre les indication suivantes<p>
+    <p class="paracenter">Veuillez suivre les indications suivantes
         </fieldset>
         <fieldset>
             <legend><span class="number">1</span> Créer un compte temporaire </legend>
@@ -32,6 +25,6 @@
             Lorsque la connexion sera effectuée, vous serez rediriger vers le formulaire.</p>
             <a href="form.php" class="indexB">Se connecter</a>
         </fieldset>
-    </div>
+        </div>  
 </body>
 </html>

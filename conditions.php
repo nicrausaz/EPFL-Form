@@ -1,14 +1,9 @@
 <!doctype html>
 <html lang="fr">
     <head>  
-        <meta charset="UTF-8"/>
-         <link rel="stylesheet" type="text/css" href="style.css">
-         <link rel="icon" type="image/png" href="img/favicon.png" />
-         <title></title>
+        <?php include('templates/header.php') ?>    
     </head>
     <body>
-          
-    <div class="form-style-5">
         <legend><h1>Conditions</h1></legend>
         <label for ="cond">Les annexes doivent inclure:</label>
         <ul id= "cond">
