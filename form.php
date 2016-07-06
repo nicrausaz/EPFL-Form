@@ -138,12 +138,12 @@
             <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname; ?>" readonly />
             <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" minlength="2" maxlength="40" required/>
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" minlength="2" maxlength="40" required/>
-            <input type="tel" name="telApp" placeholder="Téléphone (+41 21 693 11 11) *" minlength="2" autocomplete="off" maxlength="15" required/>
-            <input type="tel" name="phoneApp" placeholder="Mobile *" autocomplete="off" minlength="2" maxlength="15" required/>
-            <input type="text" name="mailApp" id="mailApp" value="<?php echo $user; ?>" readonly />
+            <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" minlength="2" autocomplete="off" maxlength="20" required/>
+            <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" autocomplete="off" minlength="2" maxlength="20" required/>
+            <input type="email" name="mailApp" id="mailApp" value="<?php echo $user; ?>" readonly />
             <input type="date" name="birthApp" required/>
             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="30" required/>
-            <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="20" required/>
+            <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="30" required/>
             <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
             
             <label for="languesApp">Connaissance linguistiques*:</label>
