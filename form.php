@@ -76,7 +76,7 @@
     </head>
     <body>
            <p class="paracenter">Les champs notés d'un astérisque* doivent être obligatoirement remplis.
-        </fieldset> 
+        </fieldset>
         <form method ="post" action="cible.php" enctype="multipart/form-data">
         <fieldset>  
             <!-- DONNEES APPRENTISSAGE-->
@@ -155,7 +155,18 @@
         </fieldset>
         <fieldset>
             <legend><span class="number">2.2</span> Réprésentants légaux</legend>    
-             (Si vous avez moins de 18 ans).<p>
+             <label for="maj">Avez vous plus de 18 ans?</label><p>
+            <dl class="radio-list-left">
+            <dd>
+                <input type="radio" name="maj" id="maj1" value="maj-non" checked="checked">
+                <label for="maj1">Non</label>
+            </dd>
+            <dd>
+                <input type="radio" name="maj" id="maj2" value="maj-oui">
+                <label for="maj2">Oui</label>
+            </dd>
+            </dl>
+            <section id="representants">
                 <!-- DONNEES REPRESENTANT 1-->
               Réprésentant 1:<p>
             <select name="genreRep1" >
@@ -184,6 +195,7 @@
             <input type="text" name="NPARep2" placeholder = "NPA\Domicile"autocomplete="off"/>
             <input type="text" name="telRep2" placeholder="Téléphone" autocomplete="off"/>   
         </fieldset>
+        </section>
          <!-- ACIVITES-->
         <legend><span class="number">3</span> Activités</legend>
         <fieldset>
@@ -270,6 +282,13 @@
         </div>
     </body>
     <script>
+        $("#maj1").change(function(){
+            $("#representants").show(1000);
+         });
+         $("#maj2").change(function(){
+            $("#representants").hide(1000);
+         });
+
           $('#addSch').click(function(){
             var div = $('<div>Yolo</div>');
             div.appendTo('#test');
