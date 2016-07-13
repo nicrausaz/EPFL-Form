@@ -10,16 +10,26 @@
     <div class="form-style-5">
         
        <?php
+       /*function getConnLing(){
+            if(!empty($_POST['check_list'])){
+                foreach($_POST['check_list'] as $check){
+                   //echo $check;
+                }
+            }
+       }
+        //$connLing = array($_POST['check_list']);
+        echo $connLing;
+       */
           //get apprenti's infos
           $job = $_POST['job']." ".$_POST['mpt'];
           $infosPerso = $_POST['genreApp']." ".$_POST['nameApp']." ".$_POST['surnameApp']." ".$_POST['adrApp']." ".$_POST['NPAApp']." ".$_POST['telApp']." ".$_POST['phoneApp']
-          ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " .$_POST['connLing'];
-          //get the rest of infos here 
+          ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " /*.$_POST['connLing']*/;
+          //get the rest of infos here
           //
           //
           $allInfos = $job." ".$infosPerso;
           
-    //Tri des apprentis par métier
+        //Tri des apprentis par métier
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
         $job = $_POST['job'];
@@ -28,28 +38,28 @@
         //$path = sprintf('../candidatures/%s/new-%s%s/', $rootpath, $formFolder, $name, $surname);
 
             if($job=="polyM") {
-                echo "Polymec"; 
+                //echo "Polymec"; 
                 $path = $rootpath.'Polymecaniciens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="info"){
-                echo "informaticien";
+                //echo "informaticien";
                 $allInfos = $_POST['filInfo']." ". $allInfos;
                 $path = $rootpath.'Informaticiens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="logi"){
-                echo "Logisticiens";
+                //echo "Logisticiens";
                 $path = $rootpath.'Logisticiens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="planElec"){
-                echo "Planif Elec";
+                //echo "Planif Elec";
                 $path = $rootpath.'PlanificateurElectriciens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="empCom"){
-                echo "EmployesCommerce";
+                //echo "EmployesCommerce";
                 $path = $rootpath.'EmployesCommerce/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="gardAn"){
-                echo "GardiensAnimaux";
+                //echo "GardiensAnimaux";
                 $path = $rootpath.'GardiensAnimaux/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }
@@ -57,9 +67,9 @@
             //create apprenti's folders
             function createThings($path,$name,$surname,$allInfos){
 
-                    //global $noError;
                     $pathInfos = $path."informations/";
                     $pathAnnexes = $path."annexes/";
+
                     if (!mkdir($path, 0777, true)){
                          die('Echec lors de la création du dossier candidat');
                           $noError = false;
@@ -83,11 +93,11 @@
                     //Photo upload
                     $dossier = $pathAnnexes;
                     $fichier = basename($_FILES['photo']['name']);
-                    $extensions = array('.jpg','.jpeg','.png');
+                    $extensions = array('.jpg','.jpeg','.png','.pdf');
                     $extension = strrchr($_FILES['photo']['name'], '.'); 
                     
                     if(!in_array($extension, $extensions)){
-                        $erreur = 'Vous devez uploader un fichier de type JPG/JPEG ou PNG';
+                        $erreur = 'Vous devez uploader un fichier de type JPG/JPEG, PNG ou PDF';
                         //$noError = false;
                     }
                     if(!isset($erreur)){
@@ -168,6 +178,69 @@
                     else{
                         echo $erreur;
                     }
+                    // ID card upload
+                    $dossier = $pathAnnexes;
+                    $fichier = basename($_FILES['idCard']['name']);
+                    $extensions = array('.jpg','.jpeg','.png','.pdf');
+                    $extension = strrchr($_FILES['idCard']['name'], '.'); 
+                    
+                    if(!in_array($extension, $extensions)){
+                        $erreur = 'Vous devez uploader un fichier de type JPG/JPEG ou PNG';
+                        //$noError = false;
+                    }
+                    //
+                    if(!isset($erreur)){
+                        $fichier = strtr($fichier, 
+                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+                        
+                        if(move_uploaded_file($_FILES['idCard']['tmp_name'], $dossier . $fichier))
+                        {
+                            echo 'Upload réussi';
+                            $noError = true;
+                            
+                        }
+                        else{
+                            echo 'Echec de l\'upload idCard!';
+                            $noError = false;
+                        }
+                    }
+                    else{
+                        echo $erreur;
+                    }
+                    /*
+                    $dossier = $pathAnnexes;
+                    $fichier = basename($_FILES['photo']['name']);
+                    $extensions = array('.jpg','.jpeg','.png');
+                    $extension = strrchr($_FILES['photo']['name'], '.'); 
+                    
+                    //GIM-CH upload
+                    if(!in_array($extension, $extensions)){
+                        $erreur = 'Vous devez uploader un fichier de type JPG/JPEG ou PNG';
+                        //$noError = false;
+                    }
+                    if(!isset($erreur)){
+                        $fichier = strtr($fichier, 
+                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+                        
+                        if(move_uploaded_file($_FILES['photo']['tmp_name'], $dossier . $fichier))
+                        {
+                            echo 'Upload réussi';
+                            $noError = true;
+                            
+                        }
+                        else{
+                            echo 'Echec de l\'upload photo!';
+                            $noError = false;
+                        }
+                    }
+                    else{
+                        echo $erreur;
+                    }
+                    */
                     // mail send
                     $to  = 'nicolas.crausaz@epfl.ch';
                     $subject = 'Nouvelle demande de place d\'apprentissage';
@@ -185,10 +258,7 @@
                             }
                 }
             }
-
-                  
-                        //else{}
-                    ?>
+        ?>
         </div>
     </body>
 </html>
