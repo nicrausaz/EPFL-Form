@@ -356,3 +356,10 @@ MINIS BUTTONS
   text-align: center;
    margin-top: -20px;
 }
+.errorMsgs{
+  margin-top: -20px;
+  color: red;
+  font-size: 15px;
+  font-style: italic;
+
+}

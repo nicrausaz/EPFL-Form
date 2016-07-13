@@ -144,6 +144,7 @@
             <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" autocomplete="off" minlength="2" maxlength="20" required/>
             <input type="email" name="mailApp" id="mailApp" value="<?php echo $user; ?>" readonly />
             <input type="date" name="birthApp" id="birthApp" required/>
+            <section id="errorMsg"></section>
             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="30" required/>
             <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="30" required/>
             <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
@@ -288,7 +289,7 @@
         <label for="photo">Photo passeport <strong>couleur:</strong></label> 
         <label class="file" title=""><input type="file" name="photo" id="photo" onchange="changeInFileTitle()" /></label>
 
-        <label for="idCard">Copie carte d'indentité:</label> <!--TOGET-->
+        <label for="idCard">Copie carte d'indentité:</label>
         <label class="file" title=""><input type="file" name="idCard" id="idCard" onchange="changeInFileTitle()" /></label>
 
         <label for="CV">Curriculum Vitae:</label>
@@ -326,32 +327,43 @@
     //
     //
      $("#birthApp").change(function(){
-        userDate = document.getElementById("birthApp").value;
+        userDate = new Date(document.getElementById("birthApp").value);
         now = new Date();
-        day = now.getDate();
-        month = now.getMonth() + 1;
-        year = now.getFullYear();
-        currentDate = year + "-" + month + "-" + day;
-        console.log(currentDate);
-        console.log(userDate);
-        if(currentDate == userDate){
-            console.log("test");
+        birthDate = userDate.getTime();
+        currentDate = now.getTime();
+        currentDays = currentDate/24/60/60/1000;
+        userDays = birthDate/24/60/60/1000;
+        currentDays = Math.floor(currentDays);
+        userDays = Math.floor(userDays);
+        douzeAns = Math.floor(currentDays - 4383);
+        console.log(currentDays);
+        console.log(userDays);
+        console.log(douzeAns);
+
+        if(currentDays <= userDays){
+            document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide';
+
+        }else if(userDays>douzeAns) {
+            document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide';
         }
-    });
+        else{
+            document.getElementById('errorMsg').innerHTML = '';
+        }
+        });
     //
     //
-    $('#addSch').click(function(){
+    /*$('#addSch').click(function(){
         var div = $('<div>Yolo</div>');
         div.appendTo('#test');
-    });
+    });*/
     //
     //
-    function changeInFileTitle(){
+    /*function changeInFileTitle(){
         this.setAttribute('title', this.value.replace(/^.*[\\/]/, '')) //not working for now in a function
-    }
-    function getTodayDate(){
+    }*/
+    /*function getTodayDate(){
 
-    }
+    }*/
        /* function addLpro(){
             //ajouter une ligne par clic
         }*/
