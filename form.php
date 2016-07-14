@@ -211,6 +211,8 @@
                         <td><input type="text" name="niveau1" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees1" placeholder="de-à(années)" autocomplete="off"/></td>  
                     </tr>
+                    <section id="test">
+                    </section>
                     <!--
                     <tr id="lSch1">
                         <td><input type="text" name="ecole2" placeholder="Ecole" autocomplete="off"/></td>
@@ -230,8 +232,6 @@
                         <td></td>
                         <td><input type="button" id="addSch" value="Ajouter une ligne"/></td>
                     </tr>
-                    <section id="test">
-                    </section>
                 </table>
                  
                 
@@ -336,15 +336,12 @@
         currentDays = Math.floor(currentDays);
         userDays = Math.floor(userDays);
         douzeAns = Math.floor(currentDays - 4383);
-        console.log(currentDays);
-        console.log(userDays);
-        console.log(douzeAns);
 
         if(currentDays <= userDays){
             document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide';
 
         }else if(userDays>douzeAns) {
-            document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide';
+            document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide, trop jeune';
         }
         else{
             document.getElementById('errorMsg').innerHTML = '';
@@ -352,10 +349,10 @@
         });
     //
     //
-    /*$('#addSch').click(function(){
+    $('#addSch').click(function(){
         var div = $('<div>Yolo</div>');
         div.appendTo('#test');
-    });*/
+    });
     //
     //
     /*function changeInFileTitle(){

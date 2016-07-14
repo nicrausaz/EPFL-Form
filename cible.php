@@ -21,14 +21,8 @@
         echo $connLing;
        */
           //get apprenti's infos
-          $job = $_POST['job']." ".$_POST['mpt'];
-          $infosPerso = $_POST['genreApp']." ".$_POST['nameApp']." ".$_POST['surnameApp']." ".$_POST['adrApp']." ".$_POST['NPAApp']." ".$_POST['telApp']." ".$_POST['phoneApp']
-          ." ".$_POST['mailApp']." ".$_POST['birthApp']." ".$_POST['originApp']." ".$_POST['nationApp']." ".$_POST['langApp']." " /*.$_POST['connLing']*/;
-          //get the rest of infos here
-          //
-          //
-          $allInfos = $job." ".$infosPerso;
-          
+          $allInfos = [$_POST['job'],$_POST['mpt'],$_POST['genreApp'],$_POST['nameApp'],$_POST['surnameApp'],$_POST['adrApp'],$_POST['NPAApp'],$_POST['telApp'],$_POST['phoneApp'],$_POST['mailApp'],$_POST['birthApp'],$_POST['originApp'],$_POST['nationApp'],$_POST['langApp']];
+   
         //Tri des apprentis par métier
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
@@ -43,7 +37,7 @@
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="info"){
                 //echo "informaticien";
-                $allInfos = $_POST['filInfo']." ". $allInfos;
+                $allInfos[1] =  $_POST['filInfo'];
                 $path = $rootpath.'Informaticiens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }else if($job=="logi"){
@@ -62,8 +56,7 @@
                 //echo "GardiensAnimaux";
                 $path = $rootpath.'GardiensAnimaux/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
-            }
-            
+            }   
             //create apprenti's folders
             function createThings($path,$name,$surname,$allInfos){
 
@@ -84,11 +77,10 @@
                         echo "Dossiers crées";
                         $noError = true;
                     }
-                    
-                    //create text file for apprenti's infos   
-                    $myfile = fopen($pathInfos."infos.txt", "w") or die("Unable to open file!");
-                    fwrite($myfile,$allInfos);
-                    fclose($myfile);
+
+                    $fp = fopen("$pathInfos/infos.csv", "w");
+                    fputcsv($fp, $allInfos);
+                    fclose($fp);
 
                     //Photo upload
                     $dossier = $pathAnnexes;
@@ -233,7 +225,7 @@
                             
                         }
                         else{
-                            echo 'Echec de l\'upload photo!';
+                            echo 'Echec de l\'upload gim-ch!';
                             $noError = false;
                         }
                     }
