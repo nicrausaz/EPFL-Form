@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="fr">
     <head>  
-        <?php include('templates/header.php') ?>    
+        <?php include('templates/head.php') ?>    
     </head>
     <body>
+    <div class="form-style-5">
+    <?php include('templates/header.php') ?> 
         <legend><h1>Conditions</h1></legend>
         <label for ="cond">Les annexes doivent inclure:</label>
         <ul id= "cond">

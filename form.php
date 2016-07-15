@@ -1,27 +1,24 @@
 <!doctype html>
 <html lang="fr">
-    <head>  
-         <meta charset="UTF-8"/>
-         <link rel="stylesheet" type="text/css" href="style.css">
-         <link rel="icon" type="image/png" href="img/favicon.png" />
-         <?php
-
+    <head> 
+    <?php include('templates/head.php');
             ini_set("display_errors",0);error_reporting(0);
+             /////////////////
+            //TEQUILA LOGON//
+           /////////////////
             require_once("tequila/tequila.php");
             $oClient = new TequilaClient();
             $oClient->SetApplicationName('Formulaire apprentissage');
             $oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
             $oClient->SetWishedAttributes(array('user'));
-
             $oClient->SetAllowsFilter('categorie=epfl-guests');
-            //$oClient->SetCustomParmaters(array ('toto' => 1));
             $oClient->Authenticate();
-            $user = $oClient->getValue('user'); //--> recupérer e mail
+            $user = $oClient->getValue('user');
             $firstname= $oClient->getValue('firstname');
             $name= $oClient->getValue('name');
             $sKey = $oClient->GetKey();
             ?>
-
+         <!--<script src="myscripts.js"></script>-->
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
          <script>
              $(document).ready(function(){ 
@@ -75,11 +72,12 @@
                         });
             </script>
 
-        <?php include('templates/header.php') ?>
          <title>Formulaire Apprentissage</title>
          <meta name="description" content="Formulaire candidature apprentissage EPFL"/>
     </head>
     <body>
+        <div class="form-style-5">
+        <?php include('templates/header.php') ?>
            <p class="paracenter">Les champs notés d'un astérisque* doivent être obligatoirement remplis.
         </fieldset>
         <form method ="post" action="cible.php" enctype="multipart/form-data">
