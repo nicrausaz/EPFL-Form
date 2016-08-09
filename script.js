@@ -8,12 +8,12 @@ $(document).ready(function(){
                 
     $("#jb").change(function(){
       var sele = $("#jb option:selected").text();
-                      
+
         if((sele=="Polymécanicien-ne CFC")||(sele=="Informaticien-ne CFC")||(sele=="Logisticien-ne CFC")||(sele=="Planificateur-trice éléctricien-ne CFC")||(sele=="Employé-e de commerce CFC")||(sele=="Gardien-ne d'animaux CFC")){
             $("#all").show(1000)
             $("#infoOnly").hide(0)
             $("#polyOnly").hide(0)
-                            
+                   
         if(sele=="Informaticien-ne CFC"){
             $("#infoOnly").show(1000)
             }
@@ -56,40 +56,41 @@ $(document).ready(function(){
 //
 //CHANGE EVENTS
 //
-
+$(document).ready(function(){ 
 // SHOW/HIDE ACCORDING TO RADIOBUTTON
-$("#maj1").change(function(){
-    $("#representants").show(1000);
-});
-$("#maj2").change(function(){
-    $("#representants").hide(1000);
-});
+    $("#maj1").change(function(){
+        $("#representants").show(1000);
+    });
+    $("#maj2").change(function(){
+        $("#representants").hide(1000);
+    });
 
 // CHECK DATE INPUT
-$("#birthApp").change(function(){
-        userDate = new Date(document.getElementById("birthApp").value);
-        now = new Date();
-        birthDate = userDate.getTime();
-        currentDate = now.getTime();
-        currentDays = currentDate/24/60/60/1000;
-        userDays = birthDate/24/60/60/1000;
-        currentDays = Math.floor(currentDays);
-        userDays = Math.floor(userDays);
-        douzeAns = Math.floor(currentDays - 4383);
+    $("#birthApp").change(function(){
+            userDate = new Date(document.getElementById("birthApp").value);
+            now = new Date();
+            birthDate = userDate.getTime();
+            currentDate = now.getTime();
+            currentDays = currentDate/24/60/60/1000;
+            userDays = birthDate/24/60/60/1000;
+            currentDays = Math.floor(currentDays);
+            userDays = Math.floor(userDays);
+            douzeAns = Math.floor(currentDays - 4383);
 
-        if(currentDays <= userDays){
-            document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide';
+            if(currentDays <= userDays){
+                document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide';
 
-        }else if(userDays>douzeAns){
-            document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide, trop jeune';
-        }
-        else{
-            document.getElementById('errorMsg').innerHTML = '';
-        }
+            }else if(userDays>douzeAns){
+                document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide, trop jeune';
+            }
+            else{
+                document.getElementById('errorMsg').innerHTML = '';
+            }
         });
 
 // CLICK TO ADD LINE
-$('#addSch').click(function(){
-    var div = $('<div>Yolo</div>');
-    div.appendTo('#test');
+    $('#addSch').click(function(){
+        var div = $('<input type="text"/>');
+        div.appendTo('#test');
+    });
 });

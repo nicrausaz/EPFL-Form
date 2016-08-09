@@ -235,10 +235,10 @@
         Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.<p>
 
         <label for="photo">Photo passeport <strong>couleur:</strong></label> 
-        <label class="file" title=""><input type="file" name="photo" id="photo" onchange="changeInFileTitle()" /></label>
+        <label class="file" title=""><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
 
         <label for="idCard">Copie carte d'indentité:</label>
-        <label class="file" title=""><input type="file" name="idCard" id="idCard" onchange="changeInFileTitle()" /></label>
+        <label class="file" title=""><input type="file" name="idCard" id="idCard" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
 
         <label for="CV">Curriculum Vitae:</label>
         <label class="file" title=""><input type="file" name="cv" id="cv" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
@@ -264,7 +264,6 @@
         </form>
         </div>
     </body>
-    <script src="script.js"></script>
     <script>
     //
     //
