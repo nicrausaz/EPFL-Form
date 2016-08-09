@@ -241,14 +241,14 @@
                                 'Reply-To: formapprentis@epfl.ch' . "\r\n" .
                                 'X-Mailer: PHP/' . phpversion();
 
-                    if( $noError == true){
-                        if (mail($to , $subject, $message, $headers)){
+                    if($noError == true){
+                        if (mail($to, $subject, $message, $headers)){
                                 echo "Mail envoyé";
                             }
                             else{
                                 echo "Mail non envoyé";
                             }
-                }
+                    }
             }
         ?>
         </div>
