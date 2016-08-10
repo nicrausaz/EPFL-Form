@@ -7,7 +7,7 @@
     padding: 20px;
     background: #f4f7f8;
     border-radius: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .form-style-5 fieldset{
     border: none;
@@ -115,12 +115,6 @@
 #incomplet{
     color: red;
     font-size: 24px;
-}
-#addSch{
-   padding: 5px 20px 5px 20px; 
-}
-#addPro{
-   padding: 5px 20px 5px 20px; 
 }
 a{
 	text-decoration: none;
@@ -277,7 +271,7 @@ MINIS BUTTONS
 }
 .paracenter{
   text-align: center;
-   margin-top: -20px;
+   margin-top: -15px;
 }
 .errorMsgs{
   margin-top: -20px;
@@ -321,7 +315,6 @@ MINIS BUTTONS
   color: red;
   transition: all .2s;
 }
-
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
@@ -330,10 +323,6 @@ MINIS BUTTONS
   opacity: 1;
   transform: scale(1);
 }
-[type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {
-  border: 1px dotted blue;
-}
 label:hover:before {
-  border: 1px solid #4778d9!important;
+  border: 1px solid red !important;
 }

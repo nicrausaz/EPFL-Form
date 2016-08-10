@@ -18,4 +18,6 @@
    <label for="fill4">Je ne sais pas</label>
 </dd>
 </dl>
-<a href="https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/" target="_blank" class="indexB" id="infoFilieres">Informations sur les filières</a>
+<button id="infoFilieres" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    Infos sur les filières
+</button>

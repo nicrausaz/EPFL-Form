@@ -2,6 +2,27 @@
 //DOCUMENT READY
 //
 
+// INDEX.PHP BUTTONS ACTIONS
+$(document).ready(function () {
+    $('#createAc').click(function () {
+        window.open("https://guests.epfl.ch/", '_blank');
+
+    });
+    $('#connectB').click(function () {
+        document.location.href = "form.php";
+    });
+    $('#infoFilieres').click(function () {
+        window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
+    });
+    $('#addSch').click(function () {
+        alert("I'm gonna add mate 1");
+    });
+    $('#addPro').click(function () {
+        alert("I'm gonna add mate 2");
+    });
+
+});
+
 // SHOW/HIDE CONTENT ACCORDING TO SELECTED JOB
 $(document).ready(function(){ 
   $("#all").hide()
@@ -89,8 +110,11 @@ $(document).ready(function(){
         });
 
 // CLICK TO ADD LINE
+
     $('#addSch').click(function(){
-        var div = $('<input type="text"/>');
-        div.appendTo('#test');
+        
     });
 });
+
+//document.getElementById("uploadBtn").onchange = function () {
+    //document.getElementById("uploadFile").value = this.value;

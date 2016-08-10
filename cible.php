@@ -57,9 +57,9 @@
                 $path = $rootpath.'GardiensAnimaux/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$allInfos);
             }   
-            //create apprenti's folders
+            
             function createThings($path,$name,$surname,$allInfos){
-
+                //create apprenti's folders
                     $pathInfos = $path."informations/";
                     $pathAnnexes = $path."annexes/";
 
@@ -77,7 +77,7 @@
                         echo "Dossiers crées";
                         $noError = true;
                     }
-
+                //Put infos in CSV File
                     $fp = fopen("$pathInfos/infos.csv", "w");
                     fputcsv($fp, $allInfos);
                     fclose($fp);
@@ -170,6 +170,7 @@
                     else{
                         echo $erreur;
                     }
+
                     // ID card upload
                     $dossier = $pathAnnexes;
                     $fichier = basename($_FILES['idCard']['name']);

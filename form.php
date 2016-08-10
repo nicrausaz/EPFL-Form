@@ -18,11 +18,8 @@
             $name= $oClient->getValue('name');
             $sKey = $oClient->GetKey();
             ?>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-         <script src="script.js"></script>
 
          <title>Formulaire Apprentissage</title>
-         <meta name="description" content="Formulaire candidature apprentissage EPFL"/>
     </head>
 
     <body>
@@ -93,7 +90,7 @@
             <input type="email" name="mailApp" id="mailApp" value="<?php echo $user; ?>" readonly />
             <input type="date" name="birthApp" id="birthApp" required/>
             <section id="errorMsg"></section>
-            <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="30" required/>
+            <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="35" required/>
             <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="30" required/>
             <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
             
@@ -173,16 +170,12 @@
                         <td><input type="text" name="lieu3" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveau3" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
-                    </tr>-->
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="button" id="addSch" value="Ajouter une ligne"/></td>
-                    </tr>
+                    </tr>-->                    
                 </table>
-                 
-                
+                <button id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Ajouter une ligne
+                </button>
+ 
         </fieldset>
         <fieldset>
             <legend><span class="number">3.2</span> Activités professionelles</legend>
@@ -199,13 +192,10 @@
                         <td><input type="text" name="activite1" placeholder="Activité" autocomplete="off"/></td>
                         <td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="button" id="addPro" value="Ajouter une ligne" class="indexB"/></td>
-                    </tr>
                 </table>
+                <button id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Ajouter une ligne
+                </button>
 
         </fieldset>
         <fieldset>
@@ -237,7 +227,7 @@
         <label for="photo">Photo passeport <strong>couleur:</strong></label> 
         <label class="file" title=""><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
 
-        <label for="idCard">Copie carte d'indentité:</label>
+        <label for="idCard">Copie carte d'indentité / passeport:</label>
         <label class="file" title=""><input type="file" name="idCard" id="idCard" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
 
         <label for="CV">Curriculum Vitae:</label>
@@ -256,7 +246,7 @@
         </div> 
         </fieldset> 
         <fieldset>  
-        <p><input type="checkbox" value="conditionsAcc" id="conditions" required/><label for="conditions"><span class="ui"></span>Accepter les <a href="conditions.php"> conditions</label></p>
+        <p><input type="checkbox" value="conditionsAcc" id="conditions" required/><label for="conditions"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions</label></p>
 
         <input type="submit" value="Terminer">
         </fieldset>
