@@ -226,15 +226,19 @@
 
         <label for="photo">Photo passeport <strong>couleur:</strong></label> 
         <label class="file" title=""><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatErrorMsg"></section>
 
         <label for="idCard">Copie carte d'indentité / passeport:</label>
         <label class="file" title=""><input type="file" name="idCard" id="idCard" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatErrorMsg"></section>
 
         <label for="CV">Curriculum Vitae:</label>
         <label class="file" title=""><input type="file" name="cv" id="cv" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
-                
+        <section class="formatErrorMsg"></section>
+
         <label for="lettre">Lettre de motivation:</label>
         <label class="file" title=""><input type="file" name="lettre" id="lettre" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatErrorMsg"></section>
 
         <!-- BULLETINS NOTES --> <!--TOGET-->
 
@@ -243,6 +247,7 @@
         <div id="polyOnly">
         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
         <label class="file" title=""><input type="file" name="gimch" id="gimch" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatErrorMsg"></section>
         </div> 
         </fieldset> 
         <fieldset>
