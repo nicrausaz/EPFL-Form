@@ -68,7 +68,7 @@
     height:35px;
 }
 .form-style-5 .number {
-    background: red;
+    background: #e50000;
     color: #fff;
     height: 30px;
     width: 30px;
@@ -89,19 +89,19 @@
     padding: 19px 39px 18px 39px;
     color: #FFF;
     margin: 0 auto;
-    background: red;
+    background: #e50000;
     font-size: 18px;
     
     font-style: normal;
     width: 100%;
-    border: 1px solid red;
+    border: 1px solid #e50000;
     border-width: 1px 1px 3px;
     margin-bottom: 10px;
 }
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover
 {
-    background: red;
+    background: #e50000;
 }
 #photoTitle{
     text-align: center;
@@ -113,7 +113,7 @@
     padding-left: 100px;
 }
 #incomplet{
-    color: red;
+    color: #e50000;
     font-size: 24px;
 }
 a{
@@ -143,10 +143,10 @@ RADIOBUTTON STYLE
   border: 1px solid #aaa;
 }
 .radio-list-left input[type="radio"]:checked + label, .radio-list-right input[type="radio"]:checked + label {
-  color: red;
+  color: #e50000;
 }
 .radio-list-left input[type="radio"]:checked + label:before, .radio-list-right input[type="radio"]:checked + label:before {
-  background: red;
+  background: #e50000;
   border-color: rgba(204, 204, 204, 0.5);
 }
 .radio-list-left input[type="radio"]:disabled + label, .radio-list-right input[type="radio"]:disabled + label {
@@ -256,7 +256,7 @@ MINIS BUTTONS
     appearance: button;
     text-decoration: none;
     color: #FFF;
-    background: red;
+    background: #e50000;
     font-size: 20px;
     padding-right: 10px;
     padding-left: 10px;
@@ -275,7 +275,7 @@ MINIS BUTTONS
 }
 .errorMsgs{
   margin-top: -20px;
-  color: red;
+  color: #e50000;
   font-size: 15px;
   font-style: italic;
 }
@@ -312,7 +312,7 @@ MINIS BUTTONS
   top: 3px; left: 4px;
   font-size: 18px;
   line-height: 0.8;
-  color: red;
+  color: #e50000;
   transition: all .2s;
 }
 [type="checkbox"]:not(:checked) + label:after {
@@ -324,5 +324,5 @@ MINIS BUTTONS
   transform: scale(1);
 }
 label:hover:before {
-  border: 1px solid red !important;
+  border: 1px solid #e50000 !important;
 }
