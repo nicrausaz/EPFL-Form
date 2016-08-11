@@ -245,9 +245,11 @@
         <label class="file" title=""><input type="file" name="gimch" id="gimch" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
         </div> 
         </fieldset> 
-        <fieldset>  
-        <p><input type="checkbox" value="conditionsAcc" id="conditions" required/><label for="conditions"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions</label></p>
-
+        <fieldset>
+        <div id="condDiv">
+        <input type="checkbox" value="conditionsAcc" id="conditions" required/>
+        <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions</label>
+        </div>
         <input type="submit" value="Terminer">
         </fieldset>
         </div>

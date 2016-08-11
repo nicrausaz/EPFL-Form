@@ -119,6 +119,14 @@
 a{
 	text-decoration: none;
 }
+#condDiv{
+  padding-bottom: 10px;
+}
+/*
+#condLabel{
+  
+}
+*/
 /*
 RADIOBUTTON STYLE
 */
@@ -156,9 +164,7 @@ RADIOBUTTON STYLE
   background: rgba(204, 204, 204, 0.5);
   border: 2px dotted #ccc;
 }
-.radio-list-left input[type="radio"]:focus + label, .radio-list-right input[type="radio"]:focus + label {
-  box-shadow: inset 0 0 3px #eee;
-}
+
 dl {
   max-width: 200px;
   
