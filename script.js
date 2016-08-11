@@ -55,23 +55,31 @@ $(document).ready(function () {
         var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
         var input = $("#photo");
         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-            //console.log("yolo");
-            //document.getElementsByClassName('formatErrorMsg').innerHTML = '<p class ="errorMsgs">Format invalide';
-            //alert("Format non pris en charge, Formats autorisés : "+fileExtension.join(', '));
-
+            $("#formatErrorZone1").html('<p class ="errorMsgs">Format invalide');
+        }
+    });
+    $("#idCard").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
+        var input = $("#idCard");
+        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+            $("#formatErrorZone2").html('<p class ="errorMsgs">Format invalide');
         }
     });
 
     $("#cv").change(function () {
         var fileExtension = ['pdf'];
+        var input = $("#cv");
         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+            $("formatErrorZone3").html('<p class ="errorMsgs">Format invalide');
             alert("Format non pris en charge, Formats autorisés : " + fileExtension.join(', '));
         }
     });
 
     $("#lettre").change(function () {
         var fileExtension = ['pdf'];
+        var input = $("#lettre");
         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+            $("formatErrorZone4").html('<p class ="errorMsgs">Format invalide');
             alert("Format non pris en charge, Formats autorisés : " + fileExtension.join(', '));
         }
     });
@@ -111,12 +119,6 @@ $(document).ready(function () {
             document.getElementById('errorMsg').innerHTML = '';
         }
     });
-
-    // CLICK TO ADD LINE
-    $('#addSch').click(function () {
-
-    });
-
 });
 
 //document.getElementById("uploadBtn").onchange = function () {
