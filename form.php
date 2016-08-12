@@ -2,22 +2,25 @@
 <html lang="fr">
     <head> 
     <?php include('templates/head.php');
-            ini_set("display_errors",0);error_reporting(0);
-             /////////////////
-            //TEQUILA LOGON//
-           /////////////////
-            require_once("tequila/tequila.php");
-            $oClient = new TequilaClient();
-            $oClient->SetApplicationName('Formulaire apprentissage');
-            $oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
-            $oClient->SetWishedAttributes(array('user'));
-            $oClient->SetAllowsFilter('categorie=epfl-guests');
-            $oClient->Authenticate();
-            $user = $oClient->getValue('user');
-            $firstname= $oClient->getValue('firstname');
-            $name= $oClient->getValue('name');
-            $sKey = $oClient->GetKey();
-            ?>
+
+        ini_set("display_errors",0);
+        error_reporting(0);
+
+        /////////////////
+        //TEQUILA LOGON//
+        /////////////////
+        require_once("tequila/tequila.php");
+        $oClient = new TequilaClient();
+        $oClient->SetApplicationName('Formulaire apprentissage');
+        $oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
+        $oClient->SetWishedAttributes(array('user'));
+        $oClient->SetAllowsFilter('categorie=epfl-guests');
+        $oClient->Authenticate();
+        $user = $oClient->getValue('user');
+        $firstname= $oClient->getValue('firstname');
+        $name= $oClient->getValue('name');
+        $sKey = $oClient->GetKey();
+        ?>
 
          <title>Formulaire Apprentissage</title>
     </head>
@@ -81,13 +84,13 @@
                 <option value="Femme">Femme</option>
             </select>
             
-            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name; ?>" readonly />
-            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname; ?>" readonly />
+            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name;?>" readonly />
+            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname;?>" readonly />
             <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" minlength="2" maxlength="40" required/>
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" minlength="2" maxlength="40" required/>
             <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" minlength="2" autocomplete="off" maxlength="20" required/>
             <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" autocomplete="off" minlength="2" maxlength="20" required/>
-            <input type="email" name="mailApp" id="mailApp" value="<?php echo $user; ?>" readonly />
+            <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;?>" readonly />
             <input type="date" name="birthApp" id="birthApp" required/>
             <section id="errorMsg"></section>
             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="35" required/>
@@ -172,10 +175,9 @@
                         <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>-->                    
                 </table>
-                <button id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Ajouter une ligne
                 </button>
- 
         </fieldset>
         <fieldset>
             <legend><span class="number">3.2</span> Activités professionelles</legend>
@@ -193,10 +195,9 @@
                         <td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                 </table>
-                <button id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <button type ="button" id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Ajouter une ligne
                 </button>
-
         </fieldset>
         <fieldset>
             <legend><span class="number">3.3</span> Stages</legend>
@@ -224,8 +225,10 @@
         <legend><span class="number">4</span> Annexes à fournir</legend>
         Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.<p>
 
-        <label for="photo">Photo passeport <strong>couleur:</strong></label> 
-        <label class="file" title=""><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <label for="photo">Photo passeport <strong>couleur:</strong></label>
+        <label class="file" title="" onmouseover="mOver(this)" onmouseout="mOut(this)"><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"/></label>
+        <section class="formatInd" id="formatZone1"></section>
+        <p>
         <section id="formatErrorZone1"></section>
 
         <label for="idCard">Copie carte d'indentité / passeport:</label>
@@ -233,10 +236,10 @@
         <p>
         <section id="formatErrorZone2"></section>
 
-        <label for="CV">Curriculum Vitae:</label>
+        <label for="cv">Curriculum Vitae:</label>
         <label class="file" title=""><input type="file" name="cv" id="cv" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
         <p>
-        
+        <section id="formatErrorZone3"></section>
 
         <label for="lettre">Lettre de motivation:</label>
         <label class="file" title=""><input type="file" name="lettre" id="lettre" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
@@ -258,6 +261,7 @@
         <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions</label>
         </div>
         <input type="submit" value="Terminer">
+        
         </fieldset>
         </div>
         </form>

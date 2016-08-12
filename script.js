@@ -12,6 +12,7 @@ $(document).ready(function () {
         document.location.href = "form.php";
     });
     $('#infoFilieres').click(function () {
+        console.log("WTF");
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
     $('#addSch').click(function () {
@@ -51,6 +52,7 @@ $(document).ready(function () {
     });
 
     // CHECK FILE FORMATS
+    //WORKING
     $("#photo").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
         var input = $("#photo");
@@ -58,6 +60,7 @@ $(document).ready(function () {
             $("#formatErrorZone1").html('<p class ="errorMsgs">Format invalide');
         }
     });
+    //WORKING
     $("#idCard").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
         var input = $("#idCard");
@@ -119,7 +122,11 @@ $(document).ready(function () {
             document.getElementById('errorMsg').innerHTML = '';
         }
     });
-});
 
-//document.getElementById("uploadBtn").onchange = function () {
-    //document.getElementById("uploadFile").value = this.value;
+});
+function mOver(obj) {
+    $("#formatZone1").html("Formats autorisés: ");
+}
+function mOut(obj) {
+    $("#formatZone1").html("");
+}

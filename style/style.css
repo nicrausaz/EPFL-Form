@@ -1,141 +1,161 @@
+/* CORPS */
 
-.form-style-5{
-    max-width: 910px; /*MODIFIE LA LARGEUR DU FORMULAIRE*/
-    padding: 10px 20px;
-    background: #f4f7f8;
-    margin: 10px auto;
-    padding: 20px;
-    background: #f4f7f8;
-    border-radius: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+.form-style-5 {
+  max-width: 910px; /*MODIFIE LA LARGEUR DU FORMULAIRE*/
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f4f7f8;
+  border-radius: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.form-style-5 fieldset{
-    border: none;
+
+.form-style-5 fieldset {
+  border: none;
 }
+
 .form-style-5 legend {
-    font-size: 23px;
-    margin-bottom: 10px;
-}
-.form-style-5 label {
-    display: block;
-    margin-bottom: 8px;
-}
-.form-style-5 input[type="text"],
-.form-style-5 input[type="date"],
-.form-style-5 input[type="datetime"],
-.form-style-5 input[type="email"],
-.form-style-5 input[type="number"],
-.form-style-5 input[type="search"],
-.form-style-5 input[type="time"],
-.form-style-5 input[type="url"],
-.form-style-5 input[type="tel"],
-.form-style-5 textarea,
-.form-style-5 select {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: rgba(255,255,255,.1);
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    margin: 0;
-    outline: 0;
-    padding: 7px;
-    width: 100%;
-    box-sizing: border-box; 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; 
-    background-color: #e8eeef;
-    color:#8a97a0;
-    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 30px;
-    
-}
-.form-style-5 input[type="text"]:focus,
-.form-style-5 input[type="date"]:focus,
-.form-style-5 input[type="datetime"]:focus,
-.form-style-5 input[type="email"]:focus,
-.form-style-5 input[type="number"]:focus,
-.form-style-5 input[type="search"]:focus,
-.form-style-5 input[type="time"]:focus,
-.form-style-5 input[type="url"]:focus,
-.form-style-5 input[type="tel"]:focus,
-.form-style-5 textarea:focus,
-.form-style-5 select:focus{
-    background: #d2d9dd;
-}
-.form-style-5 select{
-    -webkit-appearance: menulist-button;
-    height:35px;
-}
-.form-style-5 .number {
-    background: #e50000;
-    color: #fff;
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    font-size: 14px;
-    margin-right: 4px;
-    line-height: 30px;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-    border-radius: 15px 15px 15px 0px;
+  font-size: 23px;
+  margin-bottom: 10px;
 }
 
-.form-style-5 input[type="submit"],
-.form-style-5 input[type="button"]
-{
-    position: relative;
-    display: block;
-    padding: 19px 39px 18px 39px;
-    color: #FFF;
-    margin: 0 auto;
-    background: #e50000;
-    font-size: 18px;
-    
-    font-style: normal;
-    width: 100%;
-    border: 1px solid #e50000;
-    border-width: 1px 1px 3px;
-    margin-bottom: 10px;
+.form-style-5 label {
+  display: block;
+  margin-bottom: 8px;
 }
-.form-style-5 input[type="submit"]:hover,
-.form-style-5 input[type="button"]:hover
-{
-    background: #e50000;
+
+.form-style-5 input[type="text"], .form-style-5 input[type="date"], .form-style-5 input[type="datetime"], .form-style-5 input[type="email"], .form-style-5 input[type="number"], .form-style-5 input[type="search"], .form-style-5 input[type="time"], .form-style-5 input[type="url"], .form-style-5 input[type="tel"], .form-style-5 textarea, .form-style-5 select {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: rgba(255, 255, 255, .1);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 0;
+  outline: 0;
+  padding: 7px;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
 }
-#photoTitle{
-    text-align: center;
+
+.form-style-5 input[type="text"]:focus, .form-style-5 input[type="date"]:focus, .form-style-5 input[type="datetime"]:focus, .form-style-5 input[type="email"]:focus, .form-style-5 input[type="number"]:focus, .form-style-5 input[type="search"]:focus, .form-style-5 input[type="time"]:focus, .form-style-5 input[type="url"]:focus, .form-style-5 input[type="tel"]:focus, .form-style-5 textarea:focus, .form-style-5 select:focus {
+  background: #d2d9dd;
 }
-#FAPic{
-    padding-right: 100px;
+
+.form-style-5 select {
+  -webkit-appearance: menulist-button;
+  height: 35px;
 }
-#epflPic{
-    padding-left: 100px;
+
+.form-style-5 .number {
+  background: #e50000;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 15px 15px 15px 0px;
 }
-#incomplet{
-    color: #e50000;
-    font-size: 24px;
+
+.form-style-5 input[type="submit"], .form-style-5 input[type="button"] {
+  position: relative;
+  display: block;
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  margin: 0 auto;
+  background: #e50000;
+  font-size: 18px;
+  font-style: normal;
+  width: 100%;
+  border: 1px solid #e50000;
+  border-width: 1px 1px 3px;
+  margin-bottom: 10px;
 }
-a{
-	text-decoration: none;
+
+.form-style-5 input[type="submit"]:hover, .form-style-5 input[type="button"]:hover {
+  background: #e50000;
 }
+
+#infoFilieres {
+  font-size: 14px;
+}
+
+.paracenter {
+  text-align: center;
+  margin-top: -15px;
+}
+
+.errorMsgs {
+  margin-top: -20px;
+  color: #e50000;
+  font-size: 15px;
+  font-style: italic;
+}
+
+#photoTitle {
+  text-align: center;
+}
+
+#FAPic {
+  padding-right: 100px;
+}
+
+#epflPic {
+  padding-left: 100px;
+}
+
+#incomplet {
+  color: #e50000;
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.formatInd {
+  display: inline;
+  font-size: 15px;
+  font-style: italic;
+}
+
+
+/*
 #condDiv{
   padding-bottom: 10px;
 }
+*/
+
+
 /*
 #condLabel{
   
 }
 */
+
+
 /*
 RADIOBUTTON STYLE
 */
+
 .radio-list-left input[type="radio"], .radio-list-right input[type="radio"] {
   opacity: 0;
   float: left;
   width: 1px;
   margin: 0;
 }
+
 .radio-list-left input[type="radio"] + label, .radio-list-right input[type="radio"] + label {
   position: relative;
   margin: 0;
@@ -143,6 +163,7 @@ RADIOBUTTON STYLE
   width: 100%;
   padding: 10px;
 }
+
 .radio-list-left input[type="radio"] + label:before, .radio-list-right input[type="radio"] + label:before {
   content: "";
   position: absolute;
@@ -150,16 +171,20 @@ RADIOBUTTON STYLE
   background: #ddd;
   border: 1px solid #aaa;
 }
+
 .radio-list-left input[type="radio"]:checked + label, .radio-list-right input[type="radio"]:checked + label {
   color: #e50000;
 }
+
 .radio-list-left input[type="radio"]:checked + label:before, .radio-list-right input[type="radio"]:checked + label:before {
   background: #e50000;
   border-color: rgba(204, 204, 204, 0.5);
 }
+
 .radio-list-left input[type="radio"]:disabled + label, .radio-list-right input[type="radio"]:disabled + label {
   color: #ccc;
 }
+
 .radio-list-left input[type="radio"]:disabled + label:before, .radio-list-right input[type="radio"]:disabled + label:before {
   background: rgba(204, 204, 204, 0.5);
   border: 2px dotted #ccc;
@@ -167,18 +192,21 @@ RADIOBUTTON STYLE
 
 dl {
   max-width: 200px;
-  
 }
+
 dl dt {
   margin: 3em 0 5px;
   font-size: 18px;
 }
+
 dl dd {
   margin: 0;
 }
+
 .radio-list-left input[type="radio"] + label {
   padding-left: 50px;
 }
+
 .radio-list-left input[type="radio"] + label:before {
   height: 20px;
   width: 20px;
@@ -186,9 +214,11 @@ dl dd {
   left: 10px;
   border-radius: 100%;
 }
+
 .radio-list-right input[type="radio"] + label {
   padding-right: 50px;
 }
+
 .radio-list-right input[type="radio"] + label:before {
   height: 20px;
   width: 20px;
@@ -196,137 +226,127 @@ dl dd {
   right: 10px;
   border-radius: 100%;
 }
+
+
 /*
 INPUT FILE STYLE
 */
 
-label.file input {position:absolute; width:0; overflow:hidden; opacity:0;}
+label.file input {
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
 label.file {
-  width:0%; /* Use for fluid design */
-  min-width:300px;
-  height:30px;
-  line-height:26px!important;
-  cursor:pointer;
-  position:relative;
-  display:inline-block;
-  white-space:nowrap;
-  font-family:sans-serif;
-  text-align:right;
+  width: 0%;
+  /* Use for fluid design */
+  min-width: 300px;
+  height: 30px;
+  line-height: 26px!important;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  font-family: sans-serif;
+  text-align: right;
 }
+
 label.file:before {
-  content:"Aucun fichier choisi";
-  display:block;
-  position:absolute;
-  box-sizing:border-box;
-  width:100%;
-  height:inherit;
-  padding:0 84px 0 10px;
-  border:0px solid #e8eeef;
-  border-width:2px 0px 2px 2px;
-  background-color:#fff;
-  color:#e50000;
-  font-size:12px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  text-align:center;
+  content: "Aucun fichier choisi";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: inherit;
+  padding: 0 84px 0 10px;
+  border: 0px solid #e8eeef;
+  border-width: 2px 0px 2px 2px;
+  background-color: #fff;
+  color: #e50000;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
-label.file[title]:not([title=""]):before{
-  content:attr(title);
-  color:#e50000;
+
+label.file[title]:not([title=""]):before {
+  content: attr(title);
+  color: #e50000;
 }
+
 label.file:after {
-  content:"Choisir";
-  display:inline-block;
-  position:relative;
-  box-sizing:border-box;
-  width:74px;
-  height:inherit;
-  padding:0 4px;
-  background-color:#e50000;
-  color:#fff;
-  overflow:hidden;
-  font-size:11px;
-  font-weight:bold;
-  text-overflow:ellipsis;
-  text-align:center;
-  vertical-align:middle;
+  content: "Choisir";
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  width: 74px;
+  height: inherit;
+  padding: 0 4px;
+  background-color: #e50000;
+  color: #fff;
+  overflow: hidden;
+  font-size: 11px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  text-align: center;
+  vertical-align: middle;
 }
+
+
 /*
 MINIS BUTTONS
 */
-.indexB{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-    color: #FFF;
-    background: #e50000;
-    font-size: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 75%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-#infoFilieres{
-  font-size: 14px;
-}
-.paracenter{
-  text-align: center;
-   margin-top: -15px;
-}
-.errorMsgs{
-  margin-top: -20px;
-  color: #e50000;
-  font-size: 15px;
-  font-style: italic;
-}
+
+
 /* CHECKBOXES STYLE */
 
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
+
+[type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
 }
 
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
+[type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before {
   content: '';
   position: absolute;
-  left:0; top: 2px;
-  width: 17px; height: 17px;
+  left: 0;
+  top: 2px;
+  width: 17px;
+  height: 17px;
   border: 1px solid #aaa;
   background: #e8eeef;
   border-radius: 3px;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .3)
 }
 
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+[type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
-  top: 3px; left: 4px;
+  top: 3px;
+  left: 4px;
   font-size: 18px;
   line-height: 0.8;
   color: #e50000;
   transition: all .2s;
 }
+
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
+
 [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1);
 }
+
 label:hover:before {
   border: 1px solid #e50000 !important;
 }
