@@ -19,7 +19,11 @@
         echo $connLing;
        */
           //get apprenti's infos
-          $allInfos = [$_POST['job'],$_POST['mpt'],$_POST['genreApp'],$_POST['nameApp'],$_POST['surnameApp'],$_POST['adrApp'],$_POST['NPAApp'],$_POST['telApp'],$_POST['phoneApp'],$_POST['mailApp'],$_POST['birthApp'],$_POST['originApp'],$_POST['nationApp'],$_POST['langApp']];
+          $apprentiInfos = [$_POST['job'],$_POST['mpt'],$_POST['genreApp'],$_POST['nameApp'],$_POST['surnameApp'],$_POST['adrApp'],$_POST['NPAApp'],$_POST['telApp'],$_POST['phoneApp'],$_POST['mailApp'],$_POST['birthApp'],$_POST['originApp'],$_POST['nationApp'],$_POST['langApp']];
+          $major = $_POST['maj'];
+          if($major=="maj-non"){
+             $respInfos = [$_POST['nameRep1'],$_POST['surnameRep1'],$_POST['adrRep1'],$_POST['NPARep1'],$_POST['telRep1'],$_POST['nameRep2'],$_POST['surnameRep2'],$_POST['adrRep2'],$_POST['NPARep2'],$_POST['telRep2']];
+          }else{}
    
         //Tri des apprentis par métier
         $name = $_POST['nameApp'];
@@ -32,31 +36,31 @@
             if($job=="polyM") {
                 //echo "Polymec"; 
                 $path = $rootpath.'Polymecaniciens/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$allInfos);
+                createThings($path,$name,$surname,$apprentiInfos,$respInfos);
             }else if($job=="info"){
                 //echo "informaticien";
-                $allInfos[1] =  $_POST['filInfo'];
+                $apprentiInfos[1] =  $_POST['filInfo'];
                 $path = $rootpath.'Informaticiens/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$allInfos);
+                createThings($path,$name,$surname,$apprentiInfos,$respInfos);
             }else if($job=="logi"){
                 //echo "Logisticiens";
                 $path = $rootpath.'Logisticiens/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$allInfos);
+                createThings($path,$name,$surname,$apprentiInfos,$respInfos);
             }else if($job=="planElec"){
                 //echo "Planif Elec";
                 $path = $rootpath.'PlanificateurElectriciens/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$allInfos);
+                createThings($path,$name,$surname,$apprentiInfos,$respInfos);
             }else if($job=="empCom"){
                 //echo "EmployesCommerce";
                 $path = $rootpath.'EmployesCommerce/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$allInfos);
+                createThings($path,$name,$surname,$apprentiInfos,$respInfos);
             }else if($job=="gardAn"){
                 //echo "GardiensAnimaux";
                 $path = $rootpath.'GardiensAnimaux/'."new-".$name.$surname.'/';
-                createThings($path,$name,$surname,$allInfos);
+                createThings($path,$name,$surname,$apprentiInfos,$respInfos);
             }   
             
-            function createThings($path,$name,$surname,$allInfos){
+            function createThings($path,$name,$surname,$apprentiInfos,$respInfos){
                 //create apprenti's folders
                     $pathInfos = $path."informations/";
                     $pathAnnexes = $path."annexes/";
@@ -77,7 +81,8 @@
                     }
                 //Put infos in CSV File
                     $fp = fopen("$pathInfos/infos.csv", "w");
-                    fputcsv($fp, $allInfos);
+                    fputcsv($fp, $apprentiInfos);
+                    fputcsv($fp, $respInfos);
                     fclose($fp);
 
                     //Photo upload

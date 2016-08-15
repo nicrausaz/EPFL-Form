@@ -151,7 +151,6 @@
         <legend><span class="number">3</span> Activités</legend>
         <fieldset>
             <legend><span class="number">3.1</span> Scolarité</legend>
-                <input type="text" name="anneeFin" placeholder="Année de fin de scolarité*" autocomplete="off"/>
                 <table id="scolaire">
                     <tr>
                         <td><input type="text" name="ecole1" placeholder="Ecole" autocomplete="off"/></td>
@@ -175,6 +174,7 @@
                         <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>-->                    
                 </table>
+                <input type="text" name="anneeFin" placeholder="Année de fin de scolarité*" autocomplete="off"/>
                 <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Ajouter une ligne
                 </button>
@@ -224,25 +224,29 @@
         </fieldset>
         <legend><span class="number">4</span> Annexes à fournir</legend>
         Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.<p>
-
-        <label for="photo">Photo passeport <strong>couleur:</strong></label>
-        <label class="file" title="" onmouseover="mOver(this)" onmouseout="mOut(this)"><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"/></label>
-        <section class="formatInd" id="formatZone1"></section>
         <p>
+        <label for="photo">Photo passeport <strong>couleur:</strong></label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone1)" onmouseout="mOut(this,formatZone1)"><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"/></label>
+        <p>
+        <section class="formatInd" id="formatZone1"></section>
+        
         <section id="formatErrorZone1"></section>
 
         <label for="idCard">Copie carte d'indentité / passeport:</label>
-        <label class="file" title=""><input type="file" name="idCard" id="idCard" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone2)" onmouseout="mOut(this,formatZone2)"><input type="file" name="idCard" id="idCard" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatInd" id="formatZone2"></section>
         <p>
         <section id="formatErrorZone2"></section>
 
         <label for="cv">Curriculum Vitae:</label>
-        <label class="file" title=""><input type="file" name="cv" id="cv" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone3)" onmouseout="mOut(this,formatZone3)"><input type="file" name="cv" id="cv" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatInd" id="formatZone3"></section>
         <p>
         <section id="formatErrorZone3"></section>
 
         <label for="lettre">Lettre de motivation:</label>
-        <label class="file" title=""><input type="file" name="lettre" id="lettre" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone4)" onmouseout="mOut(this,formatZone4)"><input type="file" name="lettre" id="lettre" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatInd" id="formatZone4"></section>
         <p>
         <section id="formatErrorZone4"></section>
         <!-- BULLETINS NOTES --> <!--TOGET-->
@@ -251,7 +255,8 @@
 
         <div id="polyOnly">
         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
-        <label class="file" title=""><input type="file" name="gimch" id="gimch" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone5)" onmouseout="mOut(this,formatZone5)"><input type="file" name="gimch" id="gimch" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatInd" id="formatZone5"></section>
         <section id="formatErrorZone5"></section>
         </div> 
         </fieldset> 
@@ -260,6 +265,7 @@
         <input type="checkbox" value="conditionsAcc" id="conditions" required/>
         <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions</label>
         </div>
+        <p>
         <input type="submit" value="Terminer">
         
         </fieldset>
@@ -267,17 +273,4 @@
         </form>
         </div>
     </body>
-    <script>
-    //
-    //
-    /*function changeInFileTitle(){
-        this.setAttribute('title', this.value.replace(/^.*[\\/]/, '')) //not working for now in a function
-    }*/
-    /*function getTodayDate(){
-
-    }*/
-       /* function addLpro(){
-            //ajouter une ligne par clic
-        }*/
-    </script>
 </html>

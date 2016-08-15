@@ -6,7 +6,6 @@
 $(document).ready(function () {
     $('#createAc').click(function () {
         window.open("https://guests.epfl.ch/", '_blank');
-
     });
     $('#connectB').click(function () {
         document.location.href = "form.php";
@@ -16,10 +15,10 @@ $(document).ready(function () {
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
     $('#addSch').click(function () {
-        alert("I'm gonna add mate 1");
+        //
     });
     $('#addPro').click(function () {
-        alert("I'm gonna add mate 2");
+        //
     });
 
 });
@@ -124,9 +123,9 @@ $(document).ready(function () {
     });
 
 });
-function mOver(obj) {
-    $("#formatZone1").html("Formats autorisés: ");
+function mOver(obj,zone) {
+    $(zone).html("Formats autorisés: ");
 }
-function mOut(obj) {
-    $("#formatZone1").html("");
+function mOut(obj,zone) {
+    $(zone).html("");
 }

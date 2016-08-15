@@ -11,7 +11,7 @@
     <?php include('templates/header.php') ?>
         <p class="paracenter">Veuillez suivre les indications suivantes
 
-            <h3>Créer un compte temporaire</h3>
+            <h2>Créer un compte temporaire</h2>
             Cliquer sur le bouton créer un compte.</p>
         Sur la page ouverte, cliquer sur "Créer un compte pour personnes externes."</p>
         Remplir les champs et confirmer (pour le champ Organisation, entrer "Postulation Apprentis").</p>
@@ -23,7 +23,7 @@
 
         <!--<a href="https://guests.epfl.ch/" target="_blank" class="indexB">Créer un compte</a>-->
 
-        <h3>Se connecter et remplir le formulaire</h3>
+        <h2>Se connecter et remplir le formulaire</h2>
         Cliquer sur le bouton se connecter.</p>
         Entrer vos informations de compte temporaires.</p>
         Lorsque la connexion sera effectuée, vous serez rediriger vers le formulaire.</p>
