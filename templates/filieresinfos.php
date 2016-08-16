@@ -18,6 +18,6 @@
    <label for="fill4">Je ne sais pas</label>
 </dd>
 </dl>
-<button id="infoFilieres" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+<button type="button" id="infoFilieres" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
     Infos sur les filières
 </button>

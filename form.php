@@ -3,37 +3,22 @@
     <head> 
     <?php include('templates/head.php');
 
-
-ini_set("display_errors",0);
-
-error_reporting(0);
-
-
-/////////////////
-//TEQUILA LOGON//
-/////////////////
-require_once("tequila/tequila.php");
-
-$oClient = new TequilaClient();
-
-$oClient->SetApplicationName('Formulaire apprentissage');
-
-$oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
-
-$oClient->SetWishedAttributes(array('user'));
-
-$oClient->SetAllowsFilter('categorie=epfl-guests');
-
-$oClient->Authenticate();
-
-$user = $oClient->getValue('user');
-
-$firstname= $oClient->getValue('firstname');
-
-$name= $oClient->getValue('name');
-
-$sKey = $oClient->GetKey();
-
+        ini_set("display_errors",0);
+        error_reporting(0);
+        /////////////////
+        //TEQUILA LOGON//
+        /////////////////
+        require_once("tequila/tequila.php");
+        $oClient = new TequilaClient();
+        $oClient->SetApplicationName('Formulaire apprentissage');
+        $oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
+        $oClient->SetWishedAttributes(array('user'));
+        $oClient->SetAllowsFilter('categorie=epfl-guests');
+        $oClient->Authenticate();
+        $user = $oClient->getValue('user');
+        $firstname= $oClient->getValue('firstname');
+        $name= $oClient->getValue('name');
+        $sKey = $oClient->GetKey();
 ?>
 
          <title>Formulaire Apprentissage</title>
@@ -98,16 +83,13 @@ $sKey = $oClient->GetKey();
                 <option value="Femme">Femme</option>
             </select>
             
-            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name;
-?>" readonly />
-            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname;
-?>" readonly />
+            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name;?>" readonly />
+            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname;?>" readonly />
             <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" minlength="2" maxlength="40" required/>
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" minlength="2" maxlength="40" required/>
             <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" minlength="2" autocomplete="off" maxlength="20" required/>
             <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" autocomplete="off" minlength="2" maxlength="20" required/>
-            <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;
-?>" readonly />
+            <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;?>" readonly />
             <input type="date" name="birthApp" id="birthApp" required/>
             <section id="errorMsg"></section>
             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="35" required/>
@@ -274,15 +256,18 @@ $sKey = $oClient->GetKey();
         <section class="formatInd" id="formatZone4"></section>
         <p>
         <section id="formatErrorZone4"></section>
-        <!-- BULLETINS NOTES --> <!--TOGET-->
-
-        <!-- CERTIFICATS --><!--TOGET-->
+        <!-- Dossier annexes --> <!--TOGET-->
+        <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres, dans un dossier compressé:</label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone4)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatInd" id="formatZone5"></section>
+        <p>
+        <section id="formatErrorZone5"></section>
 
         <div id="polyOnly">
         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
-        <label class="file" title="" onmouseover="mOver(this,formatZone5,'jpg-jpeg-png-pdf')" onmouseout="mOut(this,formatZone5)"><input type="file" name="gimch" id="gimch" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
-        <section class="formatInd" id="formatZone5"></section>
-        <section id="formatErrorZone5"></section>
+        <label class="file" title="" onmouseover="mOver(this,formatZone6,'jpg-jpeg-png-pdf')" onmouseout="mOut(this,formatZone5)"><input type="file" name="gimch" id="gimch" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <section class="formatInd" id="formatZone6"></section>
+        <section id="formatErrorZone6"></section>
         </div> 
         </fieldset> 
         <fieldset>
