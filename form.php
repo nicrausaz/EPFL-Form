@@ -182,17 +182,12 @@
             <table id="activites">
                     <tr>
                         <td><input type="text" name="employeur1" placeholder="Employeur" autocomplete="off"/></td>
-                        <td><input type="text" name="lieu4" placeholder="Lieu" autocomplete="off"/></td>
+                        <td><input type="text" name="lieu6" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="activite1" placeholder="Activité" autocomplete="off"/></td>
-                        <td><input type="text" name="annees4" placeholder="de-à(années)" autocomplete="off"/></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="employeur2" placeholder="Employeur" autocomplete="off"/></td>
-                        <td><input type="text" name="lieu5" placeholder="Lieu" autocomplete="off"/></td>
-                        <td><input type="text" name="activite1" placeholder="Activité" autocomplete="off"/></td>
-                        <td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td>
+                        <td><input type="text" name="annees6" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                 </table>
+                
                 <button type ="button" id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Ajouter une ligne
                 </button>

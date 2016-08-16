@@ -4,28 +4,41 @@
 
 // INDEX.PHP BUTTONS ACTIONS
 $(document).ready(function () {
+    //Create account link
     $('#createAc').click(function () {
         window.open("https://guests.epfl.ch/", '_blank');
     });
+    //Form link
     $('#connectB').click(function () {
         document.location.href = "form.php";
     });
+    // ICT link
     $('#infoFilieres').click(function () {
-        console.log("WTF");
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
+    //Add line to school
     i = 1;
     $('#addSch').click(function () {
-        //document.getElementById('test').innerHTML += '<br>Some new content!';
+        if(i == 1){
         document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole4" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieu4" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveau4" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="annees4" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+        }
         i++;
         if (i == 3) {
             document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole5" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieu5" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveau5" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
             $('#addSch').hide(750);
         }
     });
+    //Add line to professionnel
+    y = 1;
     $('#addPro').click(function () {
-        console.log("add2");
+        if(y == 1){
+        document.getElementById('activites').innerHTML += '<tr><td><input type="text" name="employeur2" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieu7" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activite2" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="annees7" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+        }
+        y++;
+        if (y == 3) {
+            document.getElementById('activites').innerHTML += '<tr><td><input type="text" name="employeur3" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieu8" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activite3" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="annees8" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+            $('#addPro').hide(750);
+        }
     });
 
 });
