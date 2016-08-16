@@ -163,8 +163,8 @@ $(document).ready(function () {
     });
 
 });
-function mOver(obj, zone) {
-    $(zone).html("Formats autorisés: ");
+function mOver(obj, zone, formats) {
+    $(zone).html("Formats autorisés: "+ formats);
 }
 function mOut(obj, zone) {
     $(zone).html("");

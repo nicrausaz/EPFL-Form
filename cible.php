@@ -205,13 +205,14 @@
                     else{
                         echo $erreur;
                     }
+
                     /*
+                    //GIM-CH upload
                     $dossier = $pathAnnexes;
                     $fichier = basename($_FILES['photo']['name']);
-                    $extensions = array('.jpg','.jpeg','.png');
+                    $extensions = array('.jpg','.jpeg','.png','.pdf');
                     $extension = strrchr($_FILES['photo']['name'], '.'); 
                     
-                    //GIM-CH upload
                     if(!in_array($extension, $extensions)){
                         $erreur = 'Vous devez uploader un fichier de type JPG/JPEG ou PNG';
                         //$noError = false;
