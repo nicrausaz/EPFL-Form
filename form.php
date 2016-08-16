@@ -3,24 +3,38 @@
     <head> 
     <?php include('templates/head.php');
 
-        ini_set("display_errors",0);
-        error_reporting(0);
 
-        /////////////////
-        //TEQUILA LOGON//
-        /////////////////
-        require_once("tequila/tequila.php");
-        $oClient = new TequilaClient();
-        $oClient->SetApplicationName('Formulaire apprentissage');
-        $oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
-        $oClient->SetWishedAttributes(array('user'));
-        $oClient->SetAllowsFilter('categorie=epfl-guests');
-        $oClient->Authenticate();
-        $user = $oClient->getValue('user');
-        $firstname= $oClient->getValue('firstname');
-        $name= $oClient->getValue('name');
-        $sKey = $oClient->GetKey();
-        ?>
+ini_set("display_errors",0);
+
+error_reporting(0);
+
+
+/////////////////
+//TEQUILA LOGON//
+/////////////////
+require_once("tequila/tequila.php");
+
+$oClient = new TequilaClient();
+
+$oClient->SetApplicationName('Formulaire apprentissage');
+
+$oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
+
+$oClient->SetWishedAttributes(array('user'));
+
+$oClient->SetAllowsFilter('categorie=epfl-guests');
+
+$oClient->Authenticate();
+
+$user = $oClient->getValue('user');
+
+$firstname= $oClient->getValue('firstname');
+
+$name= $oClient->getValue('name');
+
+$sKey = $oClient->GetKey();
+
+?>
 
          <title>Formulaire Apprentissage</title>
     </head>
@@ -84,13 +98,16 @@
                 <option value="Femme">Femme</option>
             </select>
             
-            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name;?>" readonly />
-            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname;?>" readonly />
+            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name;
+?>" readonly />
+            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname;
+?>" readonly />
             <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" minlength="2" maxlength="40" required/>
             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" minlength="2" maxlength="40" required/>
             <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" minlength="2" autocomplete="off" maxlength="20" required/>
             <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" autocomplete="off" minlength="2" maxlength="20" required/>
-            <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;?>" readonly />
+            <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;
+?>" readonly />
             <input type="date" name="birthApp" id="birthApp" required/>
             <section id="errorMsg"></section>
             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="35" required/>
@@ -213,6 +230,19 @@
             <button type ="button" id="addStage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                 Ajouter une ligne
             </button>
+            <p>
+            Avez-vous déjà été candidat à l'EPFL?
+            <dl class="radio-list-left">
+            <dd>
+                <input type="radio" name="dejaCand" id="dejaCand1" value="dejaCand-non" checked="checked">
+                <label for="dejaCand1">Non</label>
+            </dd>
+            <dd>
+                <input type="radio" name="dejaCand" id="dejaCand2" value="dejaCand-oui">
+                <label for="dejaCand2">Oui</label>
+            </dd>
+            </dl>
+            <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature">
         </fieldset>
         <!-- ANNEXES-->
         <fieldset>
