@@ -242,7 +242,7 @@ $sKey = $oClient->GetKey();
                 <label for="dejaCand2">Oui</label>
             </dd>
             </dl>
-            <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature">
+            <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature" maxlength="4"/>
         </fieldset>
         <!-- ANNEXES-->
         <fieldset>
@@ -292,7 +292,6 @@ $sKey = $oClient->GetKey();
         </div>
         <p>
         <input type="submit" value="Terminer">
-        
         </fieldset>
         </div>
         </form>

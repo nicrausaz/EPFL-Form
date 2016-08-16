@@ -133,11 +133,12 @@ $(document).ready(function () {
 
     $("#dejaCand1").change(function () {
         $("#dejaCandAnnee").hide(750);
+        $("#dejaCandAnnee").val("");
     });
     $("#dejaCand2").change(function () {
         $("#dejaCandAnnee").show(750);
     });
-    
+
 
     // CHECK DATE INPUT
     $("#birthApp").change(function () {
@@ -164,7 +165,7 @@ $(document).ready(function () {
 
 });
 function mOver(obj, zone, formats) {
-    $(zone).html("Formats autorisés: "+ formats);
+    $(zone).html("Formats autorisés: " + formats);
 }
 function mOut(obj, zone) {
     $(zone).html("");
