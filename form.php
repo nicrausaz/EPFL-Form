@@ -156,19 +156,19 @@
                         <td><input type="text" name="ecole1" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieuEcole1" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveauEcole1" placeholder="Niveau" autocomplete="off"/></td>
-                        <td><input type="text" name="anneesEcole1" placeholder="de-à(années)" autocomplete="off"/></td>  
+                        <td><input type="text" name="anneesEcole1" placeholder="de-à (années)" autocomplete="off"/></td>  
                     </tr>
                     <tr>
                         <td><input type="text" name="ecole2" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieuEcole2" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveauEcole2" placeholder="Niveau" autocomplete="off"/></td>
-                        <td><input type="text" name="anneesEcole2" placeholder="de-à(années)" autocomplete="off"/></td>
+                        <td><input type="text" name="anneesEcole2" placeholder="de-à (années)" autocomplete="off"/></td>
                     </tr>
                      <tr>
                         <td><input type="text" name="ecole3" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieuEcole3" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveauEcole3" placeholder="Niveau" autocomplete="off"/></td>
-                        <td><input type="text" name="anneesEcole3" placeholder="de-à(années)" autocomplete="off"/></td>
+                        <td><input type="text" name="anneesEcole3" placeholder="de-à (années)" autocomplete="off"/></td>
                     </tr>
                     </table>
 
@@ -186,33 +186,33 @@
                         <td><input type="text" name="employeurPro1" placeholder="Employeur" autocomplete="off"/></td>
                         <td><input type="text" name="lieuPro1" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="activitePro1" placeholder="Activité" autocomplete="off"/></td>
-                        <td><input type="text" name="anneesPro1" placeholder="de-à(années)" autocomplete="off"/></td>
+                        <td><input type="text" name="anneesPro1" placeholder="de-à (années)" autocomplete="off"/></td>
                     </tr>
                 </table>
-
                 <button type ="button" id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Ajouter une ligne
                 </button>
         </fieldset>
         <fieldset>
             <legend><span class="number">3.3</span> Stages</legend>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>                
-            </tr>
-            <tr>
-                 <td></td>
-                <td></td>
-                <td></td>
-                <td></td>  
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <!--<td><input type="button" id="addStage" value="Ajouter une ligne" class="indexB"/></td>-->
+            <table id="stages">
+                <tr>
+                    <td><input type="text" name="activiteStage1" placeholder="Métier" autocomplete="off"></td>
+                    <td><input type="text" name="entrepriseStage1" placeholder="Entreprise" autocomplete="off"></td>                
+                </tr>
+                <tr>
+                    <td><input type="text" name="activiteStage2" placeholder="Métier" autocomplete="off"></td>
+                    <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <button type ="button" id="addStage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Ajouter une ligne
+            </button>
         </fieldset>
         <!-- ANNEXES-->
         <fieldset>
