@@ -158,23 +158,21 @@
                         <td><input type="text" name="niveau1" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees1" placeholder="de-à(années)" autocomplete="off"/></td>  
                     </tr>
-                    <section id="test">
-                    </section>
-                    <!--
-                    <tr id="lSch1">
+                    <tr>
                         <td><input type="text" name="ecole2" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieu2" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveau2" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees2" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
-                     <tr id="lSch2">
+                     <tr>
                         <td><input type="text" name="ecole3" placeholder="Ecole" autocomplete="off"/></td>
                         <td><input type="text" name="lieu3" placeholder="Lieu" autocomplete="off"/></td>
                         <td><input type="text" name="niveau3" placeholder="Niveau" autocomplete="off"/></td>
                         <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
-                    </tr>-->                    
-                </table>
-                <input type="text" name="anneeFin" placeholder="Année de fin de scolarité*" autocomplete="off"/>
+                    </tr>
+                    </table>
+
+                <input type="text" name="anneeFin" placeholder="Année de fin de scolarité" autocomplete="off"/>
                 <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Ajouter une ligne
                 </button>
@@ -222,7 +220,7 @@
         <!-- ANNEXES-->
         <fieldset>
         </fieldset>
-        <legend><span class="number">4</span> Annexes à fournir</legend>
+        <legend><span class="number">4</span> Annexes </legend>
         Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.<p>
         <p>
         <label for="photo">Photo passeport <strong>couleur:</strong></label>

@@ -14,11 +14,18 @@ $(document).ready(function () {
         console.log("WTF");
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
+    i = 1;
     $('#addSch').click(function () {
-        //
+        //document.getElementById('test').innerHTML += '<br>Some new content!';
+        document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole4" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieu4" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveau4" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="annees4" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+        i++;
+        if (i == 3) {
+            document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole5" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieu5" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveau5" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+            $('#addSch').hide(750);
+        }
     });
     $('#addPro').click(function () {
-        //
+        console.log("add2");
     });
 
 });
@@ -123,9 +130,9 @@ $(document).ready(function () {
     });
 
 });
-function mOver(obj,zone) {
+function mOver(obj, zone) {
     $(zone).html("Formats autorisés: ");
 }
-function mOut(obj,zone) {
+function mOut(obj, zone) {
     $(zone).html("");
 }
