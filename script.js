@@ -20,11 +20,11 @@ $(document).ready(function () {
     i = 1;
     $('#addSch').click(function () {
         if(i == 1){
-        document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole4" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieu4" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveau4" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="annees4" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+        document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole4" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieuEcole4" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveauEcole4" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="anneesEcole4" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
         }
         i++;
         if (i == 3) {
-            document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole5" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieu5" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveau5" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="annees5" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+            document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole5" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieuEcole5" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveauEcole5" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="anneesEcole5" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
             $('#addSch').hide(750);
         }
     });
@@ -32,11 +32,11 @@ $(document).ready(function () {
     y = 1;
     $('#addPro').click(function () {
         if(y == 1){
-        document.getElementById('activites').innerHTML += '<tr><td><input type="text" name="employeur2" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieu7" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activite2" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="annees7" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+        document.getElementById('activites').innerHTML += '<tr><td><input type="text" name="employeurPro2" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro2" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro2" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro2" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
         }
         y++;
         if (y == 3) {
-            document.getElementById('activites').innerHTML += '<tr><td><input type="text" name="employeur3" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieu8" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activite3" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="annees8" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+            document.getElementById('activites').innerHTML += '<tr><td><input type="text" name="employeurPro3" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro3" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro3" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro3" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
             $('#addPro').hide(750);
         }
     });

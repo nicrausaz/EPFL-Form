@@ -154,21 +154,21 @@
                 <table id="scolaire">
                     <tr>
                         <td><input type="text" name="ecole1" placeholder="Ecole" autocomplete="off"/></td>
-                        <td><input type="text" name="lieu1" placeholder="Lieu" autocomplete="off"/></td>
-                        <td><input type="text" name="niveau1" placeholder="Niveau" autocomplete="off"/></td>
-                        <td><input type="text" name="annees1" placeholder="de-à(années)" autocomplete="off"/></td>  
+                        <td><input type="text" name="lieuEcole1" placeholder="Lieu" autocomplete="off"/></td>
+                        <td><input type="text" name="niveauEcole1" placeholder="Niveau" autocomplete="off"/></td>
+                        <td><input type="text" name="anneesEcole1" placeholder="de-à(années)" autocomplete="off"/></td>  
                     </tr>
                     <tr>
                         <td><input type="text" name="ecole2" placeholder="Ecole" autocomplete="off"/></td>
-                        <td><input type="text" name="lieu2" placeholder="Lieu" autocomplete="off"/></td>
-                        <td><input type="text" name="niveau2" placeholder="Niveau" autocomplete="off"/></td>
-                        <td><input type="text" name="annees2" placeholder="de-à(années)" autocomplete="off"/></td>
+                        <td><input type="text" name="lieuEcole2" placeholder="Lieu" autocomplete="off"/></td>
+                        <td><input type="text" name="niveauEcole2" placeholder="Niveau" autocomplete="off"/></td>
+                        <td><input type="text" name="anneesEcole2" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                      <tr>
                         <td><input type="text" name="ecole3" placeholder="Ecole" autocomplete="off"/></td>
-                        <td><input type="text" name="lieu3" placeholder="Lieu" autocomplete="off"/></td>
-                        <td><input type="text" name="niveau3" placeholder="Niveau" autocomplete="off"/></td>
-                        <td><input type="text" name="annees3" placeholder="de-à(années)" autocomplete="off"/></td>
+                        <td><input type="text" name="lieuEcole3" placeholder="Lieu" autocomplete="off"/></td>
+                        <td><input type="text" name="niveauEcole3" placeholder="Niveau" autocomplete="off"/></td>
+                        <td><input type="text" name="anneesEcole3" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                     </table>
 
@@ -179,15 +179,17 @@
         </fieldset>
         <fieldset>
             <legend><span class="number">3.2</span> Activités professionelles</legend>
+            Formations / apprentissages aprés la scolarité.
+            <p>
             <table id="activites">
                     <tr>
-                        <td><input type="text" name="employeur1" placeholder="Employeur" autocomplete="off"/></td>
-                        <td><input type="text" name="lieu6" placeholder="Lieu" autocomplete="off"/></td>
-                        <td><input type="text" name="activite1" placeholder="Activité" autocomplete="off"/></td>
-                        <td><input type="text" name="annees6" placeholder="de-à(années)" autocomplete="off"/></td>
+                        <td><input type="text" name="employeurPro1" placeholder="Employeur" autocomplete="off"/></td>
+                        <td><input type="text" name="lieuPro1" placeholder="Lieu" autocomplete="off"/></td>
+                        <td><input type="text" name="activitePro1" placeholder="Activité" autocomplete="off"/></td>
+                        <td><input type="text" name="anneesPro1" placeholder="de-à(années)" autocomplete="off"/></td>
                     </tr>
                 </table>
-                
+
                 <button type ="button" id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Ajouter une ligne
                 </button>
