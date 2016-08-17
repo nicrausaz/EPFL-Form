@@ -225,6 +225,7 @@
             </dd>
             </dl>
             <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature" maxlength="4"/>
+            <section id="dejaCandError"></section>
         </fieldset>
         <!-- ANNEXES-->
         <fieldset>
@@ -268,7 +269,7 @@
         <label class="file" title="" onmouseover="mOver(this,formatZone6,'jpg-jpeg-png-pdf')" onmouseout="mOut(this,formatZone5)"><input type="file" name="gimch" id="gimch" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
         <section class="formatInd" id="formatZone6"></section>
         <section id="formatErrorZone6"></section>
-        </div> 
+        </div>
         </fieldset> 
         <fieldset>
         <div id="condDiv">

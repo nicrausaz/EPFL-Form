@@ -134,6 +134,7 @@ $(document).ready(function () {
     $("#dejaCand1").change(function () {
         $("#dejaCandAnnee").hide(750);
         $("#dejaCandAnnee").val("");
+        $("#dejaCandError").html("");
     });
     $("#dejaCand2").change(function () {
         $("#dejaCandAnnee").show(750);
@@ -162,6 +163,15 @@ $(document).ready(function () {
             document.getElementById('errorMsg').innerHTML = '';
         }
     });
+     $("#dejaCandAnnee").change(function () {
+         
+         var currentYear = (new Date).getFullYear();
+         if(currentYear < $("#dejaCandAnnee").val()){
+             $("#dejaCandError").html('<p class ="errorMsgs">Date invalide');
+         }else{
+             $("#dejaCandError").html("");
+         }
+         });
 
 });
 function mOver(obj, zone, formats) {
