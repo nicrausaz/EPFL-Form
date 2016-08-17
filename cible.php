@@ -78,16 +78,39 @@
                 //Get infos
                 $major = $_POST['maj'];
                 if($major=="maj-non"){
-                    $respInfos = [$_POST['nameRep1'],$_POST['surnameRep1'],$_POST['adrRep1'],$_POST['NPARep1'],$_POST['telRep1'],$_POST['nameRep2'],$_POST['surnameRep2'],$_POST['adrRep2'],$_POST['NPARep2'],$_POST['telRep2']];
-                }else{}
-                $schoolActivites = [$_POST['ecole1'],$_POST['lieuEcole1'],$_POST['niveauEcole1'],$_POST['anneesEcole1'],$_POST['ecole2'],$_POST['lieuEcole2'],$_POST['niveauEcole2'],$_POST['anneesEcole2'],$_POST['ecole3'],$_POST['lieuEcole3'],$_POST['niveauEcole3'],$_POST['anneesEcole3'],
-                $_POST['ecole4'],$_POST['lieuEcole4'],$_POST['niveauEcole4'],$_POST['anneesEcole4'],$_POST['ecole5'],$_POST['lieuEcole5'],$_POST['niveauEcole5'],$_POST['anneesEcole5'],$_POST['anneeFin']];
+                    $respInfos = [$_POST['nameRep1'],$_POST['surnameRep1'],$_POST['adrRep1'],$_POST['NPARep1'],$_POST['telRep1'],
+                    $_POST['nameRep2'],$_POST['surnameRep2'],$_POST['adrRep2'],$_POST['NPARep2'],$_POST['telRep2']];
+                }else{
+                    $respInfos = $major;
+                }
 
+                $schoolActivites = [$_POST['ecole1'],$_POST['lieuEcole1'],$_POST['niveauEcole1'],$_POST['anneesEcole1'],
+                $_POST['ecole2'],$_POST['lieuEcole2'],$_POST['niveauEcole2'],$_POST['anneesEcole2'],
+                $_POST['ecole3'],$_POST['lieuEcole3'],$_POST['niveauEcole3'],$_POST['anneesEcole3'],
+                $_POST['ecole4'],$_POST['lieuEcole4'],$_POST['niveauEcole4'],$_POST['anneesEcole4'],
+                $_POST['ecole5'],$_POST['lieuEcole5'],$_POST['niveauEcole5'],$_POST['anneesEcole5'],$_POST['anneeFin']];
+
+                $proActivites = [$_POST['employeurPro1'],$_POST['lieuPro1'],$_POST['activitePro1'],$_POST['anneesPro1'],
+                $_POST['employeurPro2'],$_POST['lieuPro2'],$_POST['activitePro2'],$_POST['anneesPro2'],
+                $_POST['employeurPro3'],$_POST['lieuPro3'],$_POST['activitePro3'],$_POST['anneesPro3']];
+
+                $stagesActivites = [$_POST['activiteStage1'],$_POST['entrepriseStage1'],$_POST['activiteStage2'],$_POST['entrepriseStage2'],
+                $_POST['activiteStage3'],$_POST['entrepriseStage3'],$_POST['activiteStage4'],$_POST['entrepriseStage4']];
+
+                $dejaCand = $_POST['dejaCand'];
+                if($dejaCand =="dejaCand-oui"){
+                    $candYear = [$dejaCand,$_POST['dejaCandAnnee']];
+                }else{
+                    $candYear = $dejaCand;
+                }
                 //Put infos in CSV File
                     $fp = fopen("$pathInfos/infos.csv", "w");
                     fputcsv($fp, $apprentiInfos);
                     fputcsv($fp, $respInfos);
                     fputcsv($fp, $schoolActivites);
+                    fputcsv($fp, $proActivites);
+                    fputcsv($fp, $stagesActivites);
+                    fputcsv($fp, $candYear);
                     fclose($fp);
 
                     //Photo upload
@@ -231,7 +254,6 @@
                         {
                             echo 'Upload réussi';
                             $noError = true;
-                            
                         }
                         else{
                             echo 'Echec de l\'upload gim-ch!';
