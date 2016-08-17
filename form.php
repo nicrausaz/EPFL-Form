@@ -238,37 +238,38 @@
         <label class="file" title="" onmouseover="mOver(this,formatZone1,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone1)"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)"/></label>
         <section class="formatInd" id="formatZone1"></section>
         <p>
-        <section id="formatErrorZone1"></section>
+        <section id="formatErrorZone1">ERROR</section>
 
         <label for="idCard">Copie carte d'indentité / passeport:</label>
         <label class="file" title="" onmouseover="mOver(this,formatZone2,'pdf')" onmouseout="mOut(this,formatZone2)"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" /></label>
         <section class="formatInd" id="formatZone2"></section>
         <p>
-        <section id="formatErrorZone2"></section>
+        <section id="formatErrorZone2">ERROR</section>
 
         <label for="cv">Curriculum Vitae:</label>
         <label class="file" title="" onmouseover="mOver(this,formatZone3,'pdf')" onmouseout="mOut(this,formatZone3)"><input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" /></label>
         <section class="formatInd" id="formatZone3"></section>
-        <p>
+        </p>
         <section id="formatErrorZone3"></section>
+        </p>
 
         <label for="lettre">Lettre de motivation:</label>
         <label class="file" title="" onmouseover="mOver(this,formatZone4,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone4)"><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" /></label>
         <section class="formatInd" id="formatZone4"></section>
         <p>
-        <section id="formatErrorZone4"></section>
+        <section id="formatErrorZone4">ERROR</section>
         <!-- Dossier annexes --> <!--TOGET-->
         <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres, dans un dossier compressé:</label>
         <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
         <section class="formatInd" id="formatZone5"></section>
         <p>
-        <section id="formatErrorZone5"></section>
+        <section id="formatErrorZone5">ERROR</section>
 
         <div id="polyOnly">
         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
         <label class="file" title="" onmouseover="mOver(this,formatZone6,'jpg-jpeg-png-pdf')" onmouseout="mOut(this,formatZone6)"><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
         <section class="formatInd" id="formatZone6"></section>
-        <section id="formatErrorZone6"></section>
+        <section id="formatErrorZone6">ERROR</section>
         </div>
         </fieldset> 
         <fieldset>

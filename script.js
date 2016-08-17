@@ -104,6 +104,7 @@ $(document).ready(function () {
         var fileExtension = ['pdf'];
         var input = $("#cv");
         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+            console.log("yoo");
             $("formatErrorZone3").html('<p class ="errorMsgs">Format invalide');
         }
     });
