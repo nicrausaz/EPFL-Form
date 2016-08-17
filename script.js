@@ -17,49 +17,42 @@ $(document).ready(function () {
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
     //Add line to school
-    i = 1;
     $('#addSch').click(function () {
-        if (i == 1) {
-            document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole4" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieuEcole4" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveauEcole4" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="anneesEcole4" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
-        }
-        i++;
-        if (i == 3) {
-            document.getElementById('scolaire').innerHTML += '<tr><td><input type="text" name="ecole5" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieuEcole5" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveauEcole5" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="anneesEcole5" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
-            $('#addSch').hide(750);
+        var i = $('#scolaire > tbody').children().size() + 1;
+        if (i < 6) {
+            $('#scolaire').append('<tr><td><input type="text" name="ecole' + i + '" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieuEcole' + i + '" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveauEcole' + i + '" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="anneesEcole' + i + '" placeholder="de-à(années)" autocomplete="off"/></td></tr>');
+            if (i == 5) {
+                $('#addSch').hide(750);
+            }
         }
     });
     //Add line to professionnel
-    y = 1;
     $('#addPro').click(function () {
-        if (y == 1) {
-            document.getElementById('activites').innerHTML += '<tr><td><input type="text" name="employeurPro2" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro2" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro2" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro2" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
-        }
-        y++;
-        if (y == 3) {
-            document.getElementById('activites').innerHTML += '<tr><td><input type="text" name="employeurPro3" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro3" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro3" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro3" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
-            $('#addPro').hide(750);
+        var y = $('#activites > tbody').children().size() + 1;
+        if (y < 6) {
+            $('activites').append('<tr><td><input type="text" name="employeurPro' + y + '" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro' + y + '" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro' + y + '" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro' + y + '" placeholder="de-à(années)" autocomplete="off"/></td></tr>');
+            if (y == 5) {
+                $('#addPro').hide(750);
+            }
         }
     });
-    //Add line to stage
-    x = 1;
+    //Add line to stages
     $('#addStage').click(function () {
-        if (x == 1) {
-            document.getElementById('stages').innerHTML += '<td><input type="text" name="activiteStage3" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage3" placeholder="Entreprise" autocomplete="off"></td>';
-        }
-        x++;
-        if (x == 3) {
-            document.getElementById('stages').innerHTML += '<td><input type="text" name="activiteStage4" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage4" placeholder="Entreprise" autocomplete="off"></td>';
-            $('#addStage').hide(750);
+        var x = $('#stages > tbody').children().size() + 1;
+        if (x < 6) {
+            $('stages').append('<td><input type="text" name="activiteStage' + x + '" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage' + x + '" placeholder="Entreprise" autocomplete="off"></td>');
+            if (x == 5) {
+                $('#addStage').hide(750);
+            }
         }
     });
-});
 
-// SHOW/HIDE CONTENT ACCORDING TO SELECTED JOB
-$(document).ready(function () {
-    $("#all").hide()
+    // SHOW/HIDE CONTENT ACCORDING TO SELECTED JOB
 
     $("#jb").change(function () {
+        var selectedFormation = $("#jb option:selected")[0].value;
         var sele = $("#jb option:selected").text();
+        var laborantPeople = ["laboCh", "laboPhy", "laboBio"];
 
         if ((sele == "Polymécanicien-ne CFC") || (sele == "Informaticien-ne CFC") || (sele == "Logisticien-ne CFC") || (sele == "Planificateur-trice éléctricien-ne CFC") || (sele == "Employé-e de commerce CFC") || (sele == "Gardien-ne d'animaux CFC")) {
             $("#all").show(1000)
@@ -73,7 +66,7 @@ $(document).ready(function () {
             if (sele == "Polymécanicien-ne CFC") {
                 $("#polyOnly").show(1000)
             }
-        } else if ((sele == "Laborantin-e CFC; option biologie") || (sele == "Laborantin-e CFC; option chimie") || (sele == "Laborantin-e en physique CFC")) {
+        } else if (laborantPeople.indexOf(selectedFormation) != -1) {
             $("#all").hide(1000)
 
             if (confirm("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...")) {
@@ -95,16 +88,18 @@ $(document).ready(function () {
     $("#idCard").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
         var input = $("#idCard");
-        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+        //if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+        if (fileExtension.indexOf($(this).val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone2").html('<p class ="errorMsgs">Format invalide');
         }
     });
     //NOT WORKING
     $("#cv").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#cv");
-        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-            $("formatErrorZone3").html('</p class ="errorMsgs">Format invalide');
+        if (fileExtension.indexOf($("#cv").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone3").html('<p class ="errorMsgs">Format invalide</p>');
+        } else {
+            $("#formatErrorZone3").html('');
         }
     });
     //NOT WORKING
@@ -112,15 +107,15 @@ $(document).ready(function () {
         var fileExtension = ['pdf'];
         var input = $("#lettre");
         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-            $("formatErrorZone4").html('<p class ="errorMsgs">Format invalide');
+            $("#formatErrorZone4").html('<p class ="errorMsgs">Format invalide');
         }
     });
-});
 
-//
-//CHANGE EVENTS
-//
-$(document).ready(function () {
+
+    //
+    //CHANGE EVENTS
+    //
+
     // SHOW/HIDE ACCORDING TO RADIOBUTTON
     $("#maj1").change(function () {
         $("#representants").show(1000);
@@ -161,30 +156,31 @@ $(document).ready(function () {
             document.getElementById('errorMsg').innerHTML = '';
         }
     });
-     $("#dejaCandAnnee").change(function () {
-         var currentYear = (new Date).getFullYear();
-         if(currentYear < $("#dejaCandAnnee").val()){
-             $("#dejaCandError").html('<p class ="errorMsgs">Date invalide');
-         }else{
-             $("#dejaCandError").html("");
-         }
-         });
-     $("#anneeFin").change(function () {
-         var currentYear = (new Date).getFullYear();
-         if(currentYear < $("#anneeFin").val()){
-             $("#anneeFinError").html('<p class ="errorMsgs">Date invalide');
-         }else{
-             $("#anneeFinError").html("");
-         }
-         });
+    $("#dejaCandAnnee").change(function () {
+        var currentYear = (new Date).getFullYear();
+        if (currentYear < $("#dejaCandAnnee").val()) {
+            $("#dejaCandError").html('<p class ="errorMsgs">Date invalide');
+        } else {
+            $("#dejaCandError").html("");
+        }
+    });
+    $("#anneeFin").change(function () {
+        var currentYear = (new Date).getFullYear();
+        if (currentYear < $("#anneeFin").val()) {
+            $("#anneeFinError").html('<p class ="errorMsgs">Date invalide');
+        } else {
+            $("#anneeFinError").html("");
+        }
+    });
 
 });
+
 function mOver(obj, zone, formats) {
     $(zone).html("Formats autorisés: " + formats);
 }
 function mOut(obj, zone) {
     $(zone).html("");
 }
-function changeTitleFile(objFile){
+function changeTitleFile(objFile) {
     objFile.parentNode.setAttribute('title', objFile.value.replace(/^.*[\\/]/, ''));
 }

@@ -49,7 +49,7 @@
             </select>
            </fieldset>
 
-           <div id="all">
+           <div id="all" style="display: none;">
            <fieldset>
            <div id="infoOnly">
               <?php include('templates/filieresinfos.php') ?>
