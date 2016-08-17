@@ -231,13 +231,13 @@
         <fieldset>
         </fieldset>
         <legend><span class="number">4</span> Annexes </legend>
-        Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.<p>
-        <p>
+        Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.
+        </p>
+        
         <label for="photo">Photo passeport <strong>couleur:</strong></label>
         <label class="file" title="" onmouseover="mOver(this,formatZone1,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone1)"><input type="file" name="photo" id="photo" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))"/></label>
-        <p>
         <section class="formatInd" id="formatZone1"></section>
-        
+        <p>
         <section id="formatErrorZone1"></section>
 
         <label for="idCard">Copie carte d'indentité / passeport:</label>
