@@ -242,7 +242,7 @@
         <section id="formatErrorZone1"></section>
 
         <label for="idCard">Copie carte d'indentité / passeport:</label>
-        <label class="file" title="" onmouseover="mOver(this,formatZone2,'pdf')" onmouseout="mOut(this,formatZone2)"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" /></label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone2,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone2)"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" /></label>
         <section class="formatInd" id="formatZone2"></section>
         <p>
         <section id="formatErrorZone2"></section>
@@ -255,7 +255,7 @@
         
 
         <label for="lettre">Lettre de motivation:</label>
-        <label class="file" title="" onmouseover="mOver(this,formatZone4,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone4)"><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" /></label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone4,'pdf')" onmouseout="mOut(this,formatZone4)"><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" /></label>
         <section class="formatInd" id="formatZone4"></section>
         <p>
         <section id="formatErrorZone4"></section>

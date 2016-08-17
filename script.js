@@ -31,9 +31,9 @@ $(document).ready(function () {
     $('#addPro').click(function () {
         var y = $('#activites > tbody').children().size() + 1;
         console.log(y);
-        if (y < 6) {
+        if (y < 5) {
             $('activites').append('<tr><td><input type="text" name="employeurPro' + y + '" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro' + y + '" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro' + y + '" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro' + y + '" placeholder="de-à(années)" autocomplete="off"/></td></tr>');
-            if (y == 5) {
+            if (y == 4) {
                 $('#addPro').hide(750);
             }
         }
@@ -41,6 +41,7 @@ $(document).ready(function () {
     //Add line to stages
     $('#addStage').click(function () {
         var x = $('#stages > tbody').children().size() + 1;
+        console.log(x);
         if (x < 6) {
             $('stages').append('<td><input type="text" name="activiteStage' + x + '" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage' + x + '" placeholder="Entreprise" autocomplete="off"></td>');
             if (x == 5) {
@@ -50,7 +51,6 @@ $(document).ready(function () {
     });
 
     // SHOW/HIDE CONTENT ACCORDING TO SELECTED JOB
-
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;
         var sele = $("#jb option:selected").text();
@@ -83,19 +83,20 @@ $(document).ready(function () {
     // CHECK FILE FORMATS
     //WORKING
     $("#photo").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
-        var input = $("#photo");
-        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-            $("#formatErrorZone1").html('<p class ="errorMsgs">Format invalide');
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        if (fileExtension.indexOf($("#photo").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone1").html('<p class ="errorMsgs">Format invalide</p>');
+        } else {
+            $("#formatErrorZone1").html('');
         }
     });
     //WORKING
     $("#idCard").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
-        var input = $("#idCard");
-        //if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-        if (fileExtension.indexOf($(this).val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone2").html('<p class ="errorMsgs">Format invalide');
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        if (fileExtension.indexOf($("#idCard").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone2").html('<p class ="errorMsgs">Format invalide</p>');
+        } else {
+            $("#formatErrorZone2").html('');
         }
     });
     //NOT WORKING
@@ -111,11 +112,12 @@ $(document).ready(function () {
     $("#lettre").change(function () {
         var fileExtension = ['pdf'];
         var input = $("#lettre");
-        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-            $("#formatErrorZone4").html('<p class ="errorMsgs">Format invalide');
+        if (fileExtension.indexOf($("#lettre").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone4").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone4").html('');
         }
     });
-
 
     //
     //CHANGE EVENTS
