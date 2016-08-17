@@ -19,6 +19,7 @@ $(document).ready(function () {
     //Add line to school
     $('#addSch').click(function () {
         var i = $('#scolaire > tbody').children().size() + 1;
+        console.log(i);
         if (i < 6) {
             $('#scolaire').append('<tr><td><input type="text" name="ecole' + i + '" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieuEcole' + i + '" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveauEcole' + i + '" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="anneesEcole' + i + '" placeholder="de-à(années)" autocomplete="off"/></td></tr>');
             if (i == 5) {
@@ -29,6 +30,7 @@ $(document).ready(function () {
     //Add line to professionnel
     $('#addPro').click(function () {
         var y = $('#activites > tbody').children().size() + 1;
+        console.log(y);
         if (y < 6) {
             $('activites').append('<tr><td><input type="text" name="employeurPro' + y + '" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro' + y + '" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro' + y + '" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro' + y + '" placeholder="de-à(années)" autocomplete="off"/></td></tr>');
             if (y == 5) {
@@ -52,18 +54,21 @@ $(document).ready(function () {
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;
         var sele = $("#jb option:selected").text();
+        var infoPeople = ["info"];
+        var polyPeople = ["polyM"];
         var laborantPeople = ["laboCh", "laboPhy", "laboBio"];
+        var globalPeople = ["polyM", "info", "logi", "planElec", "empCom", "gardAn"];
 
-        if ((sele == "Polymécanicien-ne CFC") || (sele == "Informaticien-ne CFC") || (sele == "Logisticien-ne CFC") || (sele == "Planificateur-trice éléctricien-ne CFC") || (sele == "Employé-e de commerce CFC") || (sele == "Gardien-ne d'animaux CFC")) {
+        if (globalPeople.indexOf(selectedFormation) != -1) {
             $("#all").show(1000)
             $("#infoOnly").hide(0)
             $("#polyOnly").hide(0)
             $("#dejaCandAnnee").hide(0);
 
-            if (sele == "Informaticien-ne CFC") {
+            if (infoPeople.indexOf(selectedFormation) != -1) {
                 $("#infoOnly").show(1000)
             }
-            if (sele == "Polymécanicien-ne CFC") {
+            if (polyPeople.indexOf(selectedFormation) != -1) {
                 $("#polyOnly").show(1000)
             }
         } else if (laborantPeople.indexOf(selectedFormation) != -1) {
