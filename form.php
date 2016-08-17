@@ -259,14 +259,14 @@
         <section id="formatErrorZone4"></section>
         <!-- Dossier annexes --> <!--TOGET-->
         <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres, dans un dossier compressé:</label>
-        <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone4)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
         <section class="formatInd" id="formatZone5"></section>
         <p>
         <section id="formatErrorZone5"></section>
 
         <div id="polyOnly">
         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
-        <label class="file" title="" onmouseover="mOver(this,formatZone6,'jpg-jpeg-png-pdf')" onmouseout="mOut(this,formatZone5)"><input type="file" name="gimch" id="gimch" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
+        <label class="file" title="" onmouseover="mOver(this,formatZone6,'jpg-jpeg-png-pdf')" onmouseout="mOut(this,formatZone6)"><input type="file" name="gimch" id="gimch" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
         <section class="formatInd" id="formatZone6"></section>
         <section id="formatErrorZone6"></section>
         </div>
