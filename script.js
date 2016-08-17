@@ -105,7 +105,6 @@ $(document).ready(function () {
         var input = $("#cv");
         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
             $("formatErrorZone3").html('<p class ="errorMsgs">Format invalide');
-            alert("Format non pris en charge, Formats autorisés : " + fileExtension.join(', '));
         }
     });
 
@@ -114,7 +113,6 @@ $(document).ready(function () {
         var input = $("#lettre");
         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
             $("formatErrorZone4").html('<p class ="errorMsgs">Format invalide');
-            alert("Format non pris en charge, Formats autorisés : " + fileExtension.join(', '));
         }
     });
 });
@@ -179,4 +177,7 @@ function mOver(obj, zone, formats) {
 }
 function mOut(obj, zone) {
     $(zone).html("");
+}
+function changeTitleFile(objFile){
+    objFile.parentNode.setAttribute('title', objFile.value.replace(/^.*[\\/]/, ''));
 }
