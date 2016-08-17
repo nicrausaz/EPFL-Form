@@ -99,16 +99,15 @@ $(document).ready(function () {
             $("#formatErrorZone2").html('<p class ="errorMsgs">Format invalide');
         }
     });
-
+    //NOT WORKING
     $("#cv").change(function () {
         var fileExtension = ['pdf'];
         var input = $("#cv");
         if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-            console.log("yoo");
-            $("formatErrorZone3").html('<p class ="errorMsgs">Format invalide');
+            $("formatErrorZone3").html('</p class ="errorMsgs">Format invalide');
         }
     });
-
+    //NOT WORKING
     $("#lettre").change(function () {
         var fileExtension = ['pdf'];
         var input = $("#lettre");
@@ -163,12 +162,19 @@ $(document).ready(function () {
         }
     });
      $("#dejaCandAnnee").change(function () {
-         
          var currentYear = (new Date).getFullYear();
          if(currentYear < $("#dejaCandAnnee").val()){
              $("#dejaCandError").html('<p class ="errorMsgs">Date invalide');
          }else{
              $("#dejaCandError").html("");
+         }
+         });
+     $("#anneeFin").change(function () {
+         var currentYear = (new Date).getFullYear();
+         if(currentYear < $("#anneeFin").val()){
+             $("#anneeFinError").html('<p class ="errorMsgs">Date invalide');
+         }else{
+             $("#anneeFinError").html("");
          }
          });
 

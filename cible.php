@@ -18,12 +18,8 @@
         //$connLing = array($_POST['check_list']);
         echo $connLing;
        */
-          //get apprenti's infos
+          //get first infos
           $apprentiInfos = [$_POST['job'],$_POST['mpt'],$_POST['genreApp'],$_POST['nameApp'],$_POST['surnameApp'],$_POST['adrApp'],$_POST['NPAApp'],$_POST['telApp'],$_POST['phoneApp'],$_POST['mailApp'],$_POST['birthApp'],$_POST['originApp'],$_POST['nationApp'],$_POST['langApp']];
-          $major = $_POST['maj'];
-          if($major=="maj-non"){
-             $respInfos = [$_POST['nameRep1'],$_POST['surnameRep1'],$_POST['adrRep1'],$_POST['NPARep1'],$_POST['telRep1'],$_POST['nameRep2'],$_POST['surnameRep2'],$_POST['adrRep2'],$_POST['NPARep2'],$_POST['telRep2']];
-          }else{}
    
         //Tri des apprentis par métier
         $name = $_POST['nameApp'];
@@ -79,6 +75,13 @@
                         echo "Dossiers crées";
                         $noError = true;
                     }
+                //Get infos
+                $major = $_POST['maj'];
+                if($major=="maj-non"){
+                    $respInfos = [$_POST['nameRep1'],$_POST['surnameRep1'],$_POST['adrRep1'],$_POST['NPARep1'],$_POST['telRep1'],$_POST['nameRep2'],$_POST['surnameRep2'],$_POST['adrRep2'],$_POST['NPARep2'],$_POST['telRep2']];
+                }else{}
+                $schoolActivites = [$_POST['ecole1'],$_POST['lieuEcole1'],$_POST['niveauEcole1'],$_POST['anneesEcole1'],$_POST['ecole2'],$_POST['lieuEcole2'],$_POST['niveauEcole2'],$_POST['anneesEcole2'],$_POST['ecole3'],$_POST['lieuEcole3'],$_POST['niveauEcole3'],$_POST['anneesEcole3']];
+
                 //Put infos in CSV File
                     $fp = fopen("$pathInfos/infos.csv", "w");
                     fputcsv($fp, $apprentiInfos);
@@ -195,7 +198,6 @@
                         {
                             echo 'Upload réussi';
                             $noError = true;
-                            
                         }
                         else{
                             echo 'Echec de l\'upload idCard!';
@@ -206,7 +208,7 @@
                         echo $erreur;
                     }
 
-                    /*
+
                     //GIM-CH upload
                     $dossier = $pathAnnexes;
                     $fichier = basename($_FILES['photo']['name']);
@@ -237,7 +239,7 @@
                     else{
                         echo $erreur;
                     }
-                    */
+                    
                     // mail send
                     $to  = 'nicolas.crausaz@epfl.ch';
                     $subject = 'Nouvelle demande de place d\'apprentissage';
