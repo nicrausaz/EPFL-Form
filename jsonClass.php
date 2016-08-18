@@ -55,6 +55,19 @@ class Doc {
 	public $anneesEcole5 = "";
 	public $anneeFinEcole = "";
 	//3.2
+	public $employeurPro1 = "";
+	public $lieuPro1 = "";
+	public $activitePro1 = "";
+	public $anneesPro1 = "";
+	public $employeurPro2 = "";
+	public $lieuPro2 = "";
+	public $activitePro2 = "";
+	public $anneesPro2 = "";
+	public $employeurPro3 = "";
+	public $lieuPro3 = "";
+	public $activitePro3 = "";
+	public $anneesPro3 = "";
+	//3.3
 
 }
 ?>          
