@@ -1,8 +1,3 @@
-//
-//DOCUMENT READY
-//
-
-// INDEX.PHP BUTTONS ACTIONS
 $(document).ready(function () {
     //Create account link
     $('#createAc').click(function () {
@@ -31,9 +26,9 @@ $(document).ready(function () {
     $('#addPro').click(function () {
         var y = $('#activites > tbody').children().size() + 1;
         console.log(y);
-        if (y < 5) {
-            $('activites').append('<tr><td><input type="text" name="employeurPro' + y + '" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro' + y + '" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro' + y + '" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro' + y + '" placeholder="de-à(années)" autocomplete="off"/></td></tr>');
-            if (y == 4) {
+        if (y < 4) {
+            $('#activites').append('<tr><td><input type="text" name="employeurPro' + y + '" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro' + y + '" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro' + y + '" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro' + y + '" placeholder="de-à(années)" autocomplete="off"/></td></tr>');
+            if (y == 3) {
                 $('#addPro').hide(750);
             }
         }
@@ -43,13 +38,12 @@ $(document).ready(function () {
         var x = $('#stages > tbody').children().size() + 1;
         console.log(x);
         if (x < 6) {
-            $('stages').append('<td><input type="text" name="activiteStage' + x + '" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage' + x + '" placeholder="Entreprise" autocomplete="off"></td>');
-            if (x == 5) {
+            $('#stages').append('<td><input type="text" name="activiteStage' + x + '" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage' + x + '" placeholder="Entreprise" autocomplete="off"></td>');
+            if (x == 4) {
                 $('#addStage').hide(750);
             }
         }
     });
-
     // SHOW/HIDE CONTENT ACCORDING TO SELECTED JOB
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;
@@ -81,7 +75,6 @@ $(document).ready(function () {
     });
 
     // CHECK FILE FORMATS
-    //WORKING
     $("#photo").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         if (fileExtension.indexOf($("#photo").val().split('.').pop().toLowerCase()) == -1) {
@@ -90,7 +83,6 @@ $(document).ready(function () {
             $("#formatErrorZone1").html('');
         }
     });
-    //WORKING
     $("#idCard").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         if (fileExtension.indexOf($("#idCard").val().split('.').pop().toLowerCase()) == -1) {
@@ -99,7 +91,6 @@ $(document).ready(function () {
             $("#formatErrorZone2").html('');
         }
     });
-    //NOT WORKING
     $("#cv").change(function () {
         var fileExtension = ['pdf'];
         if (fileExtension.indexOf($("#cv").val().split('.').pop().toLowerCase()) == -1) {
@@ -108,7 +99,6 @@ $(document).ready(function () {
             $("#formatErrorZone3").html('');
         }
     });
-    //NOT WORKING
     $("#lettre").change(function () {
         var fileExtension = ['pdf'];
         var input = $("#lettre");
@@ -118,11 +108,6 @@ $(document).ready(function () {
             $("#formatErrorZone4").html('');
         }
     });
-
-    //
-    //CHANGE EVENTS
-    //
-
     // SHOW/HIDE ACCORDING TO RADIOBUTTON
     $("#maj1").change(function () {
         $("#representants").show(1000);

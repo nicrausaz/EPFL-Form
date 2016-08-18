@@ -1,0 +1,123 @@
+{
+  "formation": "",
+  "filiere": "",
+  "matu": true,
+  "genre": "",
+  "prenom": "",
+  "nom": "",
+  "adresse": {
+    "rue": "",
+    "ville": ""
+  },
+  "telephones": {
+    "fixe": "",
+    "mobile": ""
+  },
+  "mail": "",
+  "dateNaissance": "",
+  "lieuOrigine": "",
+  "nationalite": "",
+  "langueMaternelle": "",
+  "cannaissancesLinguistiques": {
+    "francais": true,
+    "allemand": true,
+    "anglais": true,
+    "autres": true
+  },
+  "majeur": false,
+  "representants": [
+    {
+      "genre": "",
+      "nom": "",
+      "prenom": "",
+      "adresse": {
+        "rue": "",
+        "ville": ""
+      },
+      "telephone": ""
+    },
+    {
+      "genre": "",
+      "nom": "",
+      "prenom": "",
+      "adresse": {
+        "rue": "",
+        "ville": ""
+      },
+      "telephone": ""
+    }
+  ],
+  "scolarite": [
+    {
+      "ecole": "",
+      "lieu": "",
+      "niveau": "",
+      "annnes": ""
+    },
+    {
+      "ecole": "",
+      "lieu": "",
+      "niveau": "",
+      "annnes": ""
+    },
+    {
+      "ecole": "",
+      "lieu": "",
+      "niveau": "",
+      "annnes": ""
+    },
+    {
+      "ecole": "",
+      "lieu": "",
+      "niveau": "",
+      "annnes": ""
+    },
+    {
+      "ecole": "",
+      "lieu": "",
+      "niveau": "",
+      "annnes": ""
+    }
+  ],
+  "anneeFinScolarite": "",
+  "activiteProfessionelles": [
+    {
+      "employeur": "",
+      "lieu": "",
+      "activite": "",
+      "annees": ""
+    },
+    {
+      "employeur": "",
+      "lieu": "",
+      "activite": "",
+      "annees": ""
+    },
+    {
+      "employeur": "",
+      "lieu": "",
+      "activite": "",
+      "annees": ""
+    }
+  ],
+  "stages": [
+    {
+      "metier": "info",
+      "entreprise": "ETML"
+    },
+    {
+      "metier": "info",
+      "entreprise": "ETML"
+    },
+    {
+      "metier": "info",
+      "entreprise": "ETML"
+    },
+    {
+      "metier": "info",
+      "entreprise": "ETML"
+    }
+  ],
+  "dejaCandidatEPFL": false,
+  "anneeCandidature": ""
+}
