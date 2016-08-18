@@ -1,5 +1,4 @@
 <label for="filInfo">Filières informatiques:*</label>
-
 <dl class="radio-list-left" required>
 <dd>
     <input type="radio" name="filInfo" id="fill1" value="devIT"/>
