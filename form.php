@@ -18,6 +18,7 @@
         $user = $oClient->getValue('user');
         $firstname= $oClient->getValue('firstname');
         $name= $oClient->getValue('name');
+        $sciper = $oClient->getValue('');
         $sKey = $oClient->GetKey();
 ?>
          <title>Formulaire Apprentissage</title>
