@@ -114,6 +114,7 @@
                     fclose($fp);
 
                     //JSON
+                    require_once("json/jsonClass.php");
                     $doc = new Doc();
                     $doc->job = $_POST['job'];
                     $doc->mpt  = $_POST['job'];
