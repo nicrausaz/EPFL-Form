@@ -114,15 +114,14 @@
                     fclose($fp);
 
                     //JSON
-                    $name="nicolas";
                     $doc = new Doc();
-                    $doc->firstname = $name;
-                    $doc->lastname  = "bar";
+                    $doc->job = $_POST['job'];
+                    $doc->mpt  = $_POST['job'];
 
                     $encodedJson = json_encode($doc);
 
                     echo $encodedJson;
-                    file_put_contents('informations.json', $encodedJson);
+                    file_put_contents('informations.json', $encodedJson); //change path here
 
                     //Photo upload
                     $dossier = $pathAnnexes;

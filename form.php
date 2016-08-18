@@ -18,7 +18,7 @@
         $user = $oClient->getValue('user');
         $firstname= $oClient->getValue('firstname');
         $name= $oClient->getValue('name');
-        $sciper = $oClient->getValue('');
+        //$sciper = $oClient->getValue('');
         $sKey = $oClient->GetKey();
 ?>
          <title>Formulaire Apprentissage</title>
@@ -54,11 +54,11 @@
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
             <dl class="radio-list-left">
                 <dd>
-                    <input type="radio" name="mpt" id="mpt1" value="Matu-non" checked="checked">
+                    <input type="radio" name="mpt" id="mpt1" value="matu-non" checked="checked">
                     <label for="mpt1">Non</label>
                 </dd>
                 <dd>
-                    <input type="radio" name="mpt" id="mpt2" value="Matu-oui">
+                    <input type="radio" name="mpt" id="mpt2" value="matu-oui">
                     <label for="mpt2">Oui</label>
                 </dd>
             </dl>

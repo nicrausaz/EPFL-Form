@@ -19,6 +19,19 @@ class Doc {
 	//here the 4 checkboxes ....
 
 	//2.2
-
+	public $majeur = "";
+	public $genreRep1 = "";
+	public $nomRep1 = "";
+	public $prenomRep1 = "";
+	public $AdresseRep1 = "";
+	public $NPARep1 = "";
+	public $telephoneRep1 = "";
+	public $genreRep2 = "";
+	public $nomRep2 = "";
+	public $prenomRep2 = "";
+	public $AdresseRep2 = "";
+	public $NPARep2 = "";
+	public $telephoneRep2 = "";
+	//3.1
 }
 ?>          
