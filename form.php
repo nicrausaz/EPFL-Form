@@ -244,7 +244,7 @@
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
                         <label class="file" title="" onmouseover="mOver(this,formatZone6,'jpg-jpeg-png-pdf')" onmouseout="mOut(this,formatZone6)"><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
                         <section class="formatInd" id="formatZone6"></section>
-                        <section id="formatErrorZone6">ERROR</section>
+                        <section id="formatErrorZone6"></section>
                     </div>
                 </fieldset>
                 <fieldset>
