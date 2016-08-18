@@ -113,6 +113,17 @@
                     fputcsv($fp, $candYear);
                     fclose($fp);
 
+                    //JSON
+                    $name="nicolas";
+                    $doc = new Doc();
+                    $doc->firstname = $name;
+                    $doc->lastname  = "bar";
+
+                    $encodedJson = json_encode($doc);
+
+                    echo $encodedJson;
+                    file_put_contents('informations.json', $encodedJson);
+
                     //Photo upload
                     $dossier = $pathAnnexes;
                     $fichier = basename($_FILES['photo']['name']);
