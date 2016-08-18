@@ -16,7 +16,7 @@ class Doc {
 	public $originApp = "";
 	public $nationApp = "";
 	public $langApp = "";
-	//here the 4 checkboxes ....
+	//here the 4 checkboxes ...
 
 	//2.2
 	public $majeur = "";
@@ -33,5 +33,28 @@ class Doc {
 	public $NPARep2 = "";
 	public $telephoneRep2 = "";
 	//3.1
+	public $ecole1 = "";
+	public $lieuEcole1 = "";
+	public $niveauEcole1 = "";
+	public $anneesEcole1 = "";
+	public $ecole2 = "";
+	public $lieuEcole2 = "";
+	public $niveauEcole2 = "";
+	public $anneesEcole2 = "";
+	public $ecole3 = "";
+	public $lieuEcole3 = "";
+	public $niveauEcole3 = "";
+	public $anneesEcole3 = "";
+	public $ecole4 = "";
+	public $lieuEcole4 = "";
+	public $niveauEcole4 = "";
+	public $anneesEcole4 = "";
+	public $ecole5 = "";
+	public $lieuEcole5 = "";
+	public $niveauEcole5 = "";
+	public $anneesEcole5 = "";
+	public $anneeFinEcole = "";
+	//3.2
+
 }
 ?>          
