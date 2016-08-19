@@ -7,8 +7,16 @@ class Doc {
 	public $genreApp = "";
 	public $nomApp = "";
 	public $prenomApp  = "";
-	public $addresseApp = "";
-	public $NPAApp = "";
+	public $addresseComplete;
+	public $addresseApp = "test";
+	public $NPAApp = "12121";
+	 
+	public function __construct() {
+        $this->addresseComplete = function() {
+            return $addresseApp;
+			return $NPAApp;
+        };
+	}
 	public $telFixApp = "";
 	public $telMobApp = "";
 	public $mailApp = "";
@@ -16,8 +24,9 @@ class Doc {
 	public $originApp = "";
 	public $nationApp = "";
 	public $langApp = "";
+	
 	//here the 4 checkboxes ...
-
+	
 	//2.2
 	public $majeur = "";
 	public $genreRep1 = "";
