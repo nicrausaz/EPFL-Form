@@ -7,16 +7,10 @@ class Doc {
 	public $genreApp = "";
 	public $nomApp = "";
 	public $prenomApp  = "";
-	public $addresseComplete;
-	public $addresseApp = "test";
-	public $NPAApp = "12121";
-	 
-	public function __construct() {
-        $this->addresseComplete = function() {
-            return $addresseApp;
-			return $NPAApp;
-        };
-	}
+	public $addresseAppComplete = "";
+	//public $addresseApp = "";
+	//public $NPAApp = "";
+
 	public $telFixApp = "";
 	public $telMobApp = "";
 	public $mailApp = "";

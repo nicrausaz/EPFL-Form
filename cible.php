@@ -118,10 +118,11 @@
                     $doc = new Doc();
                     $doc->job = $_POST['job'];
                     $doc->mpt  = $_POST['mpt'];
-                    $doc->nowDate = new DateTime();
+                    $doc->addresseAppComplete = json_encode(array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']));
+                    //$doc->nowDate = new DateTime();
 
-                    $encodedJson = json_encode($doc);
-                    echo $encodedJson;
+                    $encodedJson = json_encode($doc, JSON_FORCE_OBJECT);
+                    //echo $encodedJson;
                     file_put_contents('informations.json', $encodedJson); //change path here
 
                     //Photo upload
