@@ -117,10 +117,10 @@
                     require_once("json/jsonClass.php");
                     $doc = new Doc();
                     $doc->job = $_POST['job'];
-                    $doc->mpt  = $_POST['job'];
+                    $doc->mpt  = $_POST['mpt'];
+                    $doc->nowDate = new DateTime();
 
                     $encodedJson = json_encode($doc);
-
                     echo $encodedJson;
                     file_put_contents('informations.json', $encodedJson); //change path here
 

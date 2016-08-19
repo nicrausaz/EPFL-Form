@@ -68,6 +68,17 @@ class Doc {
 	public $activitePro3 = "";
 	public $anneesPro3 = "";
 	//3.3
-
+	public $metierStage1 = "";
+	public $entrepriseStage1 = "";
+	public $metierStage2 = "";
+	public $entrepriseStage2 = "";
+	public $metierStage3 = "";
+	public $entrepriseStage3 = "";
+	public $metierStage4 = "";
+	public $entrepriseStage4 = "";
+	public $dejaCandidat = "";
+	public $anneeCandidature = "";
+	//others
+	public $nowDate = "";
 }
 ?>          
