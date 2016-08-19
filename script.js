@@ -38,7 +38,7 @@ $(document).ready(function () {
         var x = $('#stages > tbody').children().size() + 1;
         console.log(x);
         if (x < 6) {
-            $('#stages').append('<td><input type="text" name="activiteStage' + x + '" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage' + x + '" placeholder="Entreprise" autocomplete="off"></td>');
+            $('#stages').append('<tr><td><input type="text" name="activiteStage' + x + '" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage' + x + '" placeholder="Entreprise" autocomplete="off"></td></tr>');
             if (x == 4) {
                 $('#addStage').hide(750);
             }

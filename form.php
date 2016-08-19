@@ -187,7 +187,7 @@
                         <tr>
                             <td><input type="text" name="activiteStage2" placeholder="Métier" autocomplete="off"></td>
                             <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" autocomplete="off"></td>
-                        </tr>
+                        </tr>                       
                     </table>
                     <button type ="button" id="addStage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Ajouter une ligne
