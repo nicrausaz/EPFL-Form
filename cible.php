@@ -117,11 +117,21 @@
                     require_once("json/jsonClass.php");
                     $doc = new Doc();
                     $doc->job = $_POST['job'];
-                    $doc->mpt  = $_POST['mpt'];
-                    $doc->addresseAppComplete = json_encode(array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']));
-                    //$doc->nowDate = new DateTime();
+                    $doc->maturite = $_POST['mpt'];
+                    $doc->genreApp  = $_POST['genreApp'];
+                    $doc->nomApp  = $_POST['nameApp'];
+                    $doc->prenomApp  = $_POST['surnameApp'];
+                    $doc->addresseAppComplete = array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']);             
+                    $doc->telFixeApp  = $_POST['telApp'];
+                    $doc->telMobileApp  = $_POST['phoneApp'];
+                    $doc->mailApp  = $_POST['mailApp'];
+                    $doc->dateNaissanceApp  = $_POST['birthApp'];
+                    $doc->origineApp  = $_POST['originApp'];
+                    $doc->nationaliteApp  = $_POST['nationApp'];
+                    $doc->langueMaternelleApp  = $_POST['langApp'];
 
-                    $encodedJson = json_encode($doc, JSON_FORCE_OBJECT);
+                    //$doc->nowDate = new DateTime();
+                    $encodedJson = (json_encode($doc));
                     //echo $encodedJson;
                     file_put_contents('informations.json', $encodedJson); //change path here
 

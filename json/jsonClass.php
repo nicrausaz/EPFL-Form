@@ -2,24 +2,29 @@
 class Doc {
 	//1
 	public $job = "";
-	public $mpt = "";
+	public $maturite = "";
 	//2.1
 	public $genreApp = "";
 	public $nomApp = "";
 	public $prenomApp  = "";
-	public $addresseAppComplete = "";
+	public $addresseAppComplete = [];
 	//public $addresseApp = "";
 	//public $NPAApp = "";
 
-	public $telFixApp = "";
-	public $telMobApp = "";
+	public $telFixeApp = "";
+	public $telMobileApp = "";
 	public $mailApp = "";
-	public $birthApp = "";
-	public $originApp = "";
-	public $nationApp = "";
-	public $langApp = "";
-	
-	//here the 4 checkboxes ...
+	public $dateNaissanceApp = "";
+	public $origineApp = "";
+	public $nationaliteApp = "";
+	public $langueMaternelleApp = "";
+
+	// 4 checkboxes 
+	public $connaissancesLinguistiques = [];
+	public $connaissanceFrançais = "";
+	public $connaissanceAllemand = "";
+	public $connaissanceAnglais = "";
+	public $connaissanceAutres = "";
 	
 	//2.2
 	public $majeur = "";
