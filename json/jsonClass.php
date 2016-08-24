@@ -1,33 +1,35 @@
 <?php
 class Doc {
 	//1
-	public $job = "";
+	public $formation = "";
+	public $filiere = "";
 	public $maturite = "";
+
 	//2.1
-	public $genreApp = "";
-	public $nomApp = "";
-	public $prenomApp  = "";
+	public $genreApprenti = "";
+	public $nomApprenti = "";
+	public $prenomApprenti  = "";
 	public $addresseAppComplete = [];
-	//public $addresseApp = "";
-	//public $NPAApp = "";
-
-	public $telFixeApp = "";
-	public $telMobileApp = "";
-	public $mailApp = "";
-	public $dateNaissanceApp = "";
-	public $origineApp = "";
-	public $nationaliteApp = "";
-	public $langueMaternelleApp = "";
-
-	// 4 checkboxes 
+	public $telFixeApprenti = "";
+	public $telMobileApprenti = "";
+	public $mailApprenti = "";
+	public $dateNaissanceApprenti = "";
+	public $origineApprenti = "";
+	public $nationaliteApprenti = "";
+	public $langueMaternelleApprenti = "";
+	// 4 checkboxes
 	public $connaissancesLinguistiques = [];
-	public $connaissanceFrançais = "";
-	public $connaissanceAllemand = "";
-	public $connaissanceAnglais = "";
-	public $connaissanceAutres = "";
+	
+	public $connaissanceFrancais = "";
+	//public $connaissanceAllemand = "";
+	//public $connaissanceAnglais = "";
+	//public $connaissanceAutres = "";
 	
 	//2.2
 	public $majeur = "";
+	public $rep1 = [];
+	public $rep2 = [];
+	/*
 	public $genreRep1 = "";
 	public $nomRep1 = "";
 	public $prenomRep1 = "";
@@ -40,6 +42,7 @@ class Doc {
 	public $AdresseRep2 = "";
 	public $NPARep2 = "";
 	public $telephoneRep2 = "";
+	*/
 	//3.1
 	public $ecole1 = "";
 	public $lieuEcole1 = "";

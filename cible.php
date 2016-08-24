@@ -6,28 +6,12 @@
     </head>
     <body>
     <div class="form-style-5">
-        
        <?php
-       /*function getConnLing(){
-            if(!empty($_POST['check_list'])){
-                foreach($_POST['check_list'] as $check){
-                   //echo $check;
-                }
-            }
-       }
-        //$connLing = array($_POST['check_list']);
-        echo $connLing;
-       */
-          //get first infos
-          $apprentiInfos = [$_POST['job'],$_POST['mpt'],$_POST['genreApp'],$_POST['nameApp'],$_POST['surnameApp'],$_POST['adrApp'],$_POST['NPAApp'],$_POST['telApp'],$_POST['phoneApp'],$_POST['mailApp'],$_POST['birthApp'],$_POST['originApp'],$_POST['nationApp'],$_POST['langApp']];
-   
         //Tri des apprentis par métier
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
         $job = $_POST['job'];
         $rootpath = '../candidatures/';
-
-        //$path = sprintf('../candidatures/%s/new-%s%s/', $rootpath, $formFolder, $name, $surname);
 
             if($job=="polyM") {
                 //echo "Polymec"; 
@@ -76,6 +60,7 @@
                         $noError = true;
                     }
                 //Get infos
+                /*
                 $major = $_POST['maj'];
                 if($major=="maj-non"){
                     $respInfos = [$_POST['nameRep1'],$_POST['surnameRep1'],$_POST['adrRep1'],$_POST['NPARep1'],$_POST['telRep1'],
@@ -83,7 +68,7 @@
                 }else{
                     $respInfos = $major;
                 }
-
+                
                 $schoolActivites = [$_POST['ecole1'],$_POST['lieuEcole1'],$_POST['niveauEcole1'],$_POST['anneesEcole1'],
                 $_POST['ecole2'],$_POST['lieuEcole2'],$_POST['niveauEcole2'],$_POST['anneesEcole2'],
                 $_POST['ecole3'],$_POST['lieuEcole3'],$_POST['niveauEcole3'],$_POST['anneesEcole3'],
@@ -103,7 +88,9 @@
                 }else{
                     $candYear = $dejaCand;
                 }
+                */
                 //Put infos in CSV File
+                /*
                     $fp = fopen("$pathInfos/infos.csv", "w");
                     fputcsv($fp, $apprentiInfos);
                     fputcsv($fp, $respInfos);
@@ -112,11 +99,15 @@
                     fputcsv($fp, $stagesActivites);
                     fputcsv($fp, $candYear);
                     fclose($fp);
-
+                */
                     //JSON
                     require_once("json/jsonClass.php");
                     $doc = new Doc();
-                    $doc->job = $_POST['job'];
+                    $doc->formation = $_POST['job'];
+                    if($_POST['job'] == "info"){
+                        $doc->filiere = $_POST['filInfo'];
+                    }else{}
+
                     $doc->maturite = $_POST['mpt'];
                     $doc->genreApp  = $_POST['genreApp'];
                     $doc->nomApp  = $_POST['nameApp'];
@@ -129,10 +120,18 @@
                     $doc->origineApp  = $_POST['originApp'];
                     $doc->nationaliteApp  = $_POST['nationApp'];
                     $doc->langueMaternelleApp  = $_POST['langApp'];
+                    //GET CHECKBOXES
+                    //$doc->connaissanceFrançais = $_POST['langApp'];
+                    $doc->langueMaternelleApp  = $_POST['langApp'];
+                    $doc->majeur = $_POST['maj'];
+                    if($_POST['maj'] == "maj-non"){
+                        $doc->rep1  = array("genre"=>$_POST['genreRep1'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep1'],"addresse"=> array("rue"=>$_POST['adrRep1'],"NPA"=>$_POST['NPARep1']),"telephone"=>$_POST['telRep1']);    
+                        $doc->rep2  = array("genre"=>$_POST['genreRep2'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep2'],"addresse"=> array("rue"=>$_POST['adrRep2'],"NPA"=>$_POST['NPARep2']),"telephone"=>$_POST['telRep2']);           
+                    }else{}
 
                     //$doc->nowDate = new DateTime();
+                    
                     $encodedJson = (json_encode($doc));
-                    //echo $encodedJson;
                     file_put_contents('informations.json', $encodedJson); //change path here
 
                     //Photo upload
