@@ -9,7 +9,7 @@ class Doc {
 	public $genreApprenti = "";
 	public $nomApprenti = "";
 	public $prenomApprenti  = "";
-	public $addresseAppComplete = [];
+	public $addresseApprentiComplete = [];
 	public $telFixeApprenti = "";
 	public $telMobileApprenti = "";
 	public $mailApprenti = "";
