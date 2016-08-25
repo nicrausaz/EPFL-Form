@@ -104,7 +104,9 @@
                         uploadFile($pathAnnexes, 'cv', array('.pdf'));
                         uploadFile($pathAnnexes, 'lettre', array('.pdf'));
                         uploadFile($pathAnnexes, 'idCard', array('.jpg','.jpeg','.png','.pdf'));
-                        uploadFile($pathAnnexes, 'gimch', array('.pdf'));
+                        if($_POST['job']=="polyM"){
+                            uploadFile($pathAnnexes, 'gimch', array('.pdf'));
+                        }     
                 }
             }
                 function uploadFile($pathAnnexes, $inputName, $extensions){

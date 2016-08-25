@@ -45,7 +45,7 @@
                 <option value="empCom">Employé-e de commerce CFC</option>
                 <option value="gardAn">Gardien-ne d'animaux CFC</option>
             </select>
-            <input type="text" name="sciperTmp"  value="<?php echo $tempSciper;?>" readonly/> <!--must not be showed-->
+            <input type="text" name="sciperTmp"  value="<?php echo $tempSciper;?>" readonly hidden/> <!--must not be showed-->
         </fieldset>
         <div id="all" style="display: none;">
         <fieldset>
@@ -237,9 +237,12 @@
                     <section id="formatErrorZone4"></section>
 
                     <!-- Dossier annexes --> <!--TOGET-->
-                    <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres, dans un dossier compressé:</label>
+                    <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
                     <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
                     <section class="formatInd" id="formatZone5"></section>
+                    <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Ajouter un certificat
+                    </button>
                     <p></p>
                     <section id="formatErrorZone5"></section>
                     <div id="polyOnly">
