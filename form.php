@@ -11,13 +11,15 @@
         require_once("tequila/tequila.php");
         $oClient = new TequilaClient();
         $oClient->SetApplicationName('Formulaire apprentissage');
-        $oClient->SetWantedAttributes(array('uniqueId','firstname','name'));
+        $oClient->SetWantedAttributes(array('uniqueid','firstname','name'));
         $oClient->SetWishedAttributes(array('user'));
         $oClient->SetAllowsFilter('categorie=epfl-guests');
         $oClient->Authenticate();
+        $tempSciper = $oClient->getValue('uniqueid');
         $user = $oClient->getValue('user');
         $firstname= $oClient->getValue('firstname');
         $name= $oClient->getValue('name');
+        
         //$sciper = $oClient->getValue('');
         $sKey = $oClient->GetKey();
 ?>
@@ -45,6 +47,7 @@
                 <option value="empCom">Employé-e de commerce CFC</option>
                 <option value="gardAn">Gardien-ne d'animaux CFC</option>
             </select>
+            <?php echo $tempSciper ?>
         </fieldset>
         <div id="all" style="display: none;">
         <fieldset>

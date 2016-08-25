@@ -11,31 +11,29 @@
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
         $job = $_POST['job'];
+        $mail = $_POST['mailApp'];
+        $date = date(' j F Y h:i:s');
+        //sciper temp
         $rootpath = '../candidatures/';
-
+        //now dossier = sciper - date - mail
+        $folderName = /*sciper*/"-".$date."-".$mail;
             if($job=="polyM") {
-                //echo "Polymec"; 
                 $path = $rootpath.'Polymecaniciens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$apprentiInfos);
             }else if($job=="info"){
-                //echo "informaticien";
                 $apprentiInfos[1] =  $_POST['filInfo'];
                 $path = $rootpath.'Informaticiens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$apprentiInfos);
             }else if($job=="logi"){
-                //echo "Logisticiens";
                 $path = $rootpath.'Logisticiens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$apprentiInfos);
             }else if($job=="planElec"){
-                //echo "Planif Elec";
                 $path = $rootpath.'PlanificateurElectriciens/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$apprentiInfos);
             }else if($job=="empCom"){
-                //echo "EmployesCommerce";
                 $path = $rootpath.'EmployesCommerce/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$apprentiInfos);
             }else if($job=="gardAn"){
-                //echo "GardiensAnimaux";
                 $path = $rootpath.'GardiensAnimaux/'."new-".$name.$surname.'/';
                 createThings($path,$name,$surname,$apprentiInfos);
             }   
@@ -59,7 +57,7 @@
                         echo "Dossiers crées";
                         $noError = true;
                     }
-                    
+
                     //JSON
                     require_once("json/jsonClass.php");
                     $doc = new Doc();
