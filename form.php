@@ -45,7 +45,7 @@
                 <option value="empCom">Employé-e de commerce CFC</option>
                 <option value="gardAn">Gardien-ne d'animaux CFC</option>
             </select>
-            <input type="text" name="sciperTmp"  value="<?php echo $tempSciper;?>" readonly hidden/> <!--must not be showed-->
+            <input type="text" name="sciperTmp"  value="<?php echo $tempSciper;?>" readonly hidden/>
         </fieldset>
         <div id="all" style="display: none;">
         <fieldset>
