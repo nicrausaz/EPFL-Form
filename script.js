@@ -44,6 +44,16 @@ $(document).ready(function () {
             }
         }
     });
+    $('#addInputFile').click(function () {
+        var x = $('#annexes > tbody').children().size() + 1;
+        console.log(x);
+        if (x < 6) {
+            $('#annexes').append('ehy');
+            if (x == 4) {
+                $('#addInputFile').hide(750);
+            }
+        }
+    });
     // SHOW/HIDE CONTENT ACCORDING TO SELECTED JOB
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;

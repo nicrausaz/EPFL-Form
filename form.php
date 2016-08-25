@@ -208,7 +208,7 @@
                     <section id="dejaCandError"></section>
                 </fieldset>
                 <!-- ANNEXES-->
-                <fieldset>
+                <fieldset id="annexes">
                     <legend><span class="number">4</span> Annexes </legend>
                     <p>Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.</p>
         
@@ -241,7 +241,7 @@
                     <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
                     <section class="formatInd" id="formatZone5"></section>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Ajouter un certificat
+                        Ajouter un annexe
                     </button>
                     <p></p>
                     <section id="formatErrorZone5"></section>

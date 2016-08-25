@@ -100,10 +100,10 @@
                         $encodedJson = (json_encode($doc));
                         file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
-                        uploadFile($pathAnnexes, 'photo', array('.jpg','.jpeg','.png','.pdf'));
+                        uploadFile($pathAnnexes, 'photo', array('.jpg','.jpeg','.png','.pdf','.JPG'));
                         uploadFile($pathAnnexes, 'cv', array('.pdf'));
                         uploadFile($pathAnnexes, 'lettre', array('.pdf'));
-                        uploadFile($pathAnnexes, 'idCard', array('.jpg','.jpeg','.png','.pdf'));
+                        uploadFile($pathAnnexes, 'idCard', array('.jpg','.jpeg','.png','.pdf','.JPG'));
                         if($_POST['job']=="polyM"){
                             uploadFile($pathAnnexes, 'gimch', array('.pdf'));
                         }     
