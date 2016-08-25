@@ -96,14 +96,15 @@
                         if($_POST['dejaCand'] == "dejaCand-oui"){
                             $doc->anneeCandidature = $_POST['dejaCandAnnee'];
                         }else{}
-                        //$doc->nowDate = new DateTime();
+                        $doc->datePostulation = date('j-n-y--h:i:s'); //ad +2 to hour
                         $encodedJson = (json_encode($doc));
-                        file_put_contents('informations.json', $encodedJson); //change path 
+                        file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
                         uploadFile($pathAnnexes, 'photo', array('.jpg','.jpeg','.png','.pdf'));
                         uploadFile($pathAnnexes, 'cv', array('.pdf'));
                         uploadFile($pathAnnexes, 'lettre', array('.pdf'));
                         uploadFile($pathAnnexes, 'idCard', array('.jpg','.jpeg','.png','.pdf'));
+                        uploadFile($pathAnnexes, 'gimch', array('.pdf'));
                 }
             }
                 function uploadFile($pathAnnexes, $inputName, $extensions){
@@ -129,38 +130,6 @@
                             echo $erreur;
                         }
                     }
-                        /*
-
-                    //GIM-CH upload
-                    $dossier = $pathAnnexes;
-                    $fichier = basename($_FILES['photo']['name']);
-                    $extensions = array('.jpg','.jpeg','.png','.pdf');
-                    $extension = strrchr($_FILES['photo']['name'], '.'); 
-                    
-                    if(!in_array($extension, $extensions)){
-                        $erreur = 'Vous devez uploader un fichier de type JPG/JPEG ou PNG';
-                        //$noError = false;
-                    }
-                    if(!isset($erreur)){
-                        $fichier = strtr($fichier, 
-                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-                        
-                        if(move_uploaded_file($_FILES['photo']['tmp_name'], $dossier . $fichier))
-                        {
-                            echo 'Upload réussi';
-                            $noError = true;
-                        }
-                        else{
-                            echo 'Echec de l\'upload gim-ch!';
-                            $noError = false;
-                        }
-                    }
-                    else{
-                        echo $erreur;
-                    }
-                    */
                     // mail send
                 
                     $to  = 'nicolas.crausaz@epfl.ch';

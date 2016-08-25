@@ -1,1 +1,113 @@
-{"formation":"planElec","filiere":"","maturite":"matu-non","genreApprenti":null,"nomApprenti":"Crau","prenomApprenti":"Nico","addresseApprentiComplete":{"rue":"dsfsdfg","NPA":"sdfgsdrgsds"},"telFixeApprenti":"dfgsdfvs","telMobileApprenti":"sdgsdfgsdfg","mailApprenti":"n.crausaz99@gmail.com","dateNaissanceApprenti":"1999-08-03","origineApprenti":"sdrgsdfg","nationaliteApprenti":"fgsdfgsdf","langueMaternelleApprenti":"rgrcvsdrgc","connaissancesLinguistiques":[],"connaissanceFrancais":"","majeur":"maj-non","rep1":{"genre":null,"nom":"","prenom":"","addresse":{"rue":"","NPA":""},"telephone":""},"rep2":{"genre":null,"nom":"","prenom":"","addresse":{"rue":"","NPA":""},"telephone":""},"scolarite1":{"ecole":"","lieu":"","niveau":"","annees":""},"scolarite2":{"ecole":"","lieu":"","niveau":"","annees":""},"scolarite3":{"ecole":"","lieu":"","niveau":"","annees":""},"scolarite4":{"ecole":null,"lieu":null,"niveau":null,"annees":null},"scolarite5":{"ecole":null,"lieu":null,"niveau":null,"annees":null},"anneeFinScolarite":"","activiteProfessionelle1":{"employeur":"","lieu":"","activite":"","annees":""},"activiteProfessionelle2":{"employeur":null,"lieu":null,"activite":null,"annees":null},"activiteProfessionelle3":{"employeur":null,"lieu":null,"activite":null,"annees":null},"stage1":{"metier":"","employeur":""},"stage2":{"metier":"","employeur":""},"stage3":{"metier":null,"employeur":null},"stage4":[],"dejaCandidat":"dejaCand-non","anneeCandidature":"","nowDate":"","activiteProfessionelle4":{"employeur":null,"lieu":null,"activite":null,"annees":null}}
+{
+    "formation": "planElec",
+    "filiere": "",
+    "maturite": "matu-non",
+    "genreApprenti": null,
+    "nomApprenti": "Crau",
+    "prenomApprenti": "Nico",
+    "addresseApprentiComplete": {
+        "rue": "dsfsdfg",
+        "NPA": "sdfgsdrgsds"
+    },
+    "telFixeApprenti": "dfgsdfvs",
+    "telMobileApprenti": "sdgsdfgsdfg",
+    "mailApprenti": "n.crausaz99@gmail.com",
+    "dateNaissanceApprenti": "1999-08-03",
+    "origineApprenti": "sdrgsdfg",
+    "nationaliteApprenti": "fgsdfgsdf",
+    "langueMaternelleApprenti": "rgrcvsdrgc",
+    "connaissancesLinguistiques": [],
+    "connaissanceFrancais": "",
+    "majeur": "maj-non",
+    "rep1": {
+        "genre": null,
+        "nom": "",
+        "prenom": "",
+        "addresse": {
+            "rue": "",
+            "NPA": ""
+        },
+        "telephone": ""
+    },
+    "rep2": {
+        "genre": null,
+        "nom": "",
+        "prenom": "",
+        "addresse": {
+            "rue": "",
+            "NPA": ""
+        },
+        "telephone": ""
+    },
+    "scolarite1": {
+        "ecole": "",
+        "lieu": "",
+        "niveau": "",
+        "annees": ""
+    },
+    "scolarite2": {
+        "ecole": "",
+        "lieu": "",
+        "niveau": "",
+        "annees": ""
+    },
+    "scolarite3": {
+        "ecole": "",
+        "lieu": "",
+        "niveau": "",
+        "annees": ""
+    },
+    "scolarite4": {
+        "ecole": null,
+        "lieu": null,
+        "niveau": null,
+        "annees": null
+    },
+    "scolarite5": {
+        "ecole": null,
+        "lieu": null,
+        "niveau": null,
+        "annees": null
+    },
+    "anneeFinScolarite": "",
+    "activiteProfessionelle1": {
+        "employeur": "",
+        "lieu": "",
+        "activite": "",
+        "annees": ""
+    },
+    "activiteProfessionelle2": {
+        "employeur": null,
+        "lieu": null,
+        "activite": null,
+        "annees": null
+    },
+    "activiteProfessionelle3": {
+        "employeur": null,
+        "lieu": null,
+        "activite": null,
+        "annees": null
+    },
+    "activiteProfessionelle4": {
+        "employeur": null,
+        "lieu": null,
+        "activite": null,
+        "annees": null
+    },
+    "stage1": {
+        "metier": "",
+        "employeur": ""
+    },
+    "stage2": {
+        "metier": "",
+        "employeur": ""
+    },
+    "stage3": {
+        "metier": null,
+        "employeur": null
+    },
+    "stage4": [],
+    "dejaCandidat": "dejaCand-non",
+    "anneeCandidature": "",
+    "nowDate": "25-8-16\/01:20:02"
+}

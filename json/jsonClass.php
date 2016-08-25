@@ -42,6 +42,7 @@ class Doc {
 	public $activiteProfessionelle1 = [];
 	public $activiteProfessionelle2 = [];
 	public $activiteProfessionelle3 = [];
+	public $activiteProfessionelle4 = [];
 
 	//3.3
 	public $stage1 = [];
@@ -51,6 +52,6 @@ class Doc {
 	public $dejaCandidat = "";
 	public $anneeCandidature = "";
 	//others
-	public $nowDate = "";
+	public $datePostulation = "";
 }
 ?>          
