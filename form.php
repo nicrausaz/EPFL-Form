@@ -20,7 +20,7 @@
         $firstname= $oClient->getValue('firstname');
         $name= $oClient->getValue('name');
         $sKey = $oClient->GetKey();
-?>
+        ?>
          <title>Formulaire Apprentissage</title>
     </head>
     <body>
@@ -45,7 +45,7 @@
                 <option value="empCom">Employé-e de commerce CFC</option>
                 <option value="gardAn">Gardien-ne d'animaux CFC</option>
             </select>
-            <input type="text" name="sciperTmp"  value="<?php echo $tempSciper;?>" readonly/>
+            <input type="text" name="sciperTmp"  value="<?php echo $tempSciper;?>" readonly/> <!--must not be showed-->
         </fieldset>
         <div id="all" style="display: none;">
         <fieldset>

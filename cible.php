@@ -7,6 +7,7 @@
     <body>
     <div class="form-style-5">
        <?php
+       
         //Tri des apprentis par métier
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
@@ -50,6 +51,7 @@
                     if (!mkdir($pathAnnexes, 0777, true)){
                         die('Echec lors de la création du dossier annexes');
                     }else{
+                        
                         require_once("json/jsonClass.php");
                         $doc = new Doc();
                         $doc->formation = $_POST['job'];
@@ -68,7 +70,7 @@
                         $doc->dateNaissanceApprenti  = $_POST['birthApp'];
                         $doc->origineApprenti  = $_POST['originApp'];
                         $doc->nationaliteApprenti  = $_POST['nationApp'];
-                        $doc->langueMaternelleAprenti  = $_POST['langApp'];
+                        $doc->langueMaternelleApprenti  = $_POST['langApp'];
                         //GET CHECKBOXES
                         //$doc->connaissanceFrançais = $_POST['langApp'];
                         //$doc->langueMaternelleApprenti  = $_POST['langApp'];
@@ -94,169 +96,40 @@
                         if($_POST['dejaCand'] == "dejaCand-oui"){
                             $doc->anneeCandidature = $_POST['dejaCandAnnee'];
                         }else{}
-
                         //$doc->nowDate = new DateTime();
-                        
                         $encodedJson = (json_encode($doc));
-                        file_put_contents('informations.json', $encodedJson); //change path
-                    }
+                        file_put_contents('informations.json', $encodedJson); //change path 
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function uploadFile(){
-
-}
-                    $dossier = $pathAnnexes;
-                    $fichier = basename($_FILES['photo']['name']);
-                    $extensions = array('.jpg','.jpeg','.png','.pdf');
-                    $extension = strrchr($_FILES['photo']['name'], '.'); 
-                    
-                    if(!in_array($extension, $extensions)){
-                        $erreur = 'Vous devez uploader un fichier de type JPG/JPEG, PNG ou PDF';
-                        //$noError = false;
-                    }
-                    if(!isset($erreur)){
-                        $fichier = strtr($fichier, 
-                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+                        uploadFile($pathAnnexes, 'photo', array('.jpg','.jpeg','.png','.pdf'));
+                        uploadFile($pathAnnexes, 'cv', array('.pdf'));
+                        uploadFile($pathAnnexes, 'lettre', array('.pdf'));
+                        uploadFile($pathAnnexes, 'idCard', array('.jpg','.jpeg','.png','.pdf'));
+                }
+            }
+                function uploadFile($pathAnnexes, $inputName, $extensions){
+                        $fichier = basename($_FILES[$inputName]['name']);
+                        $extension = strrchr($_FILES[$inputName]['name'], '.');
                         
-                        if(move_uploaded_file($_FILES['photo']['tmp_name'], $dossier . $fichier))
-                        {
-                            echo 'Upload réussi';
-                            $noError = true;
-                            
+                        if(!in_array($extension, $extensions)){
+                            $erreur = "Echec";
+                        }
+                        if(!isset($erreur)){
+                            $fichier = strtr($fichier,
+                                'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+                                'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+                            $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+                            if(move_uploaded_file($_FILES[$inputName]['tmp_name'], $pathAnnexes . $fichier)){
+                                echo 'Upload réussi';  
+                            }
+                            else{
+                                echo 'Echec de l\'upload !';
+                            }
                         }
                         else{
-                            echo 'Echec de l\'upload photo!';
-                            $noError = false;
+                            echo $erreur;
                         }
                     }
-                    else{
-                        echo $erreur;
-                    }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                    //Photo upload
-                    $dossier = $pathAnnexes;
-                    $fichier = basename($_FILES['photo']['name']);
-                    $extensions = array('.jpg','.jpeg','.png','.pdf');
-                    $extension = strrchr($_FILES['photo']['name'], '.'); 
-                    
-                    if(!in_array($extension, $extensions)){
-                        $erreur = 'Vous devez uploader un fichier de type JPG/JPEG, PNG ou PDF';
-                        //$noError = false;
-                    }
-                    if(!isset($erreur)){
-                        $fichier = strtr($fichier, 
-                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-                        
-                        if(move_uploaded_file($_FILES['photo']['tmp_name'], $dossier . $fichier))
-                        {
-                            echo 'Upload réussi';
-                            $noError = true;
-                            
-                        }
-                        else{
-                            echo 'Echec de l\'upload photo!';
-                            $noError = false;
-                        }
-                    }
-                    else{
-                        echo $erreur;
-                    }
-                    
-                    //CV upload  
-                    $dossier = $pathAnnexes;
-                    $fichier = basename($_FILES['cv']['name']);
-                    $extensions = array('.pdf');
-                    $extension = strrchr($_FILES['cv']['name'], '.'); 
-                    
-                    if(!in_array($extension, $extensions)){
-                        $erreur = 'Vous devez uploader un fichier de type PDF';
-                    }
-                    if(!isset($erreur)){
-                        $fichier = strtr($fichier, 
-                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-                        
-                        if(move_uploaded_file($_FILES['cv']['tmp_name'], $dossier . $fichier))
-                        {
-                            echo 'Upload réussi';
-                            $noError = true;
-                        }
-                        else{
-                            echo 'Echec de l\'upload CV!';
-                            $noError = false;
-                        }
-                    }
-                    else{
-                        echo $erreur;
-                    }
-
-                    // Lettre upload
-                    $dossier = $pathAnnexes;
-                    $fichier = basename($_FILES['lettre']['name']);
-                    $extensions = array('.pdf');
-                    $extension = strrchr($_FILES['lettre']['name'], '.'); 
-                    
-                    if(!in_array($extension, $extensions)){
-                        $erreur = 'Vous devez uploader un fichier de type PDF';
-                    }
-                    if(!isset($erreur)){
-                        $fichier = strtr($fichier, 
-                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-                        
-                        if(move_uploaded_file($_FILES['lettre']['tmp_name'], $dossier . $fichier))
-                        {
-                            echo 'Upload réussi';
-                            $noError = true;
-                        }
-                        else{
-                            echo 'Echec de l\'upload Lettre de motivation!';
-                            $noError = false;
-                        }
-                    }
-                    else{
-                        echo $erreur;
-                    }
-
-                    // ID card upload
-                    $dossier = $pathAnnexes;
-                    $fichier = basename($_FILES['idCard']['name']);
-                    $extensions = array('.jpg','.jpeg','.png','.pdf');
-                    $extension = strrchr($_FILES['idCard']['name'], '.'); 
-                    
-                    if(!in_array($extension, $extensions)){
-                        $erreur = 'Vous devez uploader un fichier de type JPG/JPEG ou PNG';
-                        //$noError = false;
-                    }
-                    //
-                    if(!isset($erreur)){
-                        $fichier = strtr($fichier, 
-                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-                        
-                        if(move_uploaded_file($_FILES['idCard']['tmp_name'], $dossier . $fichier))
-                        {
-                            echo 'Upload réussi';
-                            $noError = true;
-                        }
-                        else{
-                            echo 'Echec de l\'upload idCard!';
-                            $noError = false;
-                        }
-                    }
-                    else{
-                        echo $erreur;
-                    }
-
+                        /*
 
                     //GIM-CH upload
                     $dossier = $pathAnnexes;
@@ -287,8 +160,9 @@ function uploadFile(){
                     else{
                         echo $erreur;
                     }
-                    
+                    */
                     // mail send
+                
                     $to  = 'nicolas.crausaz@epfl.ch';
                     $subject = 'Nouvelle demande de place d\'apprentissage';
                     $message = $name." ".$surname ." ". " a fait une demande de place d'apprentissage.";
@@ -304,7 +178,6 @@ function uploadFile(){
                                 echo "Mail non envoyé";
                             }
                     }
-            }
         ?>
         </div>
     </body>
