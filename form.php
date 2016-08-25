@@ -117,7 +117,7 @@
                         <input type="text" name="surnameRep1" placeholder="Prénom" autocomplete="off"/>
                         <input type="text" name="adrRep1" placeholder="Adresse" autocomplete="off"/>
                         <input type="text" name="NPARep1" placeholder = "NPA\Domicile"autocomplete="off"/>
-                        <input type="text" name="telRep1" placeholder="Téléphone" autocomplete="off"/>
+                        <input type="text" name="telRep1" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
                         <!-- DONNEES REPRESENTANT 2-->
                         <p>Réprésentant 2:</p>
                         <select name="genreRep2" >
@@ -129,7 +129,7 @@
                         <input type="text" name="surnameRep2" placeholder="Prénom" autocomplete="off"/>
                         <input type="text" name="adrRep2" placeholder="Adresse" autocomplete="off"/>
                         <input type="text" name="NPARep2" placeholder = "NPA\Domicile"autocomplete="off"/>
-                        <input type="text" name="telRep2" placeholder="Téléphone" autocomplete="off"/>
+                        <input type="text" name="telRep2" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
                     </section>
                 </fieldset>
                 <!-- ACIVITES-->
