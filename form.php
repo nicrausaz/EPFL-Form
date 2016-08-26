@@ -208,7 +208,7 @@
                     <section id="dejaCandError"></section>
                 </fieldset>
                 <!-- ANNEXES-->
-                <fieldset id="annexes">
+                <fieldset>
                     <legend><span class="number">4</span> Annexes </legend>
                     <p>Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.</p>
         
@@ -237,13 +237,14 @@
                     <section id="formatErrorZone4"></section>
 
                     <!-- Dossier annexes --> <!--TOGET-->
-                    <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
-                    <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
-                    <section class="formatInd" id="formatZone5"></section>
+                        <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
+                        <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
+                        <section class="formatInd" id="formatZone5"></section>
+                        <div id="newCertifZone"></div>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Ajouter un annexe
                     </button>
-                    <p></p>
+                    
                     <section id="formatErrorZone5"></section>
                     <div id="polyOnly">
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->

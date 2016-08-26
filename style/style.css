@@ -133,20 +133,6 @@ a {
 
 
 /*
-#condDiv{
-  padding-bottom: 10px;
-}
-*/
-
-
-/*
-#condLabel{
-  
-}
-*/
-
-
-/*
 RADIOBUTTON STYLE
 */
 
@@ -293,6 +279,10 @@ label.file:after {
   text-overflow: ellipsis;
   text-align: center;
   vertical-align: middle;
+}
+
+.newInputFile {
+  display:none;
 }
 
 

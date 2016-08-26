@@ -45,11 +45,11 @@ $(document).ready(function () {
         }
     });
     $('#addInputFile').click(function () {
-        var x = $('#annexes > tbody').children().size() + 1;
-        console.log(x);
-        if (x < 6) {
-            $('#annexes').append('ehy');
-            if (x == 4) {
+        var z = $('#newCertifZone > tbody').children().size() + 1;
+        console.log(z);
+        if (z < 6) {
+            $('#newCertifZone').append('<tr><td><label class="file" title="" onmouseover="mOver(this,formatCertifZone' + z +',"jpg - jpeg - png - pdf")" onmouseout="mOut(this,formatCertifZone'+ z +')" class = "newInputFile"><input type="file" name="certifInput'+ z +'" id="certifInput'+ z +'" onchange="changeTitleFile(this)"/></label><section class="formatInd" id="formatCertifZone'+ z +'"></section></td></tr>');
+            if (z == 4) {
                 $('#addInputFile').hide(750);
             }
         }

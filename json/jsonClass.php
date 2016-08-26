@@ -19,7 +19,6 @@ class Doc {
 	public $langueMaternelleApprenti = "";
 	// 4 checkboxes
 	public $connaissancesLinguistiques = [];
-	
 	public $connaissanceFrancais = "";
 	//public $connaissanceAllemand = "";
 	//public $connaissanceAnglais = "";
@@ -42,7 +41,6 @@ class Doc {
 	public $activiteProfessionelle1 = [];
 	public $activiteProfessionelle2 = [];
 	public $activiteProfessionelle3 = [];
-	public $activiteProfessionelle4 = [];
 
 	//3.3
 	public $stage1 = [];
