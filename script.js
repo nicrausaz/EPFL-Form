@@ -48,12 +48,13 @@ $(document).ready(function () {
         var z = $('#newCertifZone > tbody').children().size() + 1;
         console.log(z);
         if (z < 6) {
-            $('#newCertifZone').append('<tr><td><label class="file" title="" onmouseover="mOver(this,formatCertifZone' + z +',"jpg - jpeg - png - pdf")" onmouseout="mOut(this,formatCertifZone'+ z +')" class = "newInputFile"><input type="file" name="certifInput'+ z +'" id="certifInput'+ z +'" onchange="changeTitleFile(this)"/></label><section class="formatInd" id="formatCertifZone'+ z +'"></section></td></tr>');
+            $('#newCertifZone').append(/*'<label class="file" title="" onmouseover="mOver(this,formatZone'+ z +', jpg-)" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>'*/);
             if (z == 4) {
                 $('#addInputFile').hide(750);
             }
         }
     });
+    //class = "newInputFile"
     // SHOW/HIDE CONTENT ACCORDING TO SELECTED JOB
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;

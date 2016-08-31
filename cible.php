@@ -7,7 +7,6 @@
     <body>
     <div class="form-style-5">
        <?php
-       
         //Tri des apprentis par métier
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
@@ -91,6 +90,7 @@
                         $doc->stage1 = array("metier"=>$_POST['activiteStage1'],"employeur"=>$_POST['entrepriseStage1']);
                         $doc->stage2 = array("metier"=>$_POST['activiteStage2'],"employeur"=>$_POST['entrepriseStage2']);
                         $doc->stage3 = array("metier"=>$_POST['activiteStage3'],"employeur"=>$_POST['entrepriseStage3']);
+                        $doc->stage3 = array("metier"=>$_POST['activiteStage4'],"employeur"=>$_POST['entrepriseStage4']);
                         $doc->dejaCandidat = $_POST['dejaCand'];
                         if($_POST['dejaCand'] == "dejaCand-oui"){
                             $doc->anneeCandidature = $_POST['dejaCandAnnee'];
@@ -108,31 +108,31 @@
                         }     
                 }
             }
-                function uploadFile($pathAnnexes, $inputName, $extensions){
-                        $fichier = basename($_FILES[$inputName]['name']);
-                        $extension = strrchr($_FILES[$inputName]['name'], '.');
+            function uploadFile($pathAnnexes, $inputName, $extensions){
+                    $fichier = basename($_FILES[$inputName]['name']);
+                    $extension = strrchr($_FILES[$inputName]['name'], '.');
                         
-                        if(!in_array($extension, $extensions)){
-                            $erreur = "Echec";
-                        }
-                        if(!isset($erreur)){
-                            $fichier = strtr($fichier,
-                                'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-                                'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-                            $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-                            if(move_uploaded_file($_FILES[$inputName]['tmp_name'], $pathAnnexes . $fichier)){
-                                echo 'Upload réussi';  
-                            }
-                            else{
-                                echo 'Echec de l\'upload !';
-                            }
+                    if(!in_array($extension, $extensions)){
+                        $erreur = "Echec";
+                    }
+                    if(!isset($erreur)){
+                        $fichier = strtr($fichier,
+                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+                        if(move_uploaded_file($_FILES[$inputName]['tmp_name'], $pathAnnexes . $fichier)){
+                            echo 'Upload réussi';  
                         }
                         else{
-                            echo $erreur;
+                            echo 'Echec de l\'upload !';
                         }
                     }
+                    else{
+                        echo $erreur;
+                    }
+                }
                     // mail send
-                
+                /*
                     $to  = 'nicolas.crausaz@epfl.ch';
                     $subject = 'Nouvelle demande de place d\'apprentissage';
                     $message = $name." ".$surname ." ". " a fait une demande de place d'apprentissage.";
@@ -148,6 +148,7 @@
                                 echo "Mail non envoyé";
                             }
                     }
+                    */
         ?>
         </div>
     </body>

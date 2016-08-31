@@ -282,9 +282,8 @@ label.file:after {
 }
 
 .newInputFile {
-  display:none;
+  display: inline;
 }
-
 
 /*
 MINIS BUTTONS

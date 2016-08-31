@@ -237,14 +237,13 @@
                     <section id="formatErrorZone4"></section>
 
                     <!-- Dossier annexes --> <!--TOGET-->
-                        <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
-                        <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
-                        <section class="formatInd" id="formatZone5"></section>
-                        <div id="newCertifZone"></div>
+                    <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
+                    <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
+                    <section class="formatInd" id="formatZone5"></section>
+                    <div id="newCertifZone"></div>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Ajouter un annexe
                     </button>
-                    
                     <section id="formatErrorZone5"></section>
                     <div id="polyOnly">
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
