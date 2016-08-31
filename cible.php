@@ -13,7 +13,7 @@
         $sciper = $_POST['sciperTmp'];
         $job = $_POST['job'];
         $mail = $_POST['mailApp'];
-        $dateNow = date('j-n-y--h i-s');
+        $dateNow = date('j-n-o--h i-s');
         $folderName = $sciper."--".$dateNow."--".$mail;
         $rootpath = '../candidatures/';
             if($job=="polyM") {
@@ -103,7 +103,7 @@
                         if($_POST['dejaCand'] == "dejaCand-oui"){
                             $doc->anneeCandidature = $_POST['dejaCandAnnee'];
                         }else{}
-                        $doc->datePostulation = date('j-n-y--h:i:s'); //ad +2 to hour
+                        $doc->datePostulation = date('j-n-o--h:i:s'); //ad +2 to hour
                         $encodedJson = (json_encode($doc));
                         file_put_contents($pathInfos.'/informations.json', $encodedJson);
 

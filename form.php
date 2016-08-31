@@ -5,9 +5,7 @@
 
         ini_set("display_errors",0);
         error_reporting(0);
-        /////////////////
-        //TEQUILA LOGON//
-        /////////////////
+        
         require_once("tequila/tequila.php");
         $oClient = new TequilaClient();
         $oClient->SetApplicationName('Formulaire apprentissage');
