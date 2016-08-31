@@ -48,7 +48,7 @@ $(document).ready(function () {
         var z = $('#newCertifZone > tbody').children().size() + 1;
         console.log(z);
         if (z < 6) {
-            $('#newCertifZone').append(/*'<label class="file" title="" onmouseover="mOver(this,formatZone'+ z +', jpg-)" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>'*/);
+            $('#newCertifZone').append('<label class="file" title="" onmouseover= "mOver(this,formatZone' + z + ', \'jpg - jpeg - png - pdf\')" onmouseout="mOut(this,formatZone ' + z + ')"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>');
             if (z == 4) {
                 $('#addInputFile').hide(750);
             }

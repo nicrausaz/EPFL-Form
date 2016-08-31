@@ -24,24 +24,14 @@ class Doc {
 	//public $connaissanceAutres = "";
 	//2.2
 	public $majeur = "";
-	public $rep1 = [];
-	public $rep2 = [];
+	public $representants = [];
 	//3.1
-	public $scolarite1 = [];
-	public $scolarite2 = [];
-	public $scolarite3 = [];
-	public $scolarite4 = [];
-	public $scolarite5 = [];
+	public $scolarite = [];
 	public $anneeFinScolarite = "";
 	//3.2
-	public $activiteProfessionelle1 = [];
-	public $activiteProfessionelle2 = [];
-	public $activiteProfessionelle3 = [];
+	public $activitesProfessionnelles = [];
 	//3.3
-	public $stage1 = [];
-	public $stage2 = [];
-	public $stage3 = [];
-	public $stage4 = [];
+	public $stages = [];
 	public $dejaCandidat = "";
 	public $anneeCandidature = "";
 	//others
