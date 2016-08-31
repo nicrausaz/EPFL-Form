@@ -76,10 +76,7 @@
                         //GET CHECKBOXES
                         if(isset($_POST['languesApp']) && !empty($_POST['languesApp'])){
                             foreach($_POST['languesApp'] as $lang[]);
-                            $doc->connaissanceFrancais = $lang[0];
-                            $doc->connaissanceAllemand = $lang[1];
-                            $doc->connaissanceAnglais = $lang[2];
-                            $doc->connaissanceAutres = $lang[3];
+                            $doc->connaissancesLinguistiques[] = array("francais"=> $lang[0], "allemand"=> $lang[1], "anglais"=> $lang[2], "autre"=> $lang[3]);
                         }
                         $doc->majeur = $_POST['maj'];
                         if($_POST['maj'] == "maj-non"){
@@ -140,11 +137,11 @@
                             echo 'Upload réussi';  
                         }
                         else{
-                            echo 'Echec de l\'upload !';
+                            //echo 'Echec de l\'upload !';
                         }
                     }
                     else{
-                        echo $erreur;
+                        //echo $erreur;
                     }
                 }
                     // mail send

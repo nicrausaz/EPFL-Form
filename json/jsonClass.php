@@ -16,11 +16,7 @@ class Doc {
 	public $origineApprenti = "";
 	public $nationaliteApprenti = "";
 	public $langueMaternelleApprenti = "";
-	public $connaissancesLinguistiques = [];
-	public $connaissanceFrancais = "";
-	public $connaissanceAllemand = "";
-	public $connaissanceAnglais = "";
-	public $connaissanceAutres = "";
+	public $connaissancesLinguistiques = "";
 	//2.2
 	public $majeur = "";
 	public $representants = [];
