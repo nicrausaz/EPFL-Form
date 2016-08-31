@@ -2,8 +2,8 @@
 <html lang="fr">
     <head>  
          <?php include('templates/head.php');
-            //ini_set("display_errors",0);
-            //error_reporting(0); ?>
+            ini_set("display_errors",0);
+            error_reporting(0); ?>
          <title>Confirmation</title>
     </head>
     <body>
@@ -74,25 +74,13 @@
                         $doc->nationaliteApprenti  = $_POST['nationApp'];
                         $doc->langueMaternelleApprenti  = $_POST['langApp'];
                         //GET CHECKBOXES
-                        if ($_POST['langApp'] == 'fra-oui'){
-                            echo "yeah boi 1";
+                        if(isset($_POST['languesApp']) && !empty($_POST['languesApp'])){
+                            foreach($_POST['languesApp'] as $lang[]);
+                            $doc->connaissanceFrancais = $lang[0];
+                            $doc->connaissanceAllemand = $lang[1];
+                            $doc->connaissanceAnglais = $lang[2];
+                            $doc->connaissanceAutres = $lang[3];
                         }
-                        if ($_POST['langApp'] == 'all-oui'){
-                            echo "yeah boi 2";
-                        }
-                        if ($_POST['langApp'] == 'ang-oui'){
-                            echo "yeah boi 3";
-                        }
-                        if ($_POST['langApp'] == 'aut-oui'){
-                            echo "yeah boi 4";
-                        }
-                        
-                        /*
-                        $doc->connaissanceFrançais = $_POST['langApp[0]'];
-                        $doc->connaissanceAllemand = $_POST['langApp[1]'];
-                        $doc->connaissanceAnglais = $_POST['langApp[2]'];
-                        $doc->connaissanceAutres = $_POST['langApp[3]'];
-                        */
                         $doc->majeur = $_POST['maj'];
                         if($_POST['maj'] == "maj-non"){
                             $rep1  = array("genre"=>$_POST['genreRep1'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep1'],"addresse"=> array("rue"=>$_POST['adrRep1'],"NPA"=>$_POST['NPARep1']),"telephone"=>$_POST['telRep1']);    
@@ -179,8 +167,8 @@
                     */
         ?>
          <?php include('templates/header.php') ?>
-         <h1><?php echo $surname," ", $name ?></h1>
-         <h2>Votre demande à bien été enregistrée, vous allez bientôt recevoir un e-mail confirmant votre postulation.</h2>
+         <h1><?php echo $surname," ", $name,"," ?></h1>
+         <h3>Votre demande à bien été enregistrée, vous allez bientôt recevoir un e-mail confirmant votre postulation.</h3>
 
         </div>
     </body>

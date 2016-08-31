@@ -84,12 +84,12 @@
                     <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="35" required/>
                     <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="30" required/>
                     <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
-                
+
                     <label for="languesApp">Connaissance linguistiques*:</label>
-                    <p><input type="checkbox" name="languesApp" id="french" value="fra-oui" /><label for="french"><span class="ui"></span>Français</label></p>
-                    <p><input type="checkbox" name="languesApp" id="german" value="all-oui"/><label for="german"><span class="ui"></span>Allemand</label></p>
-                    <p><input type="checkbox" name="languesApp" id="english" value="ang-oui"/><label for="english"><span class="ui"></span>Anglais</label></p>
-                    <p><input type="checkbox" name="languesApp" id="other" value="aut-oui"/><label for="other"><span class="ui"></span>Autres</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="fra-oui" id="french"><label for="french"><span class="ui"></span>Français</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="all-oui" id="german"><label for="german"><span class="ui"></span>Allemand</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="ang-oui" id="english"><label for="english"><span class="ui"></span>Anglais</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="aut-oui" id="other"><label for="other"><span class="ui"></span>Autres</label></p>
                 </fieldset>
                 <fieldset>
                     <legend><span class="number">2.2</span> Réprésentants légaux</legend>    

@@ -16,7 +16,6 @@ class Doc {
 	public $origineApprenti = "";
 	public $nationaliteApprenti = "";
 	public $langueMaternelleApprenti = "";
-	// 4 checkboxes
 	public $connaissancesLinguistiques = [];
 	public $connaissanceFrancais = "";
 	public $connaissanceAllemand = "";
