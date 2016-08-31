@@ -5,7 +5,7 @@
 
         ini_set("display_errors",0);
         error_reporting(0);
-        
+
         require_once("tequila/tequila.php");
         $oClient = new TequilaClient();
         $oClient->SetApplicationName('Formulaire apprentissage');
@@ -86,10 +86,10 @@
                     <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
                 
                     <label for="languesApp">Connaissance linguistiques*:</label>
-                    <p><input type="checkbox" name="languesApp" id="french" value="Français" /><label for="french"><span class="ui"></span>Français</label></p>
-                    <p><input type="checkbox" name="languesApp" id="german" value="Allemand"/><label for="german"><span class="ui"></span>Allemand</label></p>
-                    <p><input type="checkbox" name="languesApp" id="english" value="Anglais"/><label for="english"><span class="ui"></span>Anglais</label></p>
-                    <p><input type="checkbox" name="languesApp" id="other" value="Autres"/><label for="other"><span class="ui"></span>Autres</label></p>
+                    <p><input type="checkbox" name="languesApp" id="french" value="fra-oui" /><label for="french"><span class="ui"></span>Français</label></p>
+                    <p><input type="checkbox" name="languesApp" id="german" value="all-oui"/><label for="german"><span class="ui"></span>Allemand</label></p>
+                    <p><input type="checkbox" name="languesApp" id="english" value="ang-oui"/><label for="english"><span class="ui"></span>Anglais</label></p>
+                    <p><input type="checkbox" name="languesApp" id="other" value="aut-oui"/><label for="other"><span class="ui"></span>Autres</label></p>
                 </fieldset>
                 <fieldset>
                     <legend><span class="number">2.2</span> Réprésentants légaux</legend>    

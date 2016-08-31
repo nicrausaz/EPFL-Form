@@ -19,9 +19,9 @@ class Doc {
 	// 4 checkboxes
 	public $connaissancesLinguistiques = [];
 	public $connaissanceFrancais = "";
-	//public $connaissanceAllemand = "";
-	//public $connaissanceAnglais = "";
-	//public $connaissanceAutres = "";
+	public $connaissanceAllemand = "";
+	public $connaissanceAnglais = "";
+	public $connaissanceAutres = "";
 	//2.2
 	public $majeur = "";
 	public $representants = [];
