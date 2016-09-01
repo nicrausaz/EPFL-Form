@@ -227,7 +227,6 @@
                     <div class="mdl-tooltip mdl-tooltip--large" for="idCardLabel">
                         Formats autorisés: jpg - jpeg - png - pdf
                     </div>
-                    <section class="formatInd" id="formatZone2"></section>
                     <p></p>
                     <section id="formatErrorZone2"></section>
 
@@ -236,7 +235,6 @@
                     <div class="mdl-tooltip mdl-tooltip--large" for="CVLabel">
                         Formats autorisés: pdf
                     </div>
-                    <section class="formatInd" id="formatZone3"></section>
                     <p></p>
                     <section id="formatErrorZone3"></section>
 
@@ -245,23 +243,20 @@
                     <div class="mdl-tooltip mdl-tooltip--large" for="lettreLabel">
                         Formats autorisés: pdf
                     </div>
-                    <section class="formatInd" id="formatZone4"></section>
                     <p></p>
                     <section id="formatErrorZone4"></section>
 
                     <!-- Dossier annexes --> <!--TOGET-->
                     <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
-                    <label class="file" title="" one5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
+                    <label class="file" title=""><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
                     <section class="formatInd" id="formatZone5"></section>
                     <div id="newCertifZone"></div>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Ajouter un annexe
                     </button>
-                    <section id="formatErrorZone5"></section>
                     <div id="polyOnly">
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
-                        <label class="file" title="" formatZone6)"><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
-                        <section class="formatInd" id="formatZone6"></section>
+                        <label class="file" title="" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
                         <section id="formatErrorZone6"></section>
                     </div>
                 </fieldset>
