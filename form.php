@@ -42,6 +42,8 @@
                 <option value="planificateurElectricien">Planificateur-trice éléctricien-ne CFC</option>
                 <option value="employeCommerce">Employé-e de commerce CFC</option>
                 <option value="gardienAnimaux">Gardien-ne d'animaux CFC</option>
+                <option value="electronicien">Electronicien-ne CFC</option>
+                <option value="interactiveMediaDesigner">Interactive Media Desginer CFC</option>
             </select>
             <input type="text" name="sciperTmp"  value="<?php echo $tempSciper;?>" readonly hidden/>
         </fieldset>

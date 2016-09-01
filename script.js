@@ -62,22 +62,22 @@ $(document).ready(function () {
         var infoPeople = ["informaticien"];
         var polyPeople = ["polyMecanicien"];
         var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
-        var globalPeople = ["polyMecanicien", "informaticien", "logisticien", "planificateurElectricien", "employeCommerce", "gardienAnimaux"];
+        var globalPeople = ["polyMecanicien", "informaticien", "logisticien", "planificateurElectricien", "employeCommerce", "gardienAnimaux","interactiveMediaDesigner","electronicien"];
 
         if (globalPeople.indexOf(selectedFormation) != -1) {
-            $("#all").show(1000)
-            $("#infoOnly").hide(0)
-            $("#polyOnly").hide(0)
+            $("#all").show(1000);
+            $("#infoOnly").hide(0);
+            $("#polyOnly").hide(0);
             $("#dejaCandAnnee").hide(0);
 
             if (infoPeople.indexOf(selectedFormation) != -1) {
-                $("#infoOnly").show(1000)
+                $("#infoOnly").show(1000);
             }
             if (polyPeople.indexOf(selectedFormation) != -1) {
-                $("#polyOnly").show(1000)
+                $("#polyOnly").show(1000);
             }
         } else if (laborantPeople.indexOf(selectedFormation) != -1) {
-            $("#all").hide(1000)
+            $("#all").hide(1000);
 
             if (confirm("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...")) {
                 window.location.replace("https://wp.unil.ch/avml/");

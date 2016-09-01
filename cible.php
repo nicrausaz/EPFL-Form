@@ -37,6 +37,12 @@
             }else if($job=="gardienAnimaux"){
                 $path = $rootpath.'GardiensAnimaux/'.$folderName.'/';
                 createThings($path,$name,$surname);
+            }else if($job=="electronicien"){
+                $path = $rootpath.'GardiensAnimaux/'.$folderName.'/';
+                createThings($path,$name,$surname);
+            }else if($job=="interactiveMediaDesigner"){
+                $path = $rootpath.'GardiensAnimaux/'.$folderName.'/';
+                createThings($path,$name,$surname);
             }
             
             function createThings($path,$name,$surname){
@@ -150,7 +156,7 @@
                 }
                 function mailToResp(){
                     // mail send
-                    $to  = 'nicolas.crausaz@epfl.ch';
+                    $to  = 'nicolas.crausaz@epfl.ch'; //formation.apprentis@epfl.ch
                     $subject = 'Nouvelle demande de place d\'apprentissage';
                     $message = $_POST['surnameApp']." ".$_POST['nameApp']." a fait une demande de place d'apprentissage.";
                     $headers = 'From: formulaireApprentis@epfl.ch' . "\r\n" .
