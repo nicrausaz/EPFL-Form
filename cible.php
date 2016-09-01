@@ -38,10 +38,10 @@
                 $path = $rootpath.'GardiensAnimaux/'.$folderName.'/';
                 createThings($path,$name,$surname);
             }else if($job=="electronicien"){
-                $path = $rootpath.'GardiensAnimaux/'.$folderName.'/';
+                $path = $rootpath.'Electoniciens/'.$folderName.'/';
                 createThings($path,$name,$surname);
             }else if($job=="interactiveMediaDesigner"){
-                $path = $rootpath.'GardiensAnimaux/'.$folderName.'/';
+                $path = $rootpath.'InteractiveMediaDesigners/'.$folderName.'/';
                 createThings($path,$name,$surname);
             }
             
