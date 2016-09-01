@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="fr">
     <head>  
-        <?php include('templates/head.php') ?>    
+        <?php include('templates/head.php') ?>
+        <title>Conditions</title>
     </head>
     <body>
     <div class="form-style-5">
