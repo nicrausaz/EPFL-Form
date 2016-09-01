@@ -162,9 +162,9 @@
                                 echo "Mail non envoyé";
                             }
                 }
-                function mailToapprenti(){
+                function mailToApprenti(){
                     // mail send
-                    $to  = 'nicolas.crausaz@epfl.ch';
+                    $to  = $_POST['mailApp'];
                     $subject = 'Confirmation demande de place d\'apprentissage';
                     $message =  "Bonjour ". $_POST['surnameApp']." ".$_POST['nameApp']. ",". "\n\n".
                                 "Votre postulation a bien été prise en considération.";
