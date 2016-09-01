@@ -246,18 +246,25 @@
                     <p></p>
                     <section id="formatErrorZone4"></section>
 
-                    <!-- Dossier annexes --> <!--TOGET-->
-                    <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
-                    <label class="file" title=""><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
+                    <label for="certifs1">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
+                    <label class="file" title="" id="certifLabel1"><input type="file" name="certifs1" id="certifs1" onchange="changeTitleFile(this)" /></label>
                     <section class="formatInd" id="formatZone5"></section>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="certifLabel1">
+                        Formats autorisés: jpg - jpeg - png - pdf
+                    </div>
+
                     <div id="newCertifZone"></div>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Ajouter un annexe
                     </button>
+
                     <div id="polyOnly">
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
-                        <label class="file" title="" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
+                        <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
                         <section id="formatErrorZone6"></section>
+                        <div class="mdl-tooltip mdl-tooltip--large" for="gimchLabel">
+                            Formats autorisés: pdf
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset>
