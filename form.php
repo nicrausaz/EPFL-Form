@@ -214,25 +214,37 @@
                     <p>Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.</p>
         
                     <label for="photo">Photo passeport <strong>couleur:</strong></label>
-                    <label class="file" title="" onmouseover="mOver(this,formatZone1,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone1)"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)"/></label>
+                    <label class="file" title="" id="photoLabel" onmouseover="mOver(this,formatZone1,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone1)"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)"/></label>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="photoLabel">
+                    Formats autorisés: jpg - jpeg - png - pdf
+                    </div>
                     <section class="formatInd" id="formatZone1"></section>
                     <p></p>
                     <section id="formatErrorZone1"></section>
 
                     <label for="idCard">Copie carte d'indentité / passeport:</label>
-                    <label class="file" title="" onmouseover="mOver(this,formatZone2,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone2)"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" /></label>
+                    <label class="file" title="" id="idCardLabel" onmouseover="mOver(this,formatZone2,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone2)"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" /></label>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="idCardLabel">
+                        Formats autorisés: jpg - jpeg - png - pdf
+                    </div>
                     <section class="formatInd" id="formatZone2"></section>
                     <p></p>
                     <section id="formatErrorZone2"></section>
 
                     <label for="cv">Curriculum Vitae:</label>
-                    <label class="file" title="" onmouseover="mOver(this,formatZone3,'pdf')" onmouseout="mOut(this,formatZone3)"><input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" /></label>
+                    <label class="file" title="" id="CVLabel" onmouseover="mOver(this,formatZone3,'pdf')" onmouseout="mOut(this,formatZone3)"><input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" /></label>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="CVLabel">
+                        Formats autorisés: pdf
+                    </div>
                     <section class="formatInd" id="formatZone3"></section>
                     <p></p>
                     <section id="formatErrorZone3"></section>
 
                     <label for="lettre">Lettre de motivation:</label>
-                    <label class="file" title="" onmouseover="mOver(this,formatZone4,'pdf')" onmouseout="mOut(this,formatZone4)"><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" /></label>
+                    <label class="file" title="" id="lettreLabel" onmouseover="mOver(this,formatZone4,'pdf')" onmouseout="mOut(this,formatZone4)"><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" /></label>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="lettreLabel">
+                        Formats autorisés: pdf
+                    </div>
                     <section class="formatInd" id="formatZone4"></section>
                     <p></p>
                     <section id="formatErrorZone4"></section>
