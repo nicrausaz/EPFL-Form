@@ -108,7 +108,7 @@
                         $doc->anneeCandidature = $_POST['dejaCandAnnee'];
                     }else{}
                     $doc->datePostulation = date('j-n-o--h:i:s'); //ad +2 to hour
-                    $encodedJson = (json_encode($doc));
+                    $encodedJson = (json_encode($doc,JSON_UNESCAPED_UNICODE));
                     file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
                     //Upload call
