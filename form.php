@@ -29,15 +29,15 @@
         <fieldset>
             <!-- DONNEES APPRENTISSAGE-->
             <legend><span class="number">1</span> Apprentissage</legend>
-            <label for="job">Je suis intéressé par le métier de*: </label>
+            <label for="job">Je suis intéressé par la formation de*: </label>
 
             <select name ="job" id="jb" required>
-                <option value="menu" selected disabled>Choisir un métier...</option>
+                <option value="menu" selected disabled>Choisir une formation...</option>
                 <option value="laborantinBiologie">Laborantin-e CFC; option biologie</option>
                 <option value="laborantinChimie">Laborantin-e CFC; option chimie</option>
                 <option value="laborantinPhysique">Laborantin-e en physique CFC</option>
                 <option value="polyMecanicien">Polymécanicien-ne CFC</option>
-                <option value="informaticien">Informaticien-ne CFC</option>
+                <option value="informaticien" >Informaticien-ne CFC</option>
                 <option value="logisticien">Logisticien-ne CFC</option>
                 <option value="planificateurElectricien">Planificateur-trice éléctricien-ne CFC</option>
                 <option value="employeCommerce">Employé-e de commerce CFC</option>
@@ -74,7 +74,7 @@
                     </select>
                     <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name;?>" readonly />
                     <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname;?>" readonly />
-                    <input type="text" name="adrApp" placeholder="Adresse *" autocomplete="off" minlength="2" maxlength="40" required/>
+                    <input type="text" name="adrApp" placeholder="Rue *" autocomplete="off" minlength="2" maxlength="40" required/>
                     <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" minlength="2" maxlength="40" required/>
                     <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" minlength="2" autocomplete="off" maxlength="20" required/>
                     <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" autocomplete="off" minlength="2" maxlength="20" required/>
@@ -114,7 +114,7 @@
                         </select>
                         <input type="text" name="nameRep1" placeholder="Nom" autocomplete="off"/>
                         <input type="text" name="surnameRep1" placeholder="Prénom" autocomplete="off"/>
-                        <input type="text" name="adrRep1" placeholder="Adresse" autocomplete="off"/>
+                        <input type="text" name="adrRep1" placeholder="Rue" autocomplete="off"/>
                         <input type="text" name="NPARep1" placeholder = "NPA\Domicile"autocomplete="off"/>
                         <input type="text" name="telRep1" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
                         <!-- DONNEES REPRESENTANT 2-->
@@ -126,7 +126,7 @@
                         </select>
                         <input type="text" name="nameRep2" placeholder="Nom" autocomplete="off"/>
                         <input type="text" name="surnameRep2" placeholder="Prénom" autocomplete="off"/>
-                        <input type="text" name="adrRep2" placeholder="Adresse" autocomplete="off"/>
+                        <input type="text" name="adrRep2" placeholder="Rue" autocomplete="off"/>
                         <input type="text" name="NPARep2" placeholder = "NPA\Domicile"autocomplete="off"/>
                         <input type="text" name="telRep2" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
                     </section>

@@ -80,7 +80,7 @@ $(document).ready(function () {
             $("#all").hide(1000)
 
             if (confirm("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...")) {
-                window.location.replace("http://apprentis.epfl.ch");
+                window.location.replace("https://wp.unil.ch/avml/");
             } else { }
         }
     });
