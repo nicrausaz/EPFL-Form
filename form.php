@@ -214,7 +214,7 @@
                     <p>Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.</p>
         
                     <label for="photo">Photo passeport <strong>couleur:</strong></label>
-                    <label class="file" title="" id="photoLabel" onmouseover="mOver(this,formatZone1,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone1)"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)"/></label>
+                    <label class="file" title="" id="photoLabel"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)"/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="photoLabel">
                     Formats autorisés: jpg - jpeg - png - pdf
                     </div>
@@ -223,7 +223,7 @@
                     <section id="formatErrorZone1"></section>
 
                     <label for="idCard">Copie carte d'indentité / passeport:</label>
-                    <label class="file" title="" id="idCardLabel" onmouseover="mOver(this,formatZone2,'jpg - jpeg - png - pdf')" onmouseout="mOut(this,formatZone2)"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" /></label>
+                    <label class="file" title="" id="idCardLabel"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" /></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="idCardLabel">
                         Formats autorisés: jpg - jpeg - png - pdf
                     </div>
@@ -232,7 +232,7 @@
                     <section id="formatErrorZone2"></section>
 
                     <label for="cv">Curriculum Vitae:</label>
-                    <label class="file" title="" id="CVLabel" onmouseover="mOver(this,formatZone3,'pdf')" onmouseout="mOut(this,formatZone3)"><input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" /></label>
+                    <label class="file" title="" id="CVLabel" ><input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" /></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="CVLabel">
                         Formats autorisés: pdf
                     </div>
@@ -241,7 +241,7 @@
                     <section id="formatErrorZone3"></section>
 
                     <label for="lettre">Lettre de motivation:</label>
-                    <label class="file" title="" id="lettreLabel" onmouseover="mOver(this,formatZone4,'pdf')" onmouseout="mOut(this,formatZone4)"><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" /></label>
+                    <label class="file" title="" id="lettreLabel" ><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" /></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="lettreLabel">
                         Formats autorisés: pdf
                     </div>
@@ -251,7 +251,7 @@
 
                     <!-- Dossier annexes --> <!--TOGET-->
                     <label for="dossierFiles">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
-                    <label class="file" title="" onmouseover="mOver(this,formatZone5,'compressé')" onmouseout="mOut(this,formatZone5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
+                    <label class="file" title="" one5)"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>
                     <section class="formatInd" id="formatZone5"></section>
                     <div id="newCertifZone"></div>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
@@ -260,7 +260,7 @@
                     <section id="formatErrorZone5"></section>
                     <div id="polyOnly">
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label><!--TOGET-->
-                        <label class="file" title="" onmouseover="mOver(this,formatZone6,'jpg-jpeg-png-pdf')" onmouseout="mOut(this,formatZone6)"><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
+                        <label class="file" title="" formatZone6)"><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
                         <section class="formatInd" id="formatZone6"></section>
                         <section id="formatErrorZone6"></section>
                     </div>

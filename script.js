@@ -177,13 +177,6 @@ $(document).ready(function () {
     });
 
 });
-
-function mOver(obj, zone, formats) {
-    $(zone).html("Formats autorisés: " + formats);
-}
-function mOut(obj, zone) {
-    $(zone).html("");
-}
 function changeTitleFile(objFile) {
     objFile.parentNode.setAttribute('title', objFile.value.replace(/^.*[\\/]/, ''));
 }
