@@ -48,7 +48,7 @@ $(document).ready(function () {
         var z = $('#newCertifZone > tbody').children().size() + 2;
         console.log(z);
         if (z < 10) {
-            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for="certifLabel' + z + '">Formats autorisés: jpg - jpeg - png - pdf </div><p></p><section id="formatErrorZone' + z + '"></section></td></tr>');
+            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for="certifLabel' + z + '">Formats autorisés: jpg - jpeg - png - pdf </div><p></p><section id="formatErrorZone' + (z + 5) + '"></section></td></tr>');
             if (z == 8) {
                 $('#addInputFile').hide(750);
             }
@@ -87,6 +87,29 @@ $(document).ready(function () {
 
     //CREATE 1 FUNCTION ONLY
     // CHECK FILE FORMATS
+    var inputsFileIdsAllowAll = ["#photo", "#idCard", "#certifs1", "#certifs2", "#certifs3", "#certifs4", "#certifs5", "#certifs6", "#certifs7", "#certifs8", "#gimch"];
+    $(inputsFileIdsAllowAll.map).change(function () {
+        console.log("changed all");
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        if (fileExtension.indexOf($("input").val().split('.').pop().toLowerCase()) == -1) {
+            $("zone").html('<p class ="errorMsgs">Format invalide</p>');
+        } else {
+            $("zone").html('');
+        }
+
+    });
+    var inputsFileIdsAllowPdf = ["#cv", "#lettre"];
+    $(inputsFileIdsAllowPdf.map).change(function () {
+        console.log("changed pdf");
+        var fileExtension = ['pdf'];
+        if (fileExtension.indexOf($("this").val().split('.').pop().toLowerCase()) == -1) {
+            $("zone").html('<p class ="errorMsgs">Format invalide</p>');
+        } else {
+            $("zone").html('');
+        }
+
+    });
+    /*
     $("#photo").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         if (fileExtension.indexOf($("#photo").val().split('.').pop().toLowerCase()) == -1) {
@@ -115,11 +138,21 @@ $(document).ready(function () {
         var fileExtension = ['pdf'];
         var input = $("#lettre");
         if (fileExtension.indexOf($("#lettre").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone4").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone5").html('<p class ="errorMsgs">Format invalide</p');
         } else {
-            $("#formatErrorZone4").html('');
+            $("#formatErrorZone5").html('');
         }
     });
+    $("#certifs1").change(function () {
+        var fileExtension = ['pdf'];
+        var input = $("#certifs1");
+        if (fileExtension.indexOf($("#certifs1").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone5").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone5").html('');
+        }
+    });  */
+
     //
     //
 
