@@ -59,10 +59,10 @@ $(document).ready(function () {
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;
         var sele = $("#jb option:selected").text();
-        var infoPeople = ["info"];
-        var polyPeople = ["polyM"];
-        var laborantPeople = ["laboCh", "laboPhy", "laboBio"];
-        var globalPeople = ["polyM", "info", "logi", "planElec", "empCom", "gardAn"];
+        var infoPeople = ["informaticien"];
+        var polyPeople = ["polyMecanicien"];
+        var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
+        var globalPeople = ["polyMecanicien", "informaticien", "logisticien", "planificateurElectricien", "employeCommerce", "gardienAnimaux"];
 
         if (globalPeople.indexOf(selectedFormation) != -1) {
             $("#all").show(1000)

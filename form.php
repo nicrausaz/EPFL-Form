@@ -33,15 +33,15 @@
 
             <select name ="job" id="jb" required>
                 <option value="menu" selected disabled>Choisir un métier...</option>
-                <option value="laboBio">Laborantin-e CFC; option biologie</option>
-                <option value="laboCh">Laborantin-e CFC; option chimie</option>
-                <option value="laboPhy">Laborantin-e en physique CFC</option>
-                <option value="polyM">Polymécanicien-ne CFC</option>
-                <option value="info">Informaticien-ne CFC</option>
-                <option value="logi">Logisticien-ne CFC</option>
-                <option value="planElec">Planificateur-trice éléctricien-ne CFC</option>
-                <option value="empCom">Employé-e de commerce CFC</option>
-                <option value="gardAn">Gardien-ne d'animaux CFC</option>
+                <option value="laborantinBiologie">Laborantin-e CFC; option biologie</option>
+                <option value="laborantinChimie">Laborantin-e CFC; option chimie</option>
+                <option value="laborantinPhysique">Laborantin-e en physique CFC</option>
+                <option value="polyMecanicien">Polymécanicien-ne CFC</option>
+                <option value="informaticien">Informaticien-ne CFC</option>
+                <option value="logisticien">Logisticien-ne CFC</option>
+                <option value="planificateurElectricien">Planificateur-trice éléctricien-ne CFC</option>
+                <option value="employeCommerce">Employé-e de commerce CFC</option>
+                <option value="gardienAnimaux">Gardien-ne d'animaux CFC</option>
             </select>
             <input type="text" name="sciperTmp"  value="<?php echo $tempSciper;?>" readonly hidden/>
         </fieldset>
@@ -86,10 +86,10 @@
                     <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
 
                     <label for="languesApp">Connaissance linguistiques*:</label>
-                    <p><input type="checkbox" name="languesApp[]" value="fra-oui" id="french"><label for="french"><span class="ui"></span>Français</label></p>
-                    <p><input type="checkbox" name="languesApp[]" value="all-oui" id="german"><label for="german"><span class="ui"></span>Allemand</label></p>
-                    <p><input type="checkbox" name="languesApp[]" value="ang-oui" id="english"><label for="english"><span class="ui"></span>Anglais</label></p>
-                    <p><input type="checkbox" name="languesApp[]" value="aut-oui" id="other"><label for="other"><span class="ui"></span>Autres</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="francais-oui" id="french"><label for="french"><span class="ui"></span>Français</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="allemand-oui" id="german"><label for="german"><span class="ui"></span>Allemand</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="anglais-oui" id="english"><label for="english"><span class="ui"></span>Anglais</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="autres-oui" id="other"><label for="other"><span class="ui"></span>Autres</label></p>
                 </fieldset>
                 <fieldset>
                     <legend><span class="number">2.2</span> Réprésentants légaux</legend>    

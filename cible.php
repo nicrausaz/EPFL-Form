@@ -18,25 +18,25 @@
         $dateNow = date('j-n-o--h i-s');
         $folderName = $sciper."--".$dateNow."--".$mail;
         $rootpath = '../candidatures/';
-            if($job=="polyM") {
+            if($job=="polyMecanicien") {
                 $path = $rootpath.'Polymecaniciens/'.$folderName.'/';
                 createThings($path,$name,$surname);
-            }else if($job=="info"){
+            }else if($job=="informaticien"){
                 $path = $rootpath.'Informaticiens/'.$folderName.'/';
                 createThings($path,$name,$surname);
-            }else if($job=="logi"){
+            }else if($job=="logisticien"){
                 $path = $rootpath.'Logisticiens/'.$folderName.'/';
                 createThings($path,$name,$surname);
-            }else if($job=="planElec"){
+            }else if($job=="planificateurElectricien"){
                 $path = $rootpath.'PlanificateurElectriciens/'.$folderName.'/';
                 createThings($path,$name,$surname);
-            }else if($job=="empCom"){
+            }else if($job=="employeCommerce"){
                 $path = $rootpath.'EmployesCommerce/'.$folderName.'/';
                 createThings($path,$name,$surname);
-            }else if($job=="gardAn"){
+            }else if($job=="gardienAnimaux"){
                 $path = $rootpath.'GardiensAnimaux/'.$folderName.'/';
                 createThings($path,$name,$surname);
-            }   
+            }
             
             function createThings($path,$name,$surname){
                 //create apprenti's folders
@@ -53,72 +53,74 @@
                         die('Echec lors de la création du dossier annexes');
                     }else{
                         
-                        //Get all infos in JSON
-                        require_once("json/jsonClass.php");
-                        $doc = new Doc();
-                        $doc->formation = $_POST['job'];
-                        if($_POST['job'] == "info"){
-                            $doc->filiere = $_POST['filInfo'];
-                        }else{}
+                    //Get all infos in JSON
+                    require_once("json/jsonClass.php");
+                    $doc = new Doc();
+                    $doc->formation = $_POST['job'];
+                    if($_POST['job'] == "informaticien"){
+                        $doc->filiere = $_POST['filInfo'];
+                    }else{}
 
-                        $doc->maturite = $_POST['mpt'];
-                        $doc->genreApprenti  = $_POST['genreApp'];
-                        $doc->nomApprenti  = $_POST['nameApp'];
-                        $doc->prenomApprenti  = $_POST['surnameApp'];
-                        $doc->addresseApprentiComplete = array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']);             
-                        $doc->telFixeApprenti  = $_POST['telApp'];
-                        $doc->telMobileApprenti  = $_POST['phoneApp'];
-                        $doc->mailApprenti  = $_POST['mailApp'];
-                        $doc->dateNaissanceApprenti  = $_POST['birthApp'];
-                        $doc->origineApprenti  = $_POST['originApp'];
-                        $doc->nationaliteApprenti  = $_POST['nationApp'];
-                        $doc->langueMaternelleApprenti  = $_POST['langApp'];
-                        //GET CHECKBOXES
-                        if(isset($_POST['languesApp']) && !empty($_POST['languesApp'])){
-                            foreach($_POST['languesApp'] as $lang[]);
-                            $doc->connaissancesLinguistiques[] = array("francais"=> $lang[0], "allemand"=> $lang[1], "anglais"=> $lang[2], "autre"=> $lang[3]);
-                        }
-                        $doc->majeur = $_POST['maj'];
-                        if($_POST['maj'] == "maj-non"){
-                            $rep1  = array("genre"=>$_POST['genreRep1'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep1'],"addresse"=> array("rue"=>$_POST['adrRep1'],"NPA"=>$_POST['NPARep1']),"telephone"=>$_POST['telRep1']);    
-                            $rep2  = array("genre"=>$_POST['genreRep2'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep2'],"addresse"=> array("rue"=>$_POST['adrRep2'],"NPA"=>$_POST['NPARep2']),"telephone"=>$_POST['telRep2']);
-                            $doc->representants = array($rep1, $rep2);
-                        }else{}
-                        $scolarite1 = array("ecole"=>$_POST['ecole1'],"lieu"=>$_POST['lieuEcole1'],"niveau"=>$_POST['niveauEcole1'],"annees"=>$_POST['anneesEcole1']);
-                        $scolarite2 = array("ecole"=>$_POST['ecole2'],"lieu"=>$_POST['lieuEcole2'],"niveau"=>$_POST['niveauEcole2'],"annees"=>$_POST['anneesEcole2']);
-                        $scolarite3 = array("ecole"=>$_POST['ecole3'],"lieu"=>$_POST['lieuEcole3'],"niveau"=>$_POST['niveauEcole3'],"annees"=>$_POST['anneesEcole3']);
-                        $scolarite4 = array("ecole"=>$_POST['ecole4'],"lieu"=>$_POST['lieuEcole4'],"niveau"=>$_POST['niveauEcole4'],"annees"=>$_POST['anneesEcole4']);
-                        $scolarite5 = array("ecole"=>$_POST['ecole5'],"lieu"=>$_POST['lieuEcole5'],"niveau"=>$_POST['niveauEcole5'],"annees"=>$_POST['anneesEcole5']);
-                        $doc->scolarite = array($scolarite1, $scolarite2, $scolarite3, $scolarite4, $scolarite5);
-                        $doc->anneeFinScolarite = $_POST['anneeFin'];
+                    $doc->maturite = $_POST['mpt'];
+                    $doc->genreApprenti  = $_POST['genreApp'];
+                    $doc->nomApprenti  = $_POST['nameApp'];
+                    $doc->prenomApprenti  = $_POST['surnameApp'];
+                    $doc->addresseApprentiComplete = array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']);             
+                    $doc->telFixeApprenti  = $_POST['telApp'];
+                    $doc->telMobileApprenti  = $_POST['phoneApp'];
+                    $doc->mailApprenti  = $_POST['mailApp'];
+                    $doc->dateNaissanceApprenti  = $_POST['birthApp'];
+                    $doc->origineApprenti  = $_POST['originApp'];
+                    $doc->nationaliteApprenti  = $_POST['nationApp'];
+                    $doc->langueMaternelleApprenti  = $_POST['langApp'];
+                    //GET CHECKBOXES
+                    if(isset($_POST['languesApp']) && !empty($_POST['languesApp'])){
+                        foreach($_POST['languesApp'] as $lang[]);
+                        $doc->connaissancesLinguistiques[] = array("francais"=> $lang[0], "allemand"=> $lang[1], "anglais"=> $lang[2], "autre"=> $lang[3]);
+                    }
+                    $doc->majeur = $_POST['maj'];
+                    if($_POST['maj'] == "maj-non"){
+                        $rep1  = array("genre"=>$_POST['genreRep1'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep1'],"addresse"=> array("rue"=>$_POST['adrRep1'],"NPA"=>$_POST['NPARep1']),"telephone"=>$_POST['telRep1']);    
+                        $rep2  = array("genre"=>$_POST['genreRep2'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep2'],"addresse"=> array("rue"=>$_POST['adrRep2'],"NPA"=>$_POST['NPARep2']),"telephone"=>$_POST['telRep2']);
+                        $doc->representants = array($rep1, $rep2);
+                    }else{}
+                    $scolarite1 = array("ecole"=>$_POST['ecole1'],"lieu"=>$_POST['lieuEcole1'],"niveau"=>$_POST['niveauEcole1'],"annees"=>$_POST['anneesEcole1']);
+                    $scolarite2 = array("ecole"=>$_POST['ecole2'],"lieu"=>$_POST['lieuEcole2'],"niveau"=>$_POST['niveauEcole2'],"annees"=>$_POST['anneesEcole2']);
+                    $scolarite3 = array("ecole"=>$_POST['ecole3'],"lieu"=>$_POST['lieuEcole3'],"niveau"=>$_POST['niveauEcole3'],"annees"=>$_POST['anneesEcole3']);
+                    $scolarite4 = array("ecole"=>$_POST['ecole4'],"lieu"=>$_POST['lieuEcole4'],"niveau"=>$_POST['niveauEcole4'],"annees"=>$_POST['anneesEcole4']);
+                    $scolarite5 = array("ecole"=>$_POST['ecole5'],"lieu"=>$_POST['lieuEcole5'],"niveau"=>$_POST['niveauEcole5'],"annees"=>$_POST['anneesEcole5']);
+                    $doc->scolarite = array($scolarite1, $scolarite2, $scolarite3, $scolarite4, $scolarite5);
+                    $doc->anneeFinScolarite = $_POST['anneeFin'];
 
-                        $activiteProfessionelle1 = array("employeur"=>$_POST['employeurPro1'],"lieu"=>$_POST['lieuPro1'],"activite"=>$_POST['activitePro1'],"annees"=>$_POST['anneesPro1']);
-                        $activiteProfessionelle2 = array("employeur"=>$_POST['employeurPro2'],"lieu"=>$_POST['lieuPro2'],"activite"=>$_POST['activitePro2'],"annees"=>$_POST['anneesPro2']);
-                        $activiteProfessionelle3 = array("employeur"=>$_POST['employeurPro3'],"lieu"=>$_POST['lieuPro3'],"activite"=>$_POST['activitePro3'],"annees"=>$_POST['anneesPro3']);
-                        $doc->activitesProfessionnelles = array($activiteProfessionelle1, $activiteProfessionelle2, $activiteProfessionelle3);
+                    $activiteProfessionelle1 = array("employeur"=>$_POST['employeurPro1'],"lieu"=>$_POST['lieuPro1'],"activite"=>$_POST['activitePro1'],"annees"=>$_POST['anneesPro1']);
+                    $activiteProfessionelle2 = array("employeur"=>$_POST['employeurPro2'],"lieu"=>$_POST['lieuPro2'],"activite"=>$_POST['activitePro2'],"annees"=>$_POST['anneesPro2']);
+                    $activiteProfessionelle3 = array("employeur"=>$_POST['employeurPro3'],"lieu"=>$_POST['lieuPro3'],"activite"=>$_POST['activitePro3'],"annees"=>$_POST['anneesPro3']);
+                    $doc->activitesProfessionnelles = array($activiteProfessionelle1, $activiteProfessionelle2, $activiteProfessionelle3);
 
-                        $stage1 = array("metier"=>$_POST['activiteStage1'],"employeur"=>$_POST['entrepriseStage1']);
-                        $stage2 = array("metier"=>$_POST['activiteStage2'],"employeur"=>$_POST['entrepriseStage2']);
-                        $stage3 = array("metier"=>$_POST['activiteStage3'],"employeur"=>$_POST['entrepriseStage3']);
-                        $stage4 = array("metier"=>$_POST['activiteStage4'],"employeur"=>$_POST['entrepriseStage4']);
-                        $doc->stages = array($stage1, $stage2, $stage3, $stage4);
+                    $stage1 = array("metier"=>$_POST['activiteStage1'],"employeur"=>$_POST['entrepriseStage1']);
+                    $stage2 = array("metier"=>$_POST['activiteStage2'],"employeur"=>$_POST['entrepriseStage2']);
+                    $stage3 = array("metier"=>$_POST['activiteStage3'],"employeur"=>$_POST['entrepriseStage3']);
+                    $stage4 = array("metier"=>$_POST['activiteStage4'],"employeur"=>$_POST['entrepriseStage4']);
+                    $doc->stages = array($stage1, $stage2, $stage3, $stage4);
 
-                        $doc->dejaCandidat = $_POST['dejaCand'];
-                        if($_POST['dejaCand'] == "dejaCand-oui"){
-                            $doc->anneeCandidature = $_POST['dejaCandAnnee'];
-                        }else{}
-                        $doc->datePostulation = date('j-n-o--h:i:s'); //ad +2 to hour
-                        $encodedJson = (json_encode($doc));
-                        file_put_contents($pathInfos.'/informations.json', $encodedJson);
+                    $doc->dejaCandidat = $_POST['dejaCand'];
+                    if($_POST['dejaCand'] == "dejaCand-oui"){
+                        $doc->anneeCandidature = $_POST['dejaCandAnnee'];
+                    }else{}
+                    $doc->datePostulation = date('j-n-o--h:i:s'); //ad +2 to hour
+                    $encodedJson = (json_encode($doc));
+                    file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
-                        //Upload call
-                        uploadFile($pathAnnexes, 'photo', array('.jpg','.jpeg','.png','.pdf','.JPG'));
-                        uploadFile($pathAnnexes, 'cv', array('.pdf'));
-                        uploadFile($pathAnnexes, 'lettre', array('.pdf'));
-                        uploadFile($pathAnnexes, 'idCard', array('.jpg','.jpeg','.png','.pdf','.JPG'));
-                        if($_POST['job']=="polyM"){
-                            uploadFile($pathAnnexes, 'gimch', array('.pdf'));
-                        }     
+                    //Upload call
+                    uploadFile($pathAnnexes, 'photo', array('.jpg','.jpeg','.png','.pdf','.JPG'));
+                    uploadFile($pathAnnexes, 'cv', array('.pdf'));
+                    uploadFile($pathAnnexes, 'lettre', array('.pdf'));
+                    uploadFile($pathAnnexes, 'idCard', array('.jpg','.jpeg','.png','.pdf','.JPG'));
+                    if($_POST['job']=="polyMecanicien"){
+                        uploadFile($pathAnnexes, 'gimch', array('.pdf'));
+                    }
+                    mailToResp();
+                    mailToApprenti();
                 }
             }
             function uploadFile($pathAnnexes, $inputName, $extensions){
@@ -144,28 +146,43 @@
                         //echo $erreur;
                     }
                 }
+                function mailToResp(){
                     // mail send
-                /*
                     $to  = 'nicolas.crausaz@epfl.ch';
                     $subject = 'Nouvelle demande de place d\'apprentissage';
-                    $message = $name." ".$surname ." ". " a fait une demande de place d'apprentissage.";
-                    $headers = 'From: formapprentis@epfl.ch' . "\r\n" .
-                                'Reply-To: formapprentis@epfl.ch' . "\r\n" .
+                    $message = $_POST['surnameApp']." ".$_POST['nameApp']." ". " a fait une demande de place d'apprentissage.";
+                    $headers = 'From: formulaireApprentis@epfl.ch' . "\r\n" .
+                                'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                                 'X-Mailer: PHP/' . phpversion();
 
-                    if($noError == true){
                         if (mail($to, $subject, $message, $headers)){
                                 echo "Mail envoyé";
                             }
                             else{
                                 echo "Mail non envoyé";
                             }
-                    }
-                    */
-        ?>
+                }
+                function mailToapprenti(){
+                    // mail send
+                    $to  = 'nicolas.crausaz@epfl.ch';
+                    $subject = 'Confirmation demande de place d\'apprentissage';
+                    $message1 = "Bonjour".$_POST['surnameApp'].$_POST['nameApp'].",";
+                    $message2 = "Votre postulation pour le métier de ".$job." a bien été prise en considération.";
+                    $headers = 'From: formulaireApprentis@epfl.ch' . "\r\n" .
+                                'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
+                                'X-Mailer: PHP/' . phpversion();
+
+                        if (mail($to, $subject, $message, $headers)){
+                                echo "Mail envoyé";
+                            }
+                            else{
+                                echo "Mail non envoyé";
+                            }
+                }
+         ?>
          <?php include('templates/header.php') ?>
          <h1><?php echo $surname," ", $name,"," ?></h1>
-         <h3>Votre demande à bien été enregistrée, vous allez bientôt recevoir un e-mail confirmant votre postulation.</h3>
+         <h4>Votre demande à bien été enregistrée, vous allez bientôt recevoir un e-mail confirmant votre postulation.</h4>
 
         </div>
     </body>
