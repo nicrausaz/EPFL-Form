@@ -150,7 +150,7 @@
                     // mail send
                     $to  = 'nicolas.crausaz@epfl.ch';
                     $subject = 'Nouvelle demande de place d\'apprentissage';
-                    $message = $_POST['surnameApp']." ".$_POST['nameApp']." ". " a fait une demande de place d'apprentissage.";
+                    $message = $_POST['surnameApp']." ".$_POST['nameApp']." a fait une demande de place d'apprentissage.";
                     $headers = 'From: formulaireApprentis@epfl.ch' . "\r\n" .
                                 'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                                 'X-Mailer: PHP/' . phpversion();
@@ -166,8 +166,8 @@
                     // mail send
                     $to  = 'nicolas.crausaz@epfl.ch';
                     $subject = 'Confirmation demande de place d\'apprentissage';
-                    $message1 = "Bonjour".$_POST['surnameApp'].$_POST['nameApp'].",";
-                    $message2 = "Votre postulation pour le métier de ".$job." a bien été prise en considération.";
+                    $message =  "Bonjour ". $_POST['surnameApp']." ".$_POST['nameApp']. ",". "\n\n".
+                                "Votre postulation a bien été prise en considération.";
                     $headers = 'From: formulaireApprentis@epfl.ch' . "\r\n" .
                                 'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                                 'X-Mailer: PHP/' . phpversion();
