@@ -35,7 +35,7 @@
                 <option value="menu" selected disabled>Choisir une formation...</option>
                 <option value="laborantinBiologie">Laborantin-e CFC; option biologie</option>
                 <option value="laborantinChimie">Laborantin-e CFC; option chimie</option>
-                <option value="laborantinPhysique">Laborantin-e en physique CFC</option>
+                <option value="laborantinPhysique">Laborantin-e CFC; option physique</option>
                 <option value="polyMecanicien">Polymécanicien-ne CFC</option>
                 <option value="informaticien" >Informaticien-ne CFC</option>
                 <option value="logisticien">Logisticien-ne CFC</option>
@@ -245,15 +245,16 @@
                     </div>
                     <p></p>
                     <section id="formatErrorZone4"></section>
-
+                    
                     <label for="certifs1">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
                     <label class="file" title="" id="certifLabel1"><input type="file" name="certifs1" id="certifs1" onchange="changeTitleFile(this)" /></label>
-                    <section class="formatInd" id="formatZone5"></section>
                     <div class="mdl-tooltip mdl-tooltip--large" for="certifLabel1">
                         Formats autorisés: jpg - jpeg - png - pdf
                     </div>
+                    <p></p>
+                    <section id="formatErrorZone5"></section>
 
-                    <div id="newCertifZone"></div>
+                    <table id="newCertifZone"></table>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Ajouter un annexe
                     </button>

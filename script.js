@@ -45,11 +45,11 @@ $(document).ready(function () {
         }
     });
     $('#addInputFile').click(function () {
-        var z = $('#newCertifZone > tbody').children().size() + 1;
+        var z = $('#newCertifZone > tbody').children().size() + 2;
         console.log(z);
-        if (z < 6) {
-            $('#newCertifZone').append('<label class="file" title="" onmouseover= "mOver(this,formatZone' + z + ', \'jpg - jpeg - png - pdf\')" onmouseout="mOut(this,formatZone ' + z + ')"><input type="file" name="dossierFiles" id="dossierFiles" onchange="changeTitleFile(this)" /></label>');
-            if (z == 4) {
+        if (z < 10) {
+            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for="certifLabel' + z + '">Formats autorisés: jpg - jpeg - png - pdf </div><p></p><section id="formatErrorZone' + z + '"></section></td></tr>');
+            if (z == 8) {
                 $('#addInputFile').hide(750);
             }
         }
@@ -62,7 +62,7 @@ $(document).ready(function () {
         var infoPeople = ["informaticien"];
         var polyPeople = ["polyMecanicien"];
         var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
-        var globalPeople = ["polyMecanicien", "informaticien", "logisticien", "planificateurElectricien", "employeCommerce", "gardienAnimaux","interactiveMediaDesigner","electronicien"];
+        var globalPeople = ["polyMecanicien", "informaticien", "logisticien", "planificateurElectricien", "employeCommerce", "gardienAnimaux", "interactiveMediaDesigner", "electronicien"];
 
         if (globalPeople.indexOf(selectedFormation) != -1) {
             $("#all").show(1000);
@@ -85,6 +85,7 @@ $(document).ready(function () {
         }
     });
 
+    //CREATE 1 FUNCTION ONLY
     // CHECK FILE FORMATS
     $("#photo").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
@@ -119,6 +120,9 @@ $(document).ready(function () {
             $("#formatErrorZone4").html('');
         }
     });
+    //
+    //
+
     // SHOW/HIDE ACCORDING TO RADIOBUTTON
     $("#maj1").change(function () {
         $("#representants").show(1000);
@@ -135,7 +139,6 @@ $(document).ready(function () {
     $("#dejaCand2").change(function () {
         $("#dejaCandAnnee").show(750);
     });
-
 
     // CHECK DATE INPUT
     $("#birthApp").change(function () {

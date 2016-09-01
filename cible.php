@@ -125,6 +125,7 @@
                     uploadFile($pathAnnexes, 'cv', array('.pdf'));
                     uploadFile($pathAnnexes, 'lettre', array('.pdf'));
                     uploadFile($pathAnnexes, 'idCard', array('.jpg','.jpeg','.png','.pdf','.JPG'));
+                    //check if input is empty then upload annexes
                     if($_POST['job']=="polyMecanicien"){
                         uploadFile($pathAnnexes, 'gimch', array('.pdf'));
                     }
