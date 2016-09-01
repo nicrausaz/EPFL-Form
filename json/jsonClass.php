@@ -13,6 +13,7 @@ class Doc {
 	public $dateNaissanceApprenti = "";
 	public $origineApprenti = "";
 	public $nationaliteApprenti = "";
+	public $permisEtranger = "";
 	public $langueMaternelleApprenti = "";
 	public $connaissancesLinguistiques = "";
 	public $majeur = "";

@@ -79,6 +79,7 @@
                     $doc->dateNaissanceApprenti  = $_POST['birthApp'];
                     $doc->origineApprenti  = $_POST['originApp'];
                     $doc->nationaliteApprenti  = $_POST['nationApp'];
+                    $doc->permisEtranger = $_POST['permisEtrangerApp'];
                     $doc->langueMaternelleApprenti  = $_POST['langApp'];
                     //GET CHECKBOXES
                     if(isset($_POST['languesApp']) && !empty($_POST['languesApp'])){
@@ -153,7 +154,7 @@
                     else{
                         //echo $erreur;
                     }
-                }
+                }                          
                 function mailToResp(){
                     // mail send
                     $to  = 'nicolas.crausaz@epfl.ch'; //formation.apprentis@epfl.ch
