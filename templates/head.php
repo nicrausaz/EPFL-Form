@@ -6,4 +6,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="style/material.js"></script>
 <script src="script.js"></script>
+<noscript>Veuillez Activer JavaScript pour utiliser le service de postulation</noscript>
 
