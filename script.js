@@ -43,9 +43,6 @@ $(document).ready(function () {
     });
     $('#addInputFile').click(function () {
         var z = $('#newCertifZone > tbody').children().size() + 2;
-        var cerlab = "certifLabel" + z;
-        console.log(z);
-        console.log(cerlab);
         if (z < 10) {
             $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for= "certifLabel' + z + '">Formats autorisés: jpg - jpeg - png - pdf </div><p></p><section id="formatErrorZone' + (z + 5) + '"></section></td></tr>');
             componentHandler.upgradeDom();
@@ -140,9 +137,9 @@ $(document).ready(function () {
         var fileExtension = ['pdf'];
         var input = $("#lettre");
         if (fileExtension.indexOf($("#lettre").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone5").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone4").html('<p class ="errorMsgs">Format invalide</p');
         } else {
-            $("#formatErrorZone5").html('');
+            $("#formatErrorZone4").html('');
         }
     });
     $("#gimchLabel").change(function () {

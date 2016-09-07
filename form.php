@@ -255,14 +255,6 @@
                     <section id="formatErrorZone5"></section>
 
                     <table id="newCertifZone">
-                    <!--
-                    <label class="file" title="" id="certifLabel2"><input type="file" name="certifs2" id="certifs2" onchange="changeTitleFile(this)" /></label>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="certifLabel2">
-                        Formats autorisés: jpg - jpeg - png - pdf
-                    </div>
-                    <p></p>
-                    <section id="formatErrorZone7"></section>
-                    -->
                     </table>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Ajouter un annexe
