@@ -85,7 +85,7 @@
                     <section id="errorMsg"></section>
                     <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="35" required/>
                     <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="30" required/>
-                    <input type="text" name="permisEtrangerApp" placeholder="Catégorie de permis pour étrangers " autocomplete="off" maxlength="1" required/>
+                    <input type="text" name="permisEtrangerApp" placeholder="Catégorie de permis pour étrangers " autocomplete="off" maxlength="1"/>
                     <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
 
                     <label for="languesApp">Connaissance linguistiques*:</label>
@@ -254,18 +254,30 @@
                     <p></p>
                     <section id="formatErrorZone5"></section>
 
-                    <table id="newCertifZone"></table>
+                    <table id="newCertifZone">
+                    <!--
+                    <label class="file" title="" id="certifLabel2"><input type="file" name="certifs2" id="certifs2" onchange="changeTitleFile(this)" /></label>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="certifLabel2">
+                        Formats autorisés: jpg - jpeg - png - pdf
+                    </div>
+                    <p></p>
+                    <section id="formatErrorZone7"></section>
+                    -->
+                    </table>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Ajouter un annexe
                     </button>
+                     
 
                     <div id="polyOnly">
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label>
                         <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
-                        <section id="formatErrorZone6"></section>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="gimchLabel">§
+                        <div class="mdl-tooltip mdl-tooltip--large" for="gimchLabel">
                             Formats autorisés: pdf
                         </div>
+                        <p></p>
+                        <section id="formatErrorZone6"></section>
+                        
                     </div>
                 </fieldset>
                 <fieldset>

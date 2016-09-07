@@ -14,7 +14,6 @@ $(document).ready(function () {
     //Add line to school
     $('#addSch').click(function () {
         var i = $('#scolaire > tbody').children().size() + 1;
-        console.log(i);
         if (i < 6) {
             $('#scolaire').append('<tr><td><input type="text" name="ecole' + i + '" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieuEcole' + i + '" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveauEcole' + i + '" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="anneesEcole' + i + '" placeholder="de-à(années)" autocomplete="off"/></td></tr>');
             if (i == 5) {
@@ -25,7 +24,6 @@ $(document).ready(function () {
     //Add line to professionnel
     $('#addPro').click(function () {
         var y = $('#activites > tbody').children().size() + 1;
-        console.log(y);
         if (y < 4) {
             $('#activites').append('<tr><td><input type="text" name="employeurPro' + y + '" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro' + y + '" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro' + y + '" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro' + y + '" placeholder="de-à(années)" autocomplete="off"/></td></tr>');
             if (y == 3) {
@@ -36,7 +34,6 @@ $(document).ready(function () {
     //Add line to stages
     $('#addStage').click(function () {
         var x = $('#stages > tbody').children().size() + 1;
-        console.log(x);
         if (x < 6) {
             $('#stages').append('<tr><td><input type="text" name="activiteStage' + x + '" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage' + x + '" placeholder="Entreprise" autocomplete="off"></td></tr>');
             if (x == 4) {
@@ -46,9 +43,12 @@ $(document).ready(function () {
     });
     $('#addInputFile').click(function () {
         var z = $('#newCertifZone > tbody').children().size() + 2;
+        var cerlab = "certifLabel" + z;
         console.log(z);
+        console.log(cerlab);
         if (z < 10) {
-            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for="certifLabel' + z + '">Formats autorisés: jpg - jpeg - png - pdf </div><p></p><section id="formatErrorZone' + (z + 5) + '"></section></td></tr>');
+            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for= "certifLabel' + z + '">Formats autorisés: jpg - jpeg - png - pdf </div><p></p><section id="formatErrorZone' + (z + 5) + '"></section></td></tr>');
+            componentHandler.upgradeDom();
             if (z == 8) {
                 $('#addInputFile').hide(750);
             }
@@ -87,6 +87,7 @@ $(document).ready(function () {
 
     //CREATE 1 FUNCTION ONLY
     // CHECK FILE FORMATS
+    /*
     var inputsFileIdsAllowAll = ["#photo", "#idCard", "#certifs1", "#certifs2", "#certifs3", "#certifs4", "#certifs5", "#certifs6", "#certifs7", "#certifs8", "#gimch"];
     $(inputsFileIdsAllowAll.map).change(function () {
         console.log("changed all");
@@ -109,7 +110,8 @@ $(document).ready(function () {
         }
 
     });
-    /*
+    */
+
     $("#photo").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         if (fileExtension.indexOf($("#photo").val().split('.').pop().toLowerCase()) == -1) {
@@ -143,15 +145,99 @@ $(document).ready(function () {
             $("#formatErrorZone5").html('');
         }
     });
-    $("#certifs1").change(function () {
+    $("#gimchLabel").change(function () {
         var fileExtension = ['pdf'];
+        var input = $("#gimchLabel");
+        if (fileExtension.indexOf($("#gimchLabel").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone6").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone6").html('');
+        }
+    });
+    $("#certifs1").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs1");
         if (fileExtension.indexOf($("#certifs1").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone5").html('<p class ="errorMsgs">Format invalide</p');
         } else {
             $("#formatErrorZone5").html('');
         }
-    });  */
+    });
+    $("#certifs2").change(function () {
+        console.log("zbre");//detecte pas le change
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var input = $("#certifs2");
+        if (fileExtension.indexOf($("#certifs2").val().split('.').pop().toLowerCase()) == -1) {
+            console.log("error");
+            $("#formatErrorZone6").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            console.log("yolo");
+            $("#formatErrorZone6").html('');
+        }
+    });
+    $("#certifs3").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var input = $("#certifs3");
+        if (fileExtension.indexOf($("#certifs3").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone7").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone7").html('');
+        }
+    });
+    $("#certifs4").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var input = $("#certifs4");
+        if (fileExtension.indexOf($("#certifs4").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone8").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone8").html('');
+        }
+    });
+    $("#certifs5").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var input = $("#certifs5");
+        if (fileExtension.indexOf($("#certifs5").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone9").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone9").html('');
+        }
+    });
+    $("#certifs6").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var input = $("#certifs6");
+        if (fileExtension.indexOf($("#certifs6").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone10").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone10").html('');
+        }
+    });
+    $("#certifs7").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var input = $("#certifs7");
+        if (fileExtension.indexOf($("#certifs7").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone11").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone11").html('');
+        }
+    });
+    $("#certifs8").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var input = $("#certifs8");
+        if (fileExtension.indexOf($("#certifs8").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone12").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone12").html('');
+        }
+    });
+    $("#certifs9").change(function () {
+        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var input = $("#certifs9");
+        if (fileExtension.indexOf($("#certifs9").val().split('.').pop().toLowerCase()) == -1) {
+            $("#formatErrorZone13").html('<p class ="errorMsgs">Format invalide</p');
+        } else {
+            $("#formatErrorZone13").html('');
+        }
+    });
 
     //
     //

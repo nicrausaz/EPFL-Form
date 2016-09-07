@@ -18,7 +18,7 @@
         $h = date('h')+2;
         $dateNow = date('j-n-o--'.$h.' i-s');
         $folderName = $sciper."--".$dateNow."--".$mail;
-        $rootpath = '../candidatures/';
+        $rootpath = "\\\\scxdata\\apprentis$\\candidatures\\nouvelles";
             if($job=="polyMecanicien") {
                 $path = $rootpath.'Polymecaniciens/'.$folderName.'/';
                 createThings($path,$name,$surname);
