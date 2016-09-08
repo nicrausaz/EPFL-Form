@@ -64,11 +64,10 @@
                 </dd>
             </dl>
           </fieldset>
-          <fieldset><!--HEHEHE-->
+          <fieldset>
             <legend><span class="number">2</span> Données </legend>
                 <fieldset>
                     <legend><span class="number">2.1</span> Données personnelles</legend>    
-                    <!-- DONNEES APPRENTIS-->
                     <select name="genreApp" id="genreApp">
                         <option disabled selected> Choisissez un genre*</option>
                         <option value="Homme">Homme</option>
@@ -108,7 +107,6 @@
                         </dd>
                     </dl>
                     <section id="representants">
-                        <!-- DONNEES REPRESENTANT 1-->
                         <p>Réprésentant 1:</p>
                         <select name="genreRep1" >
                             <option disabled selected> Choisissez un genre</option>
@@ -120,7 +118,6 @@
                         <input type="text" name="adrRep1" placeholder="Rue" autocomplete="off"/>
                         <input type="text" name="NPARep1" placeholder = "NPA\Domicile"autocomplete="off"/>
                         <input type="text" name="telRep1" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
-                        <!-- DONNEES REPRESENTANT 2-->
                         <p>Réprésentant 2:</p>
                         <select name="genreRep2" >
                             <option disabled selected> Choisissez un genre</option>
@@ -134,7 +131,6 @@
                         <input type="text" name="telRep2" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
                     </section>
                 </fieldset>
-                <!-- ACIVITES-->
                 <legend><span class="number">3</span> Activités</legend>
                 <fieldset>
                     <legend><span class="number">3.1</span> Scolarité</legend>
@@ -208,10 +204,9 @@
                     <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature" maxlength="4"/>
                     <section id="dejaCandError"></section>
                 </fieldset>
-                <!-- ANNEXES-->
                 <fieldset>
                     <legend><span class="number">4</span> Annexes </legend>
-                    <p>Merci de joindre tous les fichiers demandés, en respectant les formats. Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.</p>
+                    <p>Merci de joindre tous les fichiers demandés, en respectant les formats (si les formats ne sont pas respectés, les fichiers ne seront pas pris en compte). Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.</p>
         
                     <label for="photo">Photo passeport <strong>couleur:</strong></label>
                     <label class="file" title="" id="photoLabel"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)"/></label>
@@ -253,7 +248,6 @@
                     </div>
                     <p></p>
                     <section id="formatErrorZone5"></section>
-
                     <table id="newCertifZone">
                     </table>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

@@ -55,7 +55,6 @@ $(document).ready(function () {
     // SHOW/HIDE CONTENT ACCORDING TO SELECTED JOB
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;
-        var sele = $("#jb option:selected").text();
         var infoPeople = ["informaticien"];
         var polyPeople = ["polyMecanicien"];
         var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
@@ -108,7 +107,6 @@ $(document).ready(function () {
 
     });
     */
-
     $("#photo").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         if (fileExtension.indexOf($("#photo").val().split('.').pop().toLowerCase()) == -1) {
@@ -166,78 +164,77 @@ $(document).ready(function () {
         var input = $("#certifs2");
         if (fileExtension.indexOf($("#certifs2").val().split('.').pop().toLowerCase()) == -1) {
             console.log("error");
-            $("#formatErrorZone6").html('<p class ="errorMsgs">Format invalide</p');
+            componentHandler.upgradeDom();
+            $("#formatErrorZone7").html('<p class ="errorMsgs">Format invalide</p');
         } else {
             console.log("yolo");
-            $("#formatErrorZone6").html('');
+            $("#formatErrorZone7").html('');
         }
     });
     $("#certifs3").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs3");
         if (fileExtension.indexOf($("#certifs3").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone7").html('<p class ="errorMsgs">Format invalide</p');
+            componentHandler.upgradeDom();
+            $("#formatErrorZone8").html('<p class ="errorMsgs">Format invalide</p');
         } else {
-            $("#formatErrorZone7").html('');
+            $("#formatErrorZone8").html('');
         }
     });
     $("#certifs4").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs4");
         if (fileExtension.indexOf($("#certifs4").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone8").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone9").html('<p class ="errorMsgs">Format invalide</p');
         } else {
-            $("#formatErrorZone8").html('');
+            $("#formatErrorZone9").html('');
         }
     });
     $("#certifs5").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs5");
         if (fileExtension.indexOf($("#certifs5").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone9").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone10").html('<p class ="errorMsgs">Format invalide</p');
         } else {
-            $("#formatErrorZone9").html('');
+            $("#formatErrorZone10").html('');
         }
     });
     $("#certifs6").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs6");
         if (fileExtension.indexOf($("#certifs6").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone10").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone11").html('<p class ="errorMsgs">Format invalide</p');
         } else {
-            $("#formatErrorZone10").html('');
+            $("#formatErrorZone11").html('');
         }
     });
     $("#certifs7").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs7");
         if (fileExtension.indexOf($("#certifs7").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone11").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone12").html('<p class ="errorMsgs">Format invalide</p');
         } else {
-            $("#formatErrorZone11").html('');
+            $("#formatErrorZone12").html('');
         }
     });
     $("#certifs8").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs8");
         if (fileExtension.indexOf($("#certifs8").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone12").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone13").html('<p class ="errorMsgs">Format invalide</p');
         } else {
-            $("#formatErrorZone12").html('');
+            $("#formatErrorZone13").html('');
         }
     });
     $("#certifs9").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs9");
         if (fileExtension.indexOf($("#certifs9").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone13").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone14").html('<p class ="errorMsgs">Format invalide</p');
         } else {
-            $("#formatErrorZone13").html('');
+            $("#formatErrorZone14").html('');
         }
     });
-
-    //
-    //
 
     // SHOW/HIDE ACCORDING TO RADIOBUTTON
     $("#maj1").change(function () {
