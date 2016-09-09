@@ -11,6 +11,9 @@ $(document).ready(function () {
     $('#infoFilieres').click(function () {
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
+    $('#retourHome').click(function () {
+        document.location.href = "https://apprentis.epfl.ch/";
+    });
     //Add line to school
     $('#addSch').click(function () {
         var i = $('#scolaire > tbody').children().size() + 1;
@@ -149,6 +152,7 @@ $(document).ready(function () {
             $("#formatErrorZone6").html('');
         }
     });
+
     $("#certifs1").change(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs1");
@@ -158,6 +162,7 @@ $(document).ready(function () {
             $("#formatErrorZone5").html('');
         }
     });
+    componentHandler.upgradeDom();
     $("#certifs2").change(function () {
         console.log("zbre");//detecte pas le change
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
