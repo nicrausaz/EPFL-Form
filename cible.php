@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>  
          <?php include('templates/head.php');
+         include('templates/checkDate.php');
             ini_set("display_errors",0);
             error_reporting(0); ?>
          <title>Confirmation</title>

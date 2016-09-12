@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="fr">
     <head>  
-        <?php include('templates/head.php') ?>
+        <?php include('templates/head.php');
+        include('templates/checkDate.php');
+        ?>
         <title>Conditions</title>
     </head>
     <body>

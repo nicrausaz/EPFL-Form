@@ -3,6 +3,7 @@
     <head>
         <title>Accueil</title>
         <?php include('templates/head.php') ?>
+        <?php include('templates/checkDate.php') ?>
     </head>
     <body>
     <div class="form-style-5">
