@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="fr">
     <head> 
-    <?php include('templates/head.php');
-        include('templates/checkDate.php');
-        ini_set("display_errors",0);
-        error_reporting(0);
-
-        require_once("tequila/tequila.php");
+    <?php
+    include('templates/head.php');
+    include('templates/checkDate.php');
+    require_once("tequila/tequila.php");
         $oClient = new TequilaClient();
         $oClient->SetApplicationName('Formulaire apprentissage');
         $oClient->SetWantedAttributes(array('uniqueid','firstname','name'));

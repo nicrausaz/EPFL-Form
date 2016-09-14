@@ -8,9 +8,17 @@
     <div class="form-style-5">
     <?php include('templates/header.php');
     $actualDate = Date('d-m-Y');
-    $actualYear = Date('-Y');
-    $startDate = Date('01-09').$actualYear;
-    $endDate = Date('01-12').$actualYear;
+    $actualStamp = strtotime($actualDate);
+    $actualYear = Date('Y');
+    $startDate = Date('01-09-'.$actualYear);
+    $endDate = Date('01-12-'.$actualYear);
+    $endStamp = strtotime($endDate);
+    if($actualStamp > $endStamp){
+        $actualYear = Date('Y')+1;
+        //+1
+        $startDate = Date('01-09-'.$actualYear);
+        $endDate = Date('01-12-'.$actualYear);
+    }
     ?> 
         <h1 style="color:red">Accès Refusé</h1>
         <p>La période des postulations n'a pas démarré.</p>

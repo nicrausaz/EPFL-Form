@@ -2,8 +2,8 @@
 <html lang="fr">
     <head>
         <title>Accueil</title>
-        <?php include('templates/head.php') ?>
-        <?php include('templates/checkDate.php') ?>
+        <?php include('templates/head.php');
+        include('templates/checkDate.php') ?>
     </head>
     <body>
     <div class="form-style-5">

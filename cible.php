@@ -2,9 +2,7 @@
 <html lang="fr">
     <head>  
          <?php include('templates/head.php');
-         include('templates/checkDate.php');
-            ini_set("display_errors",0);
-            error_reporting(0); ?>
+         include('templates/checkDate.php'); ?>
          <title>Confirmation</title>
     </head>
     <body>
@@ -19,32 +17,63 @@
         $h = date('h')+2;
         $dateNow = date('j-n-o--'.$h.' i-s');
         $folderName = $sciper."--".$dateNow."--".$mail;
-        $rootpath = "\\\\scxdata\\apprentis$\\candidatures\\nouvelles";
+        $rootpath = '../candidatures/';
             if($job=="polyMecanicien") {
                 $path = $rootpath.'Polymecaniciens/'.$folderName.'/';
-                createThings($path,$name,$surname);
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                    createThings($path,$name,$surname);
+                }
             }else if($job=="informaticien"){
                 $path = $rootpath.'Informaticiens/'.$folderName.'/';
-                createThings($path,$name,$surname);
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                    createThings($path,$name,$surname);
+                }
             }else if($job=="logisticien"){
                 $path = $rootpath.'Logisticiens/'.$folderName.'/';
                 createThings($path,$name,$surname);
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                }
             }else if($job=="planificateurElectricien"){
                 $path = $rootpath.'PlanificateurElectriciens/'.$folderName.'/';
                 createThings($path,$name,$surname);
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                    createThings($path,$name,$surname);
+                }
             }else if($job=="employeCommerce"){
                 $path = $rootpath.'EmployesCommerce/'.$folderName.'/';
                 createThings($path,$name,$surname);
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                    createThings($path,$name,$surname);
+                }
             }else if($job=="gardienAnimaux"){
                 $path = $rootpath.'GardiensAnimaux/'.$folderName.'/';
                 createThings($path,$name,$surname);
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                    createThings($path,$name,$surname);
+                }
             }else if($job=="electronicien"){
                 $path = $rootpath.'Electoniciens/'.$folderName.'/';
                 createThings($path,$name,$surname);
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                    createThings($path,$name,$surname);
+                }
             }else if($job=="interactiveMediaDesigner"){
                 $path = $rootpath.'InteractiveMediaDesigners/'.$folderName.'/';
                 createThings($path,$name,$surname);
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                    createThings($path,$name,$surname);
+                }
             }
+
+                
             
             function createThings($path,$name,$surname){
                 //create apprenti's folders
