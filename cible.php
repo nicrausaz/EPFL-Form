@@ -8,15 +8,17 @@
     <body>
     <div class="form-style-5">
        <?php
-        //Tri des apprentis par métier
         $name = $_POST['nameApp'];
         $surname = $_POST['surnameApp'];
         $sciper = $_POST['sciperTmp'];
+        $sciper = checkChars($sciper);
         $job = $_POST['job'];
         $mail = $_POST['mailApp'];
+        if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+            $mail = "InvalidMailFormat";
+        }
         $h = date('h')+2;
         $dateNow = date('j-n-o--'.$h.' i-s');
-        //check special chars in next line
         $folderName = $sciper."--".$dateNow."--".$mail;
         $rootpath = '../candidatures/';
         $orientations = array(
@@ -29,16 +31,15 @@
                 "electronicien" => "Electoniciens",
                 "interactiveMediaDesigner" => "InteractiveMediaDesigners"
         );
-
         $path = '';
         if (array_key_exists($job, $orientations)) {
             $path = $rootpath.$orientations[$job].'/'.$folderName.'/';
         }
         if ($path != '' && !file_exists($path)) {
-            createThings($path,$name,$surname);
+            createThings($path);
         }
 
-        function createThings($path,$name,$surname){
+        function createThings($path){
             //create apprenti's folders
                 $pathInfos = $path."informations/";
                 $pathAnnexes = $path."annexes/";
@@ -133,10 +134,13 @@
                         $erreur = "Echec";
                     }
                     if(!isset($erreur)){
+                        checkChars($fichier);
+                        /*
                         $fichier = strtr($fichier,
                             'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
                             'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
                         $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+                        */
                         if(move_uploaded_file($_FILES[$inputName]['tmp_name'], $pathAnnexes . $fichier)){
                             echo 'Upload réussi';  
                         }
@@ -180,6 +184,13 @@
                             else{
                                 echo "Mail non envoyé";
                             }
+                }
+                function checkChars($toCheck){
+                    $toCheck = strtr($toCheck,
+                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+                        $toCheck = preg_replace('/([^.a-z0-9]+)/i', '-', $toCheck);
+                        return $toCheck;
                 }
          ?>
          <?php include('templates/header.php') ?>
