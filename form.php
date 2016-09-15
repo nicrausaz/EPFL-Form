@@ -43,7 +43,7 @@
                 <option value="electronicien">Electronicien-ne CFC</option>
                 <option value="interactiveMediaDesigner">Interactive Media Desginer CFC</option>
             </select>
-            <input type="text" name="sciperTmp"  value="<?php echo $tempSciper;?>" readonly hidden/>
+            <input type="text" name="sciperTmp" value="<?php echo $tempSciper;?>" readonly hidden/>
         </fieldset>
         <div id="all" style="display: none;">
         <fieldset>

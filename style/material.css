@@ -209,9 +209,7 @@ input.mdl-button[type="submit"] {
 .mdl-button .material-icons {
   vertical-align: middle; }
 
-
 /* TOOLTIPS */
-
 
 .mdl-tooltip {
   -webkit-transform: scale(0);

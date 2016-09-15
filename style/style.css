@@ -125,7 +125,6 @@ a {
   text-decoration: none;
 }
 
-
 /*
 RADIOBUTTON STYLE
 */
@@ -208,7 +207,6 @@ dl dd {
   border-radius: 100%;
 }
 
-
 /*
 INPUT FILE STYLE
 */
@@ -278,11 +276,6 @@ label.file:after {
 .newInputFile {
   display: inline;
 }
-
-/*
-MINIS BUTTONS
-*/
-
 
 /* CHECKBOXES STYLE */
 
