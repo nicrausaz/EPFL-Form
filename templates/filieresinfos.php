@@ -2,7 +2,7 @@
 <dl class="radio-list-left" required>
 <dd>
     <input type="radio" name="filInfo" id="fill1" value="developpementApplications"/>
-    <label for="fill1">Dévellopement d'application</label>
+    <label for="fill1">Dévelopement d'application</label>
 </dd>
 <dd>
     <input type="radio" name="filInfo" id="fill2" value="entreprise"/>

@@ -78,7 +78,7 @@ $(document).ready(function () {
         } else if (laborantPeople.indexOf(selectedFormation) != -1) {
             $("#all").hide(1000);
 
-            if (confirm("Pour les métiers de laborantins, l'inscription se fait au près de ASSOCIATION, cliquer sur ok pour être rediriger...")) {
+            if (confirm("Pour les métiers de laborantins, l'inscription se fait auprès de l'AVML, cliquer sur ok pour être redirigé-e.")) {
                 window.location.replace("https://wp.unil.ch/avml/");
             } else { }
         }
