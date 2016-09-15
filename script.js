@@ -85,33 +85,11 @@ $(document).ready(function () {
     });
 
     //CREATE 1 FUNCTION ONLY
+
+
     // CHECK FILE FORMATS
-    /*
-    var inputsFileIdsAllowAll = ["#photo", "#idCard", "#certifs1", "#certifs2", "#certifs3", "#certifs4", "#certifs5", "#certifs6", "#certifs7", "#certifs8", "#gimch"];
-    $(inputsFileIdsAllowAll.map).change(function () {
-        console.log("changed all");
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
-        if (fileExtension.indexOf($("input").val().split('.').pop().toLowerCase()) == -1) {
-            $("zone").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("zone").html('');
-        }
-
-    });
-    var inputsFileIdsAllowPdf = ["#cv", "#lettre"];
-    $(inputsFileIdsAllowPdf.map).change(function () {
-        console.log("changed pdf");
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("this").val().split('.').pop().toLowerCase()) == -1) {
-            $("zone").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("zone").html('');
-        }
-
-    });
-    */
     $("#photo").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         if (fileExtension.indexOf($("#photo").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone1").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
@@ -119,7 +97,7 @@ $(document).ready(function () {
         }
     });
     $("#idCard").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         if (fileExtension.indexOf($("#idCard").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone2").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
@@ -154,7 +132,7 @@ $(document).ready(function () {
     });
 
     $("#certifs1").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         var input = $("#certifs1");
         if (fileExtension.indexOf($("#certifs1").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone5").html('<p class ="errorMsgs">Format invalide</p');
@@ -165,7 +143,7 @@ $(document).ready(function () {
 
     $("#certifs2").change(function () {
         console.log("zbre");//detecte pas le change
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         var input = $("#certifs2");
         if (fileExtension.indexOf($("#certifs2").val().split('.').pop().toLowerCase()) == -1) {
             console.log("error");
@@ -177,7 +155,7 @@ $(document).ready(function () {
         }
     });
     $("#certifs3").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         var input = $("#certifs3");
         if (fileExtension.indexOf($("#certifs3").val().split('.').pop().toLowerCase()) == -1) {
 
@@ -187,7 +165,7 @@ $(document).ready(function () {
         }
     });
     $("#certifs4").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         var input = $("#certifs4");
         if (fileExtension.indexOf($("#certifs4").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone9").html('<p class ="errorMsgs">Format invalide</p');
@@ -196,7 +174,7 @@ $(document).ready(function () {
         }
     });
     $("#certifs5").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         var input = $("#certifs5");
         if (fileExtension.indexOf($("#certifs5").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone10").html('<p class ="errorMsgs">Format invalide</p');
@@ -205,7 +183,7 @@ $(document).ready(function () {
         }
     });
     $("#certifs6").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         var input = $("#certifs6");
         if (fileExtension.indexOf($("#certifs6").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone11").html('<p class ="errorMsgs">Format invalide</p');
@@ -214,7 +192,7 @@ $(document).ready(function () {
         }
     });
     $("#certifs7").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         var input = $("#certifs7");
         if (fileExtension.indexOf($("#certifs7").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone12").html('<p class ="errorMsgs">Format invalide</p');
@@ -223,7 +201,7 @@ $(document).ready(function () {
         }
     });
     $("#certifs8").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         var input = $("#certifs8");
         if (fileExtension.indexOf($("#certifs8").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone13").html('<p class ="errorMsgs">Format invalide</p');
@@ -232,7 +210,7 @@ $(document).ready(function () {
         }
     });
     $("#certifs9").change(function () {
-        var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
+        var fileExtension = ['pdf'];
         var input = $("#certifs9");
         if (fileExtension.indexOf($("#certifs9").val().split('.').pop().toLowerCase()) == -1) {
             $("#formatErrorZone14").html('<p class ="errorMsgs">Format invalide</p');

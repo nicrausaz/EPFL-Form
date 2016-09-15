@@ -114,10 +114,10 @@
                     file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
                     //Upload call
-                    uploadFile($pathAnnexes, 'photo', array('.jpg','.jpeg','.png','.pdf','.JPG'));
+                    uploadFile($pathAnnexes, 'photo', array('.pdf'));
                     uploadFile($pathAnnexes, 'cv', array('.pdf'));
                     uploadFile($pathAnnexes, 'lettre', array('.pdf'));
-                    uploadFile($pathAnnexes, 'idCard', array('.jpg','.jpeg','.png','.pdf','.JPG'));
+                    uploadFile($pathAnnexes, 'idCard', array('.pdf'));
                     //check if input is empty then upload annexes
                     if($_POST['job']=="polyMecanicien"){
                         uploadFile($pathAnnexes, 'gimch', array('.pdf'));
@@ -134,22 +134,14 @@
                         $erreur = "Echec";
                     }
                     if(!isset($erreur)){
-                        checkChars($fichier);
-                        /*
-                        $fichier = strtr($fichier,
-                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-                        */
+                        $fichier = checkChars($fichier);
                         if(move_uploaded_file($_FILES[$inputName]['tmp_name'], $pathAnnexes . $fichier)){
                             echo 'Upload réussi';  
                         }
                         else{
-                            //echo 'Echec de l\'upload !';
                         }
                     }
                     else{
-                        //echo $erreur;
                     }
                 }                          
                 function mailToResp(){

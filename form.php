@@ -209,7 +209,7 @@
                     <label for="photo">Photo passeport <strong>couleur:</strong></label>
                     <label class="file" title="" id="photoLabel"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)"/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="photoLabel">
-                    Formats autorisés: jpg - jpeg - png - pdf
+                    Formats autorisés: pdf
                     </div>
                     <section class="formatInd" id="formatZone1"></section>
                     <p></p>
@@ -218,7 +218,7 @@
                     <label for="idCard">Copie carte d'indentité / passeport:</label>
                     <label class="file" title="" id="idCardLabel"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" /></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="idCardLabel">
-                        Formats autorisés: jpg - jpeg - png - pdf
+                        Formats autorisés: pdf
                     </div>
                     <p></p>
                     <section id="formatErrorZone2"></section>
@@ -242,7 +242,7 @@
                     <label for="certifs1">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
                     <label class="file" title="" id="certifLabel1"><input type="file" name="certifs1" id="certifs1" onchange="changeTitleFile(this)" /></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="certifLabel1">
-                        Formats autorisés: jpg - jpeg - png - pdf
+                        Formats autorisés: pdf
                     </div>
                     <p></p>
                     <section id="formatErrorZone5"></section>
