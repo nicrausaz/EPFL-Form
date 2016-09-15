@@ -162,7 +162,7 @@ $(document).ready(function () {
             $("#formatErrorZone5").html('');
         }
     });
-    componentHandler.upgradeDom();
+
     $("#certifs2").change(function () {
         console.log("zbre");//detecte pas le change
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
@@ -180,7 +180,7 @@ $(document).ready(function () {
         var fileExtension = ['jpeg', 'jpg', 'pdf', 'png'];
         var input = $("#certifs3");
         if (fileExtension.indexOf($("#certifs3").val().split('.').pop().toLowerCase()) == -1) {
-            componentHandler.upgradeDom();
+
             $("#formatErrorZone8").html('<p class ="errorMsgs">Format invalide</p');
         } else {
             $("#formatErrorZone8").html('');
