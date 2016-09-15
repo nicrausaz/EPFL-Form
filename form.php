@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="fr">
-    <head> 
+    <head>
     <?php
     include('templates/head.php');
-    include('templates/checkDate.php');
+    //include('templates/checkDate.php');
     require_once("tequila/tequila.php");
         $oClient = new TequilaClient();
         $oClient->SetApplicationName('Formulaire apprentissage');

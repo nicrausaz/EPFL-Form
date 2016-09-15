@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>  
          <?php include('templates/head.php');
-         include('templates/checkDate.php'); ?>
+         //include('templates/checkDate.php'); ?>
          <title>Confirmation</title>
     </head>
     <body>
@@ -16,80 +16,42 @@
         $mail = $_POST['mailApp'];
         $h = date('h')+2;
         $dateNow = date('j-n-o--'.$h.' i-s');
+        //check special chars in next line
         $folderName = $sciper."--".$dateNow."--".$mail;
         $rootpath = '../candidatures/';
-            if($job=="polyMecanicien") {
-                $path = $rootpath.'Polymecaniciens/'.$folderName.'/';
-                if (!file_exists($path)) {
-                    mkdir($path, 0777, true);
-                    createThings($path,$name,$surname);
-                }
-            }else if($job=="informaticien"){
-                $path = $rootpath.'Informaticiens/'.$folderName.'/';
-                if (!file_exists($path)) {
-                    mkdir($path, 0777, true);
-                    createThings($path,$name,$surname);
-                }
-            }else if($job=="logisticien"){
-                $path = $rootpath.'Logisticiens/'.$folderName.'/';
-                createThings($path,$name,$surname);
-                if (!file_exists($path)) {
-                    mkdir($path, 0777, true);
-                }
-            }else if($job=="planificateurElectricien"){
-                $path = $rootpath.'PlanificateurElectriciens/'.$folderName.'/';
-                createThings($path,$name,$surname);
-                if (!file_exists($path)) {
-                    mkdir($path, 0777, true);
-                    createThings($path,$name,$surname);
-                }
-            }else if($job=="employeCommerce"){
-                $path = $rootpath.'EmployesCommerce/'.$folderName.'/';
-                createThings($path,$name,$surname);
-                if (!file_exists($path)) {
-                    mkdir($path, 0777, true);
-                    createThings($path,$name,$surname);
-                }
-            }else if($job=="gardienAnimaux"){
-                $path = $rootpath.'GardiensAnimaux/'.$folderName.'/';
-                createThings($path,$name,$surname);
-                if (!file_exists($path)) {
-                    mkdir($path, 0777, true);
-                    createThings($path,$name,$surname);
-                }
-            }else if($job=="electronicien"){
-                $path = $rootpath.'Electoniciens/'.$folderName.'/';
-                createThings($path,$name,$surname);
-                if (!file_exists($path)) {
-                    mkdir($path, 0777, true);
-                    createThings($path,$name,$surname);
-                }
-            }else if($job=="interactiveMediaDesigner"){
-                $path = $rootpath.'InteractiveMediaDesigners/'.$folderName.'/';
-                createThings($path,$name,$surname);
-                if (!file_exists($path)) {
-                    mkdir($path, 0777, true);
-                    createThings($path,$name,$surname);
-                }
-            }
+        $orientations = array(
+                "polyMecanicien" => "Polymecaniciens",
+                "informaticien" => "Informaticiens",
+                "logisticien" => "Logisticiens",
+                "planificateurElectricien" => "PlanificateurElectriciens",
+                "employeCommerce" => "EmployesCommerce",
+                "gardienAnimaux" => "GardiensAnimaux",
+                "electronicien" => "Electoniciens",
+                "interactiveMediaDesigner" => "InteractiveMediaDesigners"
+        );
 
-                
-            
-            function createThings($path,$name,$surname){
-                //create apprenti's folders
-                    $pathInfos = $path."informations/";
-                    $pathAnnexes = $path."annexes/";
+        $path = '';
+        if (array_key_exists($job, $orientations)) {
+            $path = $rootpath.$orientations[$job].'/'.$folderName.'/';
+        }
+        if ($path != '' && !file_exists($path)) {
+            createThings($path,$name,$surname);
+        }
 
-                    if (!mkdir($path, 0777, true)){
-                         die('Echec lors de la création du dossier candidat');
-                    }
-                    if (!mkdir($pathInfos, 0777, true)){
-                        die('Echec lors de la création du dossier informations');
-                    }
-                    if (!mkdir($pathAnnexes, 0777, true)){
-                        die('Echec lors de la création du dossier annexes');
-                    }else{
-                        
+        function createThings($path,$name,$surname){
+            //create apprenti's folders
+                $pathInfos = $path."informations/";
+                $pathAnnexes = $path."annexes/";
+
+                if (!mkdir($path, 0777, true)){
+                        die('Echec lors de la création du dossier candidat');
+                }
+                if (!mkdir($pathInfos, 0777, true)){
+                    die('Echec lors de la création du dossier informations');
+                 }
+                if (!mkdir($pathAnnexes, 0777, true)){
+                    die('Echec lors de la création du dossier annexes');
+                }else{  
                     //Get all infos in JSON
                     require_once("json/jsonClass.php");
                     $doc = new Doc();
@@ -223,7 +185,9 @@
          <?php include('templates/header.php') ?>
          <h1><?php echo $surname," ", $name,"," ?></h1>
          <h4>Votre demande à bien été enregistrée, vous allez bientôt recevoir un e-mail confirmant votre postulation.</h4>
-
+         <button type ="button" id="retourHome" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Retour à l'accueil
+        </button>
         </div>
     </body>
 </html>
