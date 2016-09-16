@@ -109,6 +109,7 @@
                     $encodedJson = (json_encode($doc,JSON_UNESCAPED_UNICODE));
                     file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
+                   
                     uploadFile($pathAnnexes, 'photo', array('.pdf'));
                     uploadFile($pathAnnexes, 'idCard', array('.pdf'));
                     uploadFile($pathAnnexes, 'cv', array('.pdf'));
@@ -143,6 +144,7 @@
                     if(!($_FILES['certifs9']['name'] == "")) {
                         uploadFile($pathAnnexes, 'certifs9', array('.pdf'));
                     }else{}
+                    
                     if($_POST['job']=="polyMecanicien"){
                         uploadFile($pathAnnexes, 'gimch', array('.pdf'));
                     }

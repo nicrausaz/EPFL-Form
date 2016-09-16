@@ -47,7 +47,9 @@ $(document).ready(function () {
     $('#addInputFile').click(function () {
         var z = $('#newCertifZone > tbody').children().size() + 2;
         if (z < 10) {
-            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for= "certifLabel' + z + '">Formats autorisés: jpg - jpeg - png - pdf </div><p></p><section id="formatErrorZone' + (z + 5) + '"></section></td></tr>');
+            console.log("formatErrorZone" + (z + 5));
+            console.log("certifLabel" + z);
+            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for= "certifLabel' + z + '">Formats autorisés: pdf </div><p></p><section id="formatErrorZone' + (z + 5) + '"></section></td></tr>');
             componentHandler.upgradeDom();
             if (z == 8) {
                 $('#addInputFile').hide(750);
