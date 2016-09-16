@@ -25,10 +25,8 @@
         <p class="paracenter">Les champs notés d'un astérisque* doivent être obligatoirement remplis.</p>
         <form method ="post" action="cible.php" enctype="multipart/form-data">
         <fieldset>
-            <!-- DONNEES APPRENTISSAGE-->
             <legend><span class="number">1</span> Apprentissage</legend>
             <label for="job">Je suis intéressé par la formation de*: </label>
-
             <select name ="job" id="jb" required>
                 <option value="menu" selected disabled>Choisir une formation...</option>
                 <option value="laborantinBiologie">Laborantin-e CFC; option biologie</option>
@@ -84,7 +82,6 @@
                     <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="30" required/>
                     <input type="text" name="permisEtrangerApp" placeholder="Catégorie de permis pour étrangers " autocomplete="off" maxlength="1"/>
                     <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
-
                     <label for="languesApp">Connaissance linguistiques*:</label>
                     <p><input type="checkbox" name="languesApp[]" value="francais-oui" id="french"><label for="french"><span class="ui"></span>Français</label></p>
                     <p><input type="checkbox" name="languesApp[]" value="allemand-oui" id="german"><label for="german"><span class="ui"></span>Allemand</label></p>
@@ -251,8 +248,6 @@
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Ajouter un annexe
                     </button>
-                     
-
                     <div id="polyOnly">
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label>
                         <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
@@ -261,7 +256,6 @@
                         </div>
                         <p></p>
                         <section id="formatErrorZone6"></section>
-                        
                     </div>
                 </fieldset>
                 <fieldset>
