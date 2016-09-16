@@ -110,10 +110,39 @@
                     file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
                     uploadFile($pathAnnexes, 'photo', array('.pdf'));
+                    uploadFile($pathAnnexes, 'idCard', array('.pdf'));
                     uploadFile($pathAnnexes, 'cv', array('.pdf'));
                     uploadFile($pathAnnexes, 'lettre', array('.pdf'));
-                    uploadFile($pathAnnexes, 'idCard', array('.pdf'));
+                    
                     //check if input is empty then upload annexes
+
+                    if(!($_FILES['certifs1']['name'] == "")) {
+                        uploadFile($pathAnnexes, 'certifs1', array('.pdf'));
+                    }else{}
+                    if(!($_FILES['certifs2']['name'] == "")) {
+                        uploadFile($pathAnnexes, 'certifs2', array('.pdf'));
+                    }else{}
+                    if(!($_FILES['certifs3']['name'] == "")) {
+                        uploadFile($pathAnnexes, 'certifs3', array('.pdf'));
+                    }else{}
+                    if(!($_FILES['certifs4']['name'] == "")) {
+                        uploadFile($pathAnnexes, 'certifs4', array('.pdf'));
+                    }else{}
+                    if(!($_FILES['certifs5']['name'] == "")) {
+                        uploadFile($pathAnnexes, 'certifs5', array('.pdf'));
+                    }else{}
+                    if(!($_FILES['certifs6']['name'] == "")) {
+                        uploadFile($pathAnnexes, 'certifs6', array('.pdf'));
+                    }else{}
+                    if(!($_FILES['certifs7']['name'] == "")) {
+                        uploadFile($pathAnnexes, 'certifs7', array('.pdf'));
+                    }else{}
+                    if(!($_FILES['certifs8']['name'] == "")) {
+                        uploadFile($pathAnnexes, 'certifs8', array('.pdf'));
+                    }else{}
+                    if(!($_FILES['certifs9']['name'] == "")) {
+                        uploadFile($pathAnnexes, 'certifs9', array('.pdf'));
+                    }else{}
                     if($_POST['job']=="polyMecanicien"){
                         uploadFile($pathAnnexes, 'gimch', array('.pdf'));
                     }
@@ -126,21 +155,17 @@
                     $extension = strrchr($_FILES[$inputName]['name'], '.');
                         
                     if(!in_array($extension, $extensions)){
-                        $erreur = "Echec";
+                        $erreur = "uploadError";
                     }
                     if(!isset($erreur)){
                         $fichier = checkChars($fichier);
                         if(move_uploaded_file($_FILES[$inputName]['tmp_name'], $pathAnnexes . $fichier)){
-                            echo 'Upload réussi';  
                         }
-                        else{
-                        }
+                        else{}
                     }
-                    else{
-                    }
+                    else{}
                 }                          
                 function mailToResp(){
-                    // mail send
                     $to  = 'nicolas.crausaz@epfl.ch'; //formation.apprentis@epfl.ch
                     $subject = 'Nouvelle demande de place d\'apprentissage';
                     $message = $_POST['surnameApp']." ".$_POST['nameApp']." a fait une demande de place d'apprentissage.";
@@ -150,8 +175,7 @@
 
                         if (mail($to, $subject, $message, $headers)){
                             }
-                            else{
-                            }
+                            else{}
                 }
                 function mailToApprenti(){
                     $to  = $_POST['mailApp'];
@@ -164,8 +188,7 @@
 
                         if (mail($to, $subject, $message, $headers)){
                             }
-                            else{
-                            }
+                            else{}
                 }
                 function checkChars($toCheck){
                     $toCheck = strtr($toCheck,
