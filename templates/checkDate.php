@@ -1,20 +1,15 @@
 <?php
 date_default_timezone_set('Europe/Zurich');
-$year = Date("Y");
-$actualDate = Date('02-09-2016');
-$startDate = Date('01-09'.$year);
-$endDate = Date('01-09'.$year);
+$year = Date('Y')."\n\n";
+$actualDate = Date("d-m-Y")."\n\n";
+$startDate = Date('01-09-'.$year)."\n\n";
+$endDate = Date('01-12-'.$year)."\n\n";
 $actualDate = strtotime($actualDate);
-echo $actualDate."\n";
 $startDate = strtotime($startDate);
-echo $startDate."\n";
 $endDate = strtotime($endDate);
-echo $endDate."\n";
 
 if(($actualDate>$startDate)&&($actualDate<$endDate)){
-    
 }else{
-    //header("Location: ./denied.php");
-    echo "error";
+    header("Location: ./denied.php");
 }
 ?>
