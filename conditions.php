@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>  
         <?php include('templates/head.php');
-        //include('templates/checkDate.php');
+        include('templates/checkDate.php');
         ?>
         <title>Conditions</title>
     </head>
