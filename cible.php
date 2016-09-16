@@ -20,7 +20,7 @@
         $h = date('h')+2;
         $dateNow = date('j-n-o--'.$h.' i-s');
         $folderName = $sciper."--".$dateNow."--".$mail;
-        $rootpath = '../candidatures/';
+        $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
         $orientations = array(
                 "polyMecanicien" => "Polymecaniciens",
                 "informaticien" => "Informaticiens",
@@ -38,9 +38,7 @@
         if ($path != '' && !file_exists($path)) {
             createThings($path);
         }
-
         function createThings($path){
-            //create apprenti's folders
                 $pathInfos = $path."informations/";
                 $pathAnnexes = $path."annexes/";
 
@@ -53,7 +51,6 @@
                 if (!mkdir($pathAnnexes, 0777, true)){
                     die('Echec lors de la création du dossier annexes');
                 }else{  
-                    //Get all infos in JSON
                     require_once("json/jsonClass.php");
                     $doc = new Doc();
                     $doc->formation = $_POST['job'];
@@ -74,7 +71,6 @@
                     $doc->nationaliteApprenti  = $_POST['nationApp'];
                     $doc->permisEtranger = $_POST['permisEtrangerApp'];
                     $doc->langueMaternelleApprenti  = $_POST['langApp'];
-                    //GET CHECKBOXES
                     if(isset($_POST['languesApp']) && !empty($_POST['languesApp'])){
                         foreach($_POST['languesApp'] as $lang[]);
                         $doc->connaissancesLinguistiques[] = array("francais"=> $lang[0], "allemand"=> $lang[1], "anglais"=> $lang[2], "autre"=> $lang[3]);
@@ -113,7 +109,6 @@
                     $encodedJson = (json_encode($doc,JSON_UNESCAPED_UNICODE));
                     file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
-                    //Upload call
                     uploadFile($pathAnnexes, 'photo', array('.pdf'));
                     uploadFile($pathAnnexes, 'cv', array('.pdf'));
                     uploadFile($pathAnnexes, 'lettre', array('.pdf'));
@@ -154,14 +149,11 @@
                                 'X-Mailer: PHP/' . phpversion();
 
                         if (mail($to, $subject, $message, $headers)){
-                                echo "Mail envoyé";
                             }
                             else{
-                                echo "Mail non envoyé";
                             }
                 }
                 function mailToApprenti(){
-                    // mail send
                     $to  = $_POST['mailApp'];
                     $subject = 'Confirmation demande de place d\'apprentissage';
                     $message =  "Bonjour ". $_POST['surnameApp']." ".$_POST['nameApp']. ",". "\n\n".
@@ -171,10 +163,8 @@
                                 'X-Mailer: PHP/' . phpversion();
 
                         if (mail($to, $subject, $message, $headers)){
-                                echo "Mail envoyé";
                             }
                             else{
-                                echo "Mail non envoyé";
                             }
                 }
                 function checkChars($toCheck){
