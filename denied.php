@@ -15,7 +15,6 @@
     $endStamp = strtotime($endDate);
     if($actualStamp > $endStamp){
         $actualYear = Date('Y')+1;
-        //+1
         $startDate = Date('01-09-'.$actualYear);
         $endDate = Date('01-12-'.$actualYear);
     }
