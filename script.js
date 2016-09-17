@@ -1,20 +1,21 @@
 $(document).ready(function () {
-    //Create account link
+    
+
     $('#createAc').click(function () {
         window.open("https://guests.epfl.ch/", '_blank');
     });
-    //Form link
+
     $('#connectB').click(function () {
         document.location.href = "form.php";
     });
-    // ICT link
+
     $('#infoFilieres').click(function () {
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
     $('#retourHome').click(function () {
         document.location.href = "https://apprentis.epfl.ch/";
     });
-    //Add line to school
+
     $('#addSch').click(function () {
         var i = $('#scolaire > tbody').children().size() + 1;
         if (i < 6) {
@@ -24,7 +25,7 @@ $(document).ready(function () {
             }
         }
     });
-    //Add line to professionnel
+
     $('#addPro').click(function () {
         var y = $('#activites > tbody').children().size() + 1;
         if (y < 4) {
@@ -34,7 +35,7 @@ $(document).ready(function () {
             }
         }
     });
-    //Add line to stages
+
     $('#addStage').click(function () {
         var x = $('#stages > tbody').children().size() + 1;
         if (x < 6) {
@@ -46,18 +47,18 @@ $(document).ready(function () {
     });
     $('#addInputFile').click(function () {
         var z = $('#newCertifZone > tbody').children().size() + 2;
+        var zoneId = z + 5;
+        $("*").off();
+        $.getScript("script.js");
         if (z < 10) {
-            console.log("formatErrorZone" + (z + 5));
-            console.log("certifLabel" + z);
-            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for= "certifLabel' + z + '">Formats autorisés: pdf </div><p></p><section id="formatErrorZone' + (z + 5) + '"></section></td></tr>');
+            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for= "certifLabel' + z + '">Formats autorisés: pdf </div><p></p><section id="formatErrorZone' + zoneId + '"></section></td></tr>');
             componentHandler.upgradeDom();
             if (z == 8) {
                 $('#addInputFile').hide(750);
             }
         }
     });
-    //class = "newInputFile"
-    // SHOW/HIDE CONTENT ACCORDING TO SELECTED JOB
+
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;
         var infoPeople = ["informaticien"];
@@ -88,8 +89,6 @@ $(document).ready(function () {
 
     //CREATE 1 FUNCTION ONLY
 
-
-    // CHECK FILE FORMATS
     $("#photo").change(function () {
         var fileExtension = ['pdf'];
         if (fileExtension.indexOf($("#photo").val().split('.').pop().toLowerCase()) == -1) {
@@ -116,112 +115,98 @@ $(document).ready(function () {
     });
     $("#lettre").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#lettre");
         if (fileExtension.indexOf($("#lettre").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone4").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone4").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone4").html('');
         }
     });
     $("#gimchLabel").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#gimchLabel");
         if (fileExtension.indexOf($("#gimchLabel").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone6").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone6").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone6").html('');
         }
     });
 
     $("#certifs1").change(function () {
+        console.log("change certif 1")
         var fileExtension = ['pdf'];
-        var input = $("#certifs1");
         if (fileExtension.indexOf($("#certifs1").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone5").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone5").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone5").html('');
         }
     });
 
     $("#certifs2").change(function () {
-        console.log("zbre");//detecte pas le change
+        console.log("change certif 2");
         var fileExtension = ['pdf'];
-        var input = $("#certifs2");
         if (fileExtension.indexOf($("#certifs2").val().split('.').pop().toLowerCase()) == -1) {
-            console.log("error");
-            componentHandler.upgradeDom();
-            $("#formatErrorZone7").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone7").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
-            console.log("yolo");
             $("#formatErrorZone7").html('');
         }
     });
     $("#certifs3").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#certifs3");
         if (fileExtension.indexOf($("#certifs3").val().split('.').pop().toLowerCase()) == -1) {
 
-            $("#formatErrorZone8").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone8").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone8").html('');
         }
     });
     $("#certifs4").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#certifs4");
         if (fileExtension.indexOf($("#certifs4").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone9").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone9").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone9").html('');
         }
     });
     $("#certifs5").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#certifs5");
         if (fileExtension.indexOf($("#certifs5").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone10").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone10").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone10").html('');
         }
     });
     $("#certifs6").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#certifs6");
         if (fileExtension.indexOf($("#certifs6").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone11").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone11").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone11").html('');
         }
     });
     $("#certifs7").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#certifs7");
         if (fileExtension.indexOf($("#certifs7").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone12").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone12").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone12").html('');
         }
     });
     $("#certifs8").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#certifs8");
         if (fileExtension.indexOf($("#certifs8").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone13").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone13").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone13").html('');
         }
     });
     $("#certifs9").change(function () {
         var fileExtension = ['pdf'];
-        var input = $("#certifs9");
         if (fileExtension.indexOf($("#certifs9").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone14").html('<p class ="errorMsgs">Format invalide</p');
+            $("#formatErrorZone14").html('<p class ="errorMsgs">Format invalide</p>');
         } else {
             $("#formatErrorZone14").html('');
         }
     });
 
-    // SHOW/HIDE ACCORDING TO RADIOBUTTON
     $("#maj1").change(function () {
         $("#representants").show(1000);
     });
@@ -238,7 +223,6 @@ $(document).ready(function () {
         $("#dejaCandAnnee").show(750);
     });
 
-    // CHECK DATE INPUT
     $("#birthApp").change(function () {
         userDate = new Date(document.getElementById("birthApp").value);
         now = new Date();
