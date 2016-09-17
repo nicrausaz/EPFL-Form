@@ -114,8 +114,6 @@
                     uploadFile($pathAnnexes, 'idCard', array('.pdf'));
                     uploadFile($pathAnnexes, 'cv', array('.pdf'));
                     uploadFile($pathAnnexes, 'lettre', array('.pdf'));
-                    
-                    //check if input is empty then upload annexes
 
                     if(!($_FILES['certifs1']['name'] == "")) {
                         uploadFile($pathAnnexes, 'certifs1', array('.pdf'));

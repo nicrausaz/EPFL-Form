@@ -19,7 +19,7 @@
         </button>
         <h2>Se connecter et remplir le formulaire</h2>
         Cliquer sur le bouton se connecter.</p>
-        Entrer vos informations de compte temporaires.</p>
+        Entrer vos informations de compte temporaire.</p>
         Lorsque la connexion sera effectuée, vous serez redirigé-e vers le formulaire.</p>
         <button id="connectB" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Se connecter
