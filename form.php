@@ -122,7 +122,7 @@
                         <input type="text" name="nameRep2" placeholder="Nom" autocomplete="off"/>
                         <input type="text" name="surnameRep2" placeholder="Prénom" autocomplete="off"/>
                         <input type="text" name="adrRep2" placeholder="Rue" autocomplete="off"/>
-                        <input type="text" name="NPARep2" placeholder = "NPA\Domicile"autocomplete="off"/>
+                        <input type="text" name="NPARep2" placeholder = "NPA\Domicile" autocomplete="off"/>
                         <input type="text" name="telRep2" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
                     </section>
                 </fieldset>
@@ -261,7 +261,7 @@
                 <fieldset>
                     <div id="condDiv">
                         <input type="checkbox" value="conditionsAcc" id="conditions" required/>
-                        <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions</label>
+                        <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions </label>
                     </div>
                     <p></p>
                     <input type="submit" value="Terminer">

@@ -106,7 +106,7 @@
                     }else{}
                     $h = date('h')+2;
                     $doc->datePostulation = date('j-n-o--'.$h.':i:s');
-                    $encodedJson = (json_encode($doc,JSON_UNESCAPED_UNICODE));
+                    $encodedJson = (json_encode($doc,JSON_UNESCAPED_UNICODE,JSON_PRETTY_PRINT));
                     file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
                    
