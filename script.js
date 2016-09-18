@@ -87,124 +87,47 @@ $(document).ready(function () {
         }
     });
 
-    //CREATE 1 FUNCTION ONLY
-
     $("#photo").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#photo").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone1").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone1").html('');
-        }
+        showFormatErrorMsg("#photo","#formatErrorZone1");
     });
     $("#idCard").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#idCard").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone2").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone2").html('');
-        }
+        showFormatErrorMsg("#idCard","#formatErrorZone2");
     });
     $("#cv").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#cv").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone3").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone3").html('');
-        }
+        showFormatErrorMsg("#cv","#formatErrorZone3");
     });
     $("#lettre").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#lettre").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone4").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone4").html('');
-        }
+        showFormatErrorMsg("#lettre","#formatErrorZone4");
     });
     $("#gimchLabel").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#gimchLabel").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone6").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone6").html('');
-        }
+        showFormatErrorMsg("#gimchLabel","#formatErrorZone6");
     });
-
     $("#certifs1").change(function () {
-        console.log("change certif 1")
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#certifs1").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone5").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone5").html('');
-        }
+        showFormatErrorMsg("#certifs1","#formatErrorZone5");
     });
-
     $("#certifs2").change(function () {
-        console.log("change certif 2");
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#certifs2").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone7").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone7").html('');
-        }
+        showFormatErrorMsg("#certifs2","#formatErrorZone7");
     });
     $("#certifs3").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#certifs3").val().split('.').pop().toLowerCase()) == -1) {
-
-            $("#formatErrorZone8").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone8").html('');
-        }
+        showFormatErrorMsg("#certifs3","#formatErrorZone8");
     });
     $("#certifs4").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#certifs4").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone9").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone9").html('');
-        }
+        showFormatErrorMsg("#certifs4","#formatErrorZone9");
     });
     $("#certifs5").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#certifs5").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone10").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone10").html('');
-        }
+        showFormatErrorMsg("#certifs5","#formatErrorZone10");
     });
     $("#certifs6").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#certifs6").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone11").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone11").html('');
-        }
+        showFormatErrorMsg("#certifs6","#formatErrorZone11");
     });
     $("#certifs7").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#certifs7").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone12").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone12").html('');
-        }
+        showFormatErrorMsg("#certifs7","#formatErrorZone12");
     });
     $("#certifs8").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#certifs8").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone13").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone13").html('');
-        }
+        showFormatErrorMsg("#certifs8","#formatErrorZone13");
     });
     $("#certifs9").change(function () {
-        var fileExtension = ['pdf'];
-        if (fileExtension.indexOf($("#certifs9").val().split('.').pop().toLowerCase()) == -1) {
-            $("#formatErrorZone14").html('<p class ="errorMsgs">Format invalide</p>');
-        } else {
-            $("#formatErrorZone14").html('');
-        }
+        showFormatErrorMsg("#certifs9","#formatErrorZone14");
     });
 
     $("#maj1").change(function () {
@@ -262,6 +185,14 @@ $(document).ready(function () {
     });
 
 });
+function showFormatErrorMsg(inputFile,formatErrorZoneId){
+    var fileExtension = ['pdf'];
+    if (fileExtension.indexOf($(inputFile).val().split('.').pop().toLowerCase()) == -1) {
+        $(formatErrorZoneId).html('<p class ="errorMsgs">Format invalide</p>');
+    } else {
+        $(formatErrorZoneId).html('');
+    }
+}
 function changeTitleFile(objFile) {
     objFile.parentNode.setAttribute('title', objFile.value.replace(/^.*[\\/]/, ''));
 }
