@@ -17,8 +17,7 @@
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
             $mail = "InvalidMailFormat";
         }
-        $h = date('h')+2;
-        $dateNow = date('j-n-o--'.$h.' i-s');
+        $dateNow = date('j-n-o--'.'h-i-s');
         $folderName = $sciper."--".$dateNow."--".$mail;
         $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
         $orientations = array(
@@ -104,8 +103,7 @@
                     if($_POST['dejaCand'] == "dejaCand-oui"){
                         $doc->anneeCandidature = $_POST['dejaCandAnnee'];
                     }else{}
-                    $h = date('h')+2;
-                    $doc->datePostulation = date('j-n-o--'.$h.':i:s');
+                    $doc->datePostulation = date('j-n-o--'.'h:i:s');
                     $encodedJson = (json_encode($doc,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
                     file_put_contents($pathInfos.'/informations.json', $encodedJson);
 

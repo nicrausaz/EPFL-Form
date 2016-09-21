@@ -99,8 +99,8 @@ $(document).ready(function () {
     $("#lettre").change(function () {
         showFormatErrorMsg("#lettre","#formatErrorZone4");
     });
-    $("#gimchLabel").change(function () {
-        showFormatErrorMsg("#gimchLabel","#formatErrorZone6");
+    $("#gimch").change(function () {
+        showFormatErrorMsg("#gimch","#formatErrorZone6");
     });
     $("#certifs1").change(function () {
         showFormatErrorMsg("#certifs1","#formatErrorZone5");

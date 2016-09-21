@@ -90,7 +90,7 @@
                 </fieldset>
                 <fieldset>
                     <legend><span class="number">2.2</span> Réprésentants légaux</legend>    
-                    <label for="maj">Avez vous plus de 18 ans?</label><p>
+                    <label for="maj">Avez vous plus de 18 ans?*</label><p>
                     <dl class="radio-list-left">
                         <dd>
                             <input type="radio" name="maj" id="maj1" value="maj-non" checked="checked">
@@ -203,8 +203,8 @@
                     <legend><span class="number">4</span> Annexes </legend>
                     <p>Merci de joindre tous les fichiers demandés, en respectant les formats (si les formats ne sont pas respectés, les fichiers ne seront pas pris en compte). Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.</p>
         
-                    <label for="photo">Photo passeport <strong>couleur:</strong></label>
-                    <label class="file" title="" id="photoLabel"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)"/></label>
+                    <label for="photo">Photo passeport <strong>couleur:*</strong></label>
+                    <label class="file" title="" id="photoLabel"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)" required/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="photoLabel">
                     Formats autorisés: pdf
                     </div>
@@ -212,24 +212,24 @@
                     <p></p>
                     <section id="formatErrorZone1"></section>
 
-                    <label for="idCard">Copie carte d'indentité / passeport:</label>
-                    <label class="file" title="" id="idCardLabel"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" /></label>
+                    <label for="idCard">Copie carte d'indentité / passeport:*</label>
+                    <label class="file" title="" id="idCardLabel"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" required/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="idCardLabel">
                         Formats autorisés: pdf
                     </div>
                     <p></p>
                     <section id="formatErrorZone2"></section>
 
-                    <label for="cv">Curriculum Vitae:</label>
-                    <label class="file" title="" id="CVLabel" ><input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" /></label>
+                    <label for="cv">Curriculum Vitae:*</label>
+                    <label class="file" title="" id="CVLabel" ><input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" required/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="CVLabel">
                         Formats autorisés: pdf
                     </div>
                     <p></p>
                     <section id="formatErrorZone3"></section>
 
-                    <label for="lettre">Lettre de motivation:</label>
-                    <label class="file" title="" id="lettreLabel" ><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" /></label>
+                    <label for="lettre">Lettre de motivation:*</label>
+                    <label class="file" title="" id="lettreLabel" ><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" required/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="lettreLabel">
                         Formats autorisés: pdf
                     </div>
@@ -249,8 +249,8 @@
                         Ajouter un annexe
                     </button>
                     <div id="polyOnly">
-                        <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label>
-                        <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" /></label>
+                        <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):*</label>
+                        <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" required/></label>
                         <div class="mdl-tooltip mdl-tooltip--large" for="gimchLabel">
                             Formats autorisés: pdf
                         </div>
@@ -261,7 +261,7 @@
                 <fieldset>
                     <div id="condDiv">
                         <input type="checkbox" value="conditionsAcc" id="conditions" required/>
-                        <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions </label>
+                        <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions*</label>
                     </div>
                     <p></p>
                     <input type="submit" value="Terminer">
