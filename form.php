@@ -250,7 +250,7 @@
                     </button>
                     <div id="polyOnly">
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):*</label>
-                        <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)" required/></label>
+                        <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)"/></label>
                         <div class="mdl-tooltip mdl-tooltip--large" for="gimchLabel">
                             Formats autorisés: pdf
                         </div>

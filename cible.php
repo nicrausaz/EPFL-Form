@@ -165,8 +165,11 @@
                 }                          
                 function mailToResp(){
                     $to  = 'nicolas.crausaz@epfl.ch'; //formation.apprentis@epfl.ch
-                    $subject = 'Nouvelle demande de place d\'apprentissage';
-                    $message = $_POST['surnameApp']." ".$_POST['nameApp']." a fait une demande de place d'apprentissage.";
+                    $subject = 'Nouvelle Candidature';
+                    $message = "Nom complet: ".$_POST['surnameApp']." ".$_POST['nameApp']."\n\n".
+                                "Metier: ".$_POST['job']."\n\n".
+                                "Consulter la candidature sur: "."\\\\scxdata\\apprentis$\\candidatures\\nouvelles";
+
                     $headers = 'From: formulaireApprentis@epfl.ch' . "\r\n" .
                                 'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                                 'X-Mailer: PHP/' . phpversion();

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
 
     $('#createAc').click(function () {
         window.open("https://guests.epfl.ch/", '_blank');
@@ -88,46 +88,46 @@ $(document).ready(function () {
     });
 
     $("#photo").change(function () {
-        showFormatErrorMsg("#photo","#formatErrorZone1");
+        showFormatErrorMsg("#photo", "#formatErrorZone1");
     });
     $("#idCard").change(function () {
-        showFormatErrorMsg("#idCard","#formatErrorZone2");
+        showFormatErrorMsg("#idCard", "#formatErrorZone2");
     });
     $("#cv").change(function () {
-        showFormatErrorMsg("#cv","#formatErrorZone3");
+        showFormatErrorMsg("#cv", "#formatErrorZone3");
     });
     $("#lettre").change(function () {
-        showFormatErrorMsg("#lettre","#formatErrorZone4");
+        showFormatErrorMsg("#lettre", "#formatErrorZone4");
     });
     $("#gimch").change(function () {
-        showFormatErrorMsg("#gimch","#formatErrorZone6");
+        showFormatErrorMsg("#gimch", "#formatErrorZone6");
     });
     $("#certifs1").change(function () {
-        showFormatErrorMsg("#certifs1","#formatErrorZone5");
+        showFormatErrorMsg("#certifs1", "#formatErrorZone5");
     });
     $("#certifs2").change(function () {
-        showFormatErrorMsg("#certifs2","#formatErrorZone7");
+        showFormatErrorMsg("#certifs2", "#formatErrorZone7");
     });
     $("#certifs3").change(function () {
-        showFormatErrorMsg("#certifs3","#formatErrorZone8");
+        showFormatErrorMsg("#certifs3", "#formatErrorZone8");
     });
     $("#certifs4").change(function () {
-        showFormatErrorMsg("#certifs4","#formatErrorZone9");
+        showFormatErrorMsg("#certifs4", "#formatErrorZone9");
     });
     $("#certifs5").change(function () {
-        showFormatErrorMsg("#certifs5","#formatErrorZone10");
+        showFormatErrorMsg("#certifs5", "#formatErrorZone10");
     });
     $("#certifs6").change(function () {
-        showFormatErrorMsg("#certifs6","#formatErrorZone11");
+        showFormatErrorMsg("#certifs6", "#formatErrorZone11");
     });
     $("#certifs7").change(function () {
-        showFormatErrorMsg("#certifs7","#formatErrorZone12");
+        showFormatErrorMsg("#certifs7", "#formatErrorZone12");
     });
     $("#certifs8").change(function () {
-        showFormatErrorMsg("#certifs8","#formatErrorZone13");
+        showFormatErrorMsg("#certifs8", "#formatErrorZone13");
     });
     $("#certifs9").change(function () {
-        showFormatErrorMsg("#certifs9","#formatErrorZone14");
+        showFormatErrorMsg("#certifs9", "#formatErrorZone14");
     });
 
     $("#maj1").change(function () {
@@ -185,7 +185,7 @@ $(document).ready(function () {
     });
 
 });
-function showFormatErrorMsg(inputFile,formatErrorZoneId){
+function showFormatErrorMsg(inputFile, formatErrorZoneId) {
     var fileExtension = ['pdf'];
     if (fileExtension.indexOf($(inputFile).val().split('.').pop().toLowerCase()) == -1) {
         $(formatErrorZoneId).html('<p class ="errorMsgs">Format invalide</p>');
