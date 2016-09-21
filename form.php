@@ -51,11 +51,11 @@
             <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
             <dl class="radio-list-left">
                 <dd>
-                    <input type="radio" name="mpt" id="mpt1" value="matu-non" checked="checked">
+                    <input type="radio" name="mpt" id="mpt1" value="false" checked="checked">
                     <label for="mpt1">Non</label>
                 </dd>
                 <dd>
-                    <input type="radio" name="mpt" id="mpt2" value="matu-oui">
+                    <input type="radio" name="mpt" id="mpt2" value="true">
                     <label for="mpt2">Oui</label>
                 </dd>
             </dl>
@@ -93,16 +93,16 @@
                     <label for="maj">Avez vous plus de 18 ans?*</label><p>
                     <dl class="radio-list-left">
                         <dd>
-                            <input type="radio" name="maj" id="maj1" value="maj-non" checked="checked">
+                            <input type="radio" name="maj" id="maj1" value="false" checked="checked">
                             <label for="maj1">Non</label>
                         </dd>
                         <dd>
-                            <input type="radio" name="maj" id="maj2" value="maj-oui">
+                            <input type="radio" name="maj" id="maj2" value="true">
                             <label for="maj2">Oui</label>
                         </dd>
                     </dl>
                     <section id="representants">
-                        <p>Réprésentant 1:</p>
+                        <p>Réprésentant 1:*</p>
                         <select name="genreRep1" >
                             <option disabled selected> Choisissez un genre</option>
                             <option value="Homme">Homme</option>
@@ -113,7 +113,7 @@
                         <input type="text" name="adrRep1" placeholder="Rue" autocomplete="off"/>
                         <input type="text" name="NPARep1" placeholder = "NPA\Domicile"autocomplete="off"/>
                         <input type="text" name="telRep1" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
-                        <p>Réprésentant 2:</p>
+                        <p>Réprésentant 2:*</p>
                         <select name="genreRep2" >
                             <option disabled selected> Choisissez un genre</option>
                             <option value="Homme">Homme</option>
@@ -188,11 +188,11 @@
                     <p>Avez-vous déjà été candidat à l'EPFL?</p>
                     <dl class="radio-list-left">
                         <dd>
-                            <input type="radio" name="dejaCand" id="dejaCand1" value="dejaCand-non" checked="checked">
+                            <input type="radio" name="dejaCand" id="dejaCand1" value="false" checked="checked">
                             <label for="dejaCand1">Non</label>
                         </dd>
                         <dd>
-                            <input type="radio" name="dejaCand" id="dejaCand2" value="dejaCand-oui">
+                            <input type="radio" name="dejaCand" id="dejaCand2" value="true">
                             <label for="dejaCand2">Oui</label>
                         </dd>
                     </dl>

@@ -12,7 +12,6 @@
 
             if (mail($to, $subject, $message, $headers)){
                 }
-                else{}
     }
 
     function checkChars($toCheck){
@@ -36,7 +35,6 @@
 
             if (mail($to, $subject, $message, $headers)){
                 }
-                else{}
     }
 
     function uploadFile($pathAnnexes, $file){
@@ -68,6 +66,7 @@
 
     function validPostedFiles($postedFiles){
         $error = false;
+        //Todo: verification des fichiers
 
         return $erreur;
     }

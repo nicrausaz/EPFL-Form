@@ -3,7 +3,7 @@
     <head>  
          <?php 
             include('templates/head.php');
-            include('templates/checkDate.php'); 
+            include('templates/checkDate.php');
          ?>
          <title>Confirmation</title>
     </head>
@@ -13,12 +13,35 @@
             include('./helpers.php');
             require_once("models/PersonnalData.php");
             require_once("models/PersonnalDataValidator.php");
+            include('templates/header.php'); 
 
             //TODO: chargement et contrôle variables postées (toutes)
             $candidateData = new PersonnalData();
             //Remplir les infos;
-            $candidateData->name = $_POST['nameApp'];
-
+            $candidateData->tempSciper = $_POST['sciperTmp']; 
+            $candidateData->formation = $_POST['job']; 
+            $candidateData->filiere = $_POST['filInfo']; 
+            $candidateData->maturite = $_POST['mpt']; 
+            $candidateData->genreApprenti = $_POST['genreApp']; 
+            $candidateData->nomApprenti = $_POST['nameApp'];
+            $candidateData->prenomApprenti = $_POST['surnameApp'];
+            $candidateData->addresseApprentiComplete = array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']);             
+            $candidateData->telFixeApprenti  = $_POST['telApp'];
+            $candidateData->telMobileApprenti  = $_POST['phoneApp'];
+            $candidateData->mailApprenti = $_POST['mailApp'];
+            $candidateData->dateNaissanceApprenti = $_POST['birthApp'];
+            $candidateData->origineApprenti = $_POST['originApp'];
+            $candidateData->nationaliteApprenti = $_POST['nationApp'];
+            $candidateData->permisEtranger = $_POST['permisEtrangerApp'];
+            $candidateData->langueMaternelleApprenti = $_POST['langApp'];
+            /*
+            $candidateData->
+            $candidateData->
+            $candidateData->
+            $candidateData->
+            $candidateData->
+            $candidateData->
+            */
             $validator = new PersonnalDataValitor($candidateData);
             if($validator->isValid()){
                 $name = $_POST['nameApp'];
@@ -53,7 +76,7 @@
                         $pathAnnexes = $path."annexes/";
 
                         if (!mkdir($path, 0777, true)){
-                                die('Echec lors de la création du dossier candidat');
+                            die('Echec lors de la création du dossier candidat');
                         }
                         if (!mkdir($pathInfos, 0777, true)){
                             die('Echec lors de la création du dossier informations');
@@ -89,7 +112,7 @@
 
                             $candidateData->majeur = $_POST['maj'];
                             
-                            if($_POST['maj'] == "maj-non"){
+                            if($_POST['maj'] == "false"){
                                 $rep1  = array("genre"=>$_POST['genreRep1'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep1'],"addresse"=> array("rue"=>$_POST['adrRep1'],"NPA"=>$_POST['NPARep1']),"telephone"=>$_POST['telRep1']);    
                                 $rep2  = array("genre"=>$_POST['genreRep2'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep2'],"addresse"=> array("rue"=>$_POST['adrRep2'],"NPA"=>$_POST['NPARep2']),"telephone"=>$_POST['telRep2']);
                                 $candidateData->representants = array($rep1, $rep2);
@@ -116,7 +139,7 @@
 
                             $candidateData->dejaCandidat = $_POST['dejaCand'];
                             
-                            if($_POST['dejaCand'] == "dejaCand-oui"){
+                            if($_POST['dejaCand'] == "true"){
                                 $candidateData->anneeCandidature = $_POST['dejaCandAnnee'];
                             }
                             
@@ -161,7 +184,7 @@
                             if($_POST['job']=="polyMecanicien"){
                                 uploadFile($pathAnnexes, $_FILES['gimch']);
                             }
-                            
+
                             mailToResp($surname, $name, $job);
                             mailToApprenti($mail);
                         }
@@ -170,8 +193,10 @@
                 //redirect errors
                 //error list
                 $validator->errors();
+                echo "Erreur(s)";
             }
-            include('templates/header.php') ?>
+         ?>
+
             <h1><?php echo $surname," ", $name,"," ?></h1>
             <h4>Votre demande à bien été enregistrée, vous allez bientôt recevoir un e-mail confirmant votre postulation.</h4>
             <button type ="button" id="retourHome" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

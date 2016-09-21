@@ -17,12 +17,41 @@ class PersonnalDataValidator {
 
     public function isValid()
     {
+
+        $this->filiereValid();
         $this->representantValid();
+        $this->baseDataValid();
         return count($this->errors) === 0;
     }
 
+    private function baseDataValid(){
+        $toValid = array($this->personnalData->tempSciper, 
+                        $this->personnalData->nomApprenti, 
+                        $this->personnalData->prenomApprenti, 
+                        $this->personnalData->formation,
+                        $this->personnalData->filiere,
+                        $this->personnalData->maturite,
+                        $this->personnalData->genreApprenti,
+                        $this->personnalData->addresseApprentiComplete, 
+                        $this->personnalData->telFixeApprenti, 
+                        $this->personnalData->telMobileApprenti,
+                        $this->personnalData->mailApprenti,
+                        $this->personnalData->dateNaissanceApprenti,
+                        $this->personnalData->origineApprenti,
+                        $this->personnalData->nationaliteApprenti,
+                        $this->personnalData->langueMaternelleApprenti
+        );
+    }
+    private function filiereValid(){
+        if($this->personnalData->formation == "informaticien"){
+            if($this->personnalData->filiere == ""){
+                 $this->errors['filiere'] = 'Filiere non valide!';
+            }
+        }
+    }
+
     private function representantValid(){
-        if($this->personnalData->majeur == 'maj-non'){
+        if($this->personnalData->majeur == 'false'){
             if($this->personnalData->representants.count() == 0){
                 $this->errors['representant'] = 'Representant non valide!';
             } 
