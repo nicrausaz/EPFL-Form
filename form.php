@@ -2,25 +2,25 @@
 <html lang="fr">
     <head>
     <?php
-    include('templates/head.php');
-    include('templates/checkDate.php');
-    require_once("tequila/tequila.php");
-        $oClient = new TequilaClient();
-        $oClient->SetApplicationName('Formulaire apprentissage');
-        $oClient->SetWantedAttributes(array('uniqueid','firstname','name'));
-        $oClient->SetWishedAttributes(array('user'));
-        $oClient->SetAllowsFilter('categorie=epfl-guests');
-        $oClient->Authenticate();
-        $tempSciper = $oClient->getValue('uniqueid');
-        $user = $oClient->getValue('user');
-        $firstname= $oClient->getValue('firstname');
-        $name= $oClient->getValue('name');
-        $sKey = $oClient->GetKey();
-        ?>
+        include('templates/head.php');
+        include('templates/checkDate.php');
+        require_once("tequila/tequila.php");
+            $oClient = new TequilaClient();
+            $oClient->SetApplicationName('Formulaire apprentissage');
+            $oClient->SetWantedAttributes(array('uniqueid','firstname','name'));
+            $oClient->SetWishedAttributes(array('user'));
+            $oClient->SetAllowsFilter('categorie=epfl-guests');
+            $oClient->Authenticate();
+            $tempSciper = $oClient->getValue('uniqueid');
+            $user = $oClient->getValue('user');
+            $firstname= $oClient->getValue('firstname');
+            $name= $oClient->getValue('name');
+            $sKey = $oClient->GetKey();
+    ?>
          <title>Formulaire Apprentissage</title>
     </head>
     <body>
-        <div class="form-style-5">
+        <div class="page-style">
         <?php include('templates/header.php') ?>
         <p class="paracenter">Les champs notés d'un astérisque* doivent être obligatoirement remplis.</p>
         <form method ="post" action="cible.php" enctype="multipart/form-data">

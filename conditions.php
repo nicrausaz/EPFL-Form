@@ -7,7 +7,7 @@
         <title>Conditions</title>
     </head>
     <body>
-    <div class="form-style-5">
+    <div class="page-style">
     <?php include('templates/header.php') ?> 
         <legend><h1>Conditions</h1></legend>
         <label for ="cond">Les annexes doivent inclure:</label>

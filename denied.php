@@ -5,7 +5,7 @@
         <title>Accès Refusé</title>
     </head>
     <body style="text-align: center">
-    <div class="form-style-5">
+    <div class="page-style">
     <?php include('templates/header.php');
     $actualDate = Date('d-m-Y');
     $actualStamp = strtotime($actualDate);

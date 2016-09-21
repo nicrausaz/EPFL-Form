@@ -13,7 +13,7 @@ $(document).ready(function () {
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
     $('#retourHome').click(function () {
-        document.location.href = "https://apprentis.epfl.ch/";
+        document.location.href = "http://apprentis.epfl.ch/";
     });
 
     $('#addSch').click(function () {

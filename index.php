@@ -6,22 +6,18 @@
         include('templates/checkDate.php') ?>
     </head>
     <body>
-    <div class="form-style-5">
+    <div class="page-style">
         <?php include('templates/header.php') ?>
         <p class="paracenter">Veuillez suivre les indications suivantes</p>
-        <h2>Créer un compte temporaire</h2>
-        <p>Cliquer sur le bouton créer un compte.</p>
-        <p>Sur la page ouverte, cliquer sur "Créer un compte pour personnes externes."</p>
-        <p>Remplir les champs et confirmer (pour le champ Organisation, entrer "Postulation Apprentis").</p>
-        <p>Attendre la récéption du mail de confirmation puis cliquer sur le lien pour confirmer l'inscription.</p>
-        <button id="createAc" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <ul>
+            <li>Créer un compte pour personnes externes (et valider par email)</li>
+            <li>Se connecter avec le compte précédemment créer</li>
+            <li>Lorsque la connexion sera effectuée, vous serez redirigé-e vers le formulaire de candidature</li>
+        </ul>
+        <button id="createAc" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Créer un compte
         </button>
-        <h2>Se connecter et remplir le formulaire</h2>
-        <p>Cliquer sur le bouton se connecter.</p>
-        <p>Entrer vos informations de compte temporaire.</p>
-        <p>Lorsque la connexion sera effectuée, vous serez redirigé-e vers le formulaire.</p>
-        <button id="connectB" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <button id="connectB" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Se connecter
         </button>
     </div>
