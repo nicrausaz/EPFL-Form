@@ -84,10 +84,9 @@
   margin-bottom: 10px;
 }
 
-.page-style .index-button-style input[type="button"]{
+.page-style .index-button-style input[type="button"] {
   margin-right: 4 px;
 }
-
 
 .page-style input[type="submit"]:hover, .page-style input[type="button"]:hover {
   background: #e50000;
@@ -129,6 +128,18 @@
 a {
   text-decoration: none;
 }
+
+li {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.buttonIndexStyle {
+  margin-top: 15px;
+  display: inline-block;
+  margin-left: 20%;
+}
+
 
 /*
 RADIOBUTTON STYLE
@@ -212,6 +223,7 @@ dl dd {
   border-radius: 100%;
 }
 
+
 /*
 INPUT FILE STYLE
 */
@@ -281,6 +293,7 @@ label.file:after {
 .newInputFile {
   display: inline;
 }
+
 
 /* CHECKBOXES STYLE */
 

@@ -14,12 +14,17 @@
             <li>Se connecter avec le compte précédemment créer</li>
             <li>Lorsque la connexion sera effectuée, vous serez redirigé-e vers le formulaire de candidature</li>
         </ul>
-        <button id="createAc" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Créer un compte
-        </button>
-        <button id="connectB" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Se connecter
-        </button>
+
+                <button id="createAc" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonIndexStyle" style="width ">
+                    Créer un compte
+                </button>
+
+
+
+                <button id="connectB" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonIndexStyle">
+                    Se connecter
+                </button>
+
     </div>
     </body>
 </html>

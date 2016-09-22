@@ -149,9 +149,9 @@
                             <td><input type="text" name="anneesEcole3" placeholder="de-à (années)" autocomplete="off"/></td>
                         </tr>
                     </table>
-                    <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité" autocomplete="off" maxlength="4"/>
+                    <input type="number" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité" autocomplete="off" maxlength="4"/>
                     <section id="anneeFinError"></section>
-                    <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                         Ajouter une ligne
                     </button>
                 </fieldset>
@@ -166,7 +166,7 @@
                             <td><input type="text" name="anneesPro1" placeholder="de-à (années)" autocomplete="off"/></td>
                         </tr>
                     </table>
-                    <button type ="button" id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    <button type ="button" id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                         Ajouter une ligne
                     </button>
                 </fieldset>
@@ -182,7 +182,7 @@
                             <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" autocomplete="off"></td>
                         </tr>                       
                     </table>
-                    <button type ="button" id="addStage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    <button type ="button" id="addStage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                         Ajouter une ligne
                     </button>
                     <p>Avez-vous déjà été candidat à l'EPFL?</p>
@@ -196,7 +196,7 @@
                             <label for="dejaCand2">Oui</label>
                         </dd>
                     </dl>
-                    <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature" maxlength="4"/>
+                    <input type="number" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature" maxlength="4"/>
                     <section id="dejaCandError"></section>
                 </fieldset>
                 <fieldset>
@@ -245,7 +245,7 @@
                     <section id="formatErrorZone5"></section>
                     <table id="newCertifZone">
                     </table>
-                    <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                         Ajouter un annexe
                     </button>
                     <div id="polyOnly">

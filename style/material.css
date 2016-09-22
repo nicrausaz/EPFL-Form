@@ -27,7 +27,6 @@
   position: relative;
   height: 36px;
   margin: 0;
-  margin-left: 75%;
   min-width: 64px;
   padding: 0 16px;
   display: inline-block;
@@ -209,6 +208,9 @@ input.mdl-button[type="submit"] {
 .mdl-button .material-icons {
   vertical-align: middle; }
 
+.buttonRight{
+  margin-left: 75%;
+}
 /* TOOLTIPS */
 
 .mdl-tooltip {

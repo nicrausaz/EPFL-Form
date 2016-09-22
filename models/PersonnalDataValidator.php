@@ -41,6 +41,11 @@ class PersonnalDataValidator {
                         $this->personnalData->nationaliteApprenti,
                         $this->personnalData->langueMaternelleApprenti
         );
+            foreach($toValid as $valid);
+            echo $valid;
+            if($valid==""){
+                $this->errors[$valid];
+            }
     }
     private function filiereValid(){
         if($this->personnalData->formation == "informaticien"){
