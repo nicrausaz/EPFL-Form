@@ -19,9 +19,18 @@ class PersonnalDataValidator {
     {
 
         $this->filiereValid();
-        $this->representantValid();
         $this->baseDataValid();
+        $this->representantValid();
+        
         return count($this->errors) === 0;
+    }
+
+    private function filiereValid(){
+        if($this->personnalData->formation == "informaticien"){
+            if($this->personnalData->filiere == ""){
+                 $this->errors['filiere'] = 'Filiere non valide!';
+            }
+        }
     }
 
     private function baseDataValid(){
@@ -29,7 +38,6 @@ class PersonnalDataValidator {
                         $this->personnalData->nomApprenti,
                         $this->personnalData->prenomApprenti,
                         $this->personnalData->formation,
-                        $this->personnalData->filiere,
                         $this->personnalData->maturite,
                         $this->personnalData->genreApprenti,
                         $this->personnalData->addresseApprentiComplete,
@@ -39,20 +47,13 @@ class PersonnalDataValidator {
                         $this->personnalData->dateNaissanceApprenti,
                         $this->personnalData->origineApprenti,
                         $this->personnalData->nationaliteApprenti,
-                        $this->personnalData->langueMaternelleApprenti
-        );
+                        $this->personnalData->langueMaternelleApprenti);
+                        
             foreach($toValid as $valid);
             echo $valid;
             if($valid==""){
                 $this->errors[$valid];
             }
-    }
-    private function filiereValid(){
-        if($this->personnalData->formation == "informaticien"){
-            if($this->personnalData->filiere == ""){
-                 $this->errors['filiere'] = 'Filiere non valide!';
-            }
-        }
     }
 
     private function representantValid(){

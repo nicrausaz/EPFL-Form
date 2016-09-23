@@ -10,7 +10,7 @@
     <body>
     <div class="page-style">
         <?php
-            include('./helpers.php');
+            include('helpers.php');
             require_once("models/PersonnalData.php");
             require_once("models/PersonnalDataValidator.php");
             include('templates/header.php'); 
@@ -71,14 +71,7 @@
                 if($_POST['dejaCand'] == "true"){
                     $candidateData->anneeCandidature = $_POST['dejaCandAnnee'];
                 }
-            /*
-            $candidateData->
-            $candidateData->
-            $candidateData->
-            $candidateData->
-            $candidateData->
-            $candidateData->
-            */
+
             $validator = new PersonnalDataValitor($candidateData);
             if($validator->isValid()){
                 $name = $_POST['nameApp'];
