@@ -25,15 +25,15 @@ class PersonnalDataValidator {
     }
 
     private function baseDataValid(){
-        $toValid = array($this->personnalData->tempSciper, 
-                        $this->personnalData->nomApprenti, 
-                        $this->personnalData->prenomApprenti, 
+        $toValid = array($this->personnalData->tempSciper,
+                        $this->personnalData->nomApprenti,
+                        $this->personnalData->prenomApprenti,
                         $this->personnalData->formation,
                         $this->personnalData->filiere,
                         $this->personnalData->maturite,
                         $this->personnalData->genreApprenti,
-                        $this->personnalData->addresseApprentiComplete, 
-                        $this->personnalData->telFixeApprenti, 
+                        $this->personnalData->addresseApprentiComplete,
+                        $this->personnalData->telFixeApprenti,
                         $this->personnalData->telMobileApprenti,
                         $this->personnalData->mailApprenti,
                         $this->personnalData->dateNaissanceApprenti,

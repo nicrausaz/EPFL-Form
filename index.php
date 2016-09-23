@@ -11,20 +11,15 @@
         <p class="paracenter">Veuillez suivre les indications suivantes</p>
         <ul>
             <li>Créer un compte pour personnes externes (et valider par email)</li>
-            <li>Se connecter avec le compte précédemment créer</li>
+            <li>Se connecter avec le compte précédemment créé</li>
             <li>Lorsque la connexion sera effectuée, vous serez redirigé-e vers le formulaire de candidature</li>
         </ul>
-
-                <button id="createAc" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonIndexStyle" style="width ">
-                    Créer un compte
-                </button>
-
-
-
-                <button id="connectB" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonIndexStyle">
-                    Se connecter
-                </button>
-
+        <button id="createAc" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonIndexStyle" style="width ">
+            Créer un compte
+        </button>
+        <button id="connectB" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonIndexStyle">
+            Se connecter
+        </button>
     </div>
     </body>
 </html>

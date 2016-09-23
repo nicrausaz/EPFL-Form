@@ -25,7 +25,7 @@
             $candidateData->genreApprenti = $_POST['genreApp']; 
             $candidateData->nomApprenti = $_POST['nameApp'];
             $candidateData->prenomApprenti = $_POST['surnameApp'];
-            $candidateData->addresseApprentiComplete = array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']);             
+            $candidateData->addresseApprentiComplete = array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']);
             $candidateData->telFixeApprenti  = $_POST['telApp'];
             $candidateData->telMobileApprenti  = $_POST['phoneApp'];
             $candidateData->mailApprenti = $_POST['mailApp'];
@@ -34,6 +34,43 @@
             $candidateData->nationaliteApprenti = $_POST['nationApp'];
             $candidateData->permisEtranger = $_POST['permisEtrangerApp'];
             $candidateData->langueMaternelleApprenti = $_POST['langApp'];
+
+            if(isset($_POST['languesApp']) && !empty($_POST['languesApp'])){
+                foreach($_POST['languesApp'] as $lang[]);
+                //TODO: check tableau ne pas utiliser l'index
+                $candidateData->connaissancesLinguistiques[] = array("francais"=> $lang[0], "allemand"=> $lang[1], "anglais"=> $lang[2], "autre"=> $lang[3]);
+            }
+            $candidateData->majeur = $_POST['maj'];
+                if($_POST['maj'] == "false"){
+                    $rep1  = array("genre"=>$_POST['genreRep1'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep1'],"addresse"=> array("rue"=>$_POST['adrRep1'],"NPA"=>$_POST['NPARep1']),"telephone"=>$_POST['telRep1']);    
+                    $rep2  = array("genre"=>$_POST['genreRep2'],"nom"=>$_POST['nameRep1'],"prenom"=>$_POST['surnameRep2'],"addresse"=> array("rue"=>$_POST['adrRep2'],"NPA"=>$_POST['NPARep2']),"telephone"=>$_POST['telRep2']);
+                    $candidateData->representants = array($rep1, $rep2);
+                }
+
+                $scolarite1 = array("ecole"=>$_POST['ecole1'],"lieu"=>$_POST['lieuEcole1'],"niveau"=>$_POST['niveauEcole1'],"annees"=>$_POST['anneesEcole1']);
+                $scolarite2 = array("ecole"=>$_POST['ecole2'],"lieu"=>$_POST['lieuEcole2'],"niveau"=>$_POST['niveauEcole2'],"annees"=>$_POST['anneesEcole2']);
+                $scolarite3 = array("ecole"=>$_POST['ecole3'],"lieu"=>$_POST['lieuEcole3'],"niveau"=>$_POST['niveauEcole3'],"annees"=>$_POST['anneesEcole3']);
+                $scolarite4 = array("ecole"=>$_POST['ecole4'],"lieu"=>$_POST['lieuEcole4'],"niveau"=>$_POST['niveauEcole4'],"annees"=>$_POST['anneesEcole4']);
+                $scolarite5 = array("ecole"=>$_POST['ecole5'],"lieu"=>$_POST['lieuEcole5'],"niveau"=>$_POST['niveauEcole5'],"annees"=>$_POST['anneesEcole5']);
+                $candidateData->scolarite = array($scolarite1, $scolarite2, $scolarite3, $scolarite4, $scolarite5);
+                $candidateData->anneeFinScolarite = $_POST['anneeFin'];
+
+                $activiteProfessionelle1 = array("employeur"=>$_POST['employeurPro1'],"lieu"=>$_POST['lieuPro1'],"activite"=>$_POST['activitePro1'],"annees"=>$_POST['anneesPro1']);
+                $activiteProfessionelle2 = array("employeur"=>$_POST['employeurPro2'],"lieu"=>$_POST['lieuPro2'],"activite"=>$_POST['activitePro2'],"annees"=>$_POST['anneesPro2']);
+                $activiteProfessionelle3 = array("employeur"=>$_POST['employeurPro3'],"lieu"=>$_POST['lieuPro3'],"activite"=>$_POST['activitePro3'],"annees"=>$_POST['anneesPro3']);
+                $candidateData->activitesProfessionnelles = array($activiteProfessionelle1, $activiteProfessionelle2, $activiteProfessionelle3);
+
+                $stage1 = array("metier"=>$_POST['activiteStage1'],"employeur"=>$_POST['entrepriseStage1']);
+                $stage2 = array("metier"=>$_POST['activiteStage2'],"employeur"=>$_POST['entrepriseStage2']);
+                $stage3 = array("metier"=>$_POST['activiteStage3'],"employeur"=>$_POST['entrepriseStage3']);
+                $stage4 = array("metier"=>$_POST['activiteStage4'],"employeur"=>$_POST['entrepriseStage4']);
+                $candidateData->stages = array($stage1, $stage2, $stage3, $stage4);
+
+                $candidateData->dejaCandidat = $_POST['dejaCand'];
+                
+                if($_POST['dejaCand'] == "true"){
+                    $candidateData->anneeCandidature = $_POST['dejaCandAnnee'];
+                }
             /*
             $candidateData->
             $candidateData->

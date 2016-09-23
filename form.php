@@ -149,7 +149,7 @@
                             <td><input type="text" name="anneesEcole3" placeholder="de-à (années)" autocomplete="off"/></td>
                         </tr>
                     </table>
-                    <input type="number" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité" autocomplete="off" maxlength="4"/>
+                    <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité" autocomplete="off" maxlength="4"/>
                     <section id="anneeFinError"></section>
                     <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                         Ajouter une ligne
@@ -171,7 +171,7 @@
                     </button>
                 </fieldset>
                 <fieldset>
-                    <legend><span class="number">3.3</span> Stages</legend>
+                    <legend><span class="text">3.3</span> Stages</legend>
                     <table id="stages">
                         <tr>
                             <td><input type="text" name="activiteStage1" placeholder="Métier" autocomplete="off"></td>
@@ -196,7 +196,7 @@
                             <label for="dejaCand2">Oui</label>
                         </dd>
                     </dl>
-                    <input type="number" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature" maxlength="4"/>
+                    <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature" maxlength="4"/>
                     <section id="dejaCandError"></section>
                 </fieldset>
                 <fieldset>
