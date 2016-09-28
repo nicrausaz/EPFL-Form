@@ -65,7 +65,7 @@
                 <fieldset>
                     <legend><span class="number">2.1</span> Données personnelles</legend>    
                     <select name="genreApp" id="genreApp">
-                        <option disabled selected> Choisissez un genre*</option>
+                        <option value="notSelected" disabled selected> Choisissez un genre*</option>
                         <option value="Homme">Homme</option>
                         <option value="Femme">Femme</option>
                     </select>
@@ -83,10 +83,10 @@
                     <input type="text" name="permisEtrangerApp" placeholder="Catégorie de permis pour étrangers " autocomplete="off" maxlength="1"/>
                     <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
                     <label for="languesApp">Connaissance linguistiques*:</label>
-                    <p><input type="checkbox" name="languesApp[]" value="francais-oui" id="french"><label for="french"><span class="ui"></span>Français</label></p>
-                    <p><input type="checkbox" name="languesApp[]" value="allemand-oui" id="german"><label for="german"><span class="ui"></span>Allemand</label></p>
-                    <p><input type="checkbox" name="languesApp[]" value="anglais-oui" id="english"><label for="english"><span class="ui"></span>Anglais</label></p>
-                    <p><input type="checkbox" name="languesApp[]" value="autres-oui" id="other"><label for="other"><span class="ui"></span>Autres</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="fr" id="french"><label for="french"><span class="ui"></span>Français</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="de" id="german"><label for="german"><span class="ui"></span>Allemand</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="en" id="english"><label for="english"><span class="ui"></span>Anglais</label></p>
+                    <p><input type="checkbox" name="languesApp[]" value="others" id="other"><label for="other"><span class="ui"></span>Autres</label></p>
                 </fieldset>
                 <fieldset>
                     <legend><span class="number">2.2</span> Réprésentants légaux</legend>    

@@ -14,6 +14,7 @@
                 }
     }
 
+    //vire les accents et remplace caractere non alphanumeric par '-' 
     function checkChars($toCheck){
                     $toCheck = strtr($toCheck,
                             'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
@@ -48,25 +49,42 @@
 
         if(!isset($erreur)){
             $fichier = checkChars($fichier);
-
             if(move_uploaded_file($file['tmp_name'], $pathAnnexes . $fichier)){
             }
         }
-    } 
+    }
+    //Crée le dossier principal est ses 2 sous-dossiers
+    function createCandidateFolders($candidateData,$formations){
+        $dateNow = date('j-n-o--'.'h-i-s');
+        $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
+        $folderName = $candidateData->tempSciper."--".$dateNow."--".$candidateData->mailApprenti;
+        $path = $rootpath.$formations[$candidateData->formation].'/'.$folderName.'/';
+        $pathInfos = $path."informations/";
+        $pathAnnexes = $path."annexes/";
+        if (!mkdir($pathInfos, 0777, true)){
+            die('Echec lors de la création du dossier informations');
+        }
+        if (!mkdir($pathAnnexes, 0777, true)){
+            die('Echec lors de la création du dossier annexes'); 
+        }
+    }
+    function uploadAllFiles($pathAnnexes, $postedFiles, $candidateData){
+        uploadFile($pathAnnexes, $postedFiles['photo']);
+        uploadFile($pathAnnexes, $postedFiles['idCard']);
+        uploadFile($pathAnnexes, $postedFiles['cv']);
+        uploadFile($pathAnnexes, $postedFiles['lettre']);
+        for($i=1; $i<=9; $i++){
+            if(!($postedFiles['certifs'.$i]['name'] == "")) {
+                uploadFile($pathAnnexes, $postedFiles['certifs'.$i]);
+            }
+        }
 
-    $mail= $_POST['mailApp'];
-
-    function validPostedData($mail){
-        $error = false;
-        //Todo: verification des données
-
-        return $erreur;
+        if($candidateData->formation=="polyMecanicien"){
+            uploadFile($pathAnnexes, $postedFiles['gimch']);
+        }
     }
 
-    function validPostedFiles($postedFiles){
-        $error = false;
-        //Todo: verification des fichiers
-
-        return $erreur;
+    function debuglog($message){
+        echo $message;
     }
 ?>
