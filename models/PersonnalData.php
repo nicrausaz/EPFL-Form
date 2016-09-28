@@ -13,7 +13,8 @@
             "electronicien" => "Electoniciens",
             "interactiveMediaDesigner" => "InteractiveMediaDesigners"
         );
-
+		private $dateNow;
+		private	$rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
 		public $tempSciper = "";
 		public $formation = "";
 		public $filiere = "";
@@ -40,14 +41,16 @@
 		public $dejaCandidat = "false";
 		public $anneeCandidature = "";
 		public $datePostulation = "";
-		public $conditionsAcceptee = "false";
 
 		public function __construct($postedData){
+			$this->dateNow = date('j-n-o--'.'h-i-s');
 			//Remplir les infos;
 			$this->postedData = $postedData;
             $this->tempSciper = checkChars($postedData['sciperTmp']);
             $this->formation = $postedData['job'];
-            $this->filiere = $postedData['filInfo'];
+			if($this->formation =="informaticien"){
+				$this->filiere = $postedData['filInfo'];
+			}
             $this->maturite = $postedData['mpt'];
             $this->genreApprenti = $postedData['genreApp']; 
             $this->nomApprenti = $postedData['nameApp'];
@@ -88,14 +91,14 @@
 		}
 		private function setActivitesPro(){
 			for ($i = 1; $i <= 3; $i++) {
-				if(array_key_exists('employeur'.$i, $this->postedData)){
+				if(array_key_exists('employeurPro'.$i, $this->postedData)){
 				array_push($this->activitesProfessionnelles,array("employeur"=>$this->postedData['employeurPro'.$i],"lieu"=>$this->postedData['lieuPro'.$i],"activite"=>$this->postedData['activitePro'.$i],"annees"=>$this->postedData['anneesPro'.$i]));					
 				}
 			}
 		}
 		private function setStages(){
 			for ($i = 1; $i <= 4; $i++) {
-				if(array_key_exists('metier'.$i, $this->postedData)){
+				if(array_key_exists('activiteStage'.$i, $this->postedData)){
 					array_push($this->stages,array("metier"=>$this->postedData['activiteStage'.$i],"employeur"=>$this->postedData['entrepriseStage'.$i]));
 				}
 			}
@@ -114,10 +117,9 @@
 			}
 		}
 		public function getPaths(){
-			$dateNow = date('j-n-o--'.'h-i-s');
-			$rootpath = './data/';
-			$folderName = $this->tempSciper."--".$dateNow."--".$this->mailApprenti;
-			$path = $rootpath.$this->formations[$this->formation].'/'.$folderName.'/';
+			
+			$folderName = $this->tempSciper."--".$this->dateNow."--".$this->mailApprenti;
+			$path = $this->rootpath.$this->formations[$this->formation].'/'.$folderName.'/';
 			$pathInfos = $path."informations/";
 			$pathAnnexes = $path."annexes/";
 			return ["pathInfos"=>$pathInfos, "pathAnnexes"=>$pathAnnexes, "path"=> $path];

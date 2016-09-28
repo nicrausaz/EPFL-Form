@@ -22,8 +22,6 @@ class PersonnalDataValidator {
         $this->dejaCandValid();
         $this->isValidMail();
         $this->isFormationValid();
-        //check connaissance linguistiques
-        //ckeck conditions
         
         return count($this->errors) === 0;
     }
