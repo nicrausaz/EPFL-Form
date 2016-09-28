@@ -13,15 +13,15 @@
             include('helpers.php');
             require_once("models/PersonnalData.php");
             require_once("models/PersonnalDataValidator.php");
-            include('templates/header.php'); 
+            include('templates/header.php');
 
             //TODO: chargement et contrôle variables postées (toutes)
             $candidateData = new PersonnalData();
             //Remplir les infos;
-            $candidateData->tempSciper = $_POST['sciperTmp']; 
-            $candidateData->formation = $_POST['job']; 
-            $candidateData->filiere = $_POST['filInfo']; 
-            $candidateData->maturite = $_POST['mpt']; 
+            $candidateData->tempSciper = $_POST['sciperTmp'];
+            $candidateData->formation = $_POST['job'];
+            $candidateData->filiere = $_POST['filInfo'];
+            $candidateData->maturite = $_POST['mpt'];
             $candidateData->genreApprenti = $_POST['genreApp']; 
             $candidateData->nomApprenti = $_POST['nameApp'];
             $candidateData->prenomApprenti = $_POST['surnameApp'];
@@ -124,7 +124,7 @@
                             $candidateData->genreApprenti  = $_POST['genreApp'];
                             $candidateData->nomApprenti  = $_POST['nameApp'];
                             $candidateData->prenomApprenti  = $_POST['surnameApp'];
-                            $candidateData->addresseApprentiComplete = array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']);             
+                            $candidateData->addresseApprentiComplete = array("rue"=>$_POST['adrApp'],"NPA"=>$_POST['NPAApp']);
                             $candidateData->telFixeApprenti  = $_POST['telApp'];
                             $candidateData->telMobileApprenti  = $_POST['phoneApp'];
                             $candidateData->mailApprenti  = $_POST['mailApp'];
@@ -177,7 +177,6 @@
                             $encodedJson = (json_encode($candidateData,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
                             file_put_contents($pathInfos.'/informations.json', $encodedJson);
 
-                        
                             uploadFile($pathAnnexes, $_FILES['photo']);
                             uploadFile($pathAnnexes, $_FILES['idCard']);
                             uploadFile($pathAnnexes, $_FILES['cv']);
@@ -224,6 +223,7 @@
                 //error list
                 $validator->errors();
                 echo "Erreur(s)";
+                //echo "<script>alert(\"des erreurs se sont produites\")</script>"; 
             }
          ?>
 

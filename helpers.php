@@ -59,7 +59,6 @@
     function validPostedData($mail){
         $error = false;
         //Todo: verification des données
-        
 
         return $erreur;
     }

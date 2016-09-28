@@ -51,9 +51,9 @@ $(document).ready(function () {
         $("*").off();
         $.getScript("script.js");
         if (z < 10) {
-            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for= "certifLabel' + z + '">Formats autorisés: pdf </div><p></p><section id="formatErrorZone' + zoneId + '"></section></td></tr>');
+            $('#newCertifZone').append('<tr><td><label class="file" title="" id="certifLabel' + z + '"><input type="file" name="certifs' + z + '" id="certifs' + z + '" onchange="changeTitleFile(this)" /></label><div class="mdl-tooltip mdl-tooltip--large" for= "certifLabel' + z + '">Formats autorisés: pdf-jpg-jpeg-png </div><p></p><section id="formatErrorZone' + zoneId + '"></section></td></tr>');
             componentHandler.upgradeDom();
-            if (z == 8) {
+            if (z == 9) {
                 $('#addInputFile').hide(750);
             }
         }
@@ -186,7 +186,7 @@ $(document).ready(function () {
 
 });
 function showFormatErrorMsg(inputFile, formatErrorZoneId) {
-    var fileExtension = ['pdf'];
+    var fileExtension = ['pdf','jpg','jpeg','png'];
     if (fileExtension.indexOf($(inputFile).val().split('.').pop().toLowerCase()) == -1) {
         $(formatErrorZoneId).html('<p class ="errorMsgs">Format invalide</p>');
     } else {

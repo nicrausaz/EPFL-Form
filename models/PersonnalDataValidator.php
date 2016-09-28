@@ -5,22 +5,23 @@ class PersonnalDataValidator {
 	private $personnalData;
     private $errors = array();
 
-    public function __construct(PersonnalData $personnalData)
-    {
+    public function __construct(PersonnalData $personnalData){
         $this->personnalData = $personnalData;
     }
 
-    public function errors()
-    {
+    public function errors(){
         return $this->errors;
     }
 
-    public function isValid()
-    {
+    public function isValid(){
 
         $this->filiereValid();
         $this->baseDataValid();
         $this->representantValid();
+        $this->dejaCandValid();
+        //check genre
+        //check connaissance linguistiques
+        //ckeck conditions
         
         return count($this->errors) === 0;
     }
@@ -59,9 +60,19 @@ class PersonnalDataValidator {
     private function representantValid(){
         if($this->personnalData->majeur == 'false'){
             if($this->personnalData->representants.count() == 0){
-                $this->errors['representant'] = 'Representant non valide!';
-            } 
-        } 
+                $this->errors['representants'] = 'Representants non valides!';
+            }
+        }
+    }
+    
+    private function dejaCandValid(){
+        if($this->personnalData->dejaCandidat == 'true'){
+            if($this->personnalData->anneeCandidature == ""){
+                $this->errors['anneeCandidature'] = 'Année de candidature non valide!';
+            }else if(!is_numeric($this->personnalData->anneeCandidature)){
+                $this->errors['anneeCandidature'] = 'Année de candidature non valide!';
+            }
     }
 }
-?>       
+}
+?>

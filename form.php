@@ -180,7 +180,7 @@
                         <tr>
                             <td><input type="text" name="activiteStage2" placeholder="Métier" autocomplete="off"></td>
                             <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" autocomplete="off"></td>
-                        </tr>                       
+                        </tr>
                     </table>
                     <button type ="button" id="addStage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                         Ajouter une ligne
@@ -206,7 +206,7 @@
                     <label for="photo">Photo passeport <strong>couleur:*</strong></label>
                     <label class="file" title="" id="photoLabel"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)" required/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="photoLabel">
-                    Formats autorisés: pdf
+                    Formats autorisés: pdf-jpg-jpeg-png
                     </div>
                     <section class="formatInd" id="formatZone1"></section>
                     <p></p>
@@ -215,7 +215,7 @@
                     <label for="idCard">Copie carte d'indentité / passeport:*</label>
                     <label class="file" title="" id="idCardLabel"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" required/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="idCardLabel">
-                        Formats autorisés: pdf
+                        Formats autorisés: pdf-jpg-jpeg-png
                     </div>
                     <p></p>
                     <section id="formatErrorZone2"></section>
@@ -223,7 +223,7 @@
                     <label for="cv">Curriculum Vitae:*</label>
                     <label class="file" title="" id="CVLabel" ><input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" required/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="CVLabel">
-                        Formats autorisés: pdf
+                        Formats autorisés: pdf-jpg-jpeg-png
                     </div>
                     <p></p>
                     <section id="formatErrorZone3"></section>
@@ -231,7 +231,7 @@
                     <label for="lettre">Lettre de motivation:*</label>
                     <label class="file" title="" id="lettreLabel" ><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" required/></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="lettreLabel">
-                        Formats autorisés: pdf
+                        Formats autorisés: pdf-jpg-jpeg-png
                     </div>
                     <p></p>
                     <section id="formatErrorZone4"></section>
@@ -239,7 +239,7 @@
                     <label for="certifs1">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
                     <label class="file" title="" id="certifLabel1"><input type="file" name="certifs1" id="certifs1" onchange="changeTitleFile(this)" /></label>
                     <div class="mdl-tooltip mdl-tooltip--large" for="certifLabel1">
-                        Formats autorisés: pdf
+                        Formats autorisés: pdf-jpg-jpeg-png
                     </div>
                     <p></p>
                     <section id="formatErrorZone5"></section>
@@ -252,7 +252,7 @@
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):*</label>
                         <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)"/></label>
                         <div class="mdl-tooltip mdl-tooltip--large" for="gimchLabel">
-                            Formats autorisés: pdf
+                            Formats autorisés: pdf-jpg-jpeg-png
                         </div>
                         <p></p>
                         <section id="formatErrorZone6"></section>
