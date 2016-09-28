@@ -1,19 +1,10 @@
 <?php
 require_once('PersonnalData.php');
+require_once(__DIR__ . '/../helpers.php');
 
 class PersonnalDataValidator {
 	private $personnalData;
     private $errors = array();
-    public $formations = array(
-                        "polyMecanicien" => "Polymecaniciens",
-                        "informaticien" => "Informaticiens",
-                        "logisticien" => "Logisticiens",
-                        "planificateurElectricien" => "PlanificateurElectriciens",
-                        "employeCommerce" => "EmployesCommerce",
-                        "gardienAnimaux" => "GardiensAnimaux",
-                        "electronicien" => "Electoniciens",
-                        "interactiveMediaDesigner" => "InteractiveMediaDesigners"
-                );
 
     public function __construct(PersonnalData $personnalData){
         $this->personnalData = $personnalData;
@@ -64,11 +55,11 @@ class PersonnalDataValidator {
                             "langueMaternelleApprenti" => $this->personnalData->langueMaternelleApprenti);
                         
             foreach($toValid as $valid){
-                $this->isRequired($valid, $toValid[$valid]);
+                $this->isRequired($valid);
             }
     }
 
-    private function isRequired($dataNameToCheck, $dataToCheck){
+    private function isRequired($dataToCheck){
         if(is_null($dataToCheck) || $dataToCheck==""){
                     $this->errors[$dataNameToCheck] = "Valeur manquante!";
                 }
@@ -76,14 +67,16 @@ class PersonnalDataValidator {
 
     private function representantValid(){
         if($this->personnalData->majeur == 'false'){
-            if($this->personnalData->representants.count() == 0){
+            //non majeur
+            if(count($this->personnalData->representants) != 2){
                 $this->errors['representants'] = 'Representants non valides!';
+            } else {
+               // CHeck les valeur rentrée par representants
             }
         } else {
-            if($this->personnalData->representants.count() != 2){
-                $this->errors['representants'] = 'Manque un representants!';
-            } else {
-                //TODO: Vérifier le contenu de chaque representant
+            //majeur
+            if(count($this->personnalData->representants) != 0){
+                $this->errors['representants'] = 'Trop un representants!';
             }
         }
     }
@@ -103,7 +96,7 @@ class PersonnalDataValidator {
         }
     }
     private function isFormationValid(){
-        if (!array_key_exists($this->personnalData->formation, $this->formations)) {
+        if (!array_key_exists($this->personnalData->formation, $this->personnalData->getFormations())) {
             $this->errors['formation'] = 'Formation invalide';
         }
     }

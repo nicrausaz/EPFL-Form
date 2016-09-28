@@ -1,8 +1,18 @@
 <?php
-	require_once('../helpers.php');
+	require_once(__DIR__ . '/../helpers.php');
 
 	class PersonnalData {
 		private $postedData;
+		private $formations = array(
+            "polyMecanicien" => "Polymecaniciens",
+            "informaticien" => "Informaticiens",
+            "logisticien" => "Logisticiens",
+            "planificateurElectricien" => "PlanificateurElectriciens",
+            "employeCommerce" => "EmployesCommerce",
+            "gardienAnimaux" => "GardiensAnimaux",
+            "electronicien" => "Electoniciens",
+            "interactiveMediaDesigner" => "InteractiveMediaDesigners"
+        );
 
 		public $tempSciper = "";
 		public $formation = "";
@@ -34,8 +44,7 @@
 
 		public function __construct($postedData){
 			//Remplir les infos;
-			$this->$postedData = $postedData;
-
+			$this->postedData = $postedData;
             $this->tempSciper = checkChars($postedData['sciperTmp']);
             $this->formation = $postedData['job'];
             $this->filiere = $postedData['filInfo'];
@@ -58,49 +67,65 @@
 				$this->setRepresentants();
 			}
 			$this->setScolarite();
-			$this->setAcivitesPro();
+			$this->setActivitesPro();
 			$this->setStages();
 			$this->setDejacand();
-
 			$this->anneeFinScolarite = $postedData['anneeFin'];
 			$this->datePostulation = date('j-n-o--'.'h:i:s');
-			
 		}
 
 		private function setRepresentants(){
-			$rep1  = array("genre"=>$postedData['genreRep1'],"nom"=>$postedData['nameRep1'],"prenom"=>$postedData['surnameRep1'],"addresse"=> array("rue"=>$postedData['adrRep1'],"NPA"=>$postedData['NPARep1']),"telephone"=>$postedData['telRep1']);    
-			$rep2  = array("genre"=>$postedData['genreRep2'],"nom"=>$postedData['nameRep1'],"prenom"=>$postedData['surnameRep2'],"addresse"=> array("rue"=>$postedData['adrRep2'],"NPA"=>$postedData['NPARep2']),"telephone"=>$postedData['telRep2']);
+			$rep1  = array("genre"=>$this->postedData['genreRep1'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep1'],"addresse"=> array("rue"=>$this->postedData['adrRep1'],"NPA"=>$this->postedData['NPARep1']),"telephone"=>$this->postedData['telRep1']);    
+			$rep2  = array("genre"=>$this->postedData['genreRep2'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep2'],"addresse"=> array("rue"=>$this->postedData['adrRep2'],"NPA"=>$this->postedData['NPARep2']),"telephone"=>$this->postedData['telRep2']);
 			$this->representants = array($rep1, $rep2);
 		}
-
 		private function setScolarite(){
 			for ($i = 1; $i <= 5; $i++) {
-				array_push($this->scolarite, array("ecole"=>$postedData['ecole'.$i],"lieu"=>$postedData['lieuEcole'.$i],"niveau"=>$postedData['niveauEcole'.$i],"annees"=>$postedData['anneesEcole'.$i]));
+				if(array_key_exists('ecole'.$i, $this->postedData)){
+					array_push($this->scolarite, array("ecole"=>$this->postedData['ecole'.$i],"lieu"=>$this->postedData['lieuEcole'.$i],"niveau"=>$this->postedData['niveauEcole'.$i],"annees"=>$this->postedData['anneesEcole'.$i]));
+				}
 			}
 		}
-		private function setAcivitesPro(){
+		private function setActivitesPro(){
 			for ($i = 1; $i <= 3; $i++) {
-				array_push($this->activitesProfessionnelles,array("employeur"=>$postedData['employeurPro'.$i],"lieu"=>$postedData['lieuPro'.$i],"activite"=>$postedData['activitePro'.$i],"annees"=>$postedData['anneesPro'.$i]));
+				if(array_key_exists('employeur'.$i, $this->postedData)){
+				array_push($this->activitesProfessionnelles,array("employeur"=>$this->postedData['employeurPro'.$i],"lieu"=>$this->postedData['lieuPro'.$i],"activite"=>$this->postedData['activitePro'.$i],"annees"=>$this->postedData['anneesPro'.$i]));					
+				}
 			}
 		}
 		private function setStages(){
 			for ($i = 1; $i <= 4; $i++) {
-				array_push($this->stages,array("metier"=>$postedData['activiteStage'.$i],"employeur"=>$postedData['entrepriseStage'.$i]));
+				if(array_key_exists('metier'.$i, $this->postedData)){
+					array_push($this->stages,array("metier"=>$this->postedData['activiteStage'.$i],"employeur"=>$this->postedData['entrepriseStage'.$i]));
+				}
 			}
 		}
 		private function setDejacand(){
-			$this->dejaCandidat = $postedData['dejaCand'];
-			if($postedData['dejaCand'] == "true"){
-                $candidateData->anneeCandidature = $postedData['dejaCandAnnee'];
+			$this->dejaCandidat = $this->postedData['dejaCand'];
+			if($this->postedData['dejaCand'] == "true"){
+                $this->anneeCandidature = $this->postedData['dejaCandAnnee'];
             }
 		}
-
 		public function setLanguages($languages){
 			if(isset($languages) && is_array($languages)){
                 $this->connaissancesLinguistiques = $languages;
             } else {
 				$this->connaissancesLinguistiques = [];
 			}
+		}
+		public function getPaths(){
+			$dateNow = date('j-n-o--'.'h-i-s');
+			$rootpath = './data/';
+			$folderName = $this->tempSciper."--".$dateNow."--".$this->mailApprenti;
+			$path = $rootpath.$this->formations[$this->formation].'/'.$folderName.'/';
+			$pathInfos = $path."informations/";
+			$pathAnnexes = $path."annexes/";
+			return ["pathInfos"=>$pathInfos, "pathAnnexes"=>$pathAnnexes, "path"=> $path];
+
+		}
+
+		public function getFormations(){
+			return $this->formations;
 		}
 	}
 ?>

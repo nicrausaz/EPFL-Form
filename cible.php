@@ -13,24 +13,22 @@
     <body>
     <div class="page-style">
         <?php
-            
             include('templates/header.php');
-
             //Init personnalData with postedData
             $candidateData = new PersonnalData($_POST);
             debuglog("personnalData initiallised");
             //TODO: chargement et contrôle variables postées (toutes)
-            $validator = new PersonnalDataValitor($candidateData);
+            $validator = new PersonnalDataValidator($candidateData);
             debuglog("PersonnalDataValitor initiallised");
 
             if($validator->isValid()){
                 debuglog("validator->isValid");
-                createCandidateFolders($candidateData,$validator->formations);
+                createCandidateFolders($candidateData);
 
                 $encodedJson = (json_encode($candidateData,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
-                file_put_contents($pathInfos.'/informations.json', $encodedJson);
+                file_put_contents($candidateData->getPaths()["pathInfos"].'/informations.json', $encodedJson);
 
-                uploadAllFiles($pathAnnexes, $_FILES, $candidateData);
+                uploadAllFiles($candidateData->getPaths()["pathAnnexes"], $_FILES, $candidateData);
 
                 mailToResp($candidateData->prenomApprenti, $candidateData->nomApprenti, $candidateData->formation);
                 mailToApprenti($candidateData->mailApprenti);

@@ -54,17 +54,12 @@
         }
     }
     //Crée le dossier principal est ses 2 sous-dossiers
-    function createCandidateFolders($candidateData,$formations){
-        $dateNow = date('j-n-o--'.'h-i-s');
-        $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
-        $folderName = $candidateData->tempSciper."--".$dateNow."--".$candidateData->mailApprenti;
-        $path = $rootpath.$formations[$candidateData->formation].'/'.$folderName.'/';
-        $pathInfos = $path."informations/";
-        $pathAnnexes = $path."annexes/";
-        if (!mkdir($pathInfos, 0777, true)){
+    function createCandidateFolders($candidateData){
+        $paths = $candidateData->getPaths();
+        if (!mkdir($paths["pathInfos"], 0777, true)){
             die('Echec lors de la création du dossier informations');
         }
-        if (!mkdir($pathAnnexes, 0777, true)){
+        if (!mkdir($paths["pathAnnexes"], 0777, true)){
             die('Echec lors de la création du dossier annexes'); 
         }
     }
@@ -74,8 +69,10 @@
         uploadFile($pathAnnexes, $postedFiles['cv']);
         uploadFile($pathAnnexes, $postedFiles['lettre']);
         for($i=1; $i<=9; $i++){
-            if(!($postedFiles['certifs'.$i]['name'] == "")) {
-                uploadFile($pathAnnexes, $postedFiles['certifs'.$i]);
+            if(array_key_exists('certifs'.$i, $postedFiles)){
+                if(!($postedFiles['certifs'.$i]['name'] == "")) {
+                    uploadFile($pathAnnexes, $postedFiles['certifs'.$i]);
+                }
             }
         }
 
@@ -85,6 +82,6 @@
     }
 
     function debuglog($message){
-        echo $message;
+        //echo $message;
     }
 ?>
