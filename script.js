@@ -168,22 +168,11 @@ $(document).ready(function () {
         }
     });
     $("#dejaCandAnnee").change(function () {
-        var currentYear = (new Date).getFullYear();
-        if (currentYear < $("#dejaCandAnnee").val()) {
-            $("#dejaCandError").html('<p class ="errorMsgs">Date invalide');
-        } else {
-            $("#dejaCandError").html("");
-        }
+        checkYearDate("#dejaCandAnnee", "#dejaCandError");
     });
     $("#anneeFin").change(function () {
-        var currentYear = (new Date).getFullYear();
-        if (currentYear < $("#anneeFin").val()) {
-            $("#anneeFinError").html('<p class ="errorMsgs">Date invalide');
-        } else {
-            $("#anneeFinError").html("");
-        }
+        checkYearDate("#anneeFin", "#anneeFinError");
     });
-
 });
 function showFormatErrorMsg(inputFile, formatErrorZoneId) {
     var fileExtension = ['pdf','jpg','jpeg','png'];
@@ -195,4 +184,12 @@ function showFormatErrorMsg(inputFile, formatErrorZoneId) {
 }
 function changeTitleFile(objFile) {
     objFile.parentNode.setAttribute('title', objFile.value.replace(/^.*[\\/]/, ''));
+}
+function checkYearDate(toCheckValue, errorZone){
+    var currentYear = (new Date).getFullYear();
+    if (currentYear < $(toCheckValue).val()) {
+            $(errorZone).html('<p class ="errorMsgs">Date invalide');
+        } else {
+            $(errorZone).html("");
+        }
 }
