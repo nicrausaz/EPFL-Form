@@ -202,60 +202,64 @@
                 <fieldset>
                     <legend><span class="number">4</span> Annexes </legend>
                     <p>Merci de joindre tous les fichiers demandés, en respectant les formats (si les formats ne sont pas respectés, les fichiers ne seront pas pris en compte). Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.</p>
-        
+
                     <label for="photo">Photo passeport <strong>couleur:*</strong></label>
-                    <label class="file" title="" id="photoLabel"><input type="file" name="photo" id="photo" onchange="changeTitleFile(this)" required/></label>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="photoLabel">
-                    Formats autorisés: pdf-jpg-jpeg-png
+                    <div class="tooltip">
+                        <label class="file" title="" id="photoLabel">
+                            <input type="file" name="photo" id="photo" onchange="changeTitleFile(this)" required/>
+                        </label>
+                        <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                        <p></p>
+                        <section id="formatErrorZone1"></section>
                     </div>
-                    <section class="formatInd" id="formatZone1"></section>
-                    <p></p>
-                    <section id="formatErrorZone1"></section>
-
                     <label for="idCard">Copie carte d'indentité / passeport:*</label>
-                    <label class="file" title="" id="idCardLabel"><input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" required/></label>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="idCardLabel">
-                        Formats autorisés: pdf-jpg-jpeg-png
+                    <div class="tooltip">
+                        <label class="file" title="" id="idCardLabel">
+                            <input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" required/>
+                        </label>
+                        <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                        <p></p>
+                        <section id="formatErrorZone2"></section>
                     </div>
-                    <p></p>
-                    <section id="formatErrorZone2"></section>
-
                     <label for="cv">Curriculum Vitae:*</label>
-                    <label class="file" title="" id="CVLabel" ><input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" required/></label>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="CVLabel">
-                        Formats autorisés: pdf-jpg-jpeg-png
+                    <div class="tooltip">
+                        <label class="file" title="" id="CVLabel" >
+                            <input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" required/>
+                        </label>
+                        <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                        <p></p>
+                        <section id="formatErrorZone3"></section>
                     </div>
-                    <p></p>
-                    <section id="formatErrorZone3"></section>
-
                     <label for="lettre">Lettre de motivation:*</label>
-                    <label class="file" title="" id="lettreLabel" ><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" required/></label>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="lettreLabel">
-                        Formats autorisés: pdf-jpg-jpeg-png
+                    <div class="tooltip">
+                        <label class="file" title="" id="lettreLabel" ><input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" required/></label>
+                        <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                        <p></p>
+                        <section id="formatErrorZone4"></section>
                     </div>
-                    <p></p>
-                    <section id="formatErrorZone4"></section>
-                    
-                    <label for="certifs1">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
-                    <label class="file" title="" id="certifLabel1"><input type="file" name="certifs1" id="certifs1" onchange="changeTitleFile(this)" /></label>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="certifLabel1">
-                        Formats autorisés: pdf-jpg-jpeg-png
-                    </div>
-                    <p></p>
-                    <section id="formatErrorZone5"></section>
+
                     <table id="newCertifZone">
+                        <label for="certifs1">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
+                        <tr><td>
+                            <div class="tooltip">
+                                <label class="file" title="" id="certifLabel1"><input type="file" name="certifs1" id="certifs1" onchange="changeTitleFile(this)" /></label>
+                                <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                                <p></p>
+                                <section id="formatErrorZone5"></section>
+                            </div>
+                        </td></td>
                     </table>
                     <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                         Ajouter un annexe
                     </button>
                     <div id="polyOnly">
                         <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):*</label>
-                        <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)"/></label>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="gimchLabel">
-                            Formats autorisés: pdf-jpg-jpeg-png
+                        <div class="tooltip">
+                            <label class="file" title="" id="gimchLabel" ><input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)"/></label>
+                            <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                            <p></p>
+                            <section id="formatErrorZone6"></section>
                         </div>
-                        <p></p>
-                        <section id="formatErrorZone6"></section>
                     </div>
                 </fieldset>
                 <fieldset>
