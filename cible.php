@@ -17,7 +17,7 @@
             //Init personnalData with postedData
             $candidateData = new PersonnalData($_POST);
             debuglog("personnalData initiallised");
-            //TODO: chargement et contrôle variables postées (toutes)
+            //Init
             $validator = new PersonnalDataValidator($candidateData);
             debuglog("PersonnalDataValitor initiallised");
 
@@ -32,18 +32,18 @@
 
                 mailToResp($candidateData->prenomApprenti, $candidateData->nomApprenti, $candidateData->formation);
                 mailToApprenti($candidateData->mailApprenti);
+
+                include("templates/confirmationText.php");
             }else{
                 debuglog("!validator->isValid");
                 //redirect errors
-                //error list
+                //print error list
+                include("templates/errorText.php");
                 print_r($validator->errors());
+                
             }
         ?>
-            <h1><?php echo $candidateData->prenomApprenti," ", $candidateData->nomApprenti,"," ?></h1>
-            <h4>Votre demande à bien été enregistrée, vous allez bientôt recevoir un e-mail confirmant votre postulation.</h4>
-            <button type ="button" id="retourHome" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                Retour à l'accueil
-            </button>
+            
         </div>
     </body>
 </html>
