@@ -143,7 +143,7 @@ function initAddRadioButtonEvent(){
     });
     $("#maj2").change(function () {
         $("#representants").hide(1000);
-        //TODO: Clean representant
+        clearRepresentants();
     });
 
     $("#dejaCand1").change(function () {
@@ -154,4 +154,14 @@ function initAddRadioButtonEvent(){
     $("#dejaCand2").change(function () {
         $("#dejaCandAnnee").show(750);
     });
+}
+function clearRepresentants(){
+    for(i = 1; i <= 2; i++){
+        $("#genreRep"+i+" :nth-child(1)").prop('selected', true);
+        $("#nameRep"+i).val("");
+        $("#surnameRep"+i).val("");
+        $("#adrRep"+i).val("");
+        $("#NPARep"+i).val("");
+        $("#telRep"+i).val("");
+    }
 }

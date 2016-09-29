@@ -103,27 +103,27 @@
                             </dl>
                             <section id="representants">
                                 <p>Réprésentant 1:*</p>
-                                <select name="genreRep1" >
+                                <select name="genreRep1" id="genreRep1">
                                     <option disabled selected> Choisissez un genre</option>
                                     <option value="Homme">Homme</option>
                                     <option value="Femme">Femme</option>
                                 </select>
-                                <input type="text" name="nameRep1" placeholder="Nom" autocomplete="off"/>
-                                <input type="text" name="surnameRep1" placeholder="Prénom" autocomplete="off"/>
-                                <input type="text" name="adrRep1" placeholder="Rue" autocomplete="off"/>
-                                <input type="text" name="NPARep1" placeholder = "NPA\Domicile"autocomplete="off"/>
-                                <input type="text" name="telRep1" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
+                                <input type="text" name="nameRep1" id="nameRep1" placeholder="Nom" autocomplete="off"/>
+                                <input type="text" name="surnameRep1" id="surnameRep1" placeholder="Prénom" autocomplete="off"/>
+                                <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue" autocomplete="off"/>
+                                <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile"autocomplete="off"/>
+                                <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
                                 <p>Réprésentant 2:*</p>
-                                <select name="genreRep2" >
+                                <select name="genreRep2" id="genreRep2">
                                     <option disabled selected> Choisissez un genre</option>
                                     <option value="Homme">Homme</option>
                                     <option value="Femme">Femme</option>
                                 </select>
-                                <input type="text" name="nameRep2" placeholder="Nom" autocomplete="off"/>
-                                <input type="text" name="surnameRep2" placeholder="Prénom" autocomplete="off"/>
-                                <input type="text" name="adrRep2" placeholder="Rue" autocomplete="off"/>
-                                <input type="text" name="NPARep2" placeholder = "NPA\Domicile" autocomplete="off"/>
-                                <input type="text" name="telRep2" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
+                                <input type="text" name="nameRep2" id="nameRep2" placeholder="Nom" autocomplete="off"/>
+                                <input type="text" name="surnameRep2" id="surnameRep2" placeholder="Prénom" autocomplete="off"/>
+                                <input type="text" name="adrRep2" id="adrRep2" placeholder="Rue" autocomplete="off"/>
+                                <input type="text" name="NPARep2" id="NPARep2" placeholder = "NPA\Domicile" autocomplete="off"/>
+                                <input type="text" name="telRep2" id="telRep2" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
                             </section>
                         </fieldset>
                         <legend><span class="number">3</span> Activités</legend>
