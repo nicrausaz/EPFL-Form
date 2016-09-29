@@ -23,13 +23,13 @@ $(document).ready(function () {
     });
 });
 
-function initDateChecker(){
+function initDateChecker() {
     $("#birthApp").change(function () {
 
         var birthdate = new Date(document.getElementById("birthApp").value);
         var cur = new Date();
-        var diff = cur-birthdate; // This is the difference in milliseconds
-        var age = Math.floor(diff/31536000000); // Divide by 1000*60*60*24*365
+        var diff = cur - birthdate; // This is the difference in milliseconds
+        var age = Math.floor(diff / 31536000000); // Divide by 1000*60*60*24*365
 
         if (age <= 12 || birthdate.getFullYear() < 1910 || age > 60) {
             document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide';
@@ -63,7 +63,7 @@ function changeTitleFile(objFile) {
     checkFileFormat(objFile);
 }
 
-function checkFileFormat(obj){
+function checkFileFormat(obj) {
     var errorSection = obj.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
     var fileExtension = ['pdf', 'jpg', 'jpeg', 'png'];
 
@@ -80,14 +80,14 @@ function checkYearDate(toCheckValue, errorZone) {
     var inputYear = $(toCheckValue).val();
     var currentYear = (new Date).getFullYear();
 
-    if ((inputYear != parseInt(inputYear, 10)) || (currentYear < inputYear)){
+    if ((inputYear != parseInt(inputYear, 10)) || (currentYear < inputYear)) {
         $(errorZone).html('<p class ="errorMsgs">Date invalide');
     } else {
         $(errorZone).html("");
     }
 }
 
-function initButtonsAction(){
+function initButtonsAction() {
     $('#createAc').click(function () {
         window.open("https://guests.epfl.ch/", '_blank');
     });
@@ -102,25 +102,13 @@ function initButtonsAction(){
     $('#retourHome').click(function () {
         document.location.href = "http://apprentis.epfl.ch/";
     });
-
-     $('#addInputFile').click(function () {
-        var nextIndex = $('#newCertifZone > tbody').children().size() + 1;
-        var zoneId = nextIndex + 6;
-        if (nextIndex < 10) {
-        $('#newCertifZone').append('<tr><td><div class="tooltip"><label class="file" title="" id="certifLabel' + nextIndex 
-                 + '"><input type="file" name="certifs' + nextIndex 
-                 + '" id="certifs' + nextIndex 
-                 + '" onchange="changeTitleFile(this)" /></label><span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span><p></p><section id="formatErrorZone' + zoneId 
-                 + '"></section></div></td></tr>');
-            if (nextIndex == 9) {
-                $('#addInputFile').hide(750);
-            }
-        }
+    $('#retourStepOne').click(function () {
+        document.location.href = "index.php";
     });
 }
 
-function initAddChildButtons(){
-     $('#addSch').click(function () {
+function initAddChildButtons() {
+    $('#addSch').click(function () {
         var template = '<tr><td><input type="text" name="ecole{i}" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieuEcole{i}" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveauEcole{i}" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="anneesEcole{i}" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
         addChildren('#scolaire', 6, template, '#addSch');
     });
@@ -135,9 +123,23 @@ function initAddChildButtons(){
         addChildren('#stages', 5, template, '#addStage');
     });
 
+    $('#addInputFile').click(function () {
+        var nextIndex = $('#newCertifZone > tbody').children().size() + 1;
+        var zoneId = nextIndex + 6;
+        if (nextIndex < 10) {
+            $('#newCertifZone').append('<tr><td><div class="tooltip"><label class="file" title="" id="certifLabel' + nextIndex
+                + '"><input type="file" name="certifs' + nextIndex
+                + '" id="certifs' + nextIndex
+                + '" onchange="changeTitleFile(this)" /></label><span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span><p></p><section id="formatErrorZone' + zoneId
+                + '"></section></div></td></tr>');
+            if (nextIndex == 9) {
+                $('#addInputFile').hide(750);
+            }
+        }
+    });
 }
 
-function initAddRadioButtonEvent(){
+function initAddRadioButtonEvent() {
     $("#maj1").change(function () {
         $("#representants").show(1000);
     });
@@ -155,13 +157,13 @@ function initAddRadioButtonEvent(){
         $("#dejaCandAnnee").show(750);
     });
 }
-function clearRepresentants(){
-    for(i = 1; i <= 2; i++){
-        $("#genreRep"+i+" :nth-child(1)").prop('selected', true);
-        $("#nameRep"+i).val("");
-        $("#surnameRep"+i).val("");
-        $("#adrRep"+i).val("");
-        $("#NPARep"+i).val("");
-        $("#telRep"+i).val("");
+function clearRepresentants() {
+    for (i = 1; i <= 2; i++) {
+        $("#genreRep" + i + " :nth-child(1)").prop('selected', true);
+        $("#nameRep" + i).val("");
+        $("#surnameRep" + i).val("");
+        $("#adrRep" + i).val("");
+        $("#NPARep" + i).val("");
+        $("#telRep" + i).val("");
     }
 }

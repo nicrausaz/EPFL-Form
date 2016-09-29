@@ -14,13 +14,13 @@
         <ul id="cond">
             <li>Lettre de motivation</li>
             <li>Curriculum Vitae avec indication des références</li>
-            <li>Copie des bulletins scolaires de 3-4 derniers semestres</li>
+            <li>Copie des bulletins scolaires des 3-4 derniers semestres</li>
             <li>Copies des certificats, diplômes obtenus, attestations de stages</li>
             <li>Copie carte d'identité</li>
-            <li>1 photo passeport couleur</li>
-            <li>Pour les apprentissages de polymécanicien(ne), une attestation de test d'aptitudes GIM-CH est demandée</li>    
+            <li>Photo passeport couleur</li>
+            <li>Pour les apprentissages de polymécanicien-ne, une attestation de test d'aptitudes GIM-CH est demandée</li>    
         </ul>
-        <legend><h3>Renseigements</h3></legend>
+        <legend><h3>Renseignements</h3></legend>
         <table>
             <tr>
                 <td>Francis Perritaz</td>

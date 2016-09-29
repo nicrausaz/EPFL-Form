@@ -6,18 +6,15 @@
     </head>
     <body style="text-align: center">
     <div class="page-style">
-    <?php include('templates/header.php');
-    $actualDate = Date('d-m-Y');
-    $actualStamp = strtotime($actualDate);
-    $actualYear = Date('Y');
-    $startDate = Date('01-09-'.$actualYear);
-    $endDate = Date('01-12-'.$actualYear);
-    $endStamp = strtotime($endDate);
-    if($actualStamp > $endStamp){
-        $actualYear = Date('Y')+1;
-        $startDate = Date('01-09-'.$actualYear);
-        $endDate = Date('01-12-'.$actualYear);
-    }
+    <?php 
+        include('templates/header.php');
+        include('templates/checkDate.php');
+
+        if($actualDateStamp > $endDateStamp){
+            $year = Date('Y')+1;
+            $startDate = Date($startDayMonth.$year);
+            $endDate = Date($endDayMonth.$year);
+        }
     ?> 
         <h1 style="color:red">Accès Refusé</h1>
         <p>La période des postulations n'a pas démarré.</p>
