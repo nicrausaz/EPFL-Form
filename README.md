@@ -33,3 +33,7 @@ lorsque l'une des 3 filières est sélectionnée, une redirection vers le site d
 Lorsque la profession d'informaticien est choisie, un choix entre les filières disponibles doit apparaitre.
 
 Lorsque la profession de polymécanicien est choisie, un champ upload supplémentaire doit apparaitre pour le certificat de capacité GIM-CH.
+
+## Améliorations futures
+
+Renvoyer les valeurs dans les champs du formulaire en cas d'erreurs.
