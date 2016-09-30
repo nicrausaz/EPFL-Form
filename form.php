@@ -274,9 +274,9 @@
                                 <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions*</label></a>
                                 <p></p>
                             </div>
-                            <input type="submit" value="Terminer"/>
                         </fieldset>
-                        </div>
+                        <input type="submit" value="Terminer"/>
+                    </div>
                 </fieldset>
             </div>
         </form>

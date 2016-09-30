@@ -3,6 +3,7 @@ $(document).ready(function () {
     initAddChildButtons();
     initAddRadioButtonEvent();
     initDateChecker();
+    initDatepicker();
 
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;
@@ -21,9 +22,6 @@ $(document).ready(function () {
             }
         }
     });
-});
-$(function () {
-    $("#birthApp").datepicker({ dateFormat: 'dd-mm-yyyy' });
 });
 
 function initDateChecker() {
@@ -168,5 +166,23 @@ function clearRepresentants() {
         $("#adrRep" + i).val("");
         $("#NPARep" + i).val("");
         $("#telRep" + i).val("");
+    }
+}
+function initDatepicker() {
+
+    if (navigator.userAgent.indexOf("Firefox") != -1) {
+        $(function () {
+            $("#birthApp").datepicker({
+                //dateFormat: 'dd-mm-yy'
+            });
+        });
+        /*
+    } else if (navigator.userAgent.indexOf("MSIE ") != -1) {
+        $(function () {
+            $("#birthApp").datepicker({
+                //dateFormat: 'dd-mm-yy'
+            });
+        });
+        */
     }
 }
