@@ -22,6 +22,9 @@ $(document).ready(function () {
         }
     });
 });
+$(function () {
+    $("#birthApp").datepicker({ dateFormat: 'dd-mm-yyyy' });
+});
 
 function initDateChecker() {
     $("#birthApp").change(function () {

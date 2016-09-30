@@ -201,7 +201,7 @@
                         </fieldset>
                         <fieldset>
                             <legend><span class="number">4</span> Annexes </legend>
-                            <p>Merci de joindre tous les fichiers demandés, en respectant les formats (si les formats ne sont pas respectés, les fichiers ne seront pas pris en compte). Veuillez également nommer différemment les fichiers et éviter les espaces dans leurs noms.</p>
+                            <p>Merci de joindre tous les fichiers demandés, en respectant les formats (si les formats ne sont pas respectés, les fichiers ne seront pas pris en compte). Veuillez également nommer différemment chaque fichiers et éviter les espaces dans leurs noms.</p>
 
                             <label for="photo">Photo passeport <strong>couleur:*</strong></label>
                             <div class="tooltip">
@@ -270,13 +270,13 @@
                         </fieldset>
                         <fieldset>
                             <div id="condDiv">
-                                <input type="checkbox" value="conditionsAcc" id="conditions" required/>
-                                <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions*</label>
+                                <input type="checkbox" value="conditionsAcc" id="conditions" required />
+                                <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions*</label></a>
+                                <p></p>
                             </div>
-                            <p></p>
-                            <input type="submit" value="Terminer">
+                            <input type="submit" value="Terminer"/>
                         </fieldset>
-                    </div>
+                        </div>
                 </fieldset>
             </div>
         </form>
