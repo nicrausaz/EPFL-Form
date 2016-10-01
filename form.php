@@ -76,7 +76,7 @@
                             <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" minlength="2" autocomplete="off" maxlength="20" required/>
                             <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" autocomplete="off" minlength="2" maxlength="20" required/>
                             <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;?>" readonly />
-                            <input type="date" name="birthApp" id="birthApp" required/>
+                            <input type="date" name="birthApp" id="birthApp" placeholder="Date de naissance" required/>
                             <section id="errorMsg"></section>
                             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="35" required/>
                             <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="30" required/>
