@@ -111,7 +111,7 @@
                                 <input type="text" name="nameRep1" id="nameRep1" placeholder="Nom" autocomplete="off"/>
                                 <input type="text" name="surnameRep1" id="surnameRep1" placeholder="Prénom" autocomplete="off"/>
                                 <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue" autocomplete="off"/>
-                                <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile"autocomplete="off"/>
+                                <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile" autocomplete="off"/>
                                 <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
                                 <p>Réprésentant 2:*</p>
                                 <select name="genreRep2" id="genreRep2">
@@ -240,8 +240,8 @@
                                 <section id="formatErrorZone4"></section>
                             </div>
 
+                            <label for="certifs1">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
                             <table id="newCertifZone">
-                                <label for="certifs1">Certificats, diplômes et bulletins de notes des derniers 3-4 semestres:</label>
                                 <tr><td>
                                     <div class="tooltip">
                                         <label class="file" title="" id="certifLabel1">
@@ -251,7 +251,7 @@
                                         <p></p>
                                         <section id="formatErrorZone5"></section>
                                     </div>
-                                </td></td>
+                                </td></tr>
                             </table>
                             <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                                 Ajouter un annexe
@@ -271,7 +271,7 @@
                         <fieldset>
                             <div id="condDiv">
                                 <input type="checkbox" value="conditionsAcc" id="conditions" required />
-                                <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions*</label></a>
+                                <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions*</a></label>
                                 <p></p>
                             </div>
                         </fieldset>

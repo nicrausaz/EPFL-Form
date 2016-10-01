@@ -170,19 +170,19 @@ function clearRepresentants() {
 }
 function initDatepicker() {
 
-    if (navigator.userAgent.indexOf("Firefox") != -1) {
+    var isFirefox = navigator.userAgent.indexOf("Firefox");
+    var isIE = navigator.userAgent.match(/Trident\/7\./);
+
+    if ((isFirefox != -1) || (!!isIE)) {
         $(function () {
-            $("#birthApp").datepicker({
-                //dateFormat: 'dd-mm-yy'
-            });
+            if (isIE) {
+                $("#birthApp").datepicker({
+                    dateFormat: 'dd-mm-yy'
+                });
+            } else {
+                $("#birthApp").datepicker({
+                });
+            }
         });
-        /*
-    } else if (navigator.userAgent.indexOf("MSIE ") != -1) {
-        $(function () {
-            $("#birthApp").datepicker({
-                //dateFormat: 'dd-mm-yy'
-            });
-        });
-        */
     }
 }
