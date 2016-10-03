@@ -13,7 +13,7 @@
             if (mail($to, $subject, $message, $headers)){
                 }
     }
-
+    
     //vire les accents et remplace caractere non alphanumeric par '-' 
     function checkChars($toCheck){
                     $toCheck = strtr($toCheck,
