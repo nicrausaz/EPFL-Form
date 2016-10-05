@@ -66,7 +66,7 @@ function changeTitleFile(objFile) {
 
 function checkFileFormat(obj) {
     var errorSection = obj.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
-    var fileExtension = ['pdf', 'jpg', 'jpeg', 'png'];
+    var fileExtension = ['pdf', 'jpeg', 'png'];
 
     if (fileExtension.indexOf(obj.value.split('.').pop().toLowerCase()) == -1) {
         //extension invalide
@@ -131,7 +131,7 @@ function initAddChildButtons() {
             $('#newCertifZone').append('<tr><td><div class="tooltip"><label class="file" title="" id="certifLabel' + nextIndex
                 + '"><input type="file" name="certifs' + nextIndex
                 + '" id="certifs' + nextIndex
-                + '" onchange="changeTitleFile(this)" /></label><span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span><p></p><section id="formatErrorZone' + zoneId
+                + '" onchange="changeTitleFile(this)" /></label><span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span><p></p><section id="formatErrorZone' + zoneId
                 + '"></section></div></td></tr>');
             if (nextIndex == 9) {
                 $('#addInputFile').hide(750);

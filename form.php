@@ -208,7 +208,7 @@
                                 <label class="file" title="" id="photoLabel">
                                     <input type="file" name="photo" id="photo" onchange="changeTitleFile(this)" required/>
                                 </label>
-                                <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                                <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span>
                                 <p></p>
                                 <section id="formatErrorZone1"></section>
                             </div>
@@ -217,7 +217,7 @@
                                 <label class="file" title="" id="idCardLabel">
                                     <input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" required/>
                                 </label>
-                                <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                                <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span>
                                 <p></p>
                                 <section id="formatErrorZone2"></section>
                             </div>
@@ -226,7 +226,7 @@
                                 <label class="file" title="" id="CVLabel" >
                                     <input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" required/>
                                 </label>
-                                <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                                <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span>
                                 <p></p>
                                 <section id="formatErrorZone3"></section>
                             </div>
@@ -235,7 +235,7 @@
                                 <label class="file" title="" id="lettreLabel" >
                                     <input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" required/>
                                 </label>
-                                <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                                <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span>
                                 <p></p>
                                 <section id="formatErrorZone4"></section>
                             </div>
@@ -247,7 +247,7 @@
                                         <label class="file" title="" id="certifLabel1">
                                             <input type="file" name="certifs1" id="certifs1" onchange="changeTitleFile(this)" />
                                         </label>
-                                        <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                                        <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span>
                                         <p></p>
                                         <section id="formatErrorZone5"></section>
                                     </div>
@@ -262,7 +262,7 @@
                                     <label class="file" title="" id="gimchLabel" >
                                         <input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)"/>
                                     </label>
-                                    <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                                    <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span>
                                     <p></p>
                                     <section id="formatErrorZone6"></section>
                                 </div>

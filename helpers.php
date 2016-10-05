@@ -41,7 +41,7 @@
     function uploadFile($pathAnnexes, $file){
         $fichier = basename($file['name']);
         $extension = strrchr($file['name'], '.');
-        $validExt = ['.pdf', '.jpeg', '.jpg', '.png'];
+        $validExt = ['.pdf', '.jpeg', '.png'];
 
         if(!in_array($extension, $validExt)){
             $erreur = "uploadError";

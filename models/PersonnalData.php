@@ -10,7 +10,7 @@
             "planificateurElectricien" => "PlanificateurElectriciens",
             "employeCommerce" => "EmployesCommerce",
             "gardienAnimaux" => "GardiensAnimaux",
-            "electronicien" => "Electoniciens",
+            "electronicien" => "Electroniciens",
             "interactiveMediaDesigner" => "InteractiveMediaDesigners"
         );
 		private $dateNow;

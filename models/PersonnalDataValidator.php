@@ -69,12 +69,12 @@ class PersonnalDataValidator {
             if(count($this->personnalData->representants) != 2){
                 $this->errors['representants'] = 'Representants non valides!';
             } else {
-               // CHeck les valeur rentrée par representants
+               // Check les valeur rentrée par representants
             }
         } else {
             //majeur
             if(count($this->personnalData->representants) != 0){
-                $this->errors['representants'] = 'Trop un representants!';
+                $this->errors['representants'] = 'Trop de representants!';
             }
         }
     }
