@@ -38,7 +38,8 @@
     }
 
     function uploadFile($pathAnnexes, $file){
-        $fichier = basename($file['name']);
+        
+        $fichier = basename(rand(1, 999).'-'.$file['name']);
         $extension = strrchr($file['name'], '.');
         $validExt = ['.pdf', '.jpeg', '.png'];
 
