@@ -25,7 +25,7 @@ $(document).ready(function () {
 });
 
 function checkDate() {
-    var birthdate = new Date(document.getElementById("birthApp").value);
+    var birthdate = moment(document.getElementById("birthApp").value, "DD/MM/YYYY")._d;
     var cur = new Date();
     var diff = cur - birthdate; // This is the difference in milliseconds
     var age = Math.floor(diff / 31536000000); // Divide by 1000*60*60*24*365
