@@ -156,8 +156,8 @@
                             </button>
                         </fieldset>
                         <fieldset>
-                            <legend><span class="number">3.2</span> Activités professionelles</legend>
-                            <p>Formations / apprentissages aprés la scolarité.</p>
+                            <legend><span class="number">3.2</span> Activités professionnelles</legend>
+                            <p>Formations / apprentissages après la scolarité.</p>
                             <table id="activites">
                                 <tr>
                                     <td><input type="text" name="employeurPro1" placeholder="Employeur" autocomplete="off"/></td>

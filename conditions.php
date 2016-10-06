@@ -8,7 +8,7 @@
     </head>
     <body>
     <div class="page-style">
-    <?php include('templates/header.php') ?> 
+        <?php include('templates/header.php') ?>
         <legend><h1>Conditions</h1></legend>
         <label for ="cond">Les annexes doivent inclure:</label>
         <ul id="cond">
@@ -18,8 +18,9 @@
             <li>Copies des certificats, diplômes obtenus, attestations de stages</li>
             <li>Copie carte d'identité</li>
             <li>Photo passeport couleur</li>
-            <li>Pour les apprentissages de polymécanicien-ne, une attestation de test d'aptitudes GIM-CH est demandée</li>    
+            <li>Pour les apprentissages de polymécanicien-ne, une attestation de test d'aptitudes GIM-CH est <strong>recommandée</strong></li>
         </ul>
+        
         <legend><h3>Renseignements</h3></legend>
         <table>
             <tr>
