@@ -142,12 +142,6 @@
                                     <td><input type="text" name="niveauEcole2" placeholder="Niveau*" autocomplete="off" required/></td>
                                     <td><input type="text" name="anneesEcole2" placeholder="de-à (années)*" autocomplete="off" required/></td>
                                 </tr>
-                                <tr>
-                                    <td><input type="text" name="ecole3" placeholder="Ecole" autocomplete="off"/></td>
-                                    <td><input type="text" name="lieuEcole3" placeholder="Lieu" autocomplete="off"/></td>
-                                    <td><input type="text" name="niveauEcole3" placeholder="Niveau" autocomplete="off"/></td>
-                                    <td><input type="text" name="anneesEcole3" placeholder="de-à (années)" autocomplete="off"/></td>
-                                </tr>
                             </table>
                             <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité" autocomplete="off" maxlength="4"/>
                             <section id="anneeFinError"></section>

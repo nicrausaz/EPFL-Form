@@ -22,6 +22,7 @@ class PersonnalDataValidator {
         $this->dejaCandValid();
         $this->isValidMail();
         $this->isFormationValid();
+        $this->isEcoleValid();
         
         return count($this->errors) === 0;
     }
@@ -99,8 +100,9 @@ class PersonnalDataValidator {
         }
     }
     private function isEcoleValid(){
-        
-        $this->errors['ecole'] = 'Informations ecole invalides';
+        if(count($this->personnalData->scolarite)< 2){
+            $this->errors['ecole'] = 'Informations ecole invalides';
+        }
     }
 }
 ?>
