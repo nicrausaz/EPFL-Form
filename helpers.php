@@ -79,9 +79,17 @@
         if($candidateData->formation=="polyMecanicien"){
             uploadFile($pathAnnexes, $postedFiles['gimch']);
         }
+        if($candidateData->formation=="informaticien"){
+            uploadFile($pathAnnexes, $postedFiles['griTestInput']);
+        }
     }
 
     function debuglog($message){
         //echo $message;
     }
+    // function createCSV($candidateData){
+    //      $fp = fopen($candidateData->getPaths()["pathInfos"]."/infos.csv", "w");
+    //             fputcsv($fp, $candidateData, ",", '"');
+    //             fclose($fp);
+    // }
 ?>

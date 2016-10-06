@@ -13,6 +13,7 @@ $(document).ready(function () {
             $("#all").show(1000);
 
             selectedFormation == "informaticien" ? $("#infoOnly").show(1000) : $("#infoOnly").hide(500);
+            selectedFormation == "informaticien" ? $("#griTest").show(1000) : $("#griTest").hide(500);
             selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
         } else {
             $("#all").hide(1000);
@@ -129,7 +130,7 @@ function initAddChildButtons() {
 
     $('#addInputFile').click(function () {
         var nextIndex = $('#newCertifZone > tbody').children().size() + 1;
-        var zoneId = nextIndex + 6;
+        var zoneId = nextIndex + 7;
         if (nextIndex < 10) {
             $('#newCertifZone').append('<tr><td><div class="tooltip"><label class="file" title="" id="certifLabel' + nextIndex
                 + '"><input type="file" name="certifs' + nextIndex

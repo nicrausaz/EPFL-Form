@@ -249,7 +249,7 @@
                                         </label>
                                         <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span>
                                         <p></p>
-                                        <section id="formatErrorZone5"></section>
+                                        <section id="formatErrorZone7"></section>
                                     </div>
                                 </td></tr>
                             </table>
@@ -257,10 +257,21 @@
                                 Ajouter un annexe
                             </button>
                             <div id="polyOnly">
-                                <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):*</label>
+                                <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label>
                                 <div class="tooltip">
                                     <label class="file" title="" id="gimchLabel" >
                                         <input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)"/>
+                                    </label>
+                                    <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span>
+                                    <p></p>
+                                    <section id="formatErrorZone5"></section>
+                                </div>
+                            </div>
+                            <div id="griTest">
+                                <label for="griTestInput">Attestation de tests d'aptitudes GRI (informaticien):</label>
+                                <div class="tooltip">
+                                    <label class="file" title="" id="griTestInputLabel" >
+                                        <input type="file" name="griTestInput" id="griTestInput" onchange="changeTitleFile(this)"/>
                                     </label>
                                     <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span>
                                     <p></p>
