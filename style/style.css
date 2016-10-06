@@ -222,7 +222,6 @@ dl dd {
   border-radius: 100%;
 }
 
-
 /*
 INPUT FILE STYLE
 */
@@ -293,7 +292,6 @@ label.file:after {
   display: inline;
 }
 
-
 /* CHECKBOXES STYLE */
 
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
@@ -345,7 +343,6 @@ label:hover:before {
   border: 1px solid #e50000 !important;
 }
 
-
 /* Tooltip container */
 .tooltip {
     position: relative;
@@ -353,7 +350,6 @@ label:hover:before {
 }
 
 /* Tooltip text */
-
 
 .tooltip .tooltiptext {
     visibility: hidden;
@@ -370,7 +366,6 @@ label:hover:before {
 }
 
 /* Tooltip arrow */
-
 
 .tooltip-right::after {
     content: "";

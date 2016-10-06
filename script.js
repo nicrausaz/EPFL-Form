@@ -24,20 +24,23 @@ $(document).ready(function () {
     });
 });
 
+function checkDate() {
+    var birthdate = new Date(document.getElementById("birthApp").value);
+    var cur = new Date();
+    var diff = cur - birthdate; // This is the difference in milliseconds
+    var age = Math.floor(diff / 31536000000); // Divide by 1000*60*60*24*365
+
+    if (age <= 12 || birthdate.getFullYear() < 1910 || age > 60) {
+        document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide';
+    }
+    else {
+        document.getElementById('errorMsg').innerHTML = '';
+    }
+}
+
 function initDateChecker() {
     $("#birthApp").change(function () {
-
-        var birthdate = new Date(document.getElementById("birthApp").value);
-        var cur = new Date();
-        var diff = cur - birthdate; // This is the difference in milliseconds
-        var age = Math.floor(diff / 31536000000); // Divide by 1000*60*60*24*365
-
-        if (age <= 12 || birthdate.getFullYear() < 1910 || age > 60) {
-            document.getElementById('errorMsg').innerHTML = '<p class ="errorMsgs">Date invalide';
-        }
-        else {
-            document.getElementById('errorMsg').innerHTML = '';
-        }
+        checkDate();
     });
 
     $("#dejaCandAnnee").change(function () {
@@ -90,7 +93,7 @@ function checkYearDate(toCheckValue, errorZone) {
 
 function initButtonsAction() {
     $('#createAc').click(function () {
-        window.open("https://guests.epfl.ch/", '_blank');
+        window.open("https://guests.epfl.ch/selfaddform", '_blank');
     });
 
     $('#connectB').click(function () {
@@ -170,19 +173,22 @@ function clearRepresentants() {
 }
 function initDatepicker() {
 
-    var isFirefox = navigator.userAgent.indexOf("Firefox");
-    var isIE = navigator.userAgent.match(/Trident\/7\./);
+    $.datepicker.setDefaults($.datepicker.regional["fr"]);
+    $("#birthApp").datepicker({ minDate: '-60y', dateFormat: "dd/mm/yy" });
+    // $.datepicker.onClose = checkDate;
+    //     var isFirefox = navigator.userAgent.indexOf("Firefox");
+    //     var isIE = navigator.userAgent.match(/Trident\/7\./);
 
-    if ((isFirefox != -1) || (!!isIE)) {
-        $(function () {
-            if (isIE) {
-                $("#birthApp").datepicker({
-                    dateFormat: 'dd-mm-yy'
-                });
-            } else {
-                $("#birthApp").datepicker({
-                });
-            }
-        });
-    }
+    // if ((isFirefox != -1) || (!!isIE)) {
+    //     $(function () {
+    //         if (isIE) {
+    //             $("#birthApp").datepicker({
+    //                 dateFormat: 'dd-mm-yy'
+    //             });
+    //         } else {
+    //             $("#birthApp").datepicker({
+    //             });
+    //         }
+    //     });
+    // }
 }
