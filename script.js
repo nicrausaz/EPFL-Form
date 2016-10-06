@@ -175,20 +175,4 @@ function initDatepicker() {
 
     $.datepicker.setDefaults($.datepicker.regional["fr"]);
     $("#birthApp").datepicker({ minDate: '-60y', dateFormat: "dd/mm/yy" });
-    // $.datepicker.onClose = checkDate;
-    //     var isFirefox = navigator.userAgent.indexOf("Firefox");
-    //     var isIE = navigator.userAgent.match(/Trident\/7\./);
-
-    // if ((isFirefox != -1) || (!!isIE)) {
-    //     $(function () {
-    //         if (isIE) {
-    //             $("#birthApp").datepicker({
-    //                 dateFormat: 'dd-mm-yy'
-    //             });
-    //         } else {
-    //             $("#birthApp").datepicker({
-    //             });
-    //         }
-    //     });
-    // }
 }

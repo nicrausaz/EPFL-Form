@@ -9,7 +9,7 @@
     <body>
     <div class="page-style">
         <?php include('templates/header.php') ?>
-        <legend><h1>Conditions</h1></legend>
+        <legend><h2>Conditions</h2></legend>
         <label for ="cond">Les annexes doivent inclure:</label>
         <ul id="cond">
             <li>Lettre de motivation</li>
@@ -19,6 +19,7 @@
             <li>Copie carte d'identité</li>
             <li>Photo passeport couleur</li>
             <li>Pour les apprentissages de polymécanicien-ne, une attestation de test d'aptitudes GIM-CH est <strong>recommandée</strong></li>
+            <li>Pour les apprentissages d'informaticien, une attestation de test d'aptitudes GRI est <strong>recommandée</strong></li>
         </ul>
         
         <legend><h3>Renseignements</h3></legend>
@@ -30,7 +31,7 @@
                 <td>Chef formation apprentis</td>
             </tr>
             <tr>
-                <td>Tél. : 021 693 31 19</td>
+                <td>Téléphone : 021 693 31 19</td>
             </tr>
             <tr>
                 <td>formation.apprentis@epfl.ch</td>

@@ -10,8 +10,7 @@
                     'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
 
-            if (mail($to, $subject, $message, $headers)){
-                }
+            mail($to, $subject, $message, $headers);
     }
     
     //vire les accents et remplace caractere non alphanumeric par '-' 
@@ -21,7 +20,8 @@
                             'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
                         $toCheck = preg_replace('/([^.a-z0-9]+)/i', '-', $toCheck);
                         return $toCheck;
-                }
+    }
+
     function mailToApprenti($to){
         $subject = 'Votre candidature pour une place d\'apprentissage';
         $message =  "Nous venons d'enregistrer votre candidature et vous remercions de votre intérêt pour la "."\n".
@@ -34,8 +34,7 @@
                     'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
 
-            if (mail($to, $subject, $message, $headers)){
-                }
+            mail($to, $subject, $message, $headers);
     }
 
     function uploadFile($pathAnnexes, $file){
@@ -49,10 +48,10 @@
 
         if(!isset($erreur)){
             $fichier = checkChars($fichier);
-            if(move_uploaded_file($file['tmp_name'], $pathAnnexes . $fichier)){
-            }
+            move_uploaded_file($file['tmp_name'], $pathAnnexes . $fichier);
         }
     }
+
     //Crée le dossier principal est ses 2 sous-dossiers
     function createCandidateFolders($candidateData){
         $paths = $candidateData->getPaths();
@@ -63,6 +62,7 @@
             die('Echec lors de la création du dossier annexes'); 
         }
     }
+    
     function uploadAllFiles($pathAnnexes, $postedFiles, $candidateData){
         uploadFile($pathAnnexes, $postedFiles['photo']);
         uploadFile($pathAnnexes, $postedFiles['idCard']);

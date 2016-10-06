@@ -76,7 +76,7 @@
                             <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" minlength="2" autocomplete="off" maxlength="20" required/>
                             <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" autocomplete="off" minlength="2" maxlength="20" required/>
                             <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;?>" readonly />
-                            <input type="date" name="birthApp" id="birthApp" placeholder="Date de naissance" required/>
+                            <input type="text" name="birthApp" id="birthApp" placeholder="Date de naissance" required/>
                             <section id="errorMsg"></section>
                             <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="35" required/>
                             <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="30" required/>
@@ -113,7 +113,7 @@
                                 <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue" autocomplete="off"/>
                                 <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile" autocomplete="off"/>
                                 <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
-                                <p>Réprésentant 2:*</p>
+                                <p>Réprésentant 2:</p>
                                 <select name="genreRep2" id="genreRep2">
                                     <option disabled selected> Choisissez un genre</option>
                                     <option value="Homme">Homme</option>
@@ -131,16 +131,16 @@
                             <legend><span class="number">3.1</span> Scolarité</legend>
                             <table id="scolaire">
                                 <tr>
-                                    <td><input type="text" name="ecole1" placeholder="Ecole" autocomplete="off"/></td>
-                                    <td><input type="text" name="lieuEcole1" placeholder="Lieu" autocomplete="off"/></td>
-                                    <td><input type="text" name="niveauEcole1" placeholder="Niveau" autocomplete="off"/></td>
-                                    <td><input type="text" name="anneesEcole1" placeholder="de-à (années)" autocomplete="off"/></td>  
+                                    <td><input type="text" name="ecole1" placeholder="Ecole*" autocomplete="off" required/></td>
+                                    <td><input type="text" name="lieuEcole1" placeholder="Lieu*" autocomplete="off" required/></td>
+                                    <td><input type="text" name="niveauEcole1" placeholder="Niveau*" autocomplete="off" required/></td>
+                                    <td><input type="text" name="anneesEcole1" placeholder="de-à (années)*" autocomplete="off" required/></td>  
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="ecole2" placeholder="Ecole" autocomplete="off"/></td>
-                                    <td><input type="text" name="lieuEcole2" placeholder="Lieu" autocomplete="off"/></td>
-                                    <td><input type="text" name="niveauEcole2" placeholder="Niveau" autocomplete="off"/></td>
-                                    <td><input type="text" name="anneesEcole2" placeholder="de-à (années)" autocomplete="off"/></td>
+                                    <td><input type="text" name="ecole2" placeholder="Ecole*" autocomplete="off" required/></td>
+                                    <td><input type="text" name="lieuEcole2" placeholder="Lieu*" autocomplete="off" required/></td>
+                                    <td><input type="text" name="niveauEcole2" placeholder="Niveau*" autocomplete="off" required/></td>
+                                    <td><input type="text" name="anneesEcole2" placeholder="de-à (années)*" autocomplete="off" required/></td>
                                 </tr>
                                 <tr>
                                     <td><input type="text" name="ecole3" placeholder="Ecole" autocomplete="off"/></td>

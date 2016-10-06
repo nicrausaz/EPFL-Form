@@ -66,7 +66,7 @@ class PersonnalDataValidator {
     private function representantValid(){
         if($this->personnalData->majeur == 'false'){
             //non majeur
-            if(count($this->personnalData->representants) != 2){
+            if(count($this->personnalData->representants) > 2){
                 $this->errors['representants'] = 'Representants non valides!';
             } else {
                // Check les valeur rentrée par representants
@@ -97,6 +97,10 @@ class PersonnalDataValidator {
         if (!array_key_exists($this->personnalData->formation, $this->personnalData->getFormations())) {
             $this->errors['formation'] = 'Formation invalide';
         }
+    }
+    private function isEcoleValid(){
+        
+        $this->errors['ecole'] = 'Informations ecole invalides';
     }
 }
 ?>
