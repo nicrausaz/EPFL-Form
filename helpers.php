@@ -87,9 +87,4 @@
     function debuglog($message){
         //echo $message;
     }
-    // function createCSV($candidateData){
-    //      $fp = fopen($candidateData->getPaths()["pathInfos"]."/infos.csv", "w");
-    //             fputcsv($fp, $candidateData, ",", '"');
-    //             fclose($fp);
-    // }
 ?>
