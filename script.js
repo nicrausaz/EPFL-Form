@@ -4,25 +4,7 @@ $(document).ready(function () {
     initAddRadioButtonEvent();
     initDateChecker();
     initDatepicker();
-
-    $("#jb").change(function () {
-        var selectedFormation = $("#jb option:selected")[0].value;
-        var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
-
-        if (laborantPeople.indexOf(selectedFormation) == -1) {
-            $("#all").show(1000);
-
-            selectedFormation == "informaticien" ? $("#infoOnly").show(1000) : $("#infoOnly").hide(500);
-            selectedFormation == "informaticien" ? $("#griTest").show(1000) : $("#griTest").hide(500);
-            selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
-        } else {
-            $("#all").hide(1000);
-
-            if (confirm("Pour les métiers de laborantins, l'inscription se fait auprès de l'AVML, cliquer sur ok pour être redirigé-e.")) {
-                window.location.replace("https://wp.unil.ch/avml/");
-            }
-        }
-    });
+    initJobChange();
 });
 
 function checkDate() {
@@ -176,4 +158,24 @@ function initDatepicker() {
 
     $.datepicker.setDefaults($.datepicker.regional["fr"]);
     $("#birthApp").datepicker({ minDate: '-60y', dateFormat: "dd/mm/yy" });
+}
+function initJobChange() {
+    $("#jb").change(function () {
+        var selectedFormation = $("#jb option:selected")[0].value;
+        var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
+
+        if (laborantPeople.indexOf(selectedFormation) == -1) {
+            $("#all").show(1000);
+
+            selectedFormation == "informaticien" ? $("#infoOnly").show(1000) : $("#infoOnly").hide(500);
+            selectedFormation == "informaticien" ? $("#griTest").show(1000) : $("#griTest").hide(500);
+            selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
+        } else {
+            $("#all").hide(1000);
+
+            if (confirm("Pour les métiers de laborantins, l'inscription se fait auprès de l'AVML, cliquer sur ok pour être redirigé-e.")) {
+                window.location.replace("https://wp.unil.ch/avml/");
+            }
+        }
+    });
 }

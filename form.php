@@ -111,11 +111,11 @@
                                     <option value="Homme" <?php echo ($_SESSION['postedForm']['genreRep1'] == "Homme") ? "selected" : ''; ?>>Homme</option>
                                     <option value="Femme" <?php echo ($_SESSION['postedForm']['genreRep1'] == "Femme") ? "selected" : ''; ?>>Femme</option>
                                 </select>
-                                <input type="text" name="nameRep1" id="nameRep1" placeholder="Nom" <?php echo $_SESSION['postedForm']['nameRep1'] != '' ? $_SESSION['postedForm']['nameRep1'] : ''; ?>/>
-                                <input type="text" name="surnameRep1" id="surnameRep1" placeholder="Prénom" <?php echo $_SESSION['postedForm']['surnameRep1'] != '' ? $_SESSION['postedForm']['surnameRep1'] : ''; ?>/>
-                                <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue" <?php echo $_SESSION['postedForm']['adrRep1'] != '' ? $_SESSION['postedForm']['adrRep1'] : ''; ?>/>
-                                <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile" <?php echo $_SESSION['postedForm']['NPARep1'] != '' ? $_SESSION['postedForm']['NPARep1'] : ''; ?>/>
-                                <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)" <?php echo $_SESSION['postedForm']['telRep1'] != '' ? $_SESSION['postedForm']['telRep1'] : ''; ?>/>
+                                <input type="text" name="nameRep1" id="nameRep1" placeholder="Nom*" <?php echo $_SESSION['postedForm']['nameRep1'] != '' ? $_SESSION['postedForm']['nameRep1'] : ''; ?>/>
+                                <input type="text" name="surnameRep1" id="surnameRep1" placeholder="Prénom*" <?php echo $_SESSION['postedForm']['surnameRep1'] != '' ? $_SESSION['postedForm']['surnameRep1'] : ''; ?>/>
+                                <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue*" <?php echo $_SESSION['postedForm']['adrRep1'] != '' ? $_SESSION['postedForm']['adrRep1'] : ''; ?>/>
+                                <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile*" <?php echo $_SESSION['postedForm']['NPARep1'] != '' ? $_SESSION['postedForm']['NPARep1'] : ''; ?>/>
+                                <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)*" <?php echo $_SESSION['postedForm']['telRep1'] != '' ? $_SESSION['postedForm']['telRep1'] : ''; ?>/>
                                 <p>Réprésentant 2:</p>
                                 <select name="genreRep2" id="genreRep2">
                                     <option <?php echo (!isset($_SESSION['postedForm']['genreRep2'])) ? "selected" : ''; ?> disabled> Choisissez un genre</option>
@@ -134,19 +134,19 @@
                             <legend><span class="number">3.1</span> Scolarité</legend>
                             <table id="scolaire">
                                 <tr>
-                                    <td><input type="text" name="ecole1" placeholder="Ecole*"  required/></td>
-                                    <td><input type="text" name="lieuEcole1" placeholder="Lieu*"  required/></td>
-                                    <td><input type="text" name="niveauEcole1" placeholder="Niveau*"  required/></td>
-                                    <td><input type="text" name="anneesEcole1" placeholder="de-à (années)*"  required/></td>
+                                    <td><input type="text" name="ecole1" placeholder="Ecole*" <?php echo $_SESSION['postedForm']['ecole1'] != '' ? $_SESSION['postedForm']['ecole1'] : ''; ?> required/></td>
+                                    <td><input type="text" name="lieuEcole1" placeholder="Lieu*" <?php echo $_SESSION['postedForm']['lieuEcole1'] != '' ? $_SESSION['postedForm']['lieuEcole1'] : ''; ?> required/></td>
+                                    <td><input type="text" name="niveauEcole1" placeholder="Niveau*" <?php echo $_SESSION['postedForm']['niveauEcole1'] != '' ? $_SESSION['postedForm']['niveauEcole1'] : ''; ?> required/></td>
+                                    <td><input type="text" name="anneesEcole1" placeholder="de-à (années)*" <?php echo $_SESSION['postedForm']['anneesEcole1'] != '' ? $_SESSION['postedForm']['anneesEcole1'] : ''; ?> required/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="ecole2" placeholder="Ecole*"  required/></td>
-                                    <td><input type="text" name="lieuEcole2" placeholder="Lieu*"  required/></td>
-                                    <td><input type="text" name="niveauEcole2" placeholder="Niveau*"  required/></td>
-                                    <td><input type="text" name="anneesEcole2" placeholder="de-à (années)*"  required/></td>
+                                    <td><input type="text" name="ecole2" placeholder="Ecole*" <?php echo $_SESSION['postedForm']['ecole2'] != '' ? $_SESSION['postedForm']['ecole2'] : ''; ?> required/></td>
+                                    <td><input type="text" name="lieuEcole2" placeholder="Lieu*" <?php echo $_SESSION['postedForm']['lieuEcole2'] != '' ? $_SESSION['postedForm']['lieuEcole2'] : ''; ?> required/></td>
+                                    <td><input type="text" name="niveauEcole2" placeholder="Niveau*" <?php echo $_SESSION['postedForm']['niveauEcole2'] != '' ? $_SESSION['postedForm']['niveauEcole2'] : ''; ?> required/></td>
+                                    <td><input type="text" name="anneesEcole2" placeholder="de-à (années)*" <?php echo $_SESSION['postedForm']['anneesEcole2'] != '' ? $_SESSION['postedForm']['anneesEcole2'] : ''; ?> required/></td>
                                 </tr>
                             </table>
-                            <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité"  maxlength="4"/>
+                            <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité" <?php echo $_SESSION['postedForm']['anneeFin'] != '' ? $_SESSION['postedForm']['anneeFin'] : ''; ?> maxlength="4"/>
                             <section id="anneeFinError"></section>
                             <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                                 Ajouter une ligne
@@ -157,10 +157,10 @@
                             <p>Formations / apprentissages après la scolarité.</p>
                             <table id="activites">
                                 <tr>
-                                    <td><input type="text" name="employeurPro1" placeholder="Employeur" /></td>
-                                    <td><input type="text" name="lieuPro1" placeholder="Lieu" /></td>
-                                    <td><input type="text" name="activitePro1" placeholder="Activité" /></td>
-                                    <td><input type="text" name="anneesPro1" placeholder="de-à (années)" /></td>
+                                    <td><input type="text" name="employeurPro1" placeholder="Employeur" <?php echo $_SESSION['postedForm']['employeurPro1'] != '' ? $_SESSION['postedForm']['employeurPro1'] : ''; ?>/></td>
+                                    <td><input type="text" name="lieuPro1" placeholder="Lieu" <?php echo $_SESSION['postedForm']['lieuPro1'] != '' ? $_SESSION['postedForm']['lieuPro1'] : ''; ?>/></td>
+                                    <td><input type="text" name="activitePro1" placeholder="Activité" <?php echo $_SESSION['postedForm']['activitePro1'] != '' ? $_SESSION['postedForm']['activitePro1'] : ''; ?>/></td>
+                                    <td><input type="text" name="anneesPro1" placeholder="de-à (années)" <?php echo $_SESSION['postedForm']['anneesPro1'] != '' ? $_SESSION['postedForm']['anneesPro1'] : ''; ?>/></td>
                                 </tr>
                             </table>
                             <button type ="button" id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
@@ -171,12 +171,12 @@
                             <legend><span class="number">3.3</span> Stages</legend>
                             <table id="stages">
                                 <tr>
-                                    <td><input type="text" name="activiteStage1" placeholder="Métier" ></td>
-                                    <td><input type="text" name="entrepriseStage1" placeholder="Entreprise" ></td>
+                                    <td><input type="text" name="activiteStage1" placeholder="Métier" <?php echo $_SESSION['postedForm']['activiteStage1'] != '' ? $_SESSION['postedForm']['activiteStage1'] : ''; ?>></td>
+                                    <td><input type="text" name="entrepriseStage1" placeholder="Entreprise" <?php echo $_SESSION['postedForm']['entrepriseStage1'] != '' ? $_SESSION['postedForm']['entrepriseStage1'] : ''; ?>></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="activiteStage2" placeholder="Métier" ></td>
-                                    <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" ></td>
+                                    <td><input type="text" name="activiteStage2" placeholder="Métier" <?php echo $_SESSION['postedForm']['activiteStage2'] != '' ? $_SESSION['postedForm']['activiteStage2'] : ''; ?>></td>
+                                    <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" <?php echo $_SESSION['postedForm']['entrepriseStage2'] != '' ? $_SESSION['postedForm']['entrepriseStage2'] : ''; ?>></td>
                                 </tr>
                             </table>
                             <button type ="button" id="addStage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
@@ -185,20 +185,20 @@
                             <p>Avez-vous déjà été candidat à l'EPFL?</p>
                             <dl class="radio-list-left">
                                 <dd>
-                                    <input type="radio" name="dejaCand" id="dejaCand1" value="false" checked="checked">
+                                    <input type="radio" name="dejaCand" id="dejaCand1" value="false" <?php echo (!isset($_SESSION['postedForm']['dejaCand']) || $_SESSION['postedForm']['dejaCand'] == "false") ? "checked=\"checked\"" : ''; ?>>
                                     <label for="dejaCand1">Non</label>
                                 </dd>
                                 <dd>
-                                    <input type="radio" name="dejaCand" id="dejaCand2" value="true">
+                                    <input type="radio" name="dejaCand" id="dejaCand2" value="true" <?php echo ($_SESSION['postedForm']['dejaCand'] == "true") ? "checked=\"checked\"" : ''; ?>/>
                                     <label for="dejaCand2">Oui</label>
                                 </dd>
                             </dl>
-                            <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature*" maxlength="4" style="display: none;"/>
+                            <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature*" <?php echo $_SESSION['postedForm']['dejaCandAnnee'] != '' ? $_SESSION['postedForm']['dejaCandAnnee'] : ''; ?> maxlength="4" style="display: none;"/>
                             <section id="dejaCandError"></section>
                         </fieldset>
                         <fieldset>
                             <legend><span class="number">4</span> Annexes </legend>
-                            <p>Merci de joindre tous les fichiers demandés, en respectant les formats (si les formats ne sont pas respectés, les fichiers ne seront pas pris en compte). Veuillez également nommer différemment chaque fichiers et éviter les espaces dans leurs noms.</p>
+                            <p>Merci de joindre tous les fichiers demandés, en respectant les formats (si les formats ne sont pas respectés, les fichiers ne seront pas pris en compte).</p>
 
                             <label for="photo">Photo passeport <strong>couleur:*</strong></label>
                             <div class="tooltip">
@@ -288,10 +288,11 @@
                 </fieldset>
             </div>
         </form>
-        <?php require_once('templates/footer.php');
+        <?php 
+            require_once('templates/footer.php');
 
             if ($_SESSION['formError']) {
-                echo '<script>$("#all").show(1000);</script>';
+                echo '<script>initJobChange();</script>';
             }
 
         ?>
