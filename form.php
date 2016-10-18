@@ -1,24 +1,26 @@
+<?php
+
+    require_once("tequila/tequila.php");
+    $oClient = new TequilaClient();
+    $oClient->SetApplicationName('Formulaire apprentissage');
+    $oClient->SetWantedAttributes(array('uniqueid','firstname','name'));
+    $oClient->SetWishedAttributes(array('user'));
+    $oClient->SetAllowsFilter('categorie=epfl-guests');
+    $oClient->Authenticate();
+    $tempSciper = $oClient->getValue('uniqueid');
+    $user = $oClient->getValue('user');
+    $firstname= $oClient->getValue('firstname');
+    $name= $oClient->getValue('name');
+    $sKey = $oClient->GetKey();
+
+    include('templates/checkDate.php');
+?>
 <!doctype html>
-<html lang="fr">
-    <head>
-    <?php
-        include('templates/head.php');
-        include('templates/checkDate.php');
-        require_once("tequila/tequila.php");
-            $oClient = new TequilaClient();
-            $oClient->SetApplicationName('Formulaire apprentissage');
-            $oClient->SetWantedAttributes(array('uniqueid','firstname','name'));
-            $oClient->SetWishedAttributes(array('user'));
-            $oClient->SetAllowsFilter('categorie=epfl-guests');
-            $oClient->Authenticate();
-            $tempSciper = $oClient->getValue('uniqueid');
-            $user = $oClient->getValue('user');
-            $firstname= $oClient->getValue('firstname');
-            $name= $oClient->getValue('name');
-            $sKey = $oClient->GetKey();
-    ?>
-         <title>Formulaire Apprentissage</title>
-    </head>
+    <html lang="fr">
+        <head>
+            <title>Formulaire Apprentissage</title>
+        </head>
+        <?php include('templates/head.php'); ?>
     <body>
         <div class="page-style">
         <?php include('templates/header.php') ?>
@@ -27,19 +29,20 @@
             <fieldset>
                 <legend><span class="number">1</span> Apprentissage</legend>
                 <label for="job">Je suis intéressé par la formation de*: </label>
+
                 <select name ="job" id="jb" required>
-                    <option value="menu" selected disabled>Choisir une formation...</option>
-                    <option value="laborantinBiologie">Laborantin-e CFC; option biologie</option>
-                    <option value="laborantinChimie">Laborantin-e CFC; option chimie</option>
-                    <option value="laborantinPhysique">Laborantin-e CFC; option physique</option>
-                    <option value="polyMecanicien">Polymécanicien-ne CFC</option>
-                    <option value="informaticien" >Informaticien-ne CFC</option>
-                    <option value="logisticien">Logisticien-ne CFC</option>
-                    <option value="planificateurElectricien">Planificateur-trice éléctricien-ne CFC</option>
-                    <option value="employeCommerce">Employé-e de commerce CFC</option>
-                    <option value="gardienAnimaux">Gardien-ne d'animaux CFC</option>
-                    <option value="electronicien">Electronicien-ne CFC</option>
-                    <option value="interactiveMediaDesigner">Interactive Media Desginer CFC</option>
+                    <option value="menu" <?php echo (!isset($_SESSION['postedForm']['job'])) ? "selected" : ''; ?> disabled>Choisir une formation...</option>
+                    <option value="laborantinBiologie" <?php echo ($_SESSION['postedForm']['job'] == "laborantinBiologie") ? "selected" : ''; ?>>Laborantin-e CFC; option biologie</option>
+                    <option value="laborantinChimie" <?php echo ($_SESSION['postedForm']['job'] == "laborantinChimie") ? "selected" : ''; ?>>Laborantin-e CFC; option chimie</option>
+                    <option value="laborantinPhysique" <?php echo ($_SESSION['postedForm']['job'] == "laborantinPhysique") ? "selected" : ''; ?>>Laborantin-e CFC; option physique</option>
+                    <option value="polyMecanicien" <?php echo ($_SESSION['postedForm']['job'] == "polyMecanicien") ? "selected" : ''; ?>>Polymécanicien-ne CFC</option>
+                    <option value="informaticien" <?php echo ($_SESSION['postedForm']['job'] == "informaticien") ? "selected" : ''; ?>>Informaticien-ne CFC</option>
+                    <option value="logisticien" <?php echo ($_SESSION['postedForm']['job'] == "logisticien") ? "selected" : ''; ?>>Logisticien-ne CFC</option>
+                    <option value="planificateurElectricien" <?php echo ($_SESSION['postedForm']['job'] == "planificateurElectricien") ? "selected" : ''; ?>>Planificateur-trice éléctricien-ne CFC</option>
+                    <option value="employeCommerce" <?php echo ($_SESSION['postedForm']['job'] == "employeCommerce") ? "selected" : ''; ?>>Employé-e de commerce CFC</option>
+                    <option value="gardienAnimaux" <?php echo ($_SESSION['postedForm']['job'] == "gardienAnimaux") ? "selected" : ''; ?>>Gardien-ne d'animaux CFC</option>
+                    <option value="electronicien" <?php echo ($_SESSION['postedForm']['job'] == "electronicien") ? "selected" : ''; ?>>Electronicien-ne CFC</option>
+                    <option value="interactiveMediaDesigner" <?php echo ($_SESSION['postedForm']['job'] == "interactiveMediaDesigner") ? "selected" : ''; ?>>Interactive Media Designer CFC</option>
                 </select>
                 <input type="text" name="sciperTmp" value="<?php echo $tempSciper;?>" readonly hidden/>
             </fieldset>
@@ -51,11 +54,11 @@
                     <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
                     <dl class="radio-list-left">
                         <dd>
-                            <input type="radio" name="mpt" id="mpt1" value="false" checked="checked">
+                            <input type="radio" name="mpt" id="mpt1" value="false" <?php echo (!isset($_SESSION['postedForm']['mpt']) || $_SESSION['postedForm']['mpt'] == "false") ? "checked=\"checked\"" : ''; ?>>
                             <label for="mpt1">Non</label>
                         </dd>
                         <dd>
-                            <input type="radio" name="mpt" id="mpt2" value="true">
+                            <input type="radio" name="mpt" id="mpt2" value="true" <?php echo ($_SESSION['postedForm']['mpt'] == "true") ? "checked=\"checked\"" : ''; ?>>
                             <label for="mpt2">Oui</label>
                         </dd>
                     </dl>
@@ -63,33 +66,33 @@
                 <fieldset>
                     <legend><span class="number">2</span> Données </legend>
                         <fieldset>
-                            <legend><span class="number">2.1</span> Données personnelles</legend>    
+                            <legend><span class="number">2.1</span> Données personnelles</legend>
                             <select name="genreApp" id="genreApp">
-                                <option value="notSelected" disabled selected> Choisissez un genre*</option>
-                                <option value="Homme">Homme</option>
-                                <option value="Femme">Femme</option>
+                                <option value="notSelected" <?php echo (!isset($_SESSION['postedForm']['genreApp'])) ? "selected" : ''; ?> disabled> Choisissez un genre*</option>
+                                <option value="Homme" <?php echo ($_SESSION['postedForm']['genreApp'] == "Homme") ? "selected" : ''; ?>>Homme</option>
+                                <option value="Femme" <?php echo ($_SESSION['postedForm']['genreApp'] == "Femme") ? "selected" : ''; ?>>Femme</option>
                             </select>
                             <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name;?>" readonly />
                             <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname;?>" readonly />
-                            <input type="text" name="adrApp" placeholder="Rue *" autocomplete="off" minlength="2" maxlength="40" required/>
-                            <input type="text" name="NPAApp" placeholder="NPA\Domicile *" autocomplete="off" minlength="2" maxlength="40" required/>
-                            <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" minlength="2" autocomplete="off" maxlength="20" required/>
-                            <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" autocomplete="off" minlength="2" maxlength="20" required/>
+                            <input type="text" name="adrApp" placeholder="Rue *" <?php echo $_SESSION['postedForm']['adrApp'] != '' ? $_SESSION['postedForm']['adrApp'] : ''; ?> minlength="2" maxlength="40" required/>
+                            <input type="text" name="NPAApp" placeholder="NPA\Domicile *" <?php echo $_SESSION['postedForm']['NPAApp'] != '' ? $_SESSION['postedForm']['NPAApp'] : ''; ?>  minlength="2" maxlength="40" required/>
+                            <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" <?php echo $_SESSION['postedForm']['telApp'] != '' ? $_SESSION['postedForm']['telApp'] : ''; ?> minlength="2"  maxlength="20" required/>
+                            <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" <?php echo $_SESSION['postedForm']['phoneApp'] != '' ? $_SESSION['postedForm']['phoneApp'] : ''; ?> minlength="2" maxlength="20" required/>
                             <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;?>" readonly />
-                            <input type="text" name="birthApp" id="birthApp" placeholder="Date de naissance" required/>
+                            <input type="text" name="birthApp" id="birthApp" placeholder="Date de naissance" <?php echo $_SESSION['postedForm']['birthApp'] != '' ? $_SESSION['postedForm']['birthApp'] : ''; ?> required />
                             <section id="errorMsg"></section>
-                            <input type="text" name="originApp" placeholder="Lieu d'origine *" autocomplete="off" minlength="2" maxlength="35" required/>
-                            <input type="text" name="nationApp" placeholder="Nationalité *" autocomplete="off" minlength="2" maxlength="30" required/>
-                            <input type="text" name="permisEtrangerApp" placeholder="Catégorie de permis pour étrangers " autocomplete="off" maxlength="1"/>
-                            <input type="text" name="langApp" placeholder="Langue Maternelle *" autocomplete="off" minlength="2" maxlength="20" required/>
+                            <input type="text" name="originApp" placeholder="Lieu d'origine *"  <?php echo $_SESSION['postedForm']['originApp'] != '' ? $_SESSION['postedForm']['originApp'] : ''; ?> minlength="2" maxlength="35" required />
+                            <input type="text" name="nationApp" placeholder="Nationalité *"  <?php echo $_SESSION['postedForm']['nationApp'] != '' ? $_SESSION['postedForm']['nationApp'] : ''; ?> minlength="2" maxlength="30" required />
+                            <input type="text" name="permisEtrangerApp" placeholder="Catégorie de permis pour étrangers "  <?php echo $_SESSION['postedForm']['permisEtrangerApp'] != '' ? $_SESSION['postedForm']['permisEtrangerApp'] : ''; ?> maxlength="1" />
+                            <input type="text" name="langApp" placeholder="Langue Maternelle *"  <?php echo $_SESSION['postedForm']['langApp'] != '' ? $_SESSION['postedForm']['langApp'] : ''; ?> minlength="2" maxlength="20" required />
                             <label for="languesApp">Connaissance linguistiques*:</label>
-                            <p><input type="checkbox" name="languesApp[]" value="fr" id="french"><label for="french"><span class="ui"></span>Français</label></p>
-                            <p><input type="checkbox" name="languesApp[]" value="de" id="german"><label for="german"><span class="ui"></span>Allemand</label></p>
-                            <p><input type="checkbox" name="languesApp[]" value="en" id="english"><label for="english"><span class="ui"></span>Anglais</label></p>
-                            <p><input type="checkbox" name="languesApp[]" value="others" id="other"><label for="other"><span class="ui"></span>Autres</label></p>
+                            <p><input type="checkbox" name="languesApp[]" value="fr" id="french" <?php echo (is_int(array_search('fr', $_SESSION['postedForm']['languesApp']))) ? 'checked="checked"' : ''; ?>><label for="french"><span class="ui"></span>Français</label></p>
+                            <p><input type="checkbox" name="languesApp[]" value="de" id="german" <?php echo (is_int(array_search('de', $_SESSION['postedForm']['languesApp']))) ? 'checked="checked"' : ''; ?>><label for="german"><span class="ui"></span>Allemand</label></p>
+                            <p><input type="checkbox" name="languesApp[]" value="en" id="english" <?php echo (is_int(array_search('en', $_SESSION['postedForm']['languesApp']))) ? 'checked="checked"' : ''; ?>><label for="english"><span class="ui" ></span>Anglais</label></p>
+                            <p><input type="checkbox" name="languesApp[]" value="others" id="other" <?php echo (is_int(array_search('others', $_SESSION['postedForm']['languesApp']))) ? 'checked="checked"' : ''; ?>><label for="other"><span class="ui" ></span>Autres</label></p>
                         </fieldset>
                         <fieldset>
-                            <legend><span class="number">2.2</span> Réprésentants légaux</legend>    
+                            <legend><span class="number">2.2</span> Réprésentants légaux</legend>
                             <label for="maj">Avez vous plus de 18 ans?*</label><p>
                             <dl class="radio-list-left">
                                 <dd>
@@ -108,22 +111,22 @@
                                     <option value="Homme">Homme</option>
                                     <option value="Femme">Femme</option>
                                 </select>
-                                <input type="text" name="nameRep1" id="nameRep1" placeholder="Nom" autocomplete="off"/>
-                                <input type="text" name="surnameRep1" id="surnameRep1" placeholder="Prénom" autocomplete="off"/>
-                                <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue" autocomplete="off"/>
-                                <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile" autocomplete="off"/>
-                                <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
+                                <input type="text" name="nameRep1" id="nameRep1" placeholder="Nom" />
+                                <input type="text" name="surnameRep1" id="surnameRep1" placeholder="Prénom" />
+                                <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue" />
+                                <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile" />
+                                <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)" />
                                 <p>Réprésentant 2:</p>
                                 <select name="genreRep2" id="genreRep2">
                                     <option disabled selected> Choisissez un genre</option>
                                     <option value="Homme">Homme</option>
                                     <option value="Femme">Femme</option>
                                 </select>
-                                <input type="text" name="nameRep2" id="nameRep2" placeholder="Nom" autocomplete="off"/>
-                                <input type="text" name="surnameRep2" id="surnameRep2" placeholder="Prénom" autocomplete="off"/>
-                                <input type="text" name="adrRep2" id="adrRep2" placeholder="Rue" autocomplete="off"/>
-                                <input type="text" name="NPARep2" id="NPARep2" placeholder = "NPA\Domicile" autocomplete="off"/>
-                                <input type="text" name="telRep2" id="telRep2" placeholder="Téléphone (+41 79 123 45 67)" autocomplete="off"/>
+                                <input type="text" name="nameRep2" id="nameRep2" placeholder="Nom" />
+                                <input type="text" name="surnameRep2" id="surnameRep2" placeholder="Prénom" />
+                                <input type="text" name="adrRep2" id="adrRep2" placeholder="Rue" />
+                                <input type="text" name="NPARep2" id="NPARep2" placeholder = "NPA\Domicile" />
+                                <input type="text" name="telRep2" id="telRep2" placeholder="Téléphone (+41 79 123 45 67)" />
                             </section>
                         </fieldset>
                         <legend><span class="number">3</span> Activités</legend>
@@ -131,19 +134,19 @@
                             <legend><span class="number">3.1</span> Scolarité</legend>
                             <table id="scolaire">
                                 <tr>
-                                    <td><input type="text" name="ecole1" placeholder="Ecole*" autocomplete="off" required/></td>
-                                    <td><input type="text" name="lieuEcole1" placeholder="Lieu*" autocomplete="off" required/></td>
-                                    <td><input type="text" name="niveauEcole1" placeholder="Niveau*" autocomplete="off" required/></td>
-                                    <td><input type="text" name="anneesEcole1" placeholder="de-à (années)*" autocomplete="off" required/></td>  
+                                    <td><input type="text" name="ecole1" placeholder="Ecole*"  required/></td>
+                                    <td><input type="text" name="lieuEcole1" placeholder="Lieu*"  required/></td>
+                                    <td><input type="text" name="niveauEcole1" placeholder="Niveau*"  required/></td>
+                                    <td><input type="text" name="anneesEcole1" placeholder="de-à (années)*"  required/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="ecole2" placeholder="Ecole*" autocomplete="off" required/></td>
-                                    <td><input type="text" name="lieuEcole2" placeholder="Lieu*" autocomplete="off" required/></td>
-                                    <td><input type="text" name="niveauEcole2" placeholder="Niveau*" autocomplete="off" required/></td>
-                                    <td><input type="text" name="anneesEcole2" placeholder="de-à (années)*" autocomplete="off" required/></td>
+                                    <td><input type="text" name="ecole2" placeholder="Ecole*"  required/></td>
+                                    <td><input type="text" name="lieuEcole2" placeholder="Lieu*"  required/></td>
+                                    <td><input type="text" name="niveauEcole2" placeholder="Niveau*"  required/></td>
+                                    <td><input type="text" name="anneesEcole2" placeholder="de-à (années)*"  required/></td>
                                 </tr>
                             </table>
-                            <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité" autocomplete="off" maxlength="4"/>
+                            <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité"  maxlength="4"/>
                             <section id="anneeFinError"></section>
                             <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                                 Ajouter une ligne
@@ -154,10 +157,10 @@
                             <p>Formations / apprentissages après la scolarité.</p>
                             <table id="activites">
                                 <tr>
-                                    <td><input type="text" name="employeurPro1" placeholder="Employeur" autocomplete="off"/></td>
-                                    <td><input type="text" name="lieuPro1" placeholder="Lieu" autocomplete="off"/></td>
-                                    <td><input type="text" name="activitePro1" placeholder="Activité" autocomplete="off"/></td>
-                                    <td><input type="text" name="anneesPro1" placeholder="de-à (années)" autocomplete="off"/></td>
+                                    <td><input type="text" name="employeurPro1" placeholder="Employeur" /></td>
+                                    <td><input type="text" name="lieuPro1" placeholder="Lieu" /></td>
+                                    <td><input type="text" name="activitePro1" placeholder="Activité" /></td>
+                                    <td><input type="text" name="anneesPro1" placeholder="de-à (années)" /></td>
                                 </tr>
                             </table>
                             <button type ="button" id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
@@ -168,12 +171,12 @@
                             <legend><span class="number">3.3</span> Stages</legend>
                             <table id="stages">
                                 <tr>
-                                    <td><input type="text" name="activiteStage1" placeholder="Métier" autocomplete="off"></td>
-                                    <td><input type="text" name="entrepriseStage1" placeholder="Entreprise" autocomplete="off"></td>                
+                                    <td><input type="text" name="activiteStage1" placeholder="Métier" ></td>
+                                    <td><input type="text" name="entrepriseStage1" placeholder="Entreprise" ></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="activiteStage2" placeholder="Métier" autocomplete="off"></td>
-                                    <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" autocomplete="off"></td>
+                                    <td><input type="text" name="activiteStage2" placeholder="Métier" ></td>
+                                    <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" ></td>
                                 </tr>
                             </table>
                             <button type ="button" id="addStage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
@@ -285,5 +288,12 @@
                 </fieldset>
             </div>
         </form>
+        <?php require_once('templates/footer.php');
+
+            if ($_SESSION['formError']) {
+                echo '<script>$("#all").show(1000);</script>';
+            }
+
+        ?>
     </body>
 </html>

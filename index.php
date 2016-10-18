@@ -7,7 +7,14 @@
     </head>
     <body>
     <div class="page-style">
-        <?php include('templates/header.php') ?>
+        <?php include('templates/header.php');
+
+
+        if ($_SESSION['TEQUILA']) {
+            echo "<a href=\"/form.php\">form</a>";
+
+        }
+        ?>
         <p class="paracenter">Veuillez suivre les indications suivantes</p>
         <ul>
             <li>Créer un compte pour personnes externes (et valider par email)</li>
@@ -22,4 +29,5 @@
         </button>
     </div>
     </body>
+    <?php require_once('templates/footer.php'); ?>
 </html>

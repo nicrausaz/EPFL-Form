@@ -14,9 +14,8 @@
             "interactiveMediaDesigner" => "InteractiveMediaDesigners"
         );
 		private $dateNow;
-		private	$rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
+		private	$rootpath = '/var/www/html/data/';
 		public $tempSciper = "";
-		public $formation = "";
 		public $filiere = "";
 		public $maturite = "false";
 		public $genreApprenti = "";
@@ -43,28 +42,28 @@
 		public $datePostulation = "";
 
 		public function __construct($postedData){
-			$this->dateNow = date('j-n-o--'.'h-i-s');
+			$this->dateNow = date('YmdHis');
 			//Remplir les infos;
 			$this->postedData = $postedData;
-            $this->tempSciper = checkChars($postedData['sciperTmp']);
-            $this->formation = $postedData['job'];
+			$this->tempSciper = checkChars($postedData['sciperTmp']);
+			$this->formation = $postedData['job'];
 			if($this->formation =="informaticien"){
 				$this->filiere = $postedData['filInfo'];
 			}
-            $this->maturite = $postedData['mpt'];
-            $this->genreApprenti = $postedData['genreApp']; 
-            $this->nomApprenti = $postedData['nameApp'];
-            $this->prenomApprenti = $postedData['surnameApp'];
-            $this->addresseApprentiComplete = array("rue"=>$postedData['adrApp'],"NPA"=>$postedData['NPAApp']);
-            $this->telFixeApprenti  = $postedData['telApp'];
-            $this->telMobileApprenti  = $postedData['phoneApp'];
-            $this->mailApprenti = $postedData['mailApp'];
-            $this->dateNaissanceApprenti = $postedData['birthApp'];
-            $this->origineApprenti = $postedData['originApp'];
-            $this->nationaliteApprenti = $postedData['nationApp'];
-            $this->permisEtranger = $postedData['permisEtrangerApp'];
-            $this->langueMaternelleApprenti = $postedData['langApp'];
-            $this->setLanguages($postedData['languesApp']);
+			$this->maturite = $postedData['mpt'];
+			$this->genreApprenti = $postedData['genreApp'];
+			$this->nomApprenti = $postedData['nameApp'];
+			$this->prenomApprenti = $postedData['surnameApp'];
+			$this->addresseApprentiComplete = array("rue"=>$postedData['adrApp'],"NPA"=>$postedData['NPAApp']);
+			$this->telFixeApprenti  = $postedData['telApp'];
+			$this->telMobileApprenti  = $postedData['phoneApp'];
+			$this->mailApprenti = $postedData['mailApp'];
+			$this->dateNaissanceApprenti = $postedData['birthApp'];
+			$this->origineApprenti = $postedData['originApp'];
+			$this->nationaliteApprenti = $postedData['nationApp'];
+			$this->permisEtranger = $postedData['permisEtrangerApp'];
+			$this->langueMaternelleApprenti = $postedData['langApp'];
+			$this->setLanguages($postedData['languesApp']);
 			$this->majeur = $postedData['maj'];
 			if($this->majeur == "false"){
 				$this->setRepresentants();
@@ -78,7 +77,7 @@
 		}
 
 		private function setRepresentants(){
-			$rep1  = array("genre"=>$this->postedData['genreRep1'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep1'],"addresse"=> array("rue"=>$this->postedData['adrRep1'],"NPA"=>$this->postedData['NPARep1']),"telephone"=>$this->postedData['telRep1']);    
+			$rep1  = array("genre"=>$this->postedData['genreRep1'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep1'],"addresse"=> array("rue"=>$this->postedData['adrRep1'],"NPA"=>$this->postedData['NPARep1']),"telephone"=>$this->postedData['telRep1']);
 			$rep2  = array("genre"=>$this->postedData['genreRep2'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep2'],"addresse"=> array("rue"=>$this->postedData['adrRep2'],"NPA"=>$this->postedData['NPARep2']),"telephone"=>$this->postedData['telRep2']);
 			$this->representants = array($rep1, $rep2);
 		}
@@ -92,7 +91,7 @@
 		private function setActivitesPro(){
 			for ($i = 1; $i <= 3; $i++) {
 				if(array_key_exists('employeurPro'.$i, $this->postedData)){
-				array_push($this->activitesProfessionnelles,array("employeur"=>$this->postedData['employeurPro'.$i],"lieu"=>$this->postedData['lieuPro'.$i],"activite"=>$this->postedData['activitePro'.$i],"annees"=>$this->postedData['anneesPro'.$i]));					
+				array_push($this->activitesProfessionnelles,array("employeur"=>$this->postedData['employeurPro'.$i],"lieu"=>$this->postedData['lieuPro'.$i],"activite"=>$this->postedData['activitePro'.$i],"annees"=>$this->postedData['anneesPro'.$i]));
 				}
 			}
 		}
@@ -117,8 +116,8 @@
 			}
 		}
 		public function getPaths(){
-			
-			$folderName = $this->tempSciper."--".$this->dateNow."--".$this->mailApprenti;
+
+			$folderName = $this->tempSciper."_".$this->dateNow."_".$this->mailApprenti;
 			$path = $this->rootpath.$this->formations[$this->formation].'/'.$folderName.'/';
 			$pathInfos = $path."informations/";
 			$pathAnnexes = $path."annexes/";

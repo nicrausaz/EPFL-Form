@@ -1,4 +1,4 @@
-<?php 
+<?php
     function mailToResp($surname, $name, $job){
         $to  = 'nicolas.crausaz@epfl.ch'; //formation.apprentis@epfl.ch
         $subject = 'Nouvelle Candidature';
@@ -12,11 +12,11 @@
 
             mail($to, $subject, $message, $headers);
     }
-    
-    //vire les accents et remplace caractere non alphanumeric par '-' 
+
+    //vire les accents et remplace caractere non alphanumeric par '-'
     function checkChars($toCheck){
                     $toCheck = strtr($toCheck,
-                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
                             'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
                         $toCheck = preg_replace('/([^.a-z0-9]+)/i', '-', $toCheck);
                         return $toCheck;
@@ -38,7 +38,7 @@
     }
 
     function uploadFile($pathAnnexes, $file){
-        
+
         $fichier = basename(rand(1, 999).'-'.$file['name']);
         $extension = strrchr($file['name'], '.');
         $validExt = ['.pdf', '.jpeg', '.png'];
@@ -60,10 +60,10 @@
             die('Echec lors de la création du dossier informations');
         }
         if (!mkdir($paths["pathAnnexes"], 0777, true)){
-            die('Echec lors de la création du dossier annexes'); 
+            die('Echec lors de la création du dossier annexes');
         }
     }
-    
+
     function uploadAllFiles($pathAnnexes, $postedFiles, $candidateData){
         uploadFile($pathAnnexes, $postedFiles['photo']);
         uploadFile($pathAnnexes, $postedFiles['idCard']);

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr">
-    <head>  
-         <?php 
+    <head>
+         <?php
             include("templates/head.php");
             include("templates/checkDate.php");
             require_once("helpers.php");
@@ -35,9 +35,14 @@
                 //Send mails
                 mailToResp($candidateData->prenomApprenti, $candidateData->nomApprenti, $candidateData->formation);
                 mailToApprenti($candidateData->mailApprenti);
-
+                $_SESSION['formError'] = false;
+                unset($_SESSION['postedForm']);
+                unset($_SESSION['postedFiles']);
                 include("templates/confirmationText.php");
             }else{
+                $_SESSION['formError'] = true;
+                $_SESSION['postedForm'] = $_POST;
+                $_SESSION['postedFiles'] = $_FILES;
                 debuglog("!validator->isValid");
                 include("templates/errorText.php");
                 //print error list

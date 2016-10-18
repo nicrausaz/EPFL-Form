@@ -11,7 +11,8 @@
 <script src="style/material.js"></script>
 <script src="script.js"></script>
 <noscript>Veuillez Activer JavaScript pour utiliser le service de postulation</noscript>
-<?php ini_set("display_errors",0); 
-      error_reporting(0); 
+<?php
+      ini_set("display_errors",1);
+      error_reporting(1);
+      session_start();
 ?>
-
