@@ -1,10 +1,10 @@
 $(document).ready(function () {
+    initJobChange();
     initButtonsAction();
     initAddChildButtons();
     initAddRadioButtonEvent();
     initDateChecker();
     initDatepicker();
-    initJobChange();
 });
 
 function checkDate() {
@@ -27,10 +27,10 @@ function initDateChecker() {
     });
 
     $("#dejaCandAnnee").change(function () {
-        checkYearDate("#dejaCandAnnee", "#dejaCandError");
+        checkYearDate("#dejaCandAnnee", "#dejaCandError", 0);
     });
     $("#anneeFin").change(function () {
-        checkYearDate("#anneeFin", "#anneeFinError");
+        checkYearDate("#anneeFin", "#anneeFinError", 1);
     });
 }
 
@@ -63,9 +63,9 @@ function checkFileFormat(obj) {
     }
 }
 
-function checkYearDate(toCheckValue, errorZone) {
+function checkYearDate(toCheckValue, errorZone, coefficiantYear) {
     var inputYear = $(toCheckValue).val();
-    var currentYear = (new Date).getFullYear();
+    var currentYear = (new Date).getFullYear() + coefficiantYear;
 
     if ((inputYear != parseInt(inputYear, 10)) || (currentYear < inputYear)) {
         $(errorZone).html('<p class ="errorMsgs">Date invalide');
@@ -144,6 +144,7 @@ function initAddRadioButtonEvent() {
         $("#dejaCandAnnee").show(750);
     });
 }
+
 function clearRepresentants() {
     for (i = 1; i <= 2; i++) {
         $("#genreRep" + i + " :nth-child(1)").prop('selected', true);
@@ -154,11 +155,13 @@ function clearRepresentants() {
         $("#telRep" + i).val("");
     }
 }
+
 function initDatepicker() {
 
     $.datepicker.setDefaults($.datepicker.regional["fr"]);
-    $("#birthApp").datepicker({ minDate: '-60y', dateFormat: "dd/mm/yy" });
+    $("#birthApp").datepicker({ minDate: '-60y', maxDate: '-12y', dateFormat: "dd/mm/yy" });
 }
+
 function initJobChange() {
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;

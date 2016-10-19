@@ -28,21 +28,18 @@
                 //Create JSON file and upload it
                 $encodedJson = (json_encode($candidateData,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
                 file_put_contents($candidateData->getPaths()["pathInfos"].'/informations.json', $encodedJson);
-                //createCSV($candidateData);
-                //echo json_decode($encodedJson);
                 //Upload files
                 uploadAllFiles($candidateData->getPaths()["pathAnnexes"], $_FILES, $candidateData);
                 //Send mails
                 mailToResp($candidateData->prenomApprenti, $candidateData->nomApprenti, $candidateData->formation);
                 mailToApprenti($candidateData->mailApprenti);
+                // kill session
                 $_SESSION['formError'] = false;
                 unset($_SESSION['postedForm']);
-                unset($_SESSION['postedFiles']);
                 include("templates/confirmationText.php");
             }else{
                 $_SESSION['formError'] = true;
                 $_SESSION['postedForm'] = $_POST;
-                $_SESSION['postedFiles'] = $_FILES;
                 debuglog("!validator->isValid");
                 include("templates/errorText.php");
                 //print error list
