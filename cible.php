@@ -46,11 +46,6 @@
                 print_r($validator->errors());
             }
         ?>
-        <footer>
-            <button type ="button" id="retourStepOne" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                Retour à l'accueil
-            </button>
-        </footer>
         </div>
     </body>
 </html>

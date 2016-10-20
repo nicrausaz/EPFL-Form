@@ -14,7 +14,7 @@
             "interactiveMediaDesigner" => "InteractiveMediaDesigners"
         );
 		private $dateNow;
-		private	$rootpath = 'D:'; //change this
+		private	$rootpath = 'D:/data/'; //change this
 		public $tempSciper = "";
 		public $filiere = "";
 		public $maturite = "false";
@@ -116,15 +116,12 @@
 			}
 		}
 		public function getPaths(){
-
 			$folderName = $this->tempSciper."_".$this->dateNow."_".$this->mailApprenti;
 			$path = $this->rootpath.$this->formations[$this->formation].'/'.$folderName.'/';
 			$pathInfos = $path."informations/";
 			$pathAnnexes = $path."annexes/";
 			return ["pathInfos"=>$pathInfos, "pathAnnexes"=>$pathAnnexes, "path"=> $path];
-
 		}
-
 		public function getFormations(){
 			return $this->formations;
 		}

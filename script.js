@@ -78,19 +78,18 @@ function initButtonsAction() {
     $('#createAc').click(function () {
         window.open("https://guests.epfl.ch/selfaddform", '_blank');
     });
-
     $('#connectB').click(function () {
         document.location.href = "form.php";
     });
-
     $('#infoFilieres').click(function () {
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
     $('#retourHome').click(function () {
         document.location.href = "http://apprentis.epfl.ch/";
+        logOutTequila();
     });
-    $('#retourStepOne').click(function () {
-        document.location.href = "index.php";
+    $('#retourFormulaire').click(function () {
+        history.go(-1);
     });
 }
 
@@ -181,4 +180,8 @@ function initJobChange() {
             }
         }
     });
+}
+function logOutTequila() {
+    var win = window.open('https://tequila.epfl.ch/logout', '_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=10000, top=10000, width=100, height=100, visible=none', '');
+    win.close();
 }

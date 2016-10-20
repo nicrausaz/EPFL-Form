@@ -2,7 +2,7 @@
 <dl class="radio-list-left" required>
 <dd>
     <input type="radio" name="filInfo" id="fill1" value="developpementApplications" <?php echo ($_SESSION['postedForm']['filInfo'] == "developpementApplications") ? "checked=\"checked\"" : ''; ?>/>
-    <label for="fill1">Dévelopement d'application</label>
+    <label for="fill1">Développement d'application</label>
 </dd>
 <dd>
     <input type="radio" name="filInfo" id="fill2" value="entreprise" <?php echo ($_SESSION['postedForm']['filInfo'] == "entreprise") ? "checked=\"checked\"" : ''; ?>/>

@@ -107,7 +107,7 @@
                             <section id="representants">
                                 <p>Réprésentant 1:*</p>
                                 <select name="genreRep1" id="genreRep1">
-                                    <option <?php echo (!isset($_SESSION['postedForm']['genreRep1'])) ? "selected" : ''; ?> disabled> Choisissez un genre</option>
+                                    <option <?php echo (!isset($_SESSION['postedForm']['genreRep1'])) ? "selected" : ''; ?> disabled> Choisissez un genre*</option>
                                     <option value="Homme" <?php echo ($_SESSION['postedForm']['genreRep1'] == "Homme") ? "selected" : ''; ?>>Homme</option>
                                     <option value="Femme" <?php echo ($_SESSION['postedForm']['genreRep1'] == "Femme") ? "selected" : ''; ?>>Femme</option>
                                 </select>
@@ -292,9 +292,8 @@
             require_once('templates/footer.php');
 
             if ($_SESSION['formError']) {
-                echo '<script>initJobChange();</script>';
+                echo '<script>$("#all").show(0);</script>';
             }
-
         ?>
     </body>
 </html>
