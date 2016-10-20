@@ -1,5 +1,5 @@
 <p style="color:red; font-size: 25px;">Des erreurs se sont produites, merci de remplir tous les champs obligatoires!</p>
-<div id="formErrorsDiv">
+<div id="formErrorsDiv" style="padding-bottom: 20px;">
     <?php
         //print error list
         print_r($validator->errors()); 

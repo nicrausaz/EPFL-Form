@@ -42,8 +42,6 @@
                 $_SESSION['postedForm'] = $_POST;
                 debuglog("!validator->isValid");
                 include("templates/errorText.php");
-                
-                
             }
         ?>
         </div>

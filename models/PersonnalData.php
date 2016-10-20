@@ -16,6 +16,7 @@
 		private $dateNow;
 		private	$rootpath = 'D:/data/'; //change this
 		public $tempSciper = "";
+		public $formation = "";
 		public $filiere = "";
 		public $maturite = "false";
 		public $genreApprenti = "";
