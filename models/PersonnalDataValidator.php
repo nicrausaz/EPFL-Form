@@ -23,6 +23,9 @@ class PersonnalDataValidator {
         $this->isValidMail();
         $this->isFormationValid();
         $this->isEcoleValid();
+
+        //$this->isRepresantantFilled();
+        //$this->isBirthDateValid();
         
         return count($this->errors) === 0;
     }

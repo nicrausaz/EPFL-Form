@@ -167,11 +167,8 @@ function initJobChange() {
         var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
 
         if (laborantPeople.indexOf(selectedFormation) == -1) {
-            $("#all").show(1000);
+            showPolyAndInfoDivs(selectedFormation);
 
-            selectedFormation == "informaticien" ? $("#infoOnly").show(1000) : $("#infoOnly").hide(500);
-            selectedFormation == "informaticien" ? $("#griTest").show(1000) : $("#griTest").hide(500);
-            selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
         } else {
             $("#all").hide(1000);
 
@@ -184,4 +181,15 @@ function initJobChange() {
 function logOutTequila() {
     var win = window.open('https://tequila.epfl.ch/logout', '_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=10000, top=10000, width=100, height=100, visible=none', '');
     win.close();
+    //Seems not working yet
+}
+function showOnFormReturn() {
+    var selectedFormation = $("#jb option:selected")[0].value;
+    showPolyAndInfoDivs(selectedFormation);
+}
+function showPolyAndInfoDivs(selectedFormation) {
+    $("#all").show(1000);
+    selectedFormation == "informaticien" ? $("#infoOnly").show(1000) : $("#infoOnly").hide(500);
+    selectedFormation == "informaticien" ? $("#griTest").show(1000) : $("#griTest").hide(500);
+    selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
 }

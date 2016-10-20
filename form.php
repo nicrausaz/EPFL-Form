@@ -292,7 +292,7 @@
             require_once('templates/footer.php');
 
             if ($_SESSION['formError']) {
-                echo '<script>$("#all").show(0);</script>';
+                echo '<script>showOnFormReturn();</script>';
             }
         ?>
     </body>

@@ -104,7 +104,7 @@ define('SESSION_NAME', 'TEQUILA');
 
 define('MIN_SESSION_TIMEOUT', 600);
 
-class TequilaClient {
+class TequilaClient{
   var $aLanguages = array (
 			   LNG_ENGLISH => 'english',
 			    LNG_FRENCH => 'francais',
@@ -223,7 +223,7 @@ class TequilaClient {
      IN  : $sSessionsDirectory  -> (optional) The directory where to save sessions files
      IN  : $iTimeout            -> (optional) Session timeout
    */
-  function TequilaClient ($sServer = '', $iTimeout = NULL) {
+  function TequilaClient($sServer = '', $iTimeout = NULL) {
     $this->stderr = fopen ('php://stderr', 'w');
 
     /* If curl is not found, */

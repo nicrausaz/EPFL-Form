@@ -42,7 +42,7 @@
 		public $datePostulation = "";
 
 		public function __construct($postedData){
-			$this->dateNow = date('YmdHis');
+			$this->dateNow = date('Y-m-d-H-i-s');
 			//Remplir les infos;
 			$this->postedData = $postedData;
 			$this->tempSciper = checkChars($postedData['sciperTmp']);
