@@ -24,9 +24,6 @@ class PersonnalDataValidator {
         $this->isFormationValid();
         $this->isEcoleValid();
 
-        //$this->isRepresantantFilled();
-        //$this->isBirthDateValid();
-        
         return count($this->errors) === 0;
     }
 
@@ -55,16 +52,42 @@ class PersonnalDataValidator {
                             "origineApprenti" => $this->personnalData->origineApprenti,
                             "nationaliteApprenti" => $this->personnalData->nationaliteApprenti,
                             "langueMaternelleApprenti" => $this->personnalData->langueMaternelleApprenti);
-                        
+
+           $this->isBirthDateValid(date($this->personnalData->dateNaissanceApprenti));
+
             foreach($toValid as $valid){
                 $this->isRequired($valid);
             }
+    }
+
+    private function isBirthDateValid($birthDate){
+        $birthYear = date('Y', strtotime($birthDate));
+        $actualYear = date('Y');
+
+        if(($birthYear > $actualYear-60)&&($birthYear <= $actualYear-13)){
+        }else{
+            $this->errors['dateNaissanceApprenti'] = 'Date de naissance non valide!';
+        }
     }
 
     private function isRequired($dataToCheck){
         if(is_null($dataToCheck) || $dataToCheck==""){
                     $this->errors[$dataNameToCheck] = "Valeur manquante!";
                 }
+    }
+
+    //NOT WORKING
+    private function isRepresantantFilled(){
+        $repData = array("genreRep" => $this->postedData['genreRep1'],
+                            "nomRep" => $this->postedData['nameRep1'],
+                            "prenomRep" => $this->postedData['surnameRep1'],
+                            "adrRep" => $this->postedData['adrRep1'],
+                            "NPARep" => $this->postedData['NPARep1'],
+                            "telRep" => $this->postedData['telRep1']);
+
+        foreach($repData as $repDataValid){
+                $this->isRequired($repDataValid);
+        }
     }
 
     private function representantValid(){
@@ -74,7 +97,8 @@ class PersonnalDataValidator {
                 $this->errors['representants'] = 'Representants non valides!';
             } else {
                // Check les valeur rentrée par representants
-            }
+                //$this->isRepresantantFilled(); //NOT WORKING
+            }   
         } else {
             //majeur
             if(count($this->personnalData->representants) != 0){
@@ -82,7 +106,7 @@ class PersonnalDataValidator {
             }
         }
     }
-    
+
     private function dejaCandValid(){
         if($this->personnalData->dejaCandidat == 'true'){
             if($this->personnalData->anneeCandidature == ""){
