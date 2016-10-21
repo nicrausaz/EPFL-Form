@@ -16,7 +16,7 @@ Un Tequila invité temporaire devra être crée afin de limiter l'accès au form
 
 Une page d'acceuil (index.php) indique les étapes d'inscription à l'utilisateur, il crée son compte temporaire et se connecte ensuite et redirige vers le formulaire.
 
-Au chargement, le formualaire ne propose que le choix du métier, puis affiche ou non le reste du formulaire selon le métier choisi (voir particularités)
+Au chargement, le formulaire ne propose que le choix du métier, puis affiche ou non le reste du formulaire selon le métier choisi (voir particularités)
 
 Le site doit être équipé de vérification multiple, côté client et serveur:
 * Contrôles d'entrées sur les champs (saisie, required, ...)
