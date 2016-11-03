@@ -36,5 +36,5 @@ Lorsque la profession de polymécanicien est choisie, un champ upload supplémen
 
 ## Améliorations futures
 
-- [ x ] Renvoyer les valeurs dans les champs du formulaire en cas d'erreurs.
-- [ x ] Cacher les représentants selon l'age du champs date.
+- [x] Renvoyer les valeurs dans les champs du formulaire en cas d'erreurs.
+- [x] Cacher les représentants selon l'age du champs date.
