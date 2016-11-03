@@ -146,7 +146,7 @@
                                     <td><input type="text" name="anneesEcole2" placeholder="de-à (années)*" <?php echo $_SESSION['postedForm']['anneesEcole2'] != '' ? $_SESSION['postedForm']['anneesEcole2'] : ''; ?> required/></td>
                                 </tr>
                             </table>
-                            <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité" <?php echo $_SESSION['postedForm']['anneeFin'] != '' ? $_SESSION['postedForm']['anneeFin'] : ''; ?> maxlength="4"/>
+                            <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité*" <?php echo $_SESSION['postedForm']['anneeFin'] != '' ? $_SESSION['postedForm']['anneeFin'] : ''; ?> maxlength="4" required/>
                             <section id="anneeFinError"></section>
                             <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                                 Ajouter une ligne

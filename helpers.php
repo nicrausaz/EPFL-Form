@@ -10,7 +10,7 @@
                     'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
 
-            mail($to, $subject, $message, $headers);
+           // mail($to, $subject, $message, $headers);
     }
 
     //vire les accents et remplace caractere non alphanumeric par '-'
@@ -34,7 +34,7 @@
                     'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
 
-            mail($to, $subject, $message, $headers);
+          //  mail($to, $subject, $message, $headers);
     }
 
     function uploadFile($pathAnnexes, $file){

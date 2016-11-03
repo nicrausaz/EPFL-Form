@@ -158,7 +158,7 @@ function clearRepresentants() {
 function initDatepicker() {
 
     $.datepicker.setDefaults($.datepicker.regional["fr"]);
-    $("#birthApp").datepicker({ minDate: '-60y', maxDate: '-12y', dateFormat: "dd/mm/yy" });
+    $("#birthApp").datepicker({ minDate: '-60y', maxDate: '-13y', dateFormat: "dd/mm/yy" });
 }
 
 function initJobChange() {
@@ -192,4 +192,7 @@ function showPolyAndInfoDivs(selectedFormation) {
     selectedFormation == "informaticien" ? $("#infoOnly").show(1000) : $("#infoOnly").hide(500);
     selectedFormation == "informaticien" ? $("#griTest").show(1000) : $("#griTest").hide(500);
     selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
+}
+function clearFileInput(fileInput){
+    $(fileInput).value = "";
 }
