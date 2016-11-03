@@ -57,6 +57,7 @@ function checkFileFormat(obj) {
     if (fileExtension.indexOf(obj.value.split('.').pop().toLowerCase()) == -1) {
         //extension invalide
         errorSection.innerHTML = '<p class ="errorMsgs">Format invalide</p>';
+        clearFileInput(obj);
     } else {
         //extension valide
         errorSection.innerHTML = '';
@@ -156,7 +157,6 @@ function clearRepresentants() {
 }
 
 function initDatepicker() {
-
     $.datepicker.setDefaults($.datepicker.regional["fr"]);
     $("#birthApp").datepicker({ minDate: '-60y', maxDate: '-13y', dateFormat: "dd/mm/yy" });
 }
@@ -193,6 +193,8 @@ function showPolyAndInfoDivs(selectedFormation) {
     selectedFormation == "informaticien" ? $("#griTest").show(1000) : $("#griTest").hide(500);
     selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
 }
-function clearFileInput(fileInput){
-    $(fileInput).value = "";
+function clearFileInput(fileInput) {
+    fileInput.parentNode.setAttribute('title', "");
+    fileInput.type = '';
+    fileInput.type = 'file';
 }
