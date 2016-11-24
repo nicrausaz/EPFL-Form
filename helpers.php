@@ -15,11 +15,11 @@
 
     //vire les accents et remplace caractere non alphanumeric par '-'
     function checkChars($toCheck){
-                    $toCheck = strtr($toCheck,
-                            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
-                            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-                        $toCheck = preg_replace('/([^.a-z0-9]+)/i', '-', $toCheck);
-                        return $toCheck;
+        $toCheck = strtr($toCheck,
+                'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
+                'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+            $toCheck = preg_replace('/([^.a-z0-9]+)/i', '-', $toCheck);
+            return $toCheck;
     }
 
     function mailToApprenti($to){
@@ -34,11 +34,10 @@
                     'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
 
-          //  mail($to, $subject, $message, $headers);
+          // mail($to, $subject, $message, $headers);
     }
 
-    function uploadFile($pathAnnexes, $file, $filename){
-        //basename(rand(1, 999).'-'
+    function uploadFile($candidateData, $pathAnnexes, $file, $filename){
         $extension = strrchr($file['name'], '.');
         $validExt = ['.pdf', '.jpeg', '.png', '.PDF', '.PNG'];
         $filename = $filename . $extension;
@@ -65,23 +64,24 @@
     }
 
     function uploadAllFiles($pathAnnexes, $postedFiles, $candidateData){
-        uploadFile($pathAnnexes, $postedFiles['photo'], "photo-passeport");
-        uploadFile($pathAnnexes, $postedFiles['idCard'], "carte-identite");
-        uploadFile($pathAnnexes, $postedFiles['cv'], "curriculum-vitae"); // ?
-        uploadFile($pathAnnexes, $postedFiles['lettre'], "lettre-motivation");
+        uploadFile($candidateData, $pathAnnexes, $postedFiles['photo'], "photo-passeport");
+        uploadFile($candidateData, $pathAnnexes, $postedFiles['idCard'], "carte-identite");
+        uploadFile($candidateData, $pathAnnexes, $postedFiles['cv'], "curriculum-vitae");
+        uploadFile($candidateData, $pathAnnexes, $postedFiles['lettre'], "lettre-motivation");
+        
         for($i=1; $i<=9; $i++){
             if(array_key_exists('certifs'.$i, $postedFiles)){
                 if(!($postedFiles['certifs'.$i]['name'] == "")) {
-                    uploadFile($pathAnnexes, $postedFiles['certifs'.$i], "annexe" .$i); //
+                    uploadFile($candidateData, $pathAnnexes, $postedFiles['certifs'.$i], "annexe".$i);
                 }
             }
         }
-
+        
         if($candidateData->formation=="polyMecanicien"){
-            uploadFile($pathAnnexes, $postedFiles['gimch'], "certificat-gimch");
+            uploadFile($candidateData, $pathAnnexes, $postedFiles['gimch'], "certificat-gimch");
         }
         if($candidateData->formation=="informaticien"){
-            uploadFile($pathAnnexes, $postedFiles['griTestInput'], "certificat-gri");
+            uploadFile($candidateData, $pathAnnexes, $postedFiles['griTestInput'], "certificat-gri");
         }
     }
 

@@ -23,7 +23,6 @@ class PersonnalDataValidator {
         $this->isValidMail();
         $this->isFormationValid();
         $this->isEcoleValid();
-
         $this->anneeFinScolariteValid();
 
         return count($this->errors) === 0;

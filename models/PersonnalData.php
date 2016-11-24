@@ -41,6 +41,7 @@
 		public $dejaCandidat = "false";
 		public $anneeCandidature = "";
 		public $datePostulation = "";
+		public $fichiers = [];
 
 		public function __construct($postedData){
 			$this->dateNow = date('Y-m-d_H-i-s');
@@ -75,11 +76,12 @@
 			$this->setDejacand();
 			$this->anneeFinScolarite = $postedData['anneeFin'];
 			$this->datePostulation = date('j-n-o--'.'h:i:s');
+			$this->fichiers = $this->addInJSON();
 		}
 
 		private function setRepresentants(){
-			$rep1  = array("genre"=>$this->postedData['genreRep1'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep1'],"addresse"=> array("rue"=>$this->postedData['adrRep1'],"NPA"=>$this->postedData['NPARep1']),"telephone"=>$this->postedData['telRep1']);
-			$rep2  = array("genre"=>$this->postedData['genreRep2'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep2'],"addresse"=> array("rue"=>$this->postedData['adrRep2'],"NPA"=>$this->postedData['NPARep2']),"telephone"=>$this->postedData['telRep2']);
+			$rep1 = array("genre"=>$this->postedData['genreRep1'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep1'],"addresse"=> array("rue"=>$this->postedData['adrRep1'],"NPA"=>$this->postedData['NPARep1']),"telephone"=>$this->postedData['telRep1']);
+			$rep2 = array("genre"=>$this->postedData['genreRep2'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep2'],"addresse"=> array("rue"=>$this->postedData['adrRep2'],"NPA"=>$this->postedData['NPARep2']),"telephone"=>$this->postedData['telRep2']);
 			$this->representants = array($rep1, $rep2);
 		}
 		private function setScolarite(){
@@ -116,6 +118,10 @@
 				$this->connaissancesLinguistiques = [];
 			}
 		}
+		public function addInJSON(){
+			return ["photo-passeport" => $_FILES['photo']['name'], "carte-identite" => $_FILES['idCard']['name'], "curriculum-vitae" => $_FILES['cv']['name'], "lettre-motivation" => $_FILES['lettre']['name']];
+		}
+
 		public function getPaths(){
 			$folderName = $this->dateNow."_".$this->mailApprenti;
 			$path = $this->rootpath.$this->formations[$this->formation].'/'.$folderName.'/';
