@@ -37,19 +37,19 @@
           //  mail($to, $subject, $message, $headers);
     }
 
-    function uploadFile($pathAnnexes, $file){
-
-        $fichier = basename(rand(1, 999).'-'.$file['name']);
+    function uploadFile($pathAnnexes, $file, $filename){
+        //basename(rand(1, 999).'-'
         $extension = strrchr($file['name'], '.');
-        $validExt = ['.pdf', '.jpeg', '.png'];
+        $validExt = ['.pdf', '.jpeg', '.png', '.PDF', '.PNG'];
+        $filename = $filename . $extension;
 
         if(!in_array($extension, $validExt)){
             $erreur = "uploadError";
         }
 
         if(!isset($erreur)){
-            $fichier = checkChars($fichier);
-            move_uploaded_file($file['tmp_name'], $pathAnnexes . $fichier);
+            $filename = checkChars($filename);
+            move_uploaded_file($file['tmp_name'], $pathAnnexes . $filename);
         }
     }
 
@@ -65,23 +65,23 @@
     }
 
     function uploadAllFiles($pathAnnexes, $postedFiles, $candidateData){
-        uploadFile($pathAnnexes, $postedFiles['photo']);
-        uploadFile($pathAnnexes, $postedFiles['idCard']);
-        uploadFile($pathAnnexes, $postedFiles['cv']);
-        uploadFile($pathAnnexes, $postedFiles['lettre']);
+        uploadFile($pathAnnexes, $postedFiles['photo'], "photo-passeport");
+        uploadFile($pathAnnexes, $postedFiles['idCard'], "carte-identite");
+        uploadFile($pathAnnexes, $postedFiles['cv'], "curriculum-vitae"); // ?
+        uploadFile($pathAnnexes, $postedFiles['lettre'], "lettre-motivation");
         for($i=1; $i<=9; $i++){
             if(array_key_exists('certifs'.$i, $postedFiles)){
                 if(!($postedFiles['certifs'.$i]['name'] == "")) {
-                    uploadFile($pathAnnexes, $postedFiles['certifs'.$i]);
+                    uploadFile($pathAnnexes, $postedFiles['certifs'.$i], "annexe" .$i); //
                 }
             }
         }
 
         if($candidateData->formation=="polyMecanicien"){
-            uploadFile($pathAnnexes, $postedFiles['gimch']);
+            uploadFile($pathAnnexes, $postedFiles['gimch'], "certificat-gimch");
         }
         if($candidateData->formation=="informaticien"){
-            uploadFile($pathAnnexes, $postedFiles['griTestInput']);
+            uploadFile($pathAnnexes, $postedFiles['griTestInput'], "certificat-gri");
         }
     }
 

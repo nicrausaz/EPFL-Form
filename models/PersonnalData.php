@@ -14,7 +14,7 @@
             "interactiveMediaDesigner" => "InteractiveMediaDesigners"
         );
 		private $dateNow;
-		private	$rootpath = 'D:/data/'; //change this
+		private $rootpath = 'D:/data/'; //change this
 		public $tempSciper = "";
 		public $formation = "";
 		public $filiere = "";
@@ -43,7 +43,7 @@
 		public $datePostulation = "";
 
 		public function __construct($postedData){
-			$this->dateNow = date('Y-m-d-H-i-s');
+			$this->dateNow = date('Y-m-d_H-i-s');
 			//Remplir les infos;
 			$this->postedData = $postedData;
 			$this->tempSciper = checkChars($postedData['sciperTmp']);
@@ -117,7 +117,7 @@
 			}
 		}
 		public function getPaths(){
-			$folderName = $this->tempSciper."_".$this->dateNow."_".$this->mailApprenti;
+			$folderName = $this->dateNow."_".$this->mailApprenti;
 			$path = $this->rootpath.$this->formations[$this->formation].'/'.$folderName.'/';
 			$pathInfos = $path."informations/";
 			$pathAnnexes = $path."annexes/";

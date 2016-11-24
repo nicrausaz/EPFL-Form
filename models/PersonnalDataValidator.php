@@ -77,7 +77,7 @@ class PersonnalDataValidator {
                     $this->errors[$dataNameToCheck] = "Valeur manquante";
         }
     }
-
+    /*
     //NOT WORKING
     private function isRepresantantFilled($representant){
         $repData = array("genreRep" => $representant['genreRep1'],
@@ -92,7 +92,7 @@ class PersonnalDataValidator {
                 //$this->isRequired($repDataValid);
         }
     }
-
+*/
     private function representantValid(){
         if($this->personnalData->majeur == 'false'){
             //non majeur
@@ -100,7 +100,7 @@ class PersonnalDataValidator {
                 $this->errors['representants'] = 'Representants non valides';
             } else {
                // Check les valeur rentrée par representants
-                $this->isRepresantantFilled($this->representants); //NOT WORKING
+                //$this->isRepresantantFilled($this->representants); //NOT WORKING
             }   
         } else {
             //majeur
