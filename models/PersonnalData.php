@@ -76,7 +76,6 @@
 			$this->setDejacand();
 			$this->anneeFinScolarite = $postedData['anneeFin'];
 			$this->datePostulation = date('j-n-o--'.'h:i:s');
-			$this->fichiers = $this->addInJSON();
 		}
 
 		private function setRepresentants(){
@@ -117,9 +116,6 @@
             } else {
 				$this->connaissancesLinguistiques = [];
 			}
-		}
-		public function addInJSON(){
-			return ["photo-passeport" => $_FILES['photo']['name'], "carte-identite" => $_FILES['idCard']['name'], "curriculum-vitae" => $_FILES['cv']['name'], "lettre-motivation" => $_FILES['lettre']['name']];
 		}
 
 		public function getPaths(){

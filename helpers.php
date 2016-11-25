@@ -37,11 +37,12 @@
           // mail($to, $subject, $message, $headers);
     }
 
-    function uploadFile($candidateData, $pathAnnexes, $file, $filename){
+    function uploadFile(&$candidateData, $pathAnnexes, $file, $name){
         $extension = strrchr($file['name'], '.');
         $validExt = ['.pdf', '.jpeg', '.png', '.PDF', '.PNG'];
-        $filename = $filename . $extension;
+        $filename = $name . $extension;
 
+        //-> dataValidator
         if(!in_array($extension, $validExt)){
             $erreur = "uploadError";
         }
@@ -49,6 +50,7 @@
         if(!isset($erreur)){
             $filename = checkChars($filename);
             move_uploaded_file($file['tmp_name'], $pathAnnexes . $filename);
+            $candidateData->fichiers[$name] = $filename;
         }
     }
 
@@ -83,6 +85,8 @@
         if($candidateData->formation=="informaticien"){
             uploadFile($candidateData, $pathAnnexes, $postedFiles['griTestInput'], "certificat-gri");
         }
+
+        return $candidateData;
     }
 
     function debuglog($message){

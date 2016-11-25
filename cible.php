@@ -25,11 +25,11 @@
                 debuglog("validator->isValid");
                 //Create folders
                 createCandidateFolders($candidateData);
+                //Upload files
+                $candidateData = uploadAllFiles($candidateData->getPaths()["pathAnnexes"], $_FILES, $candidateData);
                 //Create JSON file and upload it
                 $encodedJson = (json_encode($candidateData,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
                 file_put_contents($candidateData->getPaths()["pathInfos"].'/informations.json', $encodedJson);
-                //Upload files
-                uploadAllFiles($candidateData->getPaths()["pathAnnexes"], $_FILES, $candidateData);
                 //Send mails
                 mailToResp($candidateData->prenomApprenti, $candidateData->nomApprenti, $candidateData->formation);
                 mailToApprenti($candidateData->mailApprenti);
