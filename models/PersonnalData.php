@@ -45,7 +45,7 @@
 
 		public function __construct($postedData){
 			$this->dateNow = date('Y-m-d_H-i-s');
-			//Remplir les infos;
+			//Rempli les infos;
 			$this->postedData = $postedData;
 			$this->tempSciper = checkChars($postedData['sciperTmp']);
 			$this->formation = $postedData['job'];
