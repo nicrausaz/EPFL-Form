@@ -1,10 +1,14 @@
 $(document).ready(function () {
+    initButtonsAction();
+    if(location.pathname.split("/").slice(-1)[0] != "cible.php"){
     initJobChange();
     initButtonsAction();
     initAddChildButtons();
     initAddRadioButtonEvent();
     initDateChecker();
     initDatepicker();
+    clearFiles();
+}
 });
 
 function checkDate() {
@@ -126,23 +130,28 @@ function initAddChildButtons() {
     });
 }
 
-function initAddRadioButtonEvent() {
-    $("#maj1").change(function () {
-        $("#representants").show(1000);
-    });
-    $("#maj2").change(function () {
-        $("#representants").hide(1000);
-        clearRepresentants();
-    });
+function setMajState() {
+    $('#maj1')[0].checked ? $("#representants").show(1000) : $("#representants").hide(1000);
+}
 
-    $("#dejaCand1").change(function () {
+function setDejaCandState() {
+    if ($('#dejaCand1')[0].checked) {
         $("#dejaCandAnnee").hide(750);
         $("#dejaCandAnnee").val("");
         $("#dejaCandError").html("");
-    });
-    $("#dejaCand2").change(function () {
+    } else {
         $("#dejaCandAnnee").show(750);
-    });
+    }
+}
+
+function initAddRadioButtonEvent() {
+    $('#maj1').change(setMajState);
+    $('#maj2').change(setMajState);
+    setMajState();
+
+    $("#dejaCand1").change(setDejaCandState);
+    $("#dejaCand2").change(setDejaCandState);
+    setDejaCandState();
 }
 
 function clearRepresentants() {
@@ -186,6 +195,7 @@ function logOutTequila() {
 function showOnFormReturn() {
     var selectedFormation = $("#jb option:selected")[0].value;
     showPolyAndInfoDivs(selectedFormation);
+    //initAddRadioButtonEvent();
 }
 function showPolyAndInfoDivs(selectedFormation) {
     $("#all").show(1000);
@@ -197,4 +207,9 @@ function clearFileInput(fileInput) {
     fileInput.parentNode.setAttribute('title', "");
     fileInput.type = '';
     fileInput.type = 'file';
+}
+function clearFiles() {
+    $("#files input").each(function(input){
+        clearFileInput(this);
+    });
 }

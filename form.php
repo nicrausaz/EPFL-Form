@@ -1,5 +1,4 @@
 <?php
-
     require_once("tequila/tequila.php");
     $oClient = new TequilaClient();
     $oClient->SetApplicationName('Formulaire apprentissage');
@@ -7,7 +6,7 @@
     $oClient->SetWishedAttributes(array('user'));
     $oClient->SetAllowsFilter('categorie=epfl-guests');
     $oClient->Authenticate();
-    $tempSciper = $oClient->getValue('uniqueid');
+    //$tempSciper = $oClient->getValue('uniqueid');
     $user = $oClient->getValue('user');
     $firstname= $oClient->getValue('firstname');
     $name= $oClient->getValue('name');
@@ -44,7 +43,7 @@
                     <option value="electronicien" <?php echo ($_SESSION['postedForm']['job'] == "electronicien") ? "selected" : ''; ?>>Electronicien-ne CFC</option>
                     <option value="interactiveMediaDesigner" <?php echo ($_SESSION['postedForm']['job'] == "interactiveMediaDesigner") ? "selected" : ''; ?>>Interactive Media Designer CFC</option>
                 </select>
-                <input type="text" name="sciperTmp" value="<?php echo $tempSciper;?>" readonly hidden/>
+                <!--<input type="text" name="sciperTmp" value="<?php echo $tempSciper;?>" readonly hidden/>-->
             </fieldset>
             <div id="all" style="display: none;">
                 <fieldset>
@@ -145,6 +144,18 @@
                                     <td><input type="text" name="niveauEcole2" placeholder="Niveau*" <?php echo $_SESSION['postedForm']['niveauEcole2'] != '' ? $_SESSION['postedForm']['niveauEcole2'] : ''; ?> required/></td>
                                     <td><input type="text" name="anneesEcole2" placeholder="de-à (années)*" <?php echo $_SESSION['postedForm']['anneesEcole2'] != '' ? $_SESSION['postedForm']['anneesEcole2'] : ''; ?> required/></td>
                                 </tr>
+                                <?php
+                                for($i = 3; $i < 6; $i++){
+                                    if($_SESSION['postedForm']['ecole'.$i]){
+                                ?>
+                                <tr>
+                                    <td><input type="text" name ="ecole<?php echo $i ?>" placeholder="Ecole" value ="<?php echo $_SESSION['postedForm']['ecole'.$i] ?>"/></td>
+                                    <td><input type="text" name="lieuEcole<?php echo $i ?>" placeholder="Lieu" value ="<?php echo $_SESSION['postedForm']['lieuEcole'.$i] ?>" ></td>
+                                    <td><input type="text" name="niveauEcole<?php echo $i ?>" placeholder="Niveau" value ="<?php echo $_SESSION['postedForm']['niveauEcole'.$i] ?>"></td>
+                                    <td><input type="text" name="anneesEcole<?php echo $i ?>" placeholder="de-à (années)" value ="<?php echo $_SESSION['postedForm']['anneesEcole'.$i] ?>"></td>
+                                </tr>
+                                <?php }} ?>
+                                
                             </table>
                             <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité*" <?php echo $_SESSION['postedForm']['anneeFin'] != '' ? $_SESSION['postedForm']['anneeFin'] : ''; ?> maxlength="4" required/>
                             <section id="anneeFinError"></section>
@@ -196,7 +207,7 @@
                             <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature*" <?php echo $_SESSION['postedForm']['dejaCandAnnee'] != '' ? $_SESSION['postedForm']['dejaCandAnnee'] : ''; ?> maxlength="4" style="display: none;"/>
                             <section id="dejaCandError"></section>
                         </fieldset>
-                        <fieldset>
+                        <fieldset id="files">
                             <legend><span class="number">4</span> Annexes </legend>
                             <p>Merci de joindre tous les fichiers demandés, en respectant les formats (si les formats ne sont pas respectés, les fichiers ne seront pas pris en compte).</p>
 
@@ -289,8 +300,7 @@
             </div>
         </form>
         <?php 
-            //require_once('templates/footer.php');
-
+            require_once('templates/footer.php');
             if ($_SESSION['formError']) {
                 echo '<script>showOnFormReturn();</script>';
             }

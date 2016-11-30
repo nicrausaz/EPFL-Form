@@ -223,7 +223,7 @@ class TequilaClient{
      IN  : $sSessionsDirectory  -> (optional) The directory where to save sessions files
      IN  : $iTimeout            -> (optional) Session timeout
    */
-  function TequilaClient($sServer = '', $iTimeout = NULL) {
+  function __construct($sServer = '', $iTimeout = NULL) {
     $this->stderr = fopen ('php://stderr', 'w');
 
     /* If curl is not found, */

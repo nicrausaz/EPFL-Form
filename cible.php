@@ -35,11 +35,12 @@
                 mailToApprenti($candidateData->mailApprenti);
                 // kill session
                 $_SESSION['formError'] = false;
-                unset($_SESSION['postedForm']);
+                //unset($_SESSION['postedForm']);
                 include("templates/confirmationText.php");
             }else{
                 $_SESSION['formError'] = true;
                 $_SESSION['postedForm'] = $_POST;
+                 $_SESSION['files'] = $_FILES;
                 debuglog("!validator->isValid");
                 include("templates/errorText.php");
             }

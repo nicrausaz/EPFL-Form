@@ -15,7 +15,7 @@
         );
 		private $dateNow;
 		private $rootpath = 'D:/data/'; //change this
-		public $tempSciper = "";
+		//public $tempSciper = "";
 		public $formation = "";
 		public $filiere = "";
 		public $maturite = "false";
@@ -47,7 +47,7 @@
 			$this->dateNow = date('Y-m-d_H-i-s');
 			//Rempli les infos;
 			$this->postedData = $postedData;
-			$this->tempSciper = checkChars($postedData['sciperTmp']);
+			//$this->tempSciper = checkChars($postedData['sciperTmp']);
 			$this->formation = $postedData['job'];
 			if($this->formation =="informaticien"){
 				$this->filiere = $postedData['filInfo'];

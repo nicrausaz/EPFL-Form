@@ -85,7 +85,6 @@
         if($candidateData->formation=="informaticien"){
             uploadFile($candidateData, $pathAnnexes, $postedFiles['griTestInput'], "certificat-gri");
         }
-
         return $candidateData;
     }
 

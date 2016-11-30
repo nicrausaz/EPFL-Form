@@ -40,7 +40,7 @@ class PersonnalDataValidator {
         if(is_null($this->personnalData->genreApprenti) || $this->personnalData->genreApprenti == "" || $this->personnalData->genreApprenti =="notSelected"){
              $this->errors['genreApp'] = 'Genre non selectionné';
         }
-        $toValid = array("tempSciper" => $this->personnalData->tempSciper,
+        $toValid = array(//"tempSciper" => $this->personnalData->tempSciper,
                             "nomApprenti" => $this->personnalData->nomApprenti,
                             "prenomApprenti" => $this->personnalData->prenomApprenti,
                             "formation" => $this->personnalData->formation,
