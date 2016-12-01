@@ -78,7 +78,7 @@
 
 		private function setRepresentants(){
 			$rep1 = array("genre"=>$this->postedData['genreRep1'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep1'],"addresse"=> array("rue"=>$this->postedData['adrRep1'],"NPA"=>$this->postedData['NPARep1']),"telephone"=>$this->postedData['telRep1']);
-			$rep2 = array("genre"=>$this->postedData['genreRep2'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep2'],"addresse"=> array("rue"=>$this->postedData['adrRep2'],"NPA"=>$this->postedData['NPARep2']),"telephone"=>$this->postedData['telRep2']);
+			$rep2 = array("genre"=>$this->postedData['genreRep2'],"nom"=>$this->postedData['nameRep2'],"prenom"=>$this->postedData['surnameRep2'],"addresse"=> array("rue"=>$this->postedData['adrRep2'],"NPA"=>$this->postedData['NPARep2']),"telephone"=>$this->postedData['telRep2']);
 			$this->representants = array($rep1, $rep2);
 		}
 		private function setScolarite(){
