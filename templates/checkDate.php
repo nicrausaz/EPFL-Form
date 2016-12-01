@@ -18,5 +18,4 @@ $file = $parts[count($parts) - 1];
 if($file != "denied.php"){
     ($actualDateStamp>$startDateStamp)&&($actualDateStamp<$endDateStamp) ? "" : header("Location: ./denied.php");
 }
-
 ?>

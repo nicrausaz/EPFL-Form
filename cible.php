@@ -40,7 +40,7 @@
             }else{
                 $_SESSION['formError'] = true;
                 $_SESSION['postedForm'] = $_POST;
-                 $_SESSION['files'] = $_FILES;
+                $_SESSION['files'] = $_FILES;
                 debuglog("!validator->isValid");
                 include("templates/errorText.php");
             }

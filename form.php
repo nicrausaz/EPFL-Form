@@ -17,8 +17,8 @@
     <html lang="fr">
         <head>
             <title>Formulaire Apprentissage</title>
+            <?php include('templates/head.php'); ?>
         </head>
-        <?php include('templates/head.php'); ?>
     <body>
         <div class="page-style">
         <?php include('templates/header.php') ?>
@@ -317,11 +317,11 @@
                 </fieldset>
             </div>
         </form>
-        <?php 
-            //require_once('templates/footer.php');
+        <?php
             if ($_SESSION['formError']) {
                 echo '<script>showOnFormReturn();</script>';
             }
+            //require_once('templates/footer.php');
         ?>
     </body>
 </html>

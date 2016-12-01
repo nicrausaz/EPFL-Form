@@ -1,14 +1,14 @@
 $(document).ready(function () {
     initButtonsAction();
-    if(location.pathname.split("/").slice(-1)[0] != "cible.php"){
-    initJobChange();
-    initButtonsAction();
-    initAddChildButtons();
-    initAddRadioButtonEvent();
-    initDateChecker();
-    initDatepicker();
-    clearFiles();
-}
+    if (location.pathname.split("/").slice(-1)[0] == "form.php") {
+        initJobChange();
+        initButtonsAction();
+        initAddChildButtons();
+        initAddRadioButtonEvent();
+        initDateChecker();
+        initDatepicker();
+        clearFiles();
+    }
 });
 
 function checkDate() {
@@ -206,11 +206,11 @@ function showPolyAndInfoDivs(selectedFormation) {
 }
 function clearFileInput(fileInput) {
     fileInput.parentNode.setAttribute('title', "");
-    fileInput.type = '';
+    fileInput.type = 'file';
     fileInput.type = 'file';
 }
 function clearFiles() {
-    $("#files input").each(function(input){
+    $("#files input").each(function (input) {
         clearFileInput(this);
     });
 }
