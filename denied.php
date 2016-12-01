@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="fr">
-    <head>  
+    <head>
         <?php include('templates/head.php') ?>
         <title>Accès Refusé</title>
     </head>
     <body style="text-align: center">
         <div class="page-style">
-            <?php 
-                include('templates/header.php');
+            <?php
                 include('templates/checkDate.php');
+                include('templates/header.php');
 
                 if($actualDateStamp > $endDateStamp){
                     $year = Date('Y')+1;
