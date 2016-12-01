@@ -6,7 +6,6 @@
     $oClient->SetWishedAttributes(array('user'));
     $oClient->SetAllowsFilter('categorie=epfl-guests');
     $oClient->Authenticate();
-    //$tempSciper = $oClient->getValue('uniqueid');
     $user = $oClient->getValue('user');
     $firstname= $oClient->getValue('firstname');
     $name= $oClient->getValue('name');
@@ -43,7 +42,6 @@
                     <option value="electronicien" <?php echo ($_SESSION['postedForm']['job'] == "electronicien") ? "selected" : ''; ?>>Electronicien-ne CFC</option>
                     <option value="interactiveMediaDesigner" <?php echo ($_SESSION['postedForm']['job'] == "interactiveMediaDesigner") ? "selected" : ''; ?>>Interactive Media Designer CFC</option>
                 </select>
-                <!--<input type="text" name="sciperTmp" value="<?php echo $tempSciper;?>" readonly hidden/>-->
             </fieldset>
             <div id="all" style="display: none;">
                 <fieldset>
@@ -173,6 +171,17 @@
                                     <td><input type="text" name="activitePro1" placeholder="Activité" <?php echo $_SESSION['postedForm']['activitePro1'] != '' ? $_SESSION['postedForm']['activitePro1'] : ''; ?>/></td>
                                     <td><input type="text" name="anneesPro1" placeholder="de-à (années)" <?php echo $_SESSION['postedForm']['anneesPro1'] != '' ? $_SESSION['postedForm']['anneesPro1'] : ''; ?>/></td>
                                 </tr>
+                                <?php
+                                for($i = 2; $i < 4; $i++){
+                                    if($_SESSION['postedForm']['employeurPro'.$i]){
+                                ?>
+                                <tr>
+                                    <td><input type="text" name ="employeurPro<?php echo $i ?>" placeholder="Employeur" value ="<?php echo $_SESSION['postedForm']['employeurPro'.$i] ?>"/></td>
+                                    <td><input type="text" name="lieuPro<?php echo $i ?>" placeholder="Lieu" value ="<?php echo $_SESSION['postedForm']['lieuPro'.$i] ?>" ></td>
+                                    <td><input type="text" name="activitePro1<?php echo $i ?>" placeholder="Activité" value ="<?php echo $_SESSION['postedForm']['activitePro'.$i] ?>"></td>
+                                    <td><input type="text" name="anneesPro1<?php echo $i ?>" placeholder="de-à (années)" value ="<?php echo $_SESSION['postedForm']['anneesPro'.$i] ?>"></td>
+                                </tr>
+                                <?php }} ?>
                             </table>
                             <button type ="button" id="addPro" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                                 Ajouter une ligne
@@ -189,6 +198,15 @@
                                     <td><input type="text" name="activiteStage2" placeholder="Métier" <?php echo $_SESSION['postedForm']['activiteStage2'] != '' ? $_SESSION['postedForm']['activiteStage2'] : ''; ?>></td>
                                     <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" <?php echo $_SESSION['postedForm']['entrepriseStage2'] != '' ? $_SESSION['postedForm']['entrepriseStage2'] : ''; ?>></td>
                                 </tr>
+                                <?php
+                                for($i = 2; $i < 4; $i++){
+                                    if($_SESSION['postedForm']['activiteStage'.$i]){
+                                ?>
+                                <tr>
+                                    <td><input type="text" name ="activiteStage<?php echo $i ?>" placeholder="Métier" value ="<?php echo $_SESSION['postedForm']['activiteStage'.$i] ?>"/></td>
+                                    <td><input type="text" name="entrepriseStage<?php echo $i ?>" placeholder="Entreprise" value ="<?php echo $_SESSION['postedForm']['entrepriseStage'.$i] ?>" ></td>
+                                </tr>
+                                <?php }} ?>
                             </table>
                             <button type ="button" id="addStage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                                 Ajouter une ligne
@@ -300,7 +318,7 @@
             </div>
         </form>
         <?php 
-            require_once('templates/footer.php');
+            //require_once('templates/footer.php');
             if ($_SESSION['formError']) {
                 echo '<script>showOnFormReturn();</script>';
             }

@@ -187,15 +187,16 @@ function initJobChange() {
         }
     });
 }
+/*
 function logOutTequila() {
     var win = window.open('https://tequila.epfl.ch/logout', '_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=10000, top=10000, width=100, height=100, visible=none', '');
     win.close();
     //Seems not working yet
 }
+*/
 function showOnFormReturn() {
     var selectedFormation = $("#jb option:selected")[0].value;
     showPolyAndInfoDivs(selectedFormation);
-    //initAddRadioButtonEvent();
 }
 function showPolyAndInfoDivs(selectedFormation) {
     $("#all").show(1000);
