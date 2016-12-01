@@ -14,7 +14,7 @@
             "interactiveMediaDesigner" => "InteractiveMediaDesigners"
         );
 		private $dateNow;
-		private $rootpath = 'D:/data/'; //change this
+		private $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
 		public $formation = "";
 		public $filiere = "";
 		public $maturite = "false";

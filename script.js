@@ -206,7 +206,7 @@ function showPolyAndInfoDivs(selectedFormation) {
 }
 function clearFileInput(fileInput) {
     fileInput.parentNode.setAttribute('title', "");
-    fileInput.type = 'file';
+    fileInput.type = '';
     fileInput.type = 'file';
 }
 function clearFiles() {

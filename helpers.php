@@ -1,6 +1,6 @@
 <?php
     function mailToResp($surname, $name, $job){
-        $to  = 'nicolas.crausaz@epfl.ch'; //formation.apprentis@epfl.ch
+        $to  = 'formation.apprentis@epfl.ch';
         $subject = 'Nouvelle Candidature';
         $message = "Candidat: ".$surname." ".$name."\n\n".
                     "Apprentissage: ".$job."\n\n".
@@ -10,7 +10,7 @@
                     'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
 
-           // mail($to, $subject, $message, $headers);
+           mail($to, $subject, $message, $headers);
     }
 
     //vire les accents et remplace caractere non alphanumeric par '-'
@@ -34,7 +34,7 @@
                     'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
 
-          // mail($to, $subject, $message, $headers);
+          mail($to, $subject, $message, $headers);
     }
 
     function uploadFile(&$candidateData, $pathAnnexes, $file, $name){
