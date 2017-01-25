@@ -11,7 +11,7 @@
     $name= $oClient->getValue('name');
     $sKey = $oClient->GetKey();
 
-    include('templates/checkDate.php');
+    include('templates/isPostulationOpen.php');
 ?>
 <!doctype html>
     <html lang="fr">
