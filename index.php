@@ -3,7 +3,7 @@
     <head>
         <title>Accueil</title>
         <?php include('templates/head.php');
-        include('templates/checkDate.php');
+        //include('templates/checkDate.php');
         session_unset();
         ?>
     </head>

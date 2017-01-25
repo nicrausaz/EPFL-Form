@@ -3,7 +3,7 @@
     <head>
          <?php
             include("templates/head.php");
-            include('templates/checkDate.php');
+            //include('templates/checkDate.php');
             require_once("helpers.php");
             require_once("models/PersonnalData.php");
             require_once("models/PersonnalDataValidator.php");

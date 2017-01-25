@@ -7,7 +7,7 @@
     <body style="text-align: center">
         <div class="page-style">
             <?php
-                include('templates/checkDate.php');
+                //include('templates/checkDate.php');
                 include('templates/header.php');
 
                 if($actualDateStamp > $endDateStamp){
