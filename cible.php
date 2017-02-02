@@ -32,7 +32,7 @@
                 file_put_contents($candidateData->getPaths()["pathInfos"].'/informations.json', $encodedJson);
                 //Send mails
                 mailToResp($candidateData->prenomApprenti, $candidateData->nomApprenti, $candidateData->formation);
-                mailToApprenti($candidateData->mailApprenti);
+                mailToApprenti($candidateData->mailApprenti, $candidateData->formation);
                 // kill session
                 $_SESSION['formError'] = false;
                 //unset($_SESSION['postedForm']);
