@@ -38,7 +38,7 @@ class PersonnalDataValidator {
     
     private function dataRequiredIsValid(){
         if(is_null($this->personnalData->genreApprenti) || $this->personnalData->genreApprenti == "" || $this->personnalData->genreApprenti =="notSelected"){
-            $this->errors['genreApp'] = 'Genre non selectionné';
+            $this->errors['genreApprenti'] = 'Genre non selectionné';
         }
         $toValid = array("nomApprenti" => $this->personnalData->nomApprenti,
         "prenomApprenti" => $this->personnalData->prenomApprenti,
