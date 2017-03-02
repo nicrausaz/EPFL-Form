@@ -206,12 +206,21 @@ function showPolyAndInfoDivs(selectedFormation) {
     selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
 }
 function clearFileInput(fileInput) {
-    fileInput.parentNode.setAttribute('title', "");
-    fileInput.type = 'file';
+    $(fileInput).wrap('<form>').closest('form').get(0).reset();
+    $(fileInput).unwrap();
 }
+
+function clearFileLabel(fileInputLabel) {
+    $(fileInputLabel)[0].title = "Aucun fichier choisi";
+}
+
 function clearFiles() {
     $("#files input").each(function (input) {
         clearFileInput(this);
+    });
+
+    $("#files label").each(function (input) {
+        clearFileLabel(this);
     });
 }
 

@@ -94,6 +94,7 @@ class PersonnalDataValidator {
     private function representantValid(){
         if($this->personnalData->majeur == 'false'){
             //non majeur
+            
             if(count($this->personnalData->representants) < 1){
                 $this->errors['representants'] = 'Représentants non valides';
             } else {

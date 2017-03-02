@@ -238,7 +238,6 @@
                                 <p></p>
                                 <section id="formatErrorZone1"></section>
                             </div>
-
                             <label for="idCard">Copie carte d'indentité / passeport:*</label>
                             <div class="tooltip">
                                 <label class="file" title="" id="idCardLabel">
