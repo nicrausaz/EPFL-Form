@@ -19,8 +19,8 @@ function mailToApprenti($to, $job){
 }
 
 function uploadFile(&$candidateData, $pathAnnexes, $file, $name){
-    $extension = strrchr($file['name'], '.');
-    $validExt = ['.pdf', '.jpeg', '.png', '.PDF', '.PNG', '.JPEG'];
+    $extension = strtolower(strrchr($file['name'], '.'));
+    $validExt = ['.pdf', '.jpeg', '.png', '.jpg'];
     $filename = $name . $extension;
     
     //-> dataValidator
