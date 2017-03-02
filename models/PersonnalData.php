@@ -14,8 +14,7 @@ class PersonnalData {
     "interactiveMediaDesigner" => "InteractiveMediaDesigners"
     );
     private $dateNow;
-    // private $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
-    private $rootpath = 'D://DataTest//';
+    private $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
     public $formation = "";
     public $filiere = "";
     public $maturite = "false";
