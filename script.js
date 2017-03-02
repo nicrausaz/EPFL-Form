@@ -8,6 +8,7 @@ $(document).ready(function () {
         initDateChecker();
         initDatepicker();
         clearFiles();
+        checkRequired();
     }
 });
 
@@ -206,11 +207,24 @@ function showPolyAndInfoDivs(selectedFormation) {
 }
 function clearFileInput(fileInput) {
     fileInput.parentNode.setAttribute('title', "");
-    fileInput.type = '';
     fileInput.type = 'file';
 }
 function clearFiles() {
-    // $("#files input").each(function (input) {
-    //     clearFileInput(this);
-    // });
+    $("#files input").each(function (input) {
+        clearFileInput(this);
+    });
+}
+
+function checkRequired() {
+    $("form").submit(function (e) {
+
+        $($(this).find("[data-required]")).each(function () {
+            if ($(this).val() == '') {
+                alert("Certains champs requis n'ont pas été remplis.");
+                e.preventDefault();
+                return false;
+            }
+        });
+        return true;
+    });
 }
