@@ -210,7 +210,7 @@ function clearFileInput(fileInput) {
     fileInput.type = 'file';
 }
 function clearFiles() {
-    $("#files input").each(function (input) {
-        clearFileInput(this);
-    });
+    // $("#files input").each(function (input) {
+    //     clearFileInput(this);
+    // });
 }

@@ -1,7 +1,7 @@
 <?php
 function mailToResp($surname, $name, $job){
     require_once("templates/mailToResp.php");
-    mail($to, $subject, $message, $headers);
+    //mail($to, $subject, $message, $headers);
 }
 
 //vire les accents et remplace caractere non alphanumeric par '-'
@@ -15,12 +15,12 @@ function checkChars($toCheck){
 
 function mailToApprenti($to, $job){
     require_once("templates/mailToApp.php");
-    mail($to, $subject, $message, $headers);
+    //mail($to, $subject, $message, $headers);
 }
 
 function uploadFile(&$candidateData, $pathAnnexes, $file, $name){
     $extension = strrchr($file['name'], '.');
-    $validExt = ['.pdf', '.jpeg', '.png', '.PDF', '.PNG'];
+    $validExt = ['.pdf', '.jpeg', '.png', '.PDF', '.PNG', '.JPEG'];
     $filename = $name . $extension;
     
     //-> dataValidator

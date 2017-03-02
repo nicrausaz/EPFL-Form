@@ -43,7 +43,7 @@
                     <option value="interactiveMediaDesigner" <?php echo ($_SESSION['postedForm']['job'] == "interactiveMediaDesigner") ? "selected" : ''; ?>>Interactive Media Designer CFC</option>
                 </select>
             </fieldset>
-            <div id="all" style="display: none;">
+            <div id="all" style="">
                 <fieldset>
                     <div id="infoOnly">
                         <?php include('templates/filieresinfos.php') ?>
@@ -238,6 +238,7 @@
                                 <p></p>
                                 <section id="formatErrorZone1"></section>
                             </div>
+
                             <label for="idCard">Copie carte d'indentité / passeport:*</label>
                             <div class="tooltip">
                                 <label class="file" title="" id="idCardLabel">
