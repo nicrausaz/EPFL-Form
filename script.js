@@ -8,6 +8,7 @@ $(document).ready(function () {
         initDateChecker();
         initDatepicker();
         clearFiles();
+        checkRequired();
     }
 });
 
@@ -56,7 +57,7 @@ function changeTitleFile(objFile) {
 
 function checkFileFormat(obj) {
     var errorSection = obj.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
-    var fileExtension = ['pdf', 'jpeg', 'png'];
+    var fileExtension = ['pdf', 'jpeg', 'png', 'jpg'];
 
     if (fileExtension.indexOf(obj.value.split('.').pop().toLowerCase()) == -1) {
         //extension invalide
@@ -121,7 +122,7 @@ function initAddChildButtons() {
             $('#newCertifZone').append('<tr><td><div class="tooltip"><label class="file" title="" id="certifLabel' + nextIndex
                 + '"><input type="file" name="certifs' + nextIndex
                 + '" id="certifs' + nextIndex
-                + '" onchange="changeTitleFile(this)" /></label><span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpeg-png</span><p></p><section id="formatErrorZone' + zoneId
+                + '" onchange="changeTitleFile(this)" /></label><span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span><p></p><section id="formatErrorZone' + zoneId
                 + '"></section></div></td></tr>');
             if (nextIndex == 9) {
                 $('#addInputFile').hide(750);
@@ -205,12 +206,34 @@ function showPolyAndInfoDivs(selectedFormation) {
     selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
 }
 function clearFileInput(fileInput) {
-    fileInput.parentNode.setAttribute('title', "");
-    fileInput.type = '';
-    fileInput.type = 'file';
+    $(fileInput).wrap('<form>').closest('form').get(0).reset();
+    $(fileInput).unwrap();
 }
+
+function clearFileLabel(fileInputLabel) {
+    $(fileInputLabel)[0].title = "Aucun fichier choisi";
+}
+
 function clearFiles() {
     $("#files input").each(function (input) {
         clearFileInput(this);
+    });
+
+    $("#files label").each(function (input) {
+        clearFileLabel(this);
+    });
+}
+
+function checkRequired() {
+    $("form").submit(function (e) {
+
+        $($(this).find("[data-required]")).each(function () {
+            if ($(this).val() == '') {
+                alert("Certains champs requis n'ont pas été remplis.");
+                e.preventDefault();
+                return false;
+            }
+        });
+        return true;
     });
 }

@@ -237,7 +237,6 @@ label.file input {
 
 label.file {
   width: 0%;
-  /* Use for fluid design */
   min-width: 300px;
   height: 30px;
   line-height: 26px!important;

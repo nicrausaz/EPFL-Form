@@ -38,7 +38,7 @@ class PersonnalDataValidator {
     
     private function dataRequiredIsValid(){
         if(is_null($this->personnalData->genreApprenti) || $this->personnalData->genreApprenti == "" || $this->personnalData->genreApprenti =="notSelected"){
-            $this->errors['genreApp'] = 'Genre non selectionné';
+            $this->errors['genreApprenti'] = 'Genre non selectionné';
         }
         $toValid = array("nomApprenti" => $this->personnalData->nomApprenti,
         "prenomApprenti" => $this->personnalData->prenomApprenti,
@@ -72,7 +72,7 @@ class PersonnalDataValidator {
     
     private function isRequired($dataToCheck){
         if(is_null($dataToCheck) || $dataToCheck==""){
-            $this->errors[$dataNameToCheck] = "Valeur manquante";
+            $this->errors[$dataNameToCheck] = $dataNameToCheck . " manquant(e)";
         }
     }
     /*
@@ -94,8 +94,9 @@ class PersonnalDataValidator {
     private function representantValid(){
         if($this->personnalData->majeur == 'false'){
             //non majeur
+            
             if(count($this->personnalData->representants) < 1){
-                $this->errors['representants'] = 'Representants non valides';
+                $this->errors['representants'] = 'Représentants non valides';
             } else {
                 // Check les valeur rentrée par representants
                 //$this->isRepresantantFilled($this->representants); //NOT WORKING
@@ -103,7 +104,7 @@ class PersonnalDataValidator {
         } else {
             //majeur
             if(count($this->personnalData->representants) != 0){
-                $this->errors['representants'] = 'Trop de representants';
+                $this->errors['representants'] = 'Trop de représentants';
             }
         }
     }
@@ -118,17 +119,17 @@ class PersonnalDataValidator {
     }
     private function isValidMail(){
         if (!filter_var($this->personnalData->mailApprenti, FILTER_VALIDATE_EMAIL)) {
-            $this->errors['mailValidity'] = "InvalidMailFormat";
+            $this->errors['adresseMail'] = "Addresse mail non valide";
         }
     }
     private function isFormationValid(){
         if (!array_key_exists($this->personnalData->formation, $this->personnalData->getFormations())) {
-            $this->errors['formation'] = 'Formation invalide';
+            $this->errors['formation'] = 'Formation non valide';
         }
     }
     private function isEcoleValid(){
         if(count($this->personnalData->scolarite)< 2){
-            $this->errors['ecole'] = 'Informations ecole invalides';
+            $this->errors['ecole'] = 'Informations école non valides';
         }
     }
     private function anneeFinScolariteValid(){
@@ -136,7 +137,7 @@ class PersonnalDataValidator {
         
         if(!is_null($dateToCheck) || $dateToCheck==""){
             if(!is_numeric($dateToCheck)){
-                $this->errors['anneeFinScolarite'] = 'Valeur non valide';
+                $this->errors['anneeFinScolarite'] = 'Année de fin de scolarité non valide';
             }
         }
     }

@@ -75,11 +75,17 @@ class PersonnalData {
         $this->anneeFinScolarite = $postedData['anneeFin'];
         $this->datePostulation = date('j-n-o--'.'h:i:s');
     }
-    
+
     private function setRepresentants(){
         $rep1 = array("genre"=>$this->postedData['genreRep1'],"nom"=>$this->postedData['nameRep1'],"prenom"=>$this->postedData['surnameRep1'],"addresse"=> array("rue"=>$this->postedData['adrRep1'],"NPA"=>$this->postedData['NPARep1']),"telephone"=>$this->postedData['telRep1']);
         $rep2 = array("genre"=>$this->postedData['genreRep2'],"nom"=>$this->postedData['nameRep2'],"prenom"=>$this->postedData['surnameRep2'],"addresse"=> array("rue"=>$this->postedData['adrRep2'],"NPA"=>$this->postedData['NPARep2']),"telephone"=>$this->postedData['telRep2']);
-        $this->representants = array($rep1, $rep2);
+
+        if($rep1){
+            array_push($this->representants, $rep1);
+        }
+        if($rep2){
+            array_push($this->representants, $rep2);
+        }
     }
     private function setScolarite(){
         for ($i = 1; $i <= 5; $i++) {
