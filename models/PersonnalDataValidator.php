@@ -118,7 +118,7 @@ class PersonnalDataValidator {
     }
     private function isValidMail(){
         if (!filter_var($this->personnalData->mailApprenti, FILTER_VALIDATE_EMAIL)) {
-            $this->errors['mailValidity'] = "InvalidMailFormat";
+            $this->errors['adresseMail'] = "addresse mail non valide";
         }
     }
     private function isFormationValid(){
