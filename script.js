@@ -174,8 +174,8 @@ function initDatepicker() {
 function initJobChange() {
     $("#jb").change(function () {
         var selectedFormation = $("#jb option:selected")[0].value;
-        var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
-
+        var laborantPeople = ["laborantinPhysique", "laborantinBiologie"];
+        // var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
         if (laborantPeople.indexOf(selectedFormation) == -1) {
             showPolyAndInfoDivs(selectedFormation);
 

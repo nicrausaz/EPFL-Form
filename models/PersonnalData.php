@@ -4,6 +4,7 @@ require_once(__DIR__ . '/../helpers.php');
 class PersonnalData {
     private $postedData;
     private $formations = array(
+    "laborantinChimie" => "laborantinsChimie",
     "polyMecanicien" => "Polymecaniciens",
     "informaticien" => "Informaticiens",
     "logisticien" => "Logisticiens",
@@ -14,7 +15,7 @@ class PersonnalData {
     "interactiveMediaDesigner" => "InteractiveMediaDesigners"
     );
     private $dateNow;
-    private $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
+    private $rootpath = 'D:\\Data\\'; /*\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\*/
     public $formation = "";
     public $filiere = "";
     public $maturite = "false";

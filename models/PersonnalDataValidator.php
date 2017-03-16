@@ -124,6 +124,7 @@ class PersonnalDataValidator {
     }
     private function isFormationValid(){
         if (!array_key_exists($this->personnalData->formation, $this->personnalData->getFormations())) {
+            echo $this->personnalData->formation;
             $this->errors['formation'] = 'Formation non valide';
         }
     }
