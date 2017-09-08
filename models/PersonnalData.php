@@ -45,7 +45,7 @@ class PersonnalData {
     
     public function __construct($postedData){
         $this->dateNow = date('Y-m-d_H-i-s');
-        //Rempli les infos;
+        //Rempli les infos
         $this->postedData = $postedData;
         $this->formation = $postedData['job'];
         if($this->formation =="informaticien"){

@@ -20,7 +20,7 @@ class PersonnalDataValidator {
         $this->dataRequiredIsValid();
         $this->representantValid();
         $this->dejaCandValid();
-        $this->isValidMail();
+        $this->isMailValid();
         $this->isFormationValid();
         $this->isEcoleValid();
         $this->anneeFinScolariteValid();
@@ -101,7 +101,7 @@ class PersonnalDataValidator {
             }
         }
     }
-    private function isValidMail(){
+    private function isMailValid(){
         if (!filter_var($this->personnalData->mailApprenti, FILTER_VALIDATE_EMAIL)) {
             $this->errors['adresseMail'] = "Addresse mail non valide";
         }
