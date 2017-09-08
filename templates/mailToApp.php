@@ -14,7 +14,7 @@ if($job == "informaticien"){
 $message .= "Avec nos meilleures salutations."."\n\n".
 "Formation Apprentis EPFL";
 
-$headers = 'From: formulaireApprentis@epfl.ch' . "\r\n" .
-'Reply-To: formulaireApprentis@epfl.ch' . "\r\n" .
+$headers = 'From: noreply+formulaireApprentis@epfl.ch' . "\r\n" .
+'Reply-To: formation.apprentis@epfl.ch' . "\r\n" .
 'X-Mailer: PHP/' . phpversion();
 ?>

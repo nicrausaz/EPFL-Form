@@ -20,7 +20,7 @@ class PersonnalDataValidator {
         $this->dataRequiredIsValid();
         $this->representantValid();
         $this->dejaCandValid();
-        $this->isValidMail();
+        $this->isMailValid();
         $this->isFormationValid();
         $this->isEcoleValid();
         $this->anneeFinScolariteValid();
@@ -51,7 +51,8 @@ class PersonnalDataValidator {
         "dateNaissanceApprenti" => $this->personnalData->dateNaissanceApprenti,
         "origineApprenti" => $this->personnalData->origineApprenti,
         "nationaliteApprenti" => $this->personnalData->nationaliteApprenti,
-        "langueMaternelleApprenti" => $this->personnalData->langueMaternelleApprenti);
+        "langueMaternelleApprenti" => $this->personnalData->langueMaternelleApprenti,
+        "numeroAVS" => $this->personnalData->numeroAVS);
         
         $this->isBirthDateValid(date($this->personnalData->dateNaissanceApprenti));
         
@@ -75,31 +76,14 @@ class PersonnalDataValidator {
             $this->errors[$dataNameToCheck] = $dataNameToCheck . " manquant(e)";
         }
     }
-    /*
-    //NOT WORKING
-    private function isRepresantantFilled($representant){
-    $repData = array("genreRep" => $representant['genreRep1'],
-    "nomRep" => $representant['nameRep1'],
-    "prenomRep" => $representant['surnameRep1'],
-    "adrRep" => $representant['adrRep1'],
-    "NPARep" => $representant['NPARep1'],
-    "telRep" => $representant['telRep1']);
-    
-    foreach($repData as $repDataValid){
-    echo $repDataValid;
-    //$this->isRequired($repDataValid);
-    }
-    }
-    */
+
     private function representantValid(){
         if($this->personnalData->majeur == 'false'){
             //non majeur
-            
             if(count($this->personnalData->representants) < 1){
                 $this->errors['representants'] = 'Représentants non valides';
             } else {
-                // Check les valeur rentrée par representants
-                //$this->isRepresantantFilled($this->representants); //NOT WORKING
+                // Check les valeurs rentrée par representants
             }
         } else {
             //majeur
@@ -117,7 +101,7 @@ class PersonnalDataValidator {
             }
         }
     }
-    private function isValidMail(){
+    private function isMailValid(){
         if (!filter_var($this->personnalData->mailApprenti, FILTER_VALIDATE_EMAIL)) {
             $this->errors['adresseMail'] = "Addresse mail non valide";
         }

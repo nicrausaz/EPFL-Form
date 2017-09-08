@@ -29,6 +29,7 @@ class PersonnalData {
     public $origineApprenti = "";
     public $nationaliteApprenti = "";
     public $permisEtranger = "";
+    public $numeroAVS = "";
     public $langueMaternelleApprenti = "";
     public $connaissancesLinguistiques = "";
     public $majeur = "false";
@@ -44,7 +45,7 @@ class PersonnalData {
     
     public function __construct($postedData){
         $this->dateNow = date('Y-m-d_H-i-s');
-        //Rempli les infos;
+        //Rempli les infos
         $this->postedData = $postedData;
         $this->formation = $postedData['job'];
         if($this->formation =="informaticien"){
@@ -62,6 +63,7 @@ class PersonnalData {
         $this->origineApprenti = $postedData['originApp'];
         $this->nationaliteApprenti = $postedData['nationApp'];
         $this->permisEtranger = $postedData['permisEtrangerApp'];
+        $this->numeroAVS = $postedData['avsNumber'];
         $this->langueMaternelleApprenti = $postedData['langApp'];
         $this->setLanguages($postedData['languesApp']);
         $this->majeur = $postedData['maj'];
