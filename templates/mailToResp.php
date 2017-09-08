@@ -1,5 +1,5 @@
 <?php
-$to = 'formation.apprentis@epfl.ch';
+$to = 'nicolas.crausaz@epfl.ch'; //formation.apprentis@epfl.ch
 $subject = 'Nouvelle Candidature';
 
 $message = "Candidat: ".$surname." ".$name."\n\n".

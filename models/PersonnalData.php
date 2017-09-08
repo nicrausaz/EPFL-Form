@@ -14,7 +14,7 @@ class PersonnalData {
     "interactiveMediaDesigner" => "InteractiveMediaDesigners"
     );
     private $dateNow;
-    private $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
+    private $rootpath = 'D:\data'; /* \\\\scxdata\\apprentis$\\candidatures\\nouvelles\\ */
     public $formation = "";
     public $filiere = "";
     public $maturite = "false";
@@ -29,6 +29,7 @@ class PersonnalData {
     public $origineApprenti = "";
     public $nationaliteApprenti = "";
     public $permisEtranger = "";
+    public $numeroAVS = "";
     public $langueMaternelleApprenti = "";
     public $connaissancesLinguistiques = "";
     public $majeur = "false";
@@ -62,6 +63,7 @@ class PersonnalData {
         $this->origineApprenti = $postedData['originApp'];
         $this->nationaliteApprenti = $postedData['nationApp'];
         $this->permisEtranger = $postedData['permisEtrangerApp'];
+        $this->numeroAVS = $postedData['avsNumber'];
         $this->langueMaternelleApprenti = $postedData['langApp'];
         $this->setLanguages($postedData['languesApp']);
         $this->majeur = $postedData['maj'];
