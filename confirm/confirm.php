@@ -1,6 +1,7 @@
 
 <?php
-    echo $_GET['mail'];
+    echo $_GET['s'];
+
     $JSONstring = json_encode(["mail" => $_GET['mail'], "status" => "confirmed"], JSON_PRETTY_PRINT);
     createTempFile($JSONstring);
 

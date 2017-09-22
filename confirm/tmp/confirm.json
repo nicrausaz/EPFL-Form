@@ -1,12 +1,6 @@
 {
-    "mail": "nicolas.crausaz@epfl.ch",
-    "status": "confirmed"
-},
-{
-    "mail": "nicolas.crausaz@epfl.ch",
-    "status": "confirmed"
-},
-{
-    "mail": "nicolas.crausaz@epfl.ch",
-    "status": "confirmed"
+    "lieu": "Lausanne",
+    "job": "informaticien",
+    "mailApp": "nicolas.crausaz@epfl.ch",
+    "secret": "59c510c022f972d0b2f3408"
 }
