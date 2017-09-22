@@ -1,18 +1,3 @@
-<?php
-    require_once("tequila/tequila.php");
-    $oClient = new TequilaClient();
-    $oClient->SetApplicationName('Formulaire apprentissage');
-    $oClient->SetWantedAttributes(array('uniqueid','firstname','name'));
-    $oClient->SetWishedAttributes(array('user'));
-    $oClient->SetAllowsFilter('categorie=epfl-guests');
-    $oClient->Authenticate();
-    $user = $oClient->getValue('user');
-    $firstname= $oClient->getValue('firstname');
-    $name= $oClient->getValue('name');
-    $sKey = $oClient->GetKey();
-
-    include('templates/isPostulationOpen.php');
-?>
 <!doctype html>
     <html lang="fr">
         <head>
