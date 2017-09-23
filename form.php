@@ -2,7 +2,9 @@
     <html lang="fr">
         <head>
             <title>Formulaire Apprentissage</title>
-            <?php include('templates/head.php'); ?>
+            <?php include('templates/head.php');
+            echo $_GET['id'];
+            ?>
         </head>
     <body>
         <div class="page-style">

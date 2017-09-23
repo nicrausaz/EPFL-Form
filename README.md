@@ -31,8 +31,3 @@
 
 [ ] Plus de compte guest ?
 > Remplacer le compte guest par la validation par email.
----
-
-[ ] DB ?
->
----
