@@ -1,10 +1,27 @@
 {
-    "applicants": [
-        {
-            "lieu": "Lausanne",
-            "job": "informaticien",
-            "mailApp": "nicolas.crausaz@epfl.ch",
-            "secret": "59c689696fa4fc0c49d55c3"
-        }
-    ]
+    "test": {
+        "lieu": "test",
+        "job": "test",
+        "mailApp": "test"
+    },
+    "59c6ba094492cc9c4607be3": {
+        "lieu": "Lausanne",
+        "job": "informaticien",
+        "mailApp": "nicolas.crausaz@epfl.ch"
+    },
+    "59c6ba1a777d18225097ff2": {
+        "lieu": "Lausanne",
+        "job": "informaticien",
+        "mailApp": "nicolas.crausaz@epfl.ch"
+    },
+    "59c6bb38c52c15125d0f2f4": {
+        "lieu": "Lausanne",
+        "job": "informaticien",
+        "mailApp": "nicolas.crausaz@epfl.ch"
+    },
+    "59c6bb732af2fbf0aed93a6": {
+        "lieu": "Lausanne",
+        "job": "informaticien",
+        "mailApp": "nicolas.crausaz@epfl.ch"
+    }
 }

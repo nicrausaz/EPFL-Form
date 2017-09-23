@@ -29,7 +29,7 @@
     $message .= createLink($infos);
     
     
-    createLink ($infos);
+    createLink($infos);
 
     if (mail($infos['mailApp'], 'Confirmation', $message, $headers)) {
         createTempFile($infos);
@@ -39,9 +39,19 @@
     }
 
     function createTempFile ($infos) {
-        $fp = fopen('confirm/tmp/confirm.json', 'w');
-        fwrite($fp, json_encode($infos, JSON_PRETTY_PRINT));
-        fclose($fp);
+        $data = json_decode(file_get_contents('./confirm/tmp/confirm.json'), true);
+        //the file must contain at least one !! TODO
+
+        $newItem = [$infos['secret'] => [
+            "lieu" => $infos['lieu'],
+            "job" => $infos['job'],
+            "mailApp" => $infos['mailApp']
+        ]];
+        // adding confirmation date may be usefull
+
+        $result = array_merge($data, $newItem);
+
+        file_put_contents('confirm/tmp/confirm.json', json_encode($result, JSON_PRETTY_PRINT));
     }
 
     function createLink ($infos) {

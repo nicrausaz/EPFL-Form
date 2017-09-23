@@ -4,7 +4,7 @@
 
         $applicantID = checkSecret($_GET['s']);
 
-        if ($applicantID !== "notfound") {
+        if ($applicantID != null) {
             echo generateFormURL($applicantID);
         }
         else {
@@ -17,17 +17,15 @@
 
     function checkSecret($secret) {
         $fileContent = json_decode(file_get_contents("./tmp/confirm.json"), true);
-        foreach ($fileContent['applicants'] as $applicant => $infos) {
-            if ($infos['secret'] === $secret) {
+
+        foreach ($fileContent as $applicant => $infos) {
+            if ($applicant === $secret) {
                 return $applicant;
-            }
-            else {
-                return "notfound";
             }
         }
     }
 
     function generateFormURL ($applicantID) {
-        return "http://epfl-form.local/form.php?id=". $applicantID;
+        return "http://epflform.local/form.php?id=". $applicantID;
     }
 ?>
