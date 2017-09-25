@@ -1,21 +1,12 @@
 <!doctype html>
     <html lang="fr">
         <head>
-            <title>Formulaire Apprentissage</title>
-            
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/head.php');
-            // -> helpers
-            
-                $fileContent = json_decode(file_get_contents("./confirm/tmp/confirm.json"), true);
-                $infos = getInfos($_GET['id'], $fileContent);
-
-                function getInfos($secret, $fileContent) {
-                    foreach ($fileContent as $applicant => $infos) {
-                        if ($applicant === $secret) {
-                            return $infos;
-                        }
-                    }
-                }
+            <title>Formulaire Apprentissage</title> 
+            <?php
+                include($_SERVER['DOCUMENT_ROOT'] . '/templates/head.php');
+                include($_SERVER['DOCUMENT_ROOT'] . '/helpers.php');
+                include($_SERVER['DOCUMENT_ROOT'] . '/configs/config.php');
+                $infos = getUserInfos($_GET['id']);
             ?>
         </head>
     <body>
@@ -25,11 +16,12 @@
         <form method ="post" action="cible.php" enctype="multipart/form-data">
             <fieldset>
                 <legend><span class="number">1</span> Apprentissage</legend>
-                <label for="job">Je suis intéressé par la formation de*: </label>
+                <label for="job">Je suis intéressé par la formation de: </label>
+                
+                <input type="text" name="job" value="<?php echo $LISTJOB[$infos['lieu']][$infos['job']];?>" readonly />
+                <input type="text" name="lieu" value="<?php echo $infos['lieu'];?>" readonly />
 
-                <input type="text" name="job" value="<?php echo $infos['job'];?>" readonly />
-
-                <select name ="job" id="jb" data-required>
+                <!-- <select name ="job" id="jb" data-required>
                     <option value="menu" <?php echo (!isset($_SESSION['postedForm']['job'])) ? "selected" : ''; ?> disabled>Choisir une formation...</option>
                     <option value="laborantinBiologie" <?php echo ($_SESSION['postedForm']['job'] == "laborantinBiologie") ? "selected" : ''; ?>>Laborantin-e CFC; option biologie</option>
                     <option value="laborantinChimie" <?php echo ($_SESSION['postedForm']['job'] == "laborantinChimie") ? "selected" : ''; ?>>Laborantin-e CFC; option chimie</option>
@@ -42,13 +34,16 @@
                     <option value="gardienAnimaux" <?php echo ($_SESSION['postedForm']['job'] == "gardienAnimaux") ? "selected" : ''; ?>>Gardien-ne d'animaux CFC</option>
                     <option value="electronicien" <?php echo ($_SESSION['postedForm']['job'] == "electronicien") ? "selected" : ''; ?>>Electronicien-ne CFC</option>
                     <option value="interactiveMediaDesigner" <?php echo ($_SESSION['postedForm']['job'] == "interactiveMediaDesigner") ? "selected" : ''; ?>>Interactive Media Designer CFC</option>
-                </select>
+                </select> -->
             </fieldset>
-            <div id="all" style="display: none;">
+            <div id="all">
                 <fieldset>
-                    <div id="infoOnly">
-                        <?php include($_SERVER['DOCUMENT_ROOT'] . 'templates/filieresinfos.php') ?>
-                    </div>
+                    <?php
+                        if ($infos['job'] == 'informaticien') {
+                            include($_SERVER['DOCUMENT_ROOT'] . '/templates/filieresinfos.php');
+                        }
+                    ?>
+
                     <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
                     <dl class="radio-list-left">
                         <dd>
@@ -76,7 +71,7 @@
                             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" <?php echo $_SESSION['postedForm']['NPAApp'] != '' ? $_SESSION['postedForm']['NPAApp'] : ''; ?>  minlength="2" maxlength="40" data-required/>
                             <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" <?php echo $_SESSION['postedForm']['telApp'] != '' ? $_SESSION['postedForm']['telApp'] : ''; ?> minlength="2"  maxlength="20" data-required/>
                             <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" <?php echo $_SESSION['postedForm']['phoneApp'] != '' ? $_SESSION['postedForm']['phoneApp'] : ''; ?> minlength="2" maxlength="20" data-required/>
-                            <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;?>" readonly />
+                            <input type="email" name="mailApp" id="mailApp" value="<?php echo $infos['mailApp'];?>" readonly />
                             <input type="text" name="birthApp" id="birthApp" placeholder="Date de naissance*" <?php echo $_SESSION['postedForm']['birthApp'] != '' ? $_SESSION['postedForm']['birthApp'] : ''; ?> data-required />
                             <section id="errorMsg"></section>
                             <input type="text" name="originApp" placeholder="Lieu d'origine *" <?php echo $_SESSION['postedForm']['originApp'] != '' ? $_SESSION['postedForm']['originApp'] : ''; ?> minlength="2" maxlength="35" data-required />
@@ -284,28 +279,34 @@
                             <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                                 Ajouter un annexe
                             </button>
-                            <div id="polyOnly">
-                                <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label>
-                                <div class="tooltip">
-                                    <label class="file" title="" id="gimchLabel" >
-                                        <input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)"/>
-                                    </label>
-                                    <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
-                                    <p></p>
-                                    <section id="formatErrorZone5"></section>
+                            <?php if ($infos['job'] == 'informaticien') { ?>
+                                <div id="griTest">
+                                    <label for="griTestInput">Attestation de tests d'aptitudes GRI (informaticien):</label>
+                                    <div class="tooltip">
+                                        <label class="file" title="" id="griTestInputLabel" >
+                                            <input type="file" name="griTestInput" id="griTestInput" onchange="changeTitleFile(this)"/>
+                                        </label>
+                                        <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                                        <p></p>
+                                        <section id="formatErrorZone6"></section>
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="griTest">
-                                <label for="griTestInput">Attestation de tests d'aptitudes GRI (informaticien):</label>
-                                <div class="tooltip">
-                                    <label class="file" title="" id="griTestInputLabel" >
-                                        <input type="file" name="griTestInput" id="griTestInput" onchange="changeTitleFile(this)"/>
-                                    </label>
-                                    <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
-                                    <p></p>
-                                    <section id="formatErrorZone6"></section>
+                            <?php } ?>
+
+                            <?php if ($infos['job'] == 'polyMecanicien') { ?>
+                                <div id="polyOnly">
+                                    <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label>
+                                    <div class="tooltip">
+                                        <label class="file" title="" id="gimchLabel" >
+                                            <input type="file" name="gimch" id="gimch" onchange="changeTitleFile(this)"/>
+                                        </label>
+                                        <span class="tooltiptext tooltip-right">Formats autorisés: pdf-jpg-jpeg-png</span>
+                                        <p></p>
+                                        <section id="formatErrorZone5"></section>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php } ?>
+
                         </fieldset>
                         <fieldset>
                             <div id="condDiv">
@@ -323,7 +324,7 @@
             if ($_SESSION['formError']) {
                 echo '<script>showOnFormReturn();</script>';
             }
-            //require_once('templates/footer.php');
+            require_once($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php');
         ?>
     </body>
 </html>
