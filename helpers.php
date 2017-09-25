@@ -4,7 +4,7 @@ function mailToResp($surname, $name, $job){
     mail($to, $subject, $message, $headers);
 }
 
-//vire les accents et remplace caractere non alphanumeric par '-'
+// vire les accents et remplace caractere non alphanumeric par '-'
 function checkChars($toCheck){
     $toCheck = strtr($toCheck,
     'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
@@ -23,7 +23,7 @@ function uploadFile(&$candidateData, $pathAnnexes, $file, $name){
     $validExt = ['.pdf', '.jpeg', '.png', '.jpg'];
     $filename = $name . $extension;
     
-    //-> dataValidator
+    //-> move this to dataValidator
     if(!in_array($extension, $validExt)){
         $erreur = "uploadError";
     }
@@ -35,7 +35,7 @@ function uploadFile(&$candidateData, $pathAnnexes, $file, $name){
     }
 }
 
-//Crée le dossier principal est ses 2 sous-dossiers
+// Crée le dossier principal est ses 2 sous-dossiers
 function createCandidateFolders($candidateData){
     $paths = $candidateData->getPaths();
     if (!mkdir($paths["pathInfos"], 0777, true)){

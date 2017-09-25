@@ -1,6 +1,6 @@
 <?php
 $isOpen = true;
 if(!$isOpen){
-    header("Location: ./denied.php");
+    header("Location: ./views/denied.php");
 }
 ?>

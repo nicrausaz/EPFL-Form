@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="fr">
     <head>  
-        <?php include('templates/head.php');
-            include('templates/isPostulationOpen.php');
+        <?php 
+            include($_SERVER['DOCUMENT_ROOT'] . '/templates/head.php');
+            include($_SERVER['DOCUMENT_ROOT'] . 'templates/isPostulationOpen.php');
         ?>
         <title>Conditions</title>
     </head>

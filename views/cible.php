@@ -2,18 +2,18 @@
 <html lang="fr">
     <head>
          <?php
-            include("templates/head.php");
-            include('templates/isPostulationOpen.php');
-            require_once("helpers.php");
-            require_once("models/PersonnalData.php");
-            require_once("models/PersonnalDataValidator.php");
+            include($_SERVER['DOCUMENT_ROOT'] ."templates/head.php");
+            include($_SERVER['DOCUMENT_ROOT'] .'templates/isPostulationOpen.php');
+            require_once($_SERVER['DOCUMENT_ROOT'] ."helpers.php");
+            require_once($_SERVER['DOCUMENT_ROOT'] ."models/PersonnalData.php");
+            require_once($_SERVER['DOCUMENT_ROOT'] ."models/PersonnalDataValidator.php");
          ?>
          <title>Confirmation</title>
     </head>
     <body>
     <div class="page-style">
         <?php
-            include('templates/header.php');
+            include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
             //Init personnalData with postedData
             $candidateData = new PersonnalData($_POST);
             debuglog("personnalData initiallised");
@@ -36,13 +36,13 @@
                 // kill session
                 $_SESSION['formError'] = false;
                 //unset($_SESSION['postedForm']);
-                include("templates/confirmationText.php");
+                include($_SERVER['DOCUMENT_ROOT'] . "templates/confirmationText.php");
             }else{
                 $_SESSION['formError'] = true;
                 $_SESSION['postedForm'] = $_POST;
                 $_SESSION['files'] = $_FILES;
                 debuglog("!validator->isValid");
-                include("templates/errorText.php");
+                include($_SERVER['DOCUMENT_ROOT'] . "/templates/errorText.php");
             }
         ?>
         </div>

@@ -2,18 +2,32 @@
     <html lang="fr">
         <head>
             <title>Formulaire Apprentissage</title>
-            <?php include('templates/head.php');
-            echo $_GET['id'];
+            
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/head.php');
+            // -> helpers
+            
+                $fileContent = json_decode(file_get_contents("./confirm/tmp/confirm.json"), true);
+                $infos = getInfos($_GET['id'], $fileContent);
+
+                function getInfos($secret, $fileContent) {
+                    foreach ($fileContent as $applicant => $infos) {
+                        if ($applicant === $secret) {
+                            return $infos;
+                        }
+                    }
+                }
             ?>
         </head>
     <body>
         <div class="page-style">
-        <?php include('templates/header.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php') ?>
         <p class="paracenter">Les champs notés d'un astérisque* doivent être obligatoirement remplis.</p>
         <form method ="post" action="cible.php" enctype="multipart/form-data">
             <fieldset>
                 <legend><span class="number">1</span> Apprentissage</legend>
                 <label for="job">Je suis intéressé par la formation de*: </label>
+
+                <input type="text" name="job" value="<?php echo $infos['job'];?>" readonly />
 
                 <select name ="job" id="jb" data-required>
                     <option value="menu" <?php echo (!isset($_SESSION['postedForm']['job'])) ? "selected" : ''; ?> disabled>Choisir une formation...</option>
@@ -33,7 +47,7 @@
             <div id="all" style="display: none;">
                 <fieldset>
                     <div id="infoOnly">
-                        <?php include('templates/filieresinfos.php') ?>
+                        <?php include($_SERVER['DOCUMENT_ROOT'] . 'templates/filieresinfos.php') ?>
                     </div>
                     <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
                     <dl class="radio-list-left">

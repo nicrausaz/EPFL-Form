@@ -3,13 +3,13 @@
     <head>
         <title>Accueil</title>
         <?php 
-            include('templates/head.php');
-            include('templates/isPostulationOpen.php');
+            include($_SERVER['DOCUMENT_ROOT'] . '/templates/head.php');
+            include($_SERVER['DOCUMENT_ROOT'] . '/templates/isPostulationOpen.php');
         ?>
     </head>
     <body>
     <div class="page-style">
-        <?php include('templates/header.php');?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] .'/templates/header.php');?>
         <form method ="post" action="mailConfirm.php" enctype="multipart/form-data">
 
             <p class="paracenter">Veuillez entrer les informations suivantes</p>

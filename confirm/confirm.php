@@ -1,11 +1,11 @@
-
 <?php
     if ($_GET['s']) {
 
         $applicantID = checkSecret($_GET['s']);
 
         if ($applicantID != null) {
-            echo generateFormURL($applicantID);
+            $url = generateFormURL($applicantID);
+            header("Location: $url");
         }
         else {
             echo "wrong"; // error: Bad secret, not valid
@@ -26,6 +26,6 @@
     }
 
     function generateFormURL ($applicantID) {
-        return "http://epflform.local/form.php?id=". $applicantID;
+        return "http://epflform.local/views/form.php?id=". $applicantID;
     }
 ?>

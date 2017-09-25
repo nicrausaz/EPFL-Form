@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="fr">
     <head>
-        <?php include('templates/head.php') ?>
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/head.php'); ?>
         <title>Accès Refusé</title>
     </head>
     <body style="text-align: center">
         <div class="page-style">
-            <?php include('templates/header.php');?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] .'/templates/header.php');?>
 
             <h1 style="color:red">Accès Refusé</h1>
             <p>La période des postulations n'a pas démarré.</p>

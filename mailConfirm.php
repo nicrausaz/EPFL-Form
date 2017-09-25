@@ -1,5 +1,5 @@
 <?php
-    require_once("./config.php");
+    require_once($_SERVER['DOCUMENT_ROOT'] . "/configs/config.php");
 
     $infos = $_POST;
 
@@ -45,9 +45,9 @@
         $newItem = [$infos['secret'] => [
             "lieu" => $infos['lieu'],
             "job" => $infos['job'],
-            "mailApp" => $infos['mailApp']
+            "mailApp" => $infos['mailApp'],
+            "date" => date("d.m.Y")
         ]];
-        // adding confirmation date may be usefull
 
         $result = array_merge($data, $newItem);
 
