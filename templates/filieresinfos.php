@@ -15,7 +15,7 @@
         <label for="fill3">Technique des systèmes</label>
     </dd>
     <dd>
-    <input type="radio" name="filInfo" id="fill4" value="neSaisPas" <?php echo (!isset($_SESSION['postedForm']['filInfo']) || $_SESSION['postedForm']['mpt'] == "neSaisPas") ? "checked=\"checked\"" : ''; ?> />
+    <input type="radio" name="filInfo" id="fill4" value="neSaisPas" <?php echo (!isset($_SESSION['postedForm']['filInfo']) || $_SESSION['postedForm']['filInfo'] == "neSaisPas") ? "checked=\"checked\"" : ''; ?> />
     <label for="fill4">Je ne sais pas</label>
     </dd>
     </dl>

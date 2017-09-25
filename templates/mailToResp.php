@@ -1,7 +1,7 @@
 <?php
 if( count(get_included_files()) == 1 ) exit("Direct access not permitted.");
 
-$to = ''; // formation.apprentis@epfl.ch
+$to = 'nicolas.crausaz@epfl.ch'; // formation.apprentis@epfl.ch
 $subject = 'Nouvelle Candidature';
 
 $message = "Candidat: ".$surname." ".$name."\n\n".

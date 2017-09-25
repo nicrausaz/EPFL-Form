@@ -1,7 +1,7 @@
 <!doctype html>
     <html lang="fr">
         <head>
-            <title>Formulaire Apprentissage</title> 
+            <title>Formulaire Apprentissage</title>
             <?php
                 include($_SERVER['DOCUMENT_ROOT'] . '/templates/head.php');
                 include($_SERVER['DOCUMENT_ROOT'] . '/helpers.php');
@@ -12,29 +12,14 @@
     <body>
         <div class="page-style">
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php') ?>
-        <p class="paracenter">Les champs notés d'un astérisque* doivent être obligatoirement remplis.</p>
+        <p class="paracenter">Les champs notés d'un astérisque* doivent obligatoirement être remplis.</p>
         <form method ="post" action="cible.php" enctype="multipart/form-data">
             <fieldset>
                 <legend><span class="number">1</span> Apprentissage</legend>
-                <label for="job">Je suis intéressé par la formation de: </label>
-                
-                <input type="text" name="job" value="<?php echo $LISTJOB[$infos['lieu']][$infos['job']];?>" readonly />
-                <input type="text" name="lieu" value="<?php echo $infos['lieu'];?>" readonly />
+                <label for="job">Je suis intéressé par la formation de: <?php echo $LISTJOB[$infos['lieu']][$infos['job']];?> à <?php echo $infos['lieu'];?></label>
 
-                <!-- <select name ="job" id="jb" data-required>
-                    <option value="menu" <?php echo (!isset($_SESSION['postedForm']['job'])) ? "selected" : ''; ?> disabled>Choisir une formation...</option>
-                    <option value="laborantinBiologie" <?php echo ($_SESSION['postedForm']['job'] == "laborantinBiologie") ? "selected" : ''; ?>>Laborantin-e CFC; option biologie</option>
-                    <option value="laborantinChimie" <?php echo ($_SESSION['postedForm']['job'] == "laborantinChimie") ? "selected" : ''; ?>>Laborantin-e CFC; option chimie</option>
-                    <option value="laborantinPhysique" <?php echo ($_SESSION['postedForm']['job'] == "laborantinPhysique") ? "selected" : ''; ?>>Laborantin-e CFC; option physique</option>
-                    <option value="polyMecanicien" <?php echo ($_SESSION['postedForm']['job'] == "polyMecanicien") ? "selected" : ''; ?>>Polymécanicien-ne CFC</option>
-                    <option value="informaticien" <?php echo ($_SESSION['postedForm']['job'] == "informaticien") ? "selected" : ''; ?>>Informaticien-ne CFC</option>
-                    <option value="logisticien" <?php echo ($_SESSION['postedForm']['job'] == "logisticien") ? "selected" : ''; ?>>Logisticien-ne CFC</option>
-                    <option value="planificateurElectricien" <?php echo ($_SESSION['postedForm']['job'] == "planificateurElectricien") ? "selected" : ''; ?>>Planificateur-trice éléctricien-ne CFC</option>
-                    <option value="employeCommerce" <?php echo ($_SESSION['postedForm']['job'] == "employeCommerce") ? "selected" : ''; ?>>Employé-e de commerce CFC</option>
-                    <option value="gardienAnimaux" <?php echo ($_SESSION['postedForm']['job'] == "gardienAnimaux") ? "selected" : ''; ?>>Gardien-ne d'animaux CFC</option>
-                    <option value="electronicien" <?php echo ($_SESSION['postedForm']['job'] == "electronicien") ? "selected" : ''; ?>>Electronicien-ne CFC</option>
-                    <option value="interactiveMediaDesigner" <?php echo ($_SESSION['postedForm']['job'] == "interactiveMediaDesigner") ? "selected" : ''; ?>>Interactive Media Designer CFC</option>
-                </select> -->
+                <input type="text" name="job" value="<?php echo $infos['job'] ?>" readonly hidden/>
+                <input type="text" name="lieu" value="<?php echo $infos['lieu'];?>" readonly hidden/>
             </fieldset>
             <div id="all">
                 <fieldset>
@@ -150,7 +135,7 @@
                                     <td><input type="text" name="anneesEcole<?php echo $i ?>" placeholder="de-à (années)" value ="<?php echo $_SESSION['postedForm']['anneesEcole'.$i] ?>"></td>
                                 </tr>
                                 <?php }} ?>
-                                
+
                             </table>
                             <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité*" <?php echo $_SESSION['postedForm']['anneeFin'] != '' ? $_SESSION['postedForm']['anneeFin'] : ''; ?> maxlength="4" data-required/>
                             <section id="anneeFinError"></section>
