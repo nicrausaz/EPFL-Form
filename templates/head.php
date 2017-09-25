@@ -1,3 +1,4 @@
+<?php if( count(get_included_files()) == 1 ) exit("Direct access not permitted."); ?>
 <meta charset="UTF-8"/>
 <link rel="icon" type="image/png" href="/img/favicon.png" />
 <meta name="description" content="Formulaire candidature apprentissage EPFL" />

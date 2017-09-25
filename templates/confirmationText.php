@@ -1,3 +1,4 @@
+<?php if( count(get_included_files()) == 1 ) exit("Direct access not permitted."); ?>
 <h1><?php echo $candidateData->prenomApprenti," ", $candidateData->nomApprenti,"," ?></h1>
 <h4>Votre demande à bien été enregistrée, vous allez bientôt recevoir un e-mail confirmant votre postulation.</h4>
 <footer>

@@ -170,10 +170,6 @@ function initDatepicker() {
     $("#birthApp").datepicker({ minDate: '-60y', maxDate: '-13y', dateFormat: "dd/mm/yy" });
 }
 
-function showOnFormReturn() {
-    var selectedFormation = $("#jb option:selected")[0].value;
-    showPolyAndInfoDivs(selectedFormation);
-}
 function showPolyAndInfoDivs(selectedFormation) {
     $("#all").show(1000);
     selectedFormation == "informaticien" ? $("#infoOnly").show(1000) : $("#infoOnly").hide(500);

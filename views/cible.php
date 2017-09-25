@@ -2,11 +2,11 @@
 <html lang="fr">
     <head>
          <?php
-            include($_SERVER['DOCUMENT_ROOT'] ."templates/head.php");
-            include($_SERVER['DOCUMENT_ROOT'] .'templates/isPostulationOpen.php');
-            require_once($_SERVER['DOCUMENT_ROOT'] ."helpers.php");
-            require_once($_SERVER['DOCUMENT_ROOT'] ."models/PersonnalData.php");
-            require_once($_SERVER['DOCUMENT_ROOT'] ."models/PersonnalDataValidator.php");
+            include($_SERVER['DOCUMENT_ROOT'] ."/templates/head.php");
+            include($_SERVER['DOCUMENT_ROOT'] .'/templates/isPostulationOpen.php');
+            require_once($_SERVER['DOCUMENT_ROOT'] ."/helpers.php");
+            require_once($_SERVER['DOCUMENT_ROOT'] ."/models/PersonnalData.php");
+            require_once($_SERVER['DOCUMENT_ROOT'] ."/models/PersonnalDataValidator.php");
          ?>
          <title>Confirmation</title>
     </head>
@@ -36,7 +36,7 @@
                 // kill session
                 $_SESSION['formError'] = false;
                 //unset($_SESSION['postedForm']);
-                include($_SERVER['DOCUMENT_ROOT'] . "templates/confirmationText.php");
+                include($_SERVER['DOCUMENT_ROOT'] . "/templates/confirmationText.php");
             }else{
                 $_SESSION['formError'] = true;
                 $_SESSION['postedForm'] = $_POST;

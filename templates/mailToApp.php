@@ -1,4 +1,6 @@
 <?php
+if( count(get_included_files()) == 1 ) exit("Direct access not permitted.");
+
 $subject = 'Votre candidature pour une place d\'apprentissage';
 
 $message = "Nous venons d'enregistrer votre candidature et vous remercions de votre intérêt pour la "."\n".

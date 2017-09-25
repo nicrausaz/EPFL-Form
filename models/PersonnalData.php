@@ -1,4 +1,5 @@
 <?php
+if( count(get_included_files()) == 1 ) exit("Direct access not permitted.");
 require_once(__DIR__ . '/../helpers.php');
 
 class PersonnalData {
@@ -14,7 +15,7 @@ class PersonnalData {
     "interactiveMediaDesigner" => "InteractiveMediaDesigners"
     );
     private $dateNow;
-    private $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
+    private $rootpath = 'D:/data'; // \\\\scxdata\\apprentis$\\candidatures\\nouvelles\\
     public $formation = "";
     public $filiere = "";
     public $maturite = "false";

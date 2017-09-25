@@ -65,8 +65,8 @@
                                 <option value="Homme" <?php echo ($_SESSION['postedForm']['genreApp'] == "Homme") ? "selected" : ''; ?>>Homme</option>
                                 <option value="Femme" <?php echo ($_SESSION['postedForm']['genreApp'] == "Femme") ? "selected" : ''; ?>>Femme</option>
                             </select>
-                            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name;?>" readonly />
-                            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname;?>" readonly />
+                            <input type="text" name="nameApp" placeholder="Nom *" <?php echo $_SESSION['postedForm']['nameApp'] != '' ? $_SESSION['postedForm']['nameApp'] : ''; ?> minlength="2" maxlength="40" data-required/>
+                            <input type="text" name="surnameApp" placeholder="Prénom *"<?php echo $_SESSION['postedForm']['surnameApp'] != '' ? $_SESSION['postedForm']['surnameApp'] : ''; ?> minlength="2" maxlength="40" data-required />
                             <input type="text" name="adrApp" placeholder="Rue *" <?php echo $_SESSION['postedForm']['adrApp'] != '' ? $_SESSION['postedForm']['adrApp'] : ''; ?> minlength="2" maxlength="40" data-required/>
                             <input type="text" name="NPAApp" placeholder="NPA\Domicile *" <?php echo $_SESSION['postedForm']['NPAApp'] != '' ? $_SESSION['postedForm']['NPAApp'] : ''; ?>  minlength="2" maxlength="40" data-required/>
                             <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" <?php echo $_SESSION['postedForm']['telApp'] != '' ? $_SESSION['postedForm']['telApp'] : ''; ?> minlength="2"  maxlength="20" data-required/>
@@ -308,22 +308,12 @@
                             <?php } ?>
 
                         </fieldset>
-                        <fieldset>
-                            <div id="condDiv">
-                                <input type="checkbox" value="conditionsAcc" id="conditions" data-required/>
-                                <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions*</a></label>
-                                <p></p>
-                            </div>
-                        </fieldset>
                         <input type="submit" value="Terminer"/>
                     </div>
                 </fieldset>
             </div>
         </form>
         <?php
-            if ($_SESSION['formError']) {
-                echo '<script>showOnFormReturn();</script>';
-            }
             require_once($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php');
         ?>
     </body>

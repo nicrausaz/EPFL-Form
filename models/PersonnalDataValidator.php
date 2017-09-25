@@ -1,4 +1,5 @@
 <?php
+if( count(get_included_files()) == 1 ) exit("Direct access not permitted.");
 require_once('PersonnalData.php');
 require_once(__DIR__ . '/../helpers.php');
 

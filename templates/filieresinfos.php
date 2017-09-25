@@ -1,3 +1,4 @@
+<?php if( count(get_included_files()) == 1 ) exit("Direct access not permitted."); ?>
 <div id="infoOnly">
     <label for="filInfo">Filières informatiques:*</label>
     <dl class="radio-list-left" required>
