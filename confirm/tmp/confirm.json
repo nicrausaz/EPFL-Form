@@ -27,5 +27,11 @@
         "job": "informaticien",
         "mailApp": "nicolas.crausaz@epfl.ch",
         "date": "25.09.2017"
+    },
+    "59c8f7ec8648dcc422c05d3": {
+        "lieu": "Lausanne",
+        "job": null,
+        "mailApp": "nicolas.crausaz@epfl.ch",
+        "date": "25.09.2017"
     }
 }

@@ -11,6 +11,10 @@
         </head>
     <body>
         <div class="page-style">
+        <?php if (!$_GET) {
+            echo "error, wrong url";
+        }
+        ?>
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php') ?>
         <p class="paracenter">Les champs notés d'un astérisque* doivent obligatoirement être remplis.</p>
         <form method ="post" action="cible.php" enctype="multipart/form-data">
@@ -23,6 +27,7 @@
             </fieldset>
             <div id="all">
                 <fieldset>
+
                     <?php
                         if ($infos['job'] == 'informaticien') {
                             include($_SERVER['DOCUMENT_ROOT'] . '/templates/filieresinfos.php');
@@ -40,6 +45,7 @@
                             <label for="mpt2">Oui</label>
                         </dd>
                     </dl>
+
                 </fieldset>
                 <fieldset>
                     <legend><span class="number">2</span> Données </legend>

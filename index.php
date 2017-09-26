@@ -2,50 +2,55 @@
 <html lang="fr">
     <head>
         <title>Accueil</title>
-        <?php 
+        <?php
             include($_SERVER['DOCUMENT_ROOT'] . '/templates/head.php');
             include($_SERVER['DOCUMENT_ROOT'] . '/templates/isPostulationOpen.php');
+            require_once($_SERVER['DOCUMENT_ROOT'] . '/configs/config.php');
         ?>
     </head>
     <body>
     <div class="page-style">
         <?php include($_SERVER['DOCUMENT_ROOT'] .'/templates/header.php');?>
-        <form method ="post" action="mailConfirm.php" enctype="multipart/form-data">
+        <form method ="post" action="mailConfirm.php" enctype="multipart/form-data" id="baseForm">
 
             <p class="paracenter">Veuillez entrer les informations suivantes</p>
             <fieldset>
-
+                <div id="lieux">
                 <label for="lieu">Je désire effectuer ma formation à:</label><p>
-                <dl class="radio-list-left">
-                    <dd>
-                        <input type="radio" name="lieu" id="lieuLausanne" value="Lausanne" checked>
-                        <label for="lieuLausanne">EPFL Lausanne</label>
-                    </dd>
-                    <dd>
-                        <input type="radio" name="lieu" id="lieuSion" value="Sion">
-                        <label for="lieuSion">EPFL Valais Sion</label>
-                    </dd>
-                </dl>
+                    <dl class="radio-list-left">
+                        <dd>
+                            <input type="radio" name="lieu" id="lieuLausanne" value="Lausanne" checked>
+                            <label for="lieuLausanne">EPFL Lausanne</label>
+                        </dd>
+                        <dd>
+                            <input type="radio" name="lieu" id="lieuSion" value="Sion">
+                            <label for="lieuSion">EPFL Valais Sion</label>
+                        </dd>
+                    </dl>
+                </div>
 
-                <label for="job">Je suis intéressé par la formation de*: </label>
+                <label for="job">Je suis intéressé par la formation de: </label>
 
-                <select name ="job" id="jb" data-required>
+                <select name="job" id="jbLausanne" data-required>
                     <option value="menu" selected disabled>Choisir une formation...</option>
-                    <option value="laborantinBiologie">Laborantin-e CFC; option biologie</option>
-                    <option value="laborantinChimie">Laborantin-e CFC; option chimie</option>
-                    <option value="laborantinPhysique">Laborantin-e CFC; option physique</option>
-                    <option value="polyMecanicien">Polymécanicien-ne CFC</option>
-                    <option value="informaticien">Informaticien-ne CFC</option>
-                    <option value="logisticien">Logisticien-ne CFC</option>
-                    <option value="planificateurElectricien">Planificateur-trice éléctricien-ne CFC</option>
-                    <option value="employeCommerce">Employé-e de commerce CFC</option>
-                    <option value="gardienAnimaux">Gardien-ne d'animaux CFC</option>
-                    <option value="electronicien">Electronicien-ne CFC</option>
-                    <option value="interactiveMediaDesigner">Interactive Media Designer CFC</option>
+                    <?php
+                        foreach ($LISTJOB['Lausanne'] as $jobKey => $jobVal) {
+                            echo "<option value=".$jobKey.">$jobVal</option>";
+                        }
+                    ?>
                 </select>
 
-                <input type="email" name="mailApp" id="mailApp" placeholder="Adresse email"/>
 
+                <select name="job" id="jbSion" style="display: none;" data-required>
+                    <option value="menu" selected disabled>Choisir une formation...</option>
+                    <?php
+                        foreach ($LISTJOB['Sion'] as $jobKey => $jobVal) {
+                            echo "<option value=".$jobKey.">$jobVal</option>";
+                        }
+                    ?>
+                </select>
+
+                <input type="email" name="mailApp" id="mailApp" placeholder="Adresse email" data-required/>
             </fieldset>
 
             <input type="submit" value="Continuer"/>
@@ -53,3 +58,32 @@
     </div>
     </body>
 </html>
+
+<script>
+$(document).ready(function () {
+
+    $('#lieuLausanne').change(function () {
+
+        if ($('#lieuLausanne')[0].checked) {
+            $("#jbLausanne").show(0);
+            $("#jbSion").hide(0);
+        }
+        else if ($('#lieuSion')[0].checked) {
+            $("#jbSion").show(0);
+            $("#jbLausanne").hide(0);
+        }
+
+    })
+
+    $('#lieuSion').click(function () {
+        if ($('#lieuLausanne')[0].checked) {
+            $("#jbLausanne").show(0);
+            $("#jbSion").hide(0);
+        }
+        else if ($('#lieuSion')[0].checked) {
+            $("#jbSion").show(0);
+            $("#jbLausanne").hide(0);
+        }
+    })
+})
+</script>

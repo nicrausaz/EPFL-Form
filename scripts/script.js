@@ -1,5 +1,7 @@
 $(document).ready(function () {
     initButtonsAction();
+    checkRequired();
+
     if (location.pathname.split("/").slice(-1)[0] == "form.php") {
         initButtonsAction();
         initAddChildButtons();
@@ -7,7 +9,6 @@ $(document).ready(function () {
         initDateChecker();
         initDatepicker();
         clearFiles();
-        checkRequired();
     }
 });
 
@@ -80,18 +81,11 @@ function checkYearDate(toCheckValue, errorZone, coefficiantYear) {
 }
 
 function initButtonsAction() {
-    $('#createAc').click(function () {
-        window.open("https://guests.epfl.ch/selfaddform", '_blank');
-    });
-    $('#connectB').click(function () {
-        document.location.href = "form.php";
-    });
     $('#infoFilieres').click(function () {
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
     $('#retourHome').click(function () {
         document.location.href = "http://apprentis.epfl.ch/";
-        logOutTequila();
     });
     $('#retourFormulaire').click(function () {
         history.go(-1);
