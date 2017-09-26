@@ -10,7 +10,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/i18n/jquery-ui-i18n.min.js"></script>
 <script src="/style/material.js"></script>
-<script src="../scripts/script.js"></script>
+<!-- <script src="../scripts/script.js"></script> -->
 <noscript>Veuillez Activer JavaScript pour utiliser le service de postulation</noscript>
 <?php
       ini_set("display_errors",1);

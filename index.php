@@ -7,6 +7,7 @@
             include($_SERVER['DOCUMENT_ROOT'] . '/templates/isPostulationOpen.php');
             require_once($_SERVER['DOCUMENT_ROOT'] . '/configs/config.php');
         ?>
+        <script src="/scripts/script_index.js"></script>
     </head>
     <body>
     <div class="page-style">
@@ -50,7 +51,7 @@
                     ?>
                 </select>
 
-                <input type="email" name="mailApp" id="mailApp" placeholder="Adresse email" data-required/>
+                <input type="email" name="mailApp" id="mailApp" placeholder="Adresse email"/>
             </fieldset>
 
             <input type="submit" value="Continuer"/>
@@ -60,30 +61,5 @@
 </html>
 
 <script>
-$(document).ready(function () {
 
-    $('#lieuLausanne').change(function () {
-
-        if ($('#lieuLausanne')[0].checked) {
-            $("#jbLausanne").show(0);
-            $("#jbSion").hide(0);
-        }
-        else if ($('#lieuSion')[0].checked) {
-            $("#jbSion").show(0);
-            $("#jbLausanne").hide(0);
-        }
-
-    })
-
-    $('#lieuSion').click(function () {
-        if ($('#lieuLausanne')[0].checked) {
-            $("#jbLausanne").show(0);
-            $("#jbSion").hide(0);
-        }
-        else if ($('#lieuSion')[0].checked) {
-            $("#jbSion").show(0);
-            $("#jbLausanne").hide(0);
-        }
-    })
-})
 </script>
