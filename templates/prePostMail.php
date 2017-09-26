@@ -14,7 +14,7 @@ if( count(get_included_files()) == 1 ) exit("Direct access not permitted.");
     * Copie des bulletins scolaires des 3-4 derniers semestres \n
     * Copies des certificats, diplômes obtenus, attestations de stages \n
     * Copie carte d'identité \n
-    * Photo passeport couleur \n"; 
+    * Photo passeport couleur \n";
 
     if ($infos['job'] === 'polyMecanicien') {
     $message.= "  * Pour les apprentissages de polymécanicien-ne, une attestation de test d'aptitudes GIM-CH est recommandée \n";

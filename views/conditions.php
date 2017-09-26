@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr">
-    <head>  
-        <?php 
+    <head>
+        <?php
             include($_SERVER['DOCUMENT_ROOT'] . '/templates/head.php');
             include($_SERVER['DOCUMENT_ROOT'] . 'templates/isPostulationOpen.php');
         ?>
@@ -22,7 +22,7 @@
             <li>Pour les apprentissages de polymécanicien-ne, une attestation de test d'aptitudes GIM-CH est <strong>recommandée</strong></li>
             <li>Pour les apprentissages d'informaticien, une attestation de test d'aptitudes GRI est <strong>recommandée</strong></li>
         </ul>
-        
+
         <legend><h3>Renseignements</h3></legend>
         <table>
             <tr>

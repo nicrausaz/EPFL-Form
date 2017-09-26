@@ -4,51 +4,33 @@
         "job": "test",
         "mailApp": "test"
     },
-    "59c8a61a8e4cd6a95c717c6": {
-        "lieu": "Lausanne",
-        "job": "electronicien",
-        "mailApp": "nicolas.crausaz@epfl.ch",
-        "date": "25.09.2017"
-    },
-    "59c8bd9851d52e542d7c851": {
-        "lieu": "Lausanne",
-        "job": "informaticien",
-        "mailApp": "nicolas.crausaz@epfl.ch",
-        "date": "25.09.2017"
-    },
-    "59c8be07f296947fcd8f5f7": {
-        "lieu": "Lausanne",
-        "job": "informaticien",
-        "mailApp": "nicolas.crausaz@epfl.ch",
-        "date": "25.09.2017"
-    },
-    "59c8c88dab4b25ff3299fbc": {
-        "lieu": "Lausanne",
-        "job": "informaticien",
-        "mailApp": "nicolas.crausaz@epfl.ch",
-        "date": "25.09.2017"
-    },
-    "59c8f7ec8648dcc422c05d3": {
-        "lieu": "Lausanne",
-        "job": null,
-        "mailApp": "nicolas.crausaz@epfl.ch",
-        "date": "25.09.2017"
-    },
-    "59ca01587f97204eb152b9e": {
-        "lieu": "Lausanne",
-        "job": "planificateurElectricien",
-        "mailApp": "nicolas.crausaz@epfl.ch",
-        "date": "26.09.2017"
-    },
-    "59ca02bace677e8d5ac4b3c": {
-        "lieu": "Lausanne",
-        "job": "logisticien",
-        "mailApp": "n.crausaz99@gmail.com",
-        "date": "26.09.2017"
-    },
-    "59ca176a448d2ebd4971e4b": {
+    "59ca182492508c7c15659e7": {
         "lieu": "Sion",
         "job": "polyMecanicien",
+        "mailApp": "nicolas.crausaz@epfl.ch",
+        "date": "26.09.2017"
+    },
+    "59ca19f464ec6dc1b3220c6": {
+        "lieu": "Sion",
+        "job": "polyMecanicien",
+        "mailApp": "nicolas.crausaz@epfl.ch",
+        "date": "26.09.2017"
+    },
+    "59ca1a4486b523a2c19576c": {
+        "lieu": "Sion",
+        "job": "polyMecanicien",
+        "mailApp": "nicolas.crausaz@epfl.ch",
+        "date": "26.09.2017"
+    },
+    "59ca1a50b1a49e3a420396c": {
+        "lieu": "Sion",
+        "job": "polyMecanicien",
+        "mailApp": "nicolas.crausaz@epfl.ch",
+        "date": "26.09.2017"
+    },
+    "59ca1f0f4931c861e136bee": {
+        "lieu": "Lausanne",
+        "job": "planificateurElectricien",
         "mailApp": "nicolas.crausaz@epfl.ch",
         "date": "26.09.2017"
     }

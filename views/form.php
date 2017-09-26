@@ -20,7 +20,7 @@
         <form method ="post" action="cible.php" enctype="multipart/form-data">
             <fieldset>
                 <legend><span class="number">1</span> Apprentissage</legend>
-                <label for="job">Je suis intéressé par la formation de: <?php echo $LISTJOB[$infos['lieu']][$infos['job']];?> à <?php echo $infos['lieu'];?></label>
+                <label for="job">Je suis intéressé par la formation de: <strong><?php echo $LISTJOB[$infos['lieu']][$infos['job']];?> à <?php echo $infos['lieu'];?></strong></label>
 
                 <input type="text" name="job" value="<?php echo $infos['job'] ?>" readonly hidden/>
                 <input type="text" name="lieu" value="<?php echo $infos['lieu'];?>" readonly hidden/>
