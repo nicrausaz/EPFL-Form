@@ -12,11 +12,22 @@
         <?php include('templates/header.php');?>
 
         <p class="paracenter">Veuillez suivre les indications suivantes</p>
+        <p>Afin de compléter le processus de postulation, il est nécessaire de vous munir des documents suivants au format PDF, PNG, JPEG ou JPG:</p>
         <ul>
-            <li>Créer un compte pour personnes externes (et valider par email)</li>
-            <li>Se connecter avec le compte précédemment créé</li>
-            <li>Lorsque la connexion sera effectuée, vous serez redirigé-e vers le formulaire de candidature</li>
+            <li>Lettre de motivation</li>
+            <li>Curriculum Vitae avec indication des références</li>
+            <li>Copie des bulletins scolaires des 3-4 derniers semestres</li>
+            <li>Copies des certificats, diplômes obtenus, attestations de stages</li>
+            <li>Copie carte d'identité</li>
+            <li>Photo passeport couleur</li>
+            <li>Si informaticien, le certificat d’aptitude GRI est <strong>recommandé</strong></li>
+            <li>Si polymécanicien, le certificat d’aptitude GIM-CH est <strong>recommandé</strong></li>
         </ul>
+        Veuillez également prévoir une vingtaine de minutes pour compléter le formulaire.
+
+        <p>Pour débuter, créer un compte en cliquand sur le bouton, confirmez ensuite votre adresse via l’email reçu.</p>
+        <p>Une fois votre compte créé et validé, cliquez sur le bouton "Se connecter"</p>
+
         <button id="createAc" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonIndexStyle">
             Créer un compte
         </button>
