@@ -154,7 +154,7 @@
                                     <td><input type="text" name="anneesEcole<?php echo $i ?>" placeholder="de-à (années)" value ="<?php echo $_SESSION['postedForm']['anneesEcole'.$i] ?>"></td>
                                 </tr>
                                 <?php }} ?>
-                                
+
                             </table>
                             <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité*" <?php echo $_SESSION['postedForm']['anneeFin'] != '' ? $_SESSION['postedForm']['anneeFin'] : ''; ?> maxlength="4" data-required/>
                             <section id="anneeFinError"></section>
