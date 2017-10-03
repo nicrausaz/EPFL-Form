@@ -14,8 +14,9 @@ class PersonnalData {
     "interactiveMediaDesigner" => "InteractiveMediaDesigners"
     );
     private $dateNow;
-    private $rootpath = '\\\\scxdata\\apprentis$\\candidatures\\nouvelles\\';
+    private $rootpath = 'D:/Data/'; // \\\\scxdata\\apprentis$\\candidatures\\nouvelles\\
     public $formation = "";
+    public $lieu = "";
     public $filiere = "";
     public $maturite = "false";
     public $genreApprenti = "";
@@ -42,12 +43,13 @@ class PersonnalData {
     public $anneeCandidature = "";
     public $datePostulation = "";
     public $fichiers = [];
-    
+
     public function __construct($postedData){
         $this->dateNow = date('Y-m-d_H-i-s');
         //Rempli les infos
         $this->postedData = $postedData;
         $this->formation = $postedData['job'];
+        $this->lieu = $postedData['lieu'];
         if($this->formation =="informaticien"){
             $this->filiere = $postedData['filInfo'];
         }
@@ -123,7 +125,7 @@ class PersonnalData {
             $this->connaissancesLinguistiques = [];
         }
     }
-    
+
     public function getPaths(){
         $folderName = $this->dateNow."_".$this->mailApprenti;
         $path = $this->rootpath.$this->formations[$this->formation].'/'.$folderName.'/';

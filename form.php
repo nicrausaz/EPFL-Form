@@ -12,6 +12,7 @@
     $sKey = $oClient->GetKey();
 
     include('templates/isPostulationOpen.php');
+    require_once('configs/config.php');
 ?>
 <!doctype html>
     <html lang="fr">
@@ -26,21 +27,38 @@
         <form method ="post" action="cible.php" enctype="multipart/form-data">
             <fieldset>
                 <legend><span class="number">1</span> Apprentissage</legend>
-                <label for="job">Je suis intéressé par la formation de*: </label>
 
-                <select name ="job" id="jb" data-required>
-                    <option value="menu" <?php echo (!isset($_SESSION['postedForm']['job'])) ? "selected" : ''; ?> disabled>Choisir une formation...</option>
-                    <option value="laborantinBiologie" <?php echo ($_SESSION['postedForm']['job'] == "laborantinBiologie") ? "selected" : ''; ?>>Laborantin-e CFC; option biologie</option>
-                    <option value="laborantinChimie" <?php echo ($_SESSION['postedForm']['job'] == "laborantinChimie") ? "selected" : ''; ?>>Laborantin-e CFC; option chimie</option>
-                    <option value="laborantinPhysique" <?php echo ($_SESSION['postedForm']['job'] == "laborantinPhysique") ? "selected" : ''; ?>>Laborantin-e CFC; option physique</option>
-                    <option value="polyMecanicien" <?php echo ($_SESSION['postedForm']['job'] == "polyMecanicien") ? "selected" : ''; ?>>Polymécanicien-ne CFC</option>
-                    <option value="informaticien" <?php echo ($_SESSION['postedForm']['job'] == "informaticien") ? "selected" : ''; ?>>Informaticien-ne CFC</option>
-                    <option value="logisticien" <?php echo ($_SESSION['postedForm']['job'] == "logisticien") ? "selected" : ''; ?>>Logisticien-ne CFC</option>
-                    <option value="planificateurElectricien" <?php echo ($_SESSION['postedForm']['job'] == "planificateurElectricien") ? "selected" : ''; ?>>Planificateur-trice éléctricien-ne CFC</option>
-                    <option value="employeCommerce" <?php echo ($_SESSION['postedForm']['job'] == "employeCommerce") ? "selected" : ''; ?>>Employé-e de commerce CFC</option>
-                    <option value="gardienAnimaux" <?php echo ($_SESSION['postedForm']['job'] == "gardienAnimaux") ? "selected" : ''; ?>>Gardien-ne d'animaux CFC</option>
-                    <option value="electronicien" <?php echo ($_SESSION['postedForm']['job'] == "electronicien") ? "selected" : ''; ?>>Electronicien-ne CFC</option>
-                    <option value="interactiveMediaDesigner" <?php echo ($_SESSION['postedForm']['job'] == "interactiveMediaDesigner") ? "selected" : ''; ?>>Interactive Media Designer CFC</option>
+                <div id="lieux">
+                <label for="lieu">Je désire effectuer ma formation à:</label><p>
+                    <dl class="radio-list-left">
+                        <dd>
+                            <input type="radio" name="lieu" id="lieuLausanne" value="Lausanne" <?php echo (!isset($_SESSION['postedForm']['lieu']) || $_SESSION['postedForm']['lieu'] == "Lausanne") ? "checked=\"checked\"" : ''; ?>>
+                            <label for="lieuLausanne">EPFL Lausanne</label>
+                        </dd>
+                        <dd>
+                            <input type="radio" name="lieu" id="lieuSion" value="Sion"  <?php echo ($_SESSION['postedForm']['lieu'] == "Sion") ? "checked=\"checked\"" : ''; ?>>
+                            <label for="lieuSion">EPFL Valais Sion</label>
+                        </dd>
+                    </dl>
+                </div>
+                <label for="job">Je suis intéressé par la formation de: </label>
+
+                <select name="job" id="jbLausanne" class="jobSelectors" data-required>
+                    <option value="menu" selected disabled>Choisir une formation...</option>
+                    <?php
+                        foreach ($LISTJOB['Lausanne'] as $jobKey => $jobVal) {
+                            echo "<option value='$jobKey'>$jobVal</option>";
+                        }
+                    ?>
+                </select>
+
+                <select name="job" id="jbSion" class="jobSelectors" style="display: none;" data-required>
+                    <option value="menu" selected disabled>Choisir une formation...</option>
+                    <?php
+                        foreach ($LISTJOB['Sion'] as $jobKey => $jobVal) {
+                            echo "<option value='$jobKey'>$jobVal</option>";
+                        }
+                    ?>
                 </select>
             </fieldset>
             <div id="all" style="display: none;">
@@ -318,11 +336,12 @@
                 </fieldset>
             </div>
         </form>
+        <script> lieu = '<?php echo $_SESSION['postedForm']['lieu'] ;?>';</script>
         <?php
             if ($_SESSION['formError']) {
-                echo '<script>showOnFormReturn();</script>';
+                echo "<script>showOnFormReturn(lieu);</script>";
             }
-            //require_once('templates/footer.php');
+            require_once('templates/footer.php');
         ?>
     </body>
 </html>

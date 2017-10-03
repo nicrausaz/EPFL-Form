@@ -92,7 +92,7 @@ function initButtonsAction() {
     });
     $('#retourHome').click(function () {
         document.location.href = "http://apprentis.epfl.ch/";
-        logOutTequila();
+        // logout
     });
     $('#retourFormulaire').click(function () {
         history.go(-1);
@@ -131,11 +131,11 @@ function initAddChildButtons() {
     });
 }
 
-function setMajState() {
+function setMajState () {
     $('#maj1')[0].checked ? $("#representants").show(1000) : $("#representants").hide(1000);
 }
 
-function setDejaCandState() {
+function setDejaCandState () {
     if ($('#dejaCand1')[0].checked) {
         $("#dejaCandAnnee").hide(750);
         $("#dejaCandAnnee").val("");
@@ -145,7 +145,18 @@ function setDejaCandState() {
     }
 }
 
-function initAddRadioButtonEvent() {
+function setLieuState () {
+    if ($('#lieuLausanne')[0].checked) {
+        $("#jbLausanne").show(0);
+        $("#jbSion").hide(0);
+    }
+    else if ($('#lieuSion')[0].checked) {
+        $("#jbSion").show(0);
+        $("#jbLausanne").hide(0);
+    }
+}
+
+function initAddRadioButtonEvent () {
     $('#maj1').change(setMajState);
     $('#maj2').change(setMajState);
     setMajState();
@@ -153,6 +164,9 @@ function initAddRadioButtonEvent() {
     $("#dejaCand1").change(setDejaCandState);
     $("#dejaCand2").change(setDejaCandState);
     setDejaCandState();
+
+    $('#lieuLausanne').change(setLieuState);
+    $('#lieuSion').change(setLieuState);
 }
 
 function clearRepresentants() {
@@ -172,8 +186,8 @@ function initDatepicker() {
 }
 
 function initJobChange() {
-    $("#jb").change(function () {
-        var selectedFormation = $("#jb option:selected")[0].value;
+    $(".jobSelectors").change(function () {
+        var selectedFormation = $(".jobSelectors option:selected")[0].value;
         var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
 
         if (laborantPeople.indexOf(selectedFormation) == -1) {
@@ -188,16 +202,26 @@ function initJobChange() {
         }
     });
 }
-/*
-function logOutTequila() {
-    var win = window.open('https://tequila.epfl.ch/logout', '_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=10000, top=10000, width=100, height=100, visible=none', '');
-    win.close();
-    //Seems not working yet
-}
-*/
-function showOnFormReturn() {
-    var selectedFormation = $("#jb option:selected")[0].value;
+
+function showOnFormReturn (lieu) {
+    if (lieu == 'Lausanne') {
+        var selectedFormation = $("#jbLausanne option:selected")[0].value;
+    }
+    else if (lieu == 'Sion') {
+        var selectedFormation = $("#jbSion option:selected")[0].value;
+    }
+    showListJob(lieu)
     showPolyAndInfoDivs(selectedFormation);
+}
+function showListJob (lieu) {
+    if (lieu == 'Lausanne') {
+        $("#jbSion").hide();
+        $("#jbLausanne").show();
+    }
+    else if (lieu == 'Sion') {
+        $("#jbSion").show();
+        $("#jbLausanne").hide();
+    }
 }
 function showPolyAndInfoDivs(selectedFormation) {
     $("#all").show(1000);

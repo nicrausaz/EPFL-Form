@@ -5,17 +5,17 @@ require_once(__DIR__ . '/../helpers.php');
 class PersonnalDataValidator {
     private $personnalData;
     private $errors = array();
-    
+
     public function __construct(PersonnalData $personnalData){
         $this->personnalData = $personnalData;
     }
-    
+
     public function errors(){
         return $this->errors;
     }
-    
+
     public function isValid(){
-        
+
         $this->filiereValid();
         $this->dataRequiredIsValid();
         $this->representantValid();
@@ -24,25 +24,26 @@ class PersonnalDataValidator {
         $this->isFormationValid();
         $this->isEcoleValid();
         $this->anneeFinScolariteValid();
-        
+
         return count($this->errors) === 0;
     }
-    
-    private function filiereValid(){
-        if($this->personnalData->formation == "informaticien"){
-            if(is_null($this->personnalData->filiere) || $this->personnalData->filiere == ""){
+
+    private function filiereValid () {
+        if ($this->personnalData->formation == "informaticien") {
+            if (is_null($this->personnalData->filiere) || $this->personnalData->filiere == "") {
                 $this->errors['filiere'] = 'Filiere non valide';
             }
         }
     }
-    
-    private function dataRequiredIsValid(){
-        if(is_null($this->personnalData->genreApprenti) || $this->personnalData->genreApprenti == "" || $this->personnalData->genreApprenti =="notSelected"){
+
+    private function dataRequiredIsValid () {
+        if (is_null($this->personnalData->genreApprenti) || $this->personnalData->genreApprenti == "" || $this->personnalData->genreApprenti =="notSelected") {
             $this->errors['genreApprenti'] = 'Genre non selectionné';
         }
         $toValid = array("nomApprenti" => $this->personnalData->nomApprenti,
         "prenomApprenti" => $this->personnalData->prenomApprenti,
         "formation" => $this->personnalData->formation,
+        "lieu" => $this->personnalData->lieu,
         "maturite" => $this->personnalData->maturite,
         "addresseApprentiComplete" => $this->personnalData->addresseApprentiComplete,
         "telFixeApprenti" => $this->personnalData->telFixeApprenti,
@@ -53,31 +54,32 @@ class PersonnalDataValidator {
         "nationaliteApprenti" => $this->personnalData->nationaliteApprenti,
         "langueMaternelleApprenti" => $this->personnalData->langueMaternelleApprenti,
         "numeroAVS" => $this->personnalData->numeroAVS);
-        
+
         $this->isBirthDateValid(date($this->personnalData->dateNaissanceApprenti));
-        
-        foreach($toValid as $valid){
+
+        foreach ($toValid as $valid) {
             $this->isRequired($valid);
         }
     }
-    
-    private function isBirthDateValid($birthDate){
+
+    private function isBirthDateValid ($birthDate) {
         $birthYear = date('Y', strtotime($birthDate));
         $actualYear = date('Y');
-        
-        if(($birthYear > $actualYear-60)&&($birthYear <= $actualYear-13)){
-        }else{
+
+        if (($birthYear > $actualYear - 60) && ($birthYear <= $actualYear - 13)) {
+        }
+        else {
             $this->errors['dateNaissanceApprenti'] = 'Date de naissance non valide';
         }
     }
-    
-    private function isRequired($dataToCheck){
-        if(is_null($dataToCheck) || $dataToCheck==""){
+
+    private function isRequired ($dataToCheck) {
+        if (is_null($dataToCheck) || $dataToCheck=="") {
             $this->errors[$dataNameToCheck] = $dataNameToCheck . " manquant(e)";
         }
     }
 
-    private function representantValid(){
+    private function representantValid () {
         if($this->personnalData->majeur == 'false'){
             //non majeur
             if(count($this->personnalData->representants) < 1){
@@ -118,7 +120,7 @@ class PersonnalDataValidator {
     }
     private function anneeFinScolariteValid(){
         $dateToCheck = $this->personnalData->anneeFinScolarite;
-        
+
         if(!is_null($dateToCheck) || $dateToCheck==""){
             if(!is_numeric($dateToCheck)){
                 $this->errors['anneeFinScolarite'] = 'Année de fin de scolarité non valide';
