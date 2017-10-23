@@ -9,6 +9,7 @@
 
     $LISTJOB = [
         "Lausanne" => [
+            "laborantinBiologie" => "Laborantin-e CFC; option biologie",
             "polyMecanicien" => "Polymécanicien-ne CFC",
             "informaticien" => "Informaticien-ne CFC",
             "logisticien" => "Logisticien-ne CFC",

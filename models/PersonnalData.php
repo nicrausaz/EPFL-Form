@@ -4,6 +4,9 @@ require_once(__DIR__ . '/../helpers.php');
 class PersonnalData {
     private $postedData;
     private $formations = array(
+    "laborantinBiologie" => "laborantinsBiologie",
+    "laborantinChimie" => "laborantinsChimie",
+    "laborantinPhysique" => "laborantinsPhysique",
     "polyMecanicien" => "Polymecaniciens",
     "informaticien" => "Informaticiens",
     "logisticien" => "Logisticiens",

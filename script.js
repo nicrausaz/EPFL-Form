@@ -188,18 +188,19 @@ function initDatepicker() {
 function initJobChange() {
     $(".jobSelectors").change(function () {
         var selectedFormation = $(".jobSelectors option:selected")[0].value;
-        var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
+        showPolyAndInfoDivs(selectedFormation);
+        // var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
 
-        if (laborantPeople.indexOf(selectedFormation) == -1) {
-            showPolyAndInfoDivs(selectedFormation);
+        // if (laborantPeople.indexOf(selectedFormation) == -1) {
+        //     showPolyAndInfoDivs(selectedFormation);
 
-        } else {
-            $("#all").hide(1000);
+        // } else {
+        //     $("#all").hide(1000);
 
-            if (confirm("Pour les métiers de laborantins, l'inscription se fait auprès de l'AVML, cliquer sur ok pour être redirigé-e.")) {
-                window.location.replace("https://wp.unil.ch/avml/");
-            }
-        }
+        //     if (confirm("Pour les métiers de laborantins, l'inscription se fait auprès de l'AVML, cliquer sur ok pour être redirigé-e.")) {
+        //         window.location.replace("https://wp.unil.ch/avml/");
+        //     }
+        // }
     });
 }
 
