@@ -145,8 +145,8 @@
                                 <p>Réprésentant 2:</p>
                                 <select name="genreRep2" id="genreRep2">
                                     <option <?php echo (!isset($_SESSION['postedForm']['genreRep2'])) ? "selected" : ''; ?> disabled> Choisissez un genre</option>
-                                    <option value="Homme"<?php echo ($_SESSION['postedForm']['genreRep2'] == "Homme") ? "selected" : ''; ?>>Homme</option>
-                                    <option value="Femme"<?php echo ($_SESSION['postedForm']['genreRep2'] == "Femme") ? "selected" : ''; ?>>Femme</option>
+                                    <option value="Homme" <?php echo ($_SESSION['postedForm']['genreRep2'] == "Homme") ? "selected" : ''; ?>>Homme</option>
+                                    <option value="Femme" <?php echo ($_SESSION['postedForm']['genreRep2'] == "Femme") ? "selected" : ''; ?>>Femme</option>
                                 </select>
                                 <input type="text" name="nameRep2" id="nameRep2" placeholder="Nom" value="<?php echo $_SESSION['postedForm']['nameRep2'] != '' ? $_SESSION['postedForm']['nameRep2'] : ''; ?>"/>
                                 <input type="text" name="surnameRep2" id="surnameRep2" placeholder="Prénom" value="<?php echo $_SESSION['postedForm']['surnameRep2'] != '' ? $_SESSION['postedForm']['surnameRep2'] : ''; ?>"/>
@@ -351,7 +351,7 @@
             if ($_SESSION['formError']) {
                 echo "<script>showOnFormReturn(lieu);</script>";
             }
-            require_once('templates/footer.php');
+            // require_once('templates/footer.php');
         ?>
     </body>
 </html>

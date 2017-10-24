@@ -131,11 +131,11 @@ function initAddChildButtons() {
     });
 }
 
-function setMajState () {
+function setMajState() {
     $('#maj1')[0].checked ? $("#representants").show(1000) : $("#representants").hide(1000);
 }
 
-function setDejaCandState () {
+function setDejaCandState() {
     if ($('#dejaCand1')[0].checked) {
         $("#dejaCandAnnee").hide(750);
         $("#dejaCandAnnee").val("");
@@ -145,7 +145,7 @@ function setDejaCandState () {
     }
 }
 
-function setLieuState () {
+function setLieuState() {
     if ($('#lieuLausanne')[0].checked) {
         $("#jbLausanne").show(0);
         $("#jbSion").hide(0);
@@ -156,7 +156,7 @@ function setLieuState () {
     }
 }
 
-function initAddRadioButtonEvent () {
+function initAddRadioButtonEvent() {
     $('#maj1').change(setMajState);
     $('#maj2').change(setMajState);
     setMajState();
@@ -185,10 +185,20 @@ function initDatepicker() {
     $("#birthApp").datepicker({ minDate: '-60y', maxDate: '-13y', dateFormat: "dd/mm/yy" });
 }
 
+function getFormation() {
+    if ($('#lieuLausanne').is(":checked")) {
+        return $("#jbLausanne option:selected")[0].value;
+    }
+    else {
+        return $("#jbSion option:selected")[0].value;
+    }
+}
+
 function initJobChange() {
     $(".jobSelectors").change(function () {
-        var selectedFormation = $(".jobSelectors option:selected")[0].value;
+        var selectedFormation = getFormation();
         showPolyAndInfoDivs(selectedFormation);
+
         // var laborantPeople = ["laborantinChimie", "laborantinPhysique", "laborantinBiologie"];
 
         // if (laborantPeople.indexOf(selectedFormation) == -1) {
@@ -202,9 +212,13 @@ function initJobChange() {
         //     }
         // }
     });
+    $("#lieux").change(function () {
+        var selectedFormation = getFormation();
+        showPolyAndInfoDivs(selectedFormation);
+    });
 }
 
-function showOnFormReturn (lieu) {
+function showOnFormReturn(lieu) {
     if (lieu == 'Lausanne') {
         var selectedFormation = $("#jbLausanne option:selected")[0].value;
     }
@@ -214,7 +228,7 @@ function showOnFormReturn (lieu) {
     showListJob(lieu)
     showPolyAndInfoDivs(selectedFormation);
 }
-function showListJob (lieu) {
+function showListJob(lieu) {
     if (lieu == 'Lausanne') {
         $("#jbSion").hide();
         $("#jbLausanne").show();
