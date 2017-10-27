@@ -1,7 +1,7 @@
 <?php
 function mailToResp($surname, $name, $job){
     require_once("templates/mailToResp.php");
-    mail($to, $subject, $message, $headers);
+    //mail($to, $subject, $message, $headers);
 }
 
 //vire les accents et remplace caractere non alphanumeric par '-'
@@ -15,7 +15,7 @@ function checkChars($toCheck){
 
 function mailToApprenti($to, $job){
     require_once("templates/mailToApp.php");
-    mail($to, $subject, $message, $headers);
+    //mail($to, $subject, $message, $headers);
 }
 
 function uploadFile(&$candidateData, $pathAnnexes, $file, $name){
@@ -76,11 +76,18 @@ function createPDF ($infos, $path) {
     $pdf->SetFont('Times','',12);
     foreach($infos as $info => $val) {
         if (is_array($val)) {
+
+            $pdf->Cell(0,10,$info . " : ",0,1);
+
             foreach($val as $key => $value) {
-                $pdf->Cell(0,10,$key . ": " . $value,0,1); // doesnt work
+                $pdf->Cell(40);
+                $pdf->Cell(0,10,$key . ": " . $value,0,1);
             }
+
         }
-        $pdf->Cell(0,10,$info . ": " . $val,0,1);
+        else {
+            $pdf->Cell(0,10,$info . ": " . $val,0,1);
+        }
     }
 
     $pdf->Output("F", $path . '/final.pdf');
