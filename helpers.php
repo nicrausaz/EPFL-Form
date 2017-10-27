@@ -22,12 +22,12 @@ function uploadFile(&$candidateData, $pathAnnexes, $file, $name){
     $extension = strtolower(strrchr($file['name'], '.'));
     $validExt = ['.pdf', '.jpeg', '.png', '.jpg'];
     $filename = $name . $extension;
-    
+
     //-> dataValidator
     if(!in_array($extension, $validExt)){
         $erreur = "uploadError";
     }
-    
+
     if(!isset($erreur)){
         $filename = checkChars($filename);
         move_uploaded_file($file['tmp_name'], $pathAnnexes . $filename);
@@ -51,7 +51,7 @@ function uploadAllFiles($pathAnnexes, $postedFiles, $candidateData){
     uploadFile($candidateData, $pathAnnexes, $postedFiles['idCard'], "carte-identite");
     uploadFile($candidateData, $pathAnnexes, $postedFiles['cv'], "curriculum-vitae");
     uploadFile($candidateData, $pathAnnexes, $postedFiles['lettre'], "lettre-motivation");
-    
+
     for($i=1; $i<=9; $i++){
         if(array_key_exists('certifs'.$i, $postedFiles)){
             if(!($postedFiles['certifs'.$i]['name'] == "")) {
@@ -59,7 +59,7 @@ function uploadAllFiles($pathAnnexes, $postedFiles, $candidateData){
             }
         }
     }
-    
+
     if($candidateData->formation=="polyMecanicien"){
         uploadFile($candidateData, $pathAnnexes, $postedFiles['gimch'], "certificat-gimch");
     }
@@ -67,6 +67,23 @@ function uploadAllFiles($pathAnnexes, $postedFiles, $candidateData){
         uploadFile($candidateData, $pathAnnexes, $postedFiles['griTestInput'], "certificat-gri");
     }
     return $candidateData;
+}
+
+function createPDF ($infos, $path) {
+    $pdf = new FPDF();
+    $pdf->AliasNbPages();
+    $pdf->AddPage();
+    $pdf->SetFont('Times','',12);
+    foreach($infos as $info => $val) {
+        if (is_array($val)) {
+            foreach($val as $key => $value) {
+                $pdf->Cell(0,10,$key . ": " . $value,0,1); // doesnt work
+            }
+        }
+        $pdf->Cell(0,10,$info . ": " . $val,0,1);
+    }
+
+    $pdf->Output("F", $path . '/final.pdf');
 }
 
 function debuglog($message){

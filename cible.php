@@ -7,6 +7,7 @@
             require_once("helpers.php");
             require_once("models/PersonnalData.php");
             require_once("models/PersonnalDataValidator.php");
+            require_once("models/PDFfile.php");
          ?>
          <title>Confirmation</title>
     </head>
@@ -30,6 +31,10 @@
                 //Create JSON file and upload it
                 $encodedJson = (json_encode($candidateData,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
                 file_put_contents($candidateData->getPaths()["pathInfos"].'/informations.json', $encodedJson);
+
+                //create PDF file
+                createPDF($candidateData, $candidateData->getPaths()["pathInfos"]);
+
                 //Send mails
                 mailToResp($candidateData->prenomApprenti, $candidateData->nomApprenti, $candidateData->formation);
                 mailToApprenti($candidateData->mailApprenti, $candidateData->formation);
