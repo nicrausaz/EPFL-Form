@@ -23,7 +23,6 @@ function uploadFile(&$candidateData, $pathAnnexes, $file, $name){
     $validExt = ['.pdf', '.jpeg', '.png', '.jpg'];
     $filename = $name . $extension;
 
-    //-> dataValidator
     if(!in_array($extension, $validExt)){
         $erreur = "uploadError";
     }
@@ -75,22 +74,24 @@ function createPDF ($infos, $path) {
     $pdf->AddPage();
     $pdf->SetFont('Times','',12);
     foreach($infos as $info => $val) {
-        if (is_array($val)) {
-
-            $pdf->Cell(0,10,$info . " : ",0,1);
-
-            foreach($val as $key => $value) {
-                $pdf->Cell(40);
-                $pdf->Cell(0,10,$key . ": " . $value,0,1);
-            }
-
-        }
-        else {
-            $pdf->Cell(0,10,$info . ": " . $val,0,1);
-        }
+        checkArrayValue($info, $val, $pdf);
     }
 
-    $pdf->Output("F", $path . '/final.pdf');
+    $pdf->Output("F", $path . '/informations.pdf');
+}
+
+function checkArrayValue ($info, $val, $pdf) {
+    if (is_array($val)) {
+
+        $pdf->Cell(0,10,$info . " : ",0,1);
+
+        foreach($val as $key => $value) {
+            checkArrayValue ($key, $value, $pdf);
+        }
+    }
+    else {
+        $pdf->Cell(0,10,$info . ": " . $val,0,1);
+    }
 }
 
 function debuglog($message){
