@@ -90,6 +90,9 @@ function initButtonsAction() {
     $('#infoFilieres').click(function () {
         window.open("https://www.ict-berufsbildung.ch/fr/formation-professionnelle/formation-initiale-ict/", '_blank');
     });
+    $('#infoMpt').click(function () {
+        window.open("https://orientation.ch/dyn/show/3309", '_blank');
+    });
     $('#retourHome').click(function () {
         document.location.href = "http://apprentis.epfl.ch/";
         // logout

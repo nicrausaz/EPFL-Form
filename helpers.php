@@ -69,7 +69,7 @@ function uploadAllFiles($pathAnnexes, $postedFiles, $candidateData){
 }
 
 function createPDF ($infos, $path) {
-    $pdf = new FPDF();
+    $pdf = new PDF();
     $pdf->AliasNbPages();
     $pdf->AddPage();
     $pdf->SetFont('Times','',12);
@@ -86,6 +86,7 @@ function checkArrayValue ($info, $val, $pdf) {
         $pdf->Cell(0,10,$info . " : ",0,1);
 
         foreach($val as $key => $value) {
+            $pdf->Cell(20);
             checkArrayValue ($key, $value, $pdf);
         }
     }

@@ -10,7 +10,8 @@
     <div class="page-style">
         <?php include('templates/header.php') ?>
         <legend><h3>Protection des données</h3></legend>
-        <p>Tout usager peut exiger que ses données personnelles soient effacées de la banque de données. Merci de nous adresser un email.</p>
+        Tout usager peut exiger que ses données personnelles soient effacées de la banque de données. </br>
+        Merci de nous adresser un email.
 
         <legend><h3>Renseignements</h3></legend>
         <table>
@@ -27,7 +28,7 @@
                 <td>formation.apprentis@epfl.ch</td>
             </tr>
             <tr>
-                <td>http://apprentis.epfl.ch</td>
+                <td><a href="http://apprentis.epfl.ch">http://apprentis.epfl.ch</a></td>
             </tr>
         </table>
        <p id="incomplet"> Tout dossier incomplet ou non conforme ne sera pas pris en considération ! </p>

@@ -76,7 +76,7 @@
                     <div id="infoOnly">
                         <?php include('templates/filieresinfos.php') ?>
                     </div>
-                    <label for="mpt">Je désire m'inscire en maturité professionelle intégrée*:</label><p>
+                    <label for="mpt">Je désire m'inscire en maturité professionnelle intégrée*:</label><p>
                     <dl class="radio-list-left">
                         <dd>
                             <input type="radio" name="mpt" id="mpt1" value="false" <?php echo (!isset($_SESSION['postedForm']['mpt']) || $_SESSION['postedForm']['mpt'] == "false") ? "checked=\"checked\"" : ''; ?>>
@@ -87,6 +87,9 @@
                             <label for="mpt2">Oui</label>
                         </dd>
                     </dl>
+                    <button type="button" id="infoMpt" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
+                        Infos sur la maturité professionnelle
+                    </button>
                 </fieldset>
                 <fieldset>
                     <legend><span class="number">2</span> Données </legend>
@@ -104,7 +107,7 @@
                             <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" value="<?php echo $_SESSION['postedForm']['telApp'] != '' ? $_SESSION['postedForm']['telApp'] : ''; ?>" minlength="2"  maxlength="20" data-required/>
                             <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" value="<?php echo $_SESSION['postedForm']['phoneApp'] != '' ? $_SESSION['postedForm']['phoneApp'] : ''; ?>" minlength="2" maxlength="20" data-required/>
                             <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;?>" readonly />
-                            <input type="text" name="birthApp" id="birthApp" placeholder="Date de naissance*" value="<?php echo $_SESSION['postedForm']['birthApp'] != '' ? $_SESSION['postedForm']['birthApp'] : ''; ?>" data-required />
+                            <input type="text" name="birthApp" id="birthApp" placeholder="Date de naissance *" value="<?php echo $_SESSION['postedForm']['birthApp'] != '' ? $_SESSION['postedForm']['birthApp'] : ''; ?>" data-required />
                             <section id="errorMsg"></section>
                             <input type="text" name="originApp" placeholder="Lieu d'origine *" value="<?php echo $_SESSION['postedForm']['originApp'] != '' ? $_SESSION['postedForm']['originApp'] : ''; ?>" minlength="2" maxlength="35" data-required />
                             <input type="text" name="nationApp" placeholder="Nationalité *" value="<?php echo $_SESSION['postedForm']['nationApp'] != '' ? $_SESSION['postedForm']['nationApp'] : ''; ?>" minlength="2" maxlength="30" data-required />
@@ -118,7 +121,7 @@
                             <p><input type="checkbox" name="languesApp[]" value="others" id="other" <?php echo (is_int(array_search('others', $_SESSION['postedForm']['languesApp']))) ? 'checked="checked"' : ''; ?>><label for="other"><span class="ui" ></span>Autres</label></p>
                         </fieldset>
                         <fieldset>
-                            <legend><span class="number">2.2</span> Réprésentants légaux</legend>
+                            <legend><span class="number">2.2</span> Représentants légaux</legend>
                             <label for="maj">Avez vous plus de 18 ans?*</label><p>
                             <dl class="radio-list-left">
                                 <dd>
@@ -131,7 +134,7 @@
                                 </dd>
                             </dl>
                             <section id="representants">
-                                <p>Réprésentant 1:*</p>
+                                <p>Représentant principal:*</p>
                                 <select name="genreRep1" id="genreRep1">
                                     <option <?php echo (!isset($_SESSION['postedForm']['genreRep1'])) ? "selected" : ''; ?> disabled> Choisissez un genre*</option>
                                     <option value="Homme" <?php echo ($_SESSION['postedForm']['genreRep1'] == "Homme") ? "selected" : ''; ?>>Homme</option>
@@ -142,7 +145,7 @@
                                 <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue*" value="<?php echo $_SESSION['postedForm']['adrRep1'] != '' ? $_SESSION['postedForm']['adrRep1'] : ''; ?>"/>
                                 <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile*" value="<?php echo $_SESSION['postedForm']['NPARep1'] != '' ? $_SESSION['postedForm']['NPARep1'] : ''; ?>"/>
                                 <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)*" value="<?php echo $_SESSION['postedForm']['telRep1'] != '' ? $_SESSION['postedForm']['telRep1'] : ''; ?>"/>
-                                <p>Réprésentant 2:</p>
+                                <p>Représentant secondaire:</p>
                                 <select name="genreRep2" id="genreRep2">
                                     <option <?php echo (!isset($_SESSION['postedForm']['genreRep2'])) ? "selected" : ''; ?> disabled> Choisissez un genre</option>
                                     <option value="Homme" <?php echo ($_SESSION['postedForm']['genreRep2'] == "Homme") ? "selected" : ''; ?>>Homme</option>
@@ -186,7 +189,7 @@
                             </table>
                             <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité*" value="<?php echo $_SESSION['postedForm']['anneeFin'] != '' ? $_SESSION['postedForm']['anneeFin'] : ''; ?>" maxlength="4" data-required/>
                             <section id="anneeFinError"></section>
-                            <button type ="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
+                            <button type="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                                 Ajouter une ligne
                             </button>
                         </fieldset>
@@ -309,7 +312,7 @@
                                 </td></tr>
                             </table>
                             <button type ="button" id="addInputFile" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
-                                Ajouter un annexe
+                                Ajouter une annexe
                             </button>
                             <div id="polyOnly">
                                 <label for="gimch">Attestation de tests d'aptitudes GIM-CH (polymécanicien):</label>
