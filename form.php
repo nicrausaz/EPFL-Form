@@ -205,20 +205,20 @@
                             <p>Formations / apprentissages après la scolarité.</p>
                             <table id="activites">
                                 <tr>
-                                    <td><input type="text" name="employeurPro1" placeholder="Employeur" value="<?php echo $_SESSION['postedForm']['employeurPro1'] != '' ? $_SESSION['postedForm']['employeurPro1'] : ''; ?>"/></td>
-                                    <td><input type="text" name="lieuPro1" placeholder="Lieu" value="<?php echo $_SESSION['postedForm']['lieuPro1'] != '' ? $_SESSION['postedForm']['lieuPro1'] : ''; ?>"/></td>
-                                    <td><input type="text" name="activitePro1" placeholder="Activité" value="<?php echo $_SESSION['postedForm']['activitePro1'] != '' ? $_SESSION['postedForm']['activitePro1'] : ''; ?>"/></td>
-                                    <td><input type="text" name="anneesPro1" placeholder="de-à (années)" value="<?php echo $_SESSION['postedForm']['anneesPro1'] != '' ? $_SESSION['postedForm']['anneesPro1'] : ''; ?>"/></td>
+                                    <td><label for="employeurPro1">Employeur:</label><input type="text" name="employeurPro1" id="employeurPro1" placeholder="Employeur" value="<?php echo $_SESSION['postedForm']['employeurPro1'] != '' ? $_SESSION['postedForm']['employeurPro1'] : ''; ?>"/></td>
+                                    <td><label for="lieuPro1">Lieu:</label><input type="text" name="lieuPro1" id="lieuPro1" placeholder="Lieu" value="<?php echo $_SESSION['postedForm']['lieuPro1'] != '' ? $_SESSION['postedForm']['lieuPro1'] : ''; ?>"/></td>
+                                    <td><label for="activitePro1">Activité:</label><input type="text" name="activitePro1" id="activitePro1" placeholder="Activité" value="<?php echo $_SESSION['postedForm']['activitePro1'] != '' ? $_SESSION['postedForm']['activitePro1'] : ''; ?>"/></td>
+                                    <td><label for="anneesPro1">Années:</label><input type="text" name="anneesPro1" id="anneesPro1" placeholder="de-à" value="<?php echo $_SESSION['postedForm']['anneesPro1'] != '' ? $_SESSION['postedForm']['anneesPro1'] : ''; ?>"/></td>
                                 </tr>
                                 <?php
                                 for($i = 2; $i < 4; $i++){
                                     if($_SESSION['postedForm']['employeurPro'.$i]){
                                 ?>
                                 <tr>
-                                    <td><input type="text" name="employeurPro<?php echo $i ?>" placeholder="Employeur" value="<?php echo $_SESSION['postedForm']['employeurPro'.$i] ?>"/></td>
-                                    <td><input type="text" name="lieuPro<?php echo $i ?>" placeholder="Lieu" value="<?php echo $_SESSION['postedForm']['lieuPro'.$i] ?>" ></td>
-                                    <td><input type="text" name="activitePro1<?php echo $i ?>" placeholder="Activité" value="<?php echo $_SESSION['postedForm']['activitePro'.$i] ?>"></td>
-                                    <td><input type="text" name="anneesPro1<?php echo $i ?>" placeholder="de-à (années)" value="<?php echo $_SESSION['postedForm']['anneesPro'.$i] ?>"></td>
+                                    <td><label for="employeurPro<?php echo $i ?>">Employeur:</label><input type="text" name="employeurPro<?php echo $i ?>" id="employeurPro<?php echo $i ?>" placeholder="Employeur" value="<?php echo $_SESSION['postedForm']['employeurPro'.$i] ?>"/></td>
+                                    <td><label for="lieuPro<?php echo $i ?>">Lieu:</label><input type="text" name="lieuPro<?php echo $i ?>" id="lieuPro<?php echo $i ?>" placeholder="Lieu" value="<?php echo $_SESSION['postedForm']['lieuPro'.$i] ?>" ></td>
+                                    <td><label for="activitePro<?php echo $i ?>">Activité:</label><input type="text" name="activitePro<?php echo $i ?>" id="activitePro<?php echo $i ?>" placeholder="Activité" value="<?php echo $_SESSION['postedForm']['activitePro'.$i] ?>"></td>
+                                    <td><label for="anneesPro<?php echo $i ?>">Années:</label><input type="text" name="anneesPro<?php echo $i ?>" id="anneesPro<?php echo $i ?>" placeholder="de-à" value="<?php echo $_SESSION['postedForm']['anneesPro'.$i] ?>"></td>
                                 </tr>
                                 <?php }} ?>
                             </table>
@@ -230,20 +230,20 @@
                             <legend><span class="number">3.3</span> Stages</legend>
                             <table id="stages">
                                 <tr>
-                                    <td><input type="text" name="activiteStage1" placeholder="Métier" value="<?php echo $_SESSION['postedForm']['activiteStage1'] != '' ? $_SESSION['postedForm']['activiteStage1'] : ''; ?>"></td>
-                                    <td><input type="text" name="entrepriseStage1" placeholder="Entreprise" value="<?php echo $_SESSION['postedForm']['entrepriseStage1'] != '' ? $_SESSION['postedForm']['entrepriseStage1'] : ''; ?>"></td>
+                                    <td><label for="activiteStage1">Métier:</label><input type="text" name="activiteStage1" id="activiteStage1" placeholder="Métier" value="<?php echo $_SESSION['postedForm']['activiteStage1'] != '' ? $_SESSION['postedForm']['activiteStage1'] : ''; ?>"></td>
+                                    <td><label for="entrepriseStage1">Entreprise:</label><input type="text" name="entrepriseStage1" id="entrepriseStage1" placeholder="Entreprise" value="<?php echo $_SESSION['postedForm']['entrepriseStage1'] != '' ? $_SESSION['postedForm']['entrepriseStage1'] : ''; ?>"></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="activiteStage2" placeholder="Métier" value="<?php echo $_SESSION['postedForm']['activiteStage2'] != '' ? $_SESSION['postedForm']['activiteStage2'] : ''; ?>"></td>
-                                    <td><input type="text" name="entrepriseStage2" placeholder="Entreprise" value="<?php echo $_SESSION['postedForm']['entrepriseStage2'] != '' ? $_SESSION['postedForm']['entrepriseStage2'] : ''; ?>"></td>
+                                    <td><label for="activiteStage2">Métier:</label><input type="text" name="activiteStage2" id="activiteStage2" placeholder="Métier" value="<?php echo $_SESSION['postedForm']['activiteStage2'] != '' ? $_SESSION['postedForm']['activiteStage2'] : ''; ?>"></td>
+                                    <td><label for="entrepriseStage2">Entreprise:</label><input type="text" name="entrepriseStage2" id="entrepriseStage2" placeholder="Entreprise" value="<?php echo $_SESSION['postedForm']['entrepriseStage2'] != '' ? $_SESSION['postedForm']['entrepriseStage2'] : ''; ?>"></td>
                                 </tr>
                                 <?php
                                 for($i = 2; $i < 4; $i++){
                                     if($_SESSION['postedForm']['activiteStage'.$i]){
                                 ?>
                                 <tr>
-                                    <td><input type="text" name="activiteStage<?php echo $i ?>" placeholder="Métier" value="<?php echo $_SESSION['postedForm']['activiteStage'.$i] ?>"/></td>
-                                    <td><input type="text" name="entrepriseStage<?php echo $i ?>" placeholder="Entreprise" value="<?php echo $_SESSION['postedForm']['entrepriseStage'.$i] ?>" ></td>
+                                    <td><label for="activiteStage<?php echo $i ?>">Métier:</label><input type="text" name="activiteStage<?php echo $i ?>" id="activiteStage<?php echo $i ?>" placeholder="Métier" value="<?php echo $_SESSION['postedForm']['activiteStage'.$i] ?>"/></td>
+                                    <td><label for="entrepriseStage<?php echo $i ?>">Entreprise:</label><input type="text" name="entrepriseStage<?php echo $i ?>" id="entrepriseStage<?php echo $i ?>" placeholder="Entreprise" value="<?php echo $_SESSION['postedForm']['entrepriseStage'.$i] ?>" ></td>
                                 </tr>
                                 <?php }} ?>
                             </table>
@@ -261,7 +261,8 @@
                                     <label for="dejaCand2">Oui</label>
                                 </dd>
                             </dl>
-                            <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature" value="<?php echo $_SESSION['postedForm']['dejaCandAnnee'] != '' ? $_SESSION['postedForm']['dejaCandAnnee'] : ''; ?>" maxlength="4" style="display: none;"/>
+                            <label for="dejaCandAnnee">Année de candidature:</label>
+                            <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année" value="<?php echo $_SESSION['postedForm']['dejaCandAnnee'] != '' ? $_SESSION['postedForm']['dejaCandAnnee'] : ''; ?>" maxlength="4" style="display: none;"/>
                             <section id="dejaCandError"></section>
                         </fieldset>
                         <fieldset id="files">

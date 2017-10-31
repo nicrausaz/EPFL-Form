@@ -73,7 +73,7 @@ function checkYearDate(toCheckValue, errorZone, coefficiantYear) {
     var inputYear = $(toCheckValue).val();
     var currentYear = (new Date).getFullYear() + coefficiantYear;
 
-    if ((inputYear != parseInt(inputYear, 10)) || (currentYear < inputYear)) {
+    if ((inputYear != parseInt(inputYear, 10)) || (currentYear < inputYear) || (inputYear.length != 4)) {
         $(errorZone).html('<p class ="errorMsgs">Date invalide');
     } else {
         $(errorZone).html("");
@@ -104,17 +104,17 @@ function initButtonsAction() {
 
 function initAddChildButtons() {
     $('#addSch').click(function () {
-        var template = '<tr><td><label for="ecole{i}">Ecole:</label><input type="text" name="ecole{i}" id="ecole{i}" placeholder="Ecole" autocomplete="off"/></td><td><label for="lieuEcole{i}">Lieu:</label><input type="text" name="lieuEcole{i}" id="lieuEcole{i}" placeholder="Lieu" autocomplete="off"/></td><td><label for="niveauEcole{i}">Niveau:</label><input type="text" name="niveauEcole{i}" id="niveauEcole{i}" placeholder="Niveau" autocomplete="off"/></td><td><label for="anneesEcole{i}">Années:</label><input type="text" name="anneesEcole{i}" id="name="anneesEcole{i}" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+        var template = '<tr><td><label for="ecole{i}">Ecole:</label><input type="text" name="ecole{i}" id="ecole{i}" placeholder="Ecole"/></td><td><label for="lieuEcole{i}">Lieu:</label><input type="text" name="lieuEcole{i}" id="lieuEcole{i}" placeholder="Lieu"/></td><td><label for="niveauEcole{i}">Niveau:</label><input type="text" name="niveauEcole{i}" id="niveauEcole{i}" placeholder="Niveau"/></td><td><label for="anneesEcole{i}">Années:</label><input type="text" name="anneesEcole{i}" id="name="anneesEcole{i}" placeholder="de-à"/></td></tr>';
         addChildren('#scolaire', 6, template, '#addSch');
     });
 
     $('#addPro').click(function () {
-        var template = '<tr><td><input type="text" name="employeurPro{i}" placeholder="Employeur" autocomplete="off"/></td><td><input type="text" name="lieuPro{i}" placeholder="Lieu" autocomplete="off"/></td><td><input type="text" name="activitePro{i}" placeholder="Activité" autocomplete="off"/></td><td><input type="text" name="anneesPro{i}" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+        var template = '<tr><td><label for="employeurPro{i}">Employeur:</label><input type="text" name="employeurPro{i}" id="employeurPro{i}" placeholder="Employeur"/></td><td><label for="lieuPro{i}">Lieu:</label><input type="text" name="lieuPro{i}" id="lieuPro{i}" placeholder="Lieu"/></td><td><label for="activitePro{i}">Activité:</label><input type="text" name="activitePro{i}" id="activitePro{i}" placeholder="Activité"/></td><td><label for="anneesPro{i}">Années:</label><input type="text" name="anneesPro{i}" id="anneesPro{i}" placeholder="de-à"/></td></tr>';
         addChildren('#activites', 4, template, '#addPro');
     });
 
     $('#addStage').click(function () {
-        var template = '<tr><td><input type="text" name="activiteStage{i}" placeholder="Métier" autocomplete="off"></td><td><input type="text" name="entrepriseStage{i}" placeholder="Entreprise" autocomplete="off"></td></tr>';
+        var template = '<tr><td><label for="activiteStage{i}">Métier:</label><input type="text" name="activiteStage{i}" id="activiteStage{i}" placeholder="Métier"></td><td><label for="entrepriseStage{i}">Entreprise:</label><input type="text" name="entrepriseStage{i}" id="entrepriseStage{i}" placeholder="Entreprise"></td></tr>';
         addChildren('#stages', 5, template, '#addStage');
     });
 

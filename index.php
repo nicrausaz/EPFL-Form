@@ -25,7 +25,7 @@
         </ul>
         Veuillez également prévoir une vingtaine de minutes pour compléter le formulaire.
 
-        <p>Pour débuter, créer un compte en cliquand sur le bouton, confirmez ensuite votre adresse via l’email reçu.</p>
+        <p>Pour débuter, créez un compte en cliquant sur le bouton (remplissez la rubrique "organisation" par "postulation"), confirmez ensuite votre adresse via l’email reçu.</p>
         <p>Une fois votre compte créé et validé, cliquez sur le bouton "Se connecter"</p>
 
         <button id="createAc" class="index-button-style  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonIndexStyle">
