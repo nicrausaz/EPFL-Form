@@ -23,7 +23,7 @@
     <body>
         <div class="page-style">
         <?php include('templates/header.php') ?>
-        <p class="paracenter">Les champs notés d'un astérisque* doivent être obligatoirement remplis.</p>
+        <p class="paracenter">Les champs ayant une bordure rouge sont obligatoires</p>
         <form method="post" action="cible.php" enctype="multipart/form-data">
             <fieldset>
                 <legend><span class="number">1</span> Apprentissage </legend>
@@ -76,7 +76,7 @@
                     <div id="infoOnly">
                         <?php include('templates/filieresinfos.php') ?>
                     </div>
-                    <label for="mpt">Je désire m'inscire en maturité professionnelle intégrée*:</label><p>
+                    <label for="mpt">Je désire m'inscire en maturité professionnelle intégrée:</label><p>
                     <dl class="radio-list-left">
                         <dd>
                             <input type="radio" name="mpt" id="mpt1" value="false" <?php echo (!isset($_SESSION['postedForm']['mpt']) || $_SESSION['postedForm']['mpt'] == "false") ? "checked=\"checked\"" : ''; ?>>
@@ -88,7 +88,7 @@
                         </dd>
                     </dl>
                     <button type="button" id="infoMpt" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
-                        Infos sur la maturité professionnelle
+                        Infos sur la maturité
                     </button>
                 </fieldset>
                 <fieldset>
@@ -96,25 +96,24 @@
                         <fieldset>
                             <legend><span class="number">2.1</span> Données personnelles</legend>
                             <select name="genreApp" id="genreApp">
-                                <option value="notSelected" <?php echo (!isset($_SESSION['postedForm']['genreApp'])) ? "selected" : ''; ?> disabled> Choisissez un genre*</option>
+                                <option value="notSelected" <?php echo (!isset($_SESSION['postedForm']['genreApp'])) ? "selected" : ''; ?> disabled> Choisissez un genre</option>
                                 <option value="Homme" <?php echo ($_SESSION['postedForm']['genreApp'] == "Homme") ? "selected" : ''; ?>>Homme</option>
                                 <option value="Femme" <?php echo ($_SESSION['postedForm']['genreApp'] == "Femme") ? "selected" : ''; ?>>Femme</option>
                             </select>
-                            <input type="text" name="nameApp" placeholder="Nom *" value="<?php echo $name;?>" readonly />
-                            <input type="text" name="surnameApp" placeholder="Prénom *" value="<?php echo $firstname;?>" readonly />
-                            <input type="text" name="adrApp" placeholder="Rue *" value="<?php echo $_SESSION['postedForm']['adrApp'] != '' ? $_SESSION['postedForm']['adrApp'] : ''; ?>" minlength="2" maxlength="40" data-required/>
-                            <input type="text" name="NPAApp" placeholder="NPA\Domicile *" value="<?php echo $_SESSION['postedForm']['NPAApp'] != '' ? $_SESSION['postedForm']['NPAApp'] : ''; ?>"  minlength="2" maxlength="40" data-required/>
-                            <input type="tel" name="telApp" placeholder="Téléphone (+41 21 123 45 67) *" value="<?php echo $_SESSION['postedForm']['telApp'] != '' ? $_SESSION['postedForm']['telApp'] : ''; ?>" minlength="2"  maxlength="20" data-required/>
-                            <input type="tel" name="phoneApp" placeholder="Mobile (+41 79 123 45 67) *" value="<?php echo $_SESSION['postedForm']['phoneApp'] != '' ? $_SESSION['postedForm']['phoneApp'] : ''; ?>" minlength="2" maxlength="20" data-required/>
+                            <input type="text" name="nameApp" placeholder="Nom " value="<?php echo $name;?>" readonly />
+                            <input type="text" name="surnameApp" placeholder="Prénom " value="<?php echo $firstname;?>" readonly />
+                            <input type="text" name="adrApp" placeholder="Rue " value="<?php echo $_SESSION['postedForm']['adrApp'] != '' ? $_SESSION['postedForm']['adrApp'] : ''; ?>" minlength="2" maxlength="40" data-required/>
+                            <input type="text" name="NPAApp" placeholder="NPA\Domicile " value="<?php echo $_SESSION['postedForm']['NPAApp'] != '' ? $_SESSION['postedForm']['NPAApp'] : ''; ?>"  minlength="2" maxlength="40" data-required/>
+                            <input type="tel" name="telApp" placeholder="Téléphone (+41 79 123 45 67) " value="<?php echo $_SESSION['postedForm']['telApp'] != '' ? $_SESSION['postedForm']['telApp'] : ''; ?>" minlength="2"  maxlength="20" data-required/>
                             <input type="email" name="mailApp" id="mailApp" value="<?php echo $user;?>" readonly />
-                            <input type="text" name="birthApp" id="birthApp" placeholder="Date de naissance *" value="<?php echo $_SESSION['postedForm']['birthApp'] != '' ? $_SESSION['postedForm']['birthApp'] : ''; ?>" data-required />
+                            <input type="text" name="birthApp" id="birthApp" placeholder="Date de naissance " value="<?php echo $_SESSION['postedForm']['birthApp'] != '' ? $_SESSION['postedForm']['birthApp'] : ''; ?>" data-required />
                             <section id="errorMsg"></section>
-                            <input type="text" name="originApp" placeholder="Lieu d'origine *" value="<?php echo $_SESSION['postedForm']['originApp'] != '' ? $_SESSION['postedForm']['originApp'] : ''; ?>" minlength="2" maxlength="35" data-required />
-                            <input type="text" name="nationApp" placeholder="Nationalité *" value="<?php echo $_SESSION['postedForm']['nationApp'] != '' ? $_SESSION['postedForm']['nationApp'] : ''; ?>" minlength="2" maxlength="30" data-required />
+                            <input type="text" name="originApp" placeholder="Lieu d'origine " value="<?php echo $_SESSION['postedForm']['originApp'] != '' ? $_SESSION['postedForm']['originApp'] : ''; ?>" minlength="2" maxlength="35" data-required />
+                            <input type="text" name="nationApp" placeholder="Nationalité " value="<?php echo $_SESSION['postedForm']['nationApp'] != '' ? $_SESSION['postedForm']['nationApp'] : ''; ?>" minlength="2" maxlength="30" data-required />
                             <input type="text" name="permisEtrangerApp" placeholder="Catégorie de permis pour étrangers" value="<?php echo $_SESSION['postedForm']['permisEtrangerApp'] != '' ? $_SESSION['postedForm']['permisEtrangerApp'] : ''; ?>" maxlength="1" />
-                            <input type="text" name="langApp" placeholder="Langue Maternelle *" value="<?php echo $_SESSION['postedForm']['langApp'] != '' ? $_SESSION['postedForm']['langApp'] : ''; ?>" minlength="2" maxlength="20" data-required />
-                            <input type="text" name="avsNumber" placeholder="Numéro AVS *" value="<?php echo $_SESSION['postedForm']['avsNumber'] != '' ? $_SESSION['postedForm']['avsNumber'] : ''; ?>" minlength="2" maxlength="20" data-required />
-                            <label for="languesApp">Connaissance linguistiques*:</label>
+                            <input type="text" name="langApp" placeholder="Langue Maternelle " value="<?php echo $_SESSION['postedForm']['langApp'] != '' ? $_SESSION['postedForm']['langApp'] : ''; ?>" minlength="2" maxlength="20" data-required />
+                            <input type="text" name="avsNumber" placeholder="Numéro AVS " value="<?php echo $_SESSION['postedForm']['avsNumber'] != '' ? $_SESSION['postedForm']['avsNumber'] : ''; ?>" minlength="2" maxlength="20" data-required />
+                            <label for="languesApp">Connaissance linguistiques:</label>
                             <p><input type="checkbox" name="languesApp[]" value="fr" id="french" <?php echo (is_int(array_search('fr', $_SESSION['postedForm']['languesApp']))) ? 'checked="checked"' : ''; ?>><label for="french"><span class="ui"></span>Français</label></p>
                             <p><input type="checkbox" name="languesApp[]" value="de" id="german" <?php echo (is_int(array_search('de', $_SESSION['postedForm']['languesApp']))) ? 'checked="checked"' : ''; ?>><label for="german"><span class="ui"></span>Allemand</label></p>
                             <p><input type="checkbox" name="languesApp[]" value="en" id="english" <?php echo (is_int(array_search('en', $_SESSION['postedForm']['languesApp']))) ? 'checked="checked"' : ''; ?>><label for="english"><span class="ui" ></span>Anglais</label></p>
@@ -122,7 +121,7 @@
                         </fieldset>
                         <fieldset>
                             <legend><span class="number">2.2</span> Représentants légaux</legend>
-                            <label for="maj">Avez vous plus de 18 ans?*</label><p>
+                            <label for="maj">Avez vous plus de 18 ans?</label><p>
                             <dl class="radio-list-left">
                                 <dd>
                                     <input type="radio" name="maj" id="maj1" value="false" <?php echo (!isset($_SESSION['postedForm']['maj']) || $_SESSION['postedForm']['maj'] == "false") ? "checked=\"checked\"" : ''; ?>>
@@ -134,17 +133,17 @@
                                 </dd>
                             </dl>
                             <section id="representants">
-                                <p>Représentant principal:*</p>
+                                <p>Représentant principal:</p>
                                 <select name="genreRep1" id="genreRep1">
-                                    <option <?php echo (!isset($_SESSION['postedForm']['genreRep1'])) ? "selected" : ''; ?> disabled> Choisissez un genre*</option>
+                                    <option <?php echo (!isset($_SESSION['postedForm']['genreRep1'])) ? "selected" : ''; ?> disabled> Choisissez un genre</option>
                                     <option value="Homme" <?php echo ($_SESSION['postedForm']['genreRep1'] == "Homme") ? "selected" : ''; ?>>Homme</option>
                                     <option value="Femme" <?php echo ($_SESSION['postedForm']['genreRep1'] == "Femme") ? "selected" : ''; ?>>Femme</option>
                                 </select>
-                                <input type="text" name="nameRep1" id="nameRep1" placeholder="Nom*" value="<?php echo $_SESSION['postedForm']['nameRep1'] != '' ? $_SESSION['postedForm']['nameRep1'] : ''; ?>"/>
-                                <input type="text" name="surnameRep1" id="surnameRep1" placeholder="Prénom*" value="<?php echo $_SESSION['postedForm']['surnameRep1'] != '' ? $_SESSION['postedForm']['surnameRep1'] : ''; ?>"/>
-                                <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue*" value="<?php echo $_SESSION['postedForm']['adrRep1'] != '' ? $_SESSION['postedForm']['adrRep1'] : ''; ?>"/>
-                                <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile*" value="<?php echo $_SESSION['postedForm']['NPARep1'] != '' ? $_SESSION['postedForm']['NPARep1'] : ''; ?>"/>
-                                <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)*" value="<?php echo $_SESSION['postedForm']['telRep1'] != '' ? $_SESSION['postedForm']['telRep1'] : ''; ?>"/>
+                                <input type="text" name="nameRep1" id="nameRep1" placeholder="Nom" value="<?php echo $_SESSION['postedForm']['nameRep1'] != '' ? $_SESSION['postedForm']['nameRep1'] : ''; ?>"/>
+                                <input type="text" name="surnameRep1" id="surnameRep1" placeholder="Prénom" value="<?php echo $_SESSION['postedForm']['surnameRep1'] != '' ? $_SESSION['postedForm']['surnameRep1'] : ''; ?>"/>
+                                <input type="text" name="adrRep1" id="adrRep1" placeholder="Rue" value="<?php echo $_SESSION['postedForm']['adrRep1'] != '' ? $_SESSION['postedForm']['adrRep1'] : ''; ?>"/>
+                                <input type="text" name="NPARep1" id="NPARep1" placeholder = "NPA\Domicile" value="<?php echo $_SESSION['postedForm']['NPARep1'] != '' ? $_SESSION['postedForm']['NPARep1'] : ''; ?>"/>
+                                <input type="text" name="telRep1" id="telRep1" placeholder="Téléphone (+41 79 123 45 67)" value="<?php echo $_SESSION['postedForm']['telRep1'] != '' ? $_SESSION['postedForm']['telRep1'] : ''; ?>"/>
                                 <p>Représentant secondaire:</p>
                                 <select name="genreRep2" id="genreRep2">
                                     <option <?php echo (!isset($_SESSION['postedForm']['genreRep2'])) ? "selected" : ''; ?> disabled> Choisissez un genre</option>
@@ -163,16 +162,16 @@
                             <legend><span class="number">3.1</span> Scolarité</legend>
                             <table id="scolaire">
                                 <tr>
-                                    <td><input type="text" name="ecole1" placeholder="Ecole*" value="<?php echo $_SESSION['postedForm']['ecole1'] != '' ? $_SESSION['postedForm']['ecole1'] : ''; ?>" data-required/></td>
-                                    <td><input type="text" name="lieuEcole1" placeholder="Lieu*" value="<?php echo $_SESSION['postedForm']['lieuEcole1'] != '' ? $_SESSION['postedForm']['lieuEcole1'] : ''; ?>" data-required/></td>
-                                    <td><input type="text" name="niveauEcole1" placeholder="Niveau*" value="<?php echo $_SESSION['postedForm']['niveauEcole1'] != '' ? $_SESSION['postedForm']['niveauEcole1'] : ''; ?>" data-required/></td>
-                                    <td><input type="text" name="anneesEcole1" placeholder="de-à (années)*" value="<?php echo $_SESSION['postedForm']['anneesEcole1'] != '' ? $_SESSION['postedForm']['anneesEcole1'] : ''; ?>" data-required/></td>
+                                    <td><input type="text" name="ecole1" placeholder="Ecole" value="<?php echo $_SESSION['postedForm']['ecole1'] != '' ? $_SESSION['postedForm']['ecole1'] : ''; ?>" data-required/></td>
+                                    <td><input type="text" name="lieuEcole1" placeholder="Lieu" value="<?php echo $_SESSION['postedForm']['lieuEcole1'] != '' ? $_SESSION['postedForm']['lieuEcole1'] : ''; ?>" data-required/></td>
+                                    <td><input type="text" name="niveauEcole1" placeholder="Niveau" value="<?php echo $_SESSION['postedForm']['niveauEcole1'] != '' ? $_SESSION['postedForm']['niveauEcole1'] : ''; ?>" data-required/></td>
+                                    <td><input type="text" name="anneesEcole1" placeholder="de-à (années)" value="<?php echo $_SESSION['postedForm']['anneesEcole1'] != '' ? $_SESSION['postedForm']['anneesEcole1'] : ''; ?>" data-required/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" name="ecole2" placeholder="Ecole*" value="<?php echo $_SESSION['postedForm']['ecole2'] != '' ? $_SESSION['postedForm']['ecole2'] : ''; ?>" data-required/></td>
-                                    <td><input type="text" name="lieuEcole2" placeholder="Lieu*" value="<?php echo $_SESSION['postedForm']['lieuEcole2'] != '' ? $_SESSION['postedForm']['lieuEcole2'] : ''; ?>" data-required/></td>
-                                    <td><input type="text" name="niveauEcole2" placeholder="Niveau*" value="<?php echo $_SESSION['postedForm']['niveauEcole2'] != '' ? $_SESSION['postedForm']['niveauEcole2'] : ''; ?>" data-required/></td>
-                                    <td><input type="text" name="anneesEcole2" placeholder="de-à (années)*" value="<?php echo $_SESSION['postedForm']['anneesEcole2'] != '' ? $_SESSION['postedForm']['anneesEcole2'] : ''; ?>" data-required/></td>
+                                    <td><input type="text" name="ecole2" placeholder="Ecole" value="<?php echo $_SESSION['postedForm']['ecole2'] != '' ? $_SESSION['postedForm']['ecole2'] : ''; ?>" data-required/></td>
+                                    <td><input type="text" name="lieuEcole2" placeholder="Lieu" value="<?php echo $_SESSION['postedForm']['lieuEcole2'] != '' ? $_SESSION['postedForm']['lieuEcole2'] : ''; ?>" data-required/></td>
+                                    <td><input type="text" name="niveauEcole2" placeholder="Niveau" value="<?php echo $_SESSION['postedForm']['niveauEcole2'] != '' ? $_SESSION['postedForm']['niveauEcole2'] : ''; ?>" data-required/></td>
+                                    <td><input type="text" name="anneesEcole2" placeholder="de-à (années)" value="<?php echo $_SESSION['postedForm']['anneesEcole2'] != '' ? $_SESSION['postedForm']['anneesEcole2'] : ''; ?>" data-required/></td>
                                 </tr>
                                 <?php
                                 for($i = 3; $i < 6; $i++){
@@ -187,7 +186,7 @@
                                 <?php }} ?>
 
                             </table>
-                            <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité*" value="<?php echo $_SESSION['postedForm']['anneeFin'] != '' ? $_SESSION['postedForm']['anneeFin'] : ''; ?>" maxlength="4" data-required/>
+                            <input type="text" name="anneeFin" id="anneeFin" placeholder="Année de fin de scolarité" value="<?php echo $_SESSION['postedForm']['anneeFin'] != '' ? $_SESSION['postedForm']['anneeFin'] : ''; ?>" maxlength="4" data-required/>
                             <section id="anneeFinError"></section>
                             <button type="button" id="addSch" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent buttonRight">
                                 Ajouter une ligne
@@ -254,14 +253,14 @@
                                     <label for="dejaCand2">Oui</label>
                                 </dd>
                             </dl>
-                            <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature*" value="<?php echo $_SESSION['postedForm']['dejaCandAnnee'] != '' ? $_SESSION['postedForm']['dejaCandAnnee'] : ''; ?>" maxlength="4" style="display: none;"/>
+                            <input type="text" name="dejaCandAnnee" id="dejaCandAnnee" placeholder="Année de candidature" value="<?php echo $_SESSION['postedForm']['dejaCandAnnee'] != '' ? $_SESSION['postedForm']['dejaCandAnnee'] : ''; ?>" maxlength="4" style="display: none;"/>
                             <section id="dejaCandError"></section>
                         </fieldset>
                         <fieldset id="files">
                             <legend><span class="number">4</span> Annexes </legend>
                             <p>Merci de joindre tous les fichiers demandés, en respectant les formats (si les formats ne sont pas respectés, les fichiers ne seront pas pris en compte).</p>
 
-                            <label for="photo">Photo passeport <strong>couleur:*</strong></label>
+                            <label for="photo">Photo passeport <strong>couleur:</strong></label>
                             <div class="tooltip">
                                 <label class="file" title="" id="photoLabel">
                                     <input type="file" name="photo" id="photo" onchange="changeTitleFile(this)" data-required/>
@@ -270,7 +269,7 @@
                                 <p></p>
                                 <section id="formatErrorZone1"></section>
                             </div>
-                            <label for="idCard">Copie carte d'indentité / passeport:*</label>
+                            <label for="idCard">Copie carte d'indentité / passeport:</label>
                             <div class="tooltip">
                                 <label class="file" title="" id="idCardLabel">
                                     <input type="file" name="idCard" id="idCard" onchange="changeTitleFile(this)" data-required/>
@@ -279,7 +278,7 @@
                                 <p></p>
                                 <section id="formatErrorZone2"></section>
                             </div>
-                            <label for="cv">Curriculum Vitae:*</label>
+                            <label for="cv">Curriculum Vitae:</label>
                             <div class="tooltip">
                                 <label class="file" title="" id="CVLabel" >
                                     <input type="file" name="cv" id="cv" onchange="changeTitleFile(this)" data-required/>
@@ -288,7 +287,7 @@
                                 <p></p>
                                 <section id="formatErrorZone3"></section>
                             </div>
-                            <label for="lettre">Lettre de motivation:*</label>
+                            <label for="lettre">Lettre de motivation:</label>
                             <div class="tooltip">
                                 <label class="file" title="" id="lettreLabel" >
                                     <input type="file" name="lettre" id="lettre" onchange="changeTitleFile(this)" data-required/>
@@ -340,7 +339,7 @@
                         <fieldset>
                             <div id="condDiv">
                                 <input type="checkbox" value="conditionsAcc" id="conditions" data-required/>
-                                <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions*</a></label>
+                                <label for="conditions" id="condLabel"><span class="ui"></span>Accepter les <a href="conditions.php" target="_blank"> conditions</a></label>
                                 <p></p>
                             </div>
                         </fieldset>

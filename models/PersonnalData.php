@@ -26,8 +26,7 @@ class PersonnalData {
     public $nomApprenti = "";
     public $prenomApprenti  = "";
     public $addresseApprentiComplete = [];
-    public $telFixeApprenti = "";
-    public $telMobileApprenti = "";
+    public $telApprenti = "";
     public $mailApprenti = "";
     public $dateNaissanceApprenti = "";
     public $origineApprenti = "";
@@ -61,8 +60,7 @@ class PersonnalData {
         $this->nomApprenti = $postedData['nameApp'];
         $this->prenomApprenti = $postedData['surnameApp'];
         $this->addresseApprentiComplete = array("rue"=>$postedData['adrApp'],"NPA"=>$postedData['NPAApp']);
-        $this->telFixeApprenti  = $postedData['telApp'];
-        $this->telMobileApprenti  = $postedData['phoneApp'];
+        $this->telApprenti  = $postedData['telApp'];
         $this->mailApprenti = $postedData['mailApp'];
         $this->dateNaissanceApprenti = $postedData['birthApp'];
         $this->origineApprenti = $postedData['originApp'];
