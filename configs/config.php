@@ -6,21 +6,21 @@
     // "laborantinBiologie" => "Laborantin-e CFC; option biologie",
     // "laborantinChimie" => "Laborantin-e CFC; option chimie",
     // "laborantinPhysique" => "Laborantin-e CFC; option physique",
+    // "logisticien" => "Logisticien-ne CFC",
+    // "planificateurElectricien" => "Planificateur-trice éléctricien-ne CFC",
+    // "electronicien" => "Electronicien-ne CFC",
 
     $LISTJOB = [
         "Lausanne" => [
             "laborantinBiologie" => "Laborantin-e CFC; option biologie",
             "polyMecanicien" => "Polymécanicien-ne CFC",
             "informaticien" => "Informaticien-ne CFC",
-            "logisticien" => "Logisticien-ne CFC",
-            "planificateurElectricien" => "Planificateur-trice éléctricien-ne CFC",
             "employeCommerce" => "Employé-e de commerce CFC",
             "gardienAnimaux" => "Gardien-ne d'animaux CFC",
-            "electronicien" => "Electronicien-ne CFC",
             "interactiveMediaDesigner" => "Interactive Media Designer CFC"
         ],
         "Sion" => [
-            "polyMecanicien" => "Polymécanicien-ne CFC"
+            "logisticien" => "Logisticien-ne CFC"
         ]
     ];
 ?>

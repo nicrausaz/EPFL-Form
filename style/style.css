@@ -1,10 +1,5 @@
 /* CORPS */
 
-[data-required] {
-  border-left-style: solid !important;
-  border-left-color: #ff0000 !important;
-}
-
 .page-style {
   max-width: 910px;
   /*MODIFIE LA LARGEUR DU FORMULAIRE*/
@@ -95,6 +90,11 @@
 
 .page-style input[type="submit"]:hover, .page-style input[type="button"]:hover {
   background: #e50000;
+}
+
+[data-required] {
+  border-left-style: solid !important;
+  border-left-color: #ff0000 !important;
 }
 
 #infoFilieres {

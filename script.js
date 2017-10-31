@@ -104,7 +104,7 @@ function initButtonsAction() {
 
 function initAddChildButtons() {
     $('#addSch').click(function () {
-        var template = '<tr><td><input type="text" name="ecole{i}" placeholder="Ecole" autocomplete="off"/></td><td><input type="text" name="lieuEcole{i}" placeholder="Lieu" autocomplete="off"/></td> <td><input type="text" name="niveauEcole{i}" placeholder="Niveau" autocomplete="off"/></td><td><input type="text" name="anneesEcole{i}" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
+        var template = '<tr><td><label for="ecole{i}">Ecole:</label><input type="text" name="ecole{i}" id="ecole{i}" placeholder="Ecole" autocomplete="off"/></td><td><label for="lieuEcole{i}">Lieu:</label><input type="text" name="lieuEcole{i}" id="lieuEcole{i}" placeholder="Lieu" autocomplete="off"/></td><td><label for="niveauEcole{i}">Niveau:</label><input type="text" name="niveauEcole{i}" id="niveauEcole{i}" placeholder="Niveau" autocomplete="off"/></td><td><label for="anneesEcole{i}">Années:</label><input type="text" name="anneesEcole{i}" id="name="anneesEcole{i}" placeholder="de-à(années)" autocomplete="off"/></td></tr>';
         addChildren('#scolaire', 6, template, '#addSch');
     });
 
