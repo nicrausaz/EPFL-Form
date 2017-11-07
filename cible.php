@@ -17,13 +17,10 @@
             include('templates/header.php');
             //Init personnalData with postedData
             $candidateData = new PersonnalData($_POST);
-            debuglog("personnalData initiallised");
             //Init dataValidator
             $validator = new PersonnalDataValidator($candidateData);
-            debuglog("PersonnalDataValitor initiallised");
 
             if($validator->isValid()){
-                debuglog("validator->isValid");
                 //Create folders
                 createCandidateFolders($candidateData);
                 //Upload files
@@ -44,7 +41,6 @@
                 $_SESSION['formError'] = true;
                 $_SESSION['postedForm'] = $_POST;
                 $_SESSION['files'] = $_FILES;
-                debuglog("!validator->isValid");
                 include("templates/errorText.php");
             }
         ?>

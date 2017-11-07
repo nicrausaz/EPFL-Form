@@ -242,10 +242,12 @@ function showListJob(lieu) {
     }
 }
 function showPolyAndInfoDivs(selectedFormation) {
-    $("#all").show(1000);
-    selectedFormation == "informaticien" ? $("#infoOnly").show(1000) : $("#infoOnly").hide(500);
-    selectedFormation == "informaticien" ? $("#griTest").show(1000) : $("#griTest").hide(500);
-    selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
+    if (selectedFormation != "menu") {
+        $("#all").show(1000);
+        selectedFormation == "informaticien" ? $("#infoOnly").show(1000) : $("#infoOnly").hide(500);
+        selectedFormation == "informaticien" ? $("#griTest").show(1000) : $("#griTest").hide(500);
+        selectedFormation == "polyMecanicien" ? $("#polyOnly").show(1000) : $("#polyOnly").hide(500);
+    }
 }
 function clearFileInput(fileInput) {
     $(fileInput).wrap('<form>').closest('form').get(0).reset();

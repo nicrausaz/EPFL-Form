@@ -82,9 +82,7 @@ function createPDF ($infos, $path) {
 
 function checkArrayValue ($info, $val, $pdf) {
     if (is_array($val)) {
-
         $pdf->Cell(0,10,$info . " : ",0,1);
-
         foreach($val as $key => $value) {
             $pdf->Cell(20);
             checkArrayValue ($key, $value, $pdf);
@@ -93,9 +91,5 @@ function checkArrayValue ($info, $val, $pdf) {
     else {
         $pdf->Cell(0,10,$info . ": " . $val,0,1);
     }
-}
-
-function debuglog($message){
-    //echo $message;
 }
 ?>
